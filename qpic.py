@@ -1630,7 +1630,8 @@ class Gate:
                 continue
             self.controls.append(wname)
         my_wires = box_targets + self.controls + self.targets
-        for wstr in self.options['wires'].keys():
+        named_opts = copy.copy(self.options['wires'])
+        for wstr in named_opts.keys():
             if self.options['wires'][wstr] and (wstr not in my_wires):
                 wname = get_wire_name(wstr, return_prefix=0, create_wire=0)
                 if wname != None:
@@ -2110,34 +2111,20 @@ def repeat_section(start, end):
         w.touch(last_depth)
 
 # descriptor can be an integer, or a tuple whose first entry is a string
-def descriptor_compare(a,b):
-    if isinstance(a,int) and isinstance(b,int):
-        return a - b
+# build a sort key from this
+def descriptor_key(a):
+    # ints first
     if isinstance(a,int):
-        return -1
-    if isinstance(b,int):
-        return 1
-    # both tuples
-    if a[0] < b[0]:
-        return -1
-    if a[0] > b[0]:
-        return 1
-    # same initial string
-    if len(a) != len(b):
-        return len(a) - len(b)
-    # same length
-    if a < b:
-        return -1
-    if a > b:
-        return 1
-    return 0
+        return (0, a)
+    # tuple: sort by initial string, then length, then contents
+    return (1, a[0], len(a)) + a
 
 def list_wires_in_order():
     descriptors = []
     for wname in wires:
         if wname not in declared_wires_in_order:
             descriptors.append(wname)
-    descriptors.sort(descriptor_compare)
+    descriptors.sort(key=descriptor_key)
     return declared_wires_in_order + descriptors
 
 def end_circuit():
@@ -2318,7 +2305,7 @@ def get_wire_name(word, check_if_wire=1,return_prefix=1,create_wire=1):
     else: # try the descriptor, maybe create the wire
         name = string_to_descriptor(raw_name)
         if create_wire and (name not in wires):
-            if (auto_wires == 'off') or isinstance(name,types.NoneType):
+            if (auto_wires == 'off') or (name is None):
                 sys.exit("Error:  Line %i:  Unknown wire %s" % (line_num, raw_name))
             else:
                 wires[name] = Wire(name, new_wire_depth, [], {})
