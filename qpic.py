@@ -1321,6 +1321,8 @@ class Box:
 		self.specified_length = length
 		self.specified_breadth = breadth
 		self.hyperlink = options.get('hyperlink', None)
+                if self.hyperlink:
+                        add_to_predocument("hyperref")
 		self.check_wires()
 
 	def min_and_max_wires(self, pos):
@@ -2655,6 +2657,7 @@ for (words, line_options, gate_options, comment0, comment1) in get_command_from_
 		posttikz_list.append(' '.join(words[1:]))
 	elif (words[0] == 'HYPERTARGET'):
 		preamble_list.append('\\hypertarget{%s}{}' % ' '.join(words[1:]))
+                add_to_predocument("hyperref")
 	elif (words[0] == 'HORIZONTAL'):
 		orientation = 'horizontal'
 	elif (words[0] == 'VERTICAL'):
