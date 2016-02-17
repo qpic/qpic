@@ -2164,7 +2164,7 @@ def print_circuit(circuit_length, cut_lines):
 	global wires, master_depth_list, orientation, braces_list, circuit_bottom, circuit_top
 
 	for pre in predocument_list:
-		print("% HEADER " + pre)
+		print("%! " + pre)
 	for pre in preamble_list:
 		print(pre)
 	for col in new_colors:

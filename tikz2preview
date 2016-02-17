@@ -31,7 +31,7 @@ postscript=r'''\end{preview}
 \end{document}
 '''
 
-header_flag = '% HEADER '
+header_flag = '%! '
 
 print(header, end='')
 prescript_done = 0
