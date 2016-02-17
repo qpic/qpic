@@ -35,7 +35,7 @@ setup(
     ],
     package_dir={'qpic':
                  'qpic'},
-    scripts=['bin/qpic', 'bin/tikz2preview'],
+    scripts=['bin/qpic.py', 'bin/tikz2preview'],
     include_package_data=True,
     install_requires=requirements,
     license="GPL",
