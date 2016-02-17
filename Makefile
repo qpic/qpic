@@ -1,85 +1,84 @@
-##########################################
-# <q|pic> Makefile
-# Tom Draper and Sandy Kutin -- 2013
-##########################################
+.PHONY: clean-pyc clean-build docs clean
+define BROWSER_PYSCRIPT
+import os, webbrowser, sys
+try:
+	from urllib import pathname2url
+except:
+	from urllib.request import pathname2url
 
-#############################################################################
-#Copyright (c) 2013, Institute for Defense Analyses, 4850 Mark Center Drive;#
-#               Alexandria, VA 22311-1882; 703-845-2500                     #
-#                                                                           #
-#This material may be reproduced by or for the US Government pursuant to the#
-#copyright license under the clauses at DFARS 252.227-7013 and 252.227-7014.#
-#                                                                           #
-#    Do not distribute without express written permission of the authors    #
-#############################################################################
+webbrowser.open("file://" + pathname2url(os.path.abspath(sys.argv[1])))
+endef
+export BROWSER_PYSCRIPT
+BROWSER := python -c "$$BROWSER_PYSCRIPT"
 
-# This makefile creates PDF graphics from .qpic files and manages their inclusion
-# into a master LaTeX document. Usage examples assume <q|pic> file "diagram.qpic"
-# and document file "mainfile.tex". Users should modify the two "# USER CHANGE:" 
-# lines as necessary.
-# 
-# Usage 1: Making standalone PDF graphics
-# "make diagram.pdf" creates a PDF graphic that can be viewed directly.
-# 
-# Usage 2: Including .qpic diagrams as PDF files
-# "make" executes PDFLaTeX on "mainfile.tex" assuming all .qpic files as dependencies.
-#
-#   Required in main document preamble:
-#   \usepackage{graphicx}
-#
-#   Include "diagram.pdf" using:
-#   \includegraphics{diagram}
+help:
+	@echo "clean - remove all build, test, coverage and Python artifacts"
+	@echo "clean-build - remove build artifacts"
+	@echo "clean-pyc - remove Python file artifacts"
+	@echo "clean-test - remove test and coverage artifacts"
+	@echo "lint - check style with flake8"
+	@echo "test - run tests quickly with the default Python"
+	@echo "test-all - run tests on every Python version with tox"
+	@echo "coverage - check code coverage quickly with the default Python"
+	@echo "docs - generate Sphinx HTML documentation, including API docs"
+	@echo "release - package and upload a release"
+	@echo "dist - package"
+	@echo "install - install the package to the active Python's site-packages"
 
-# Usage 3: Including .qpic diagrams as TikZ code
-# "make" executes PDFLaTeX on "mainfile.tex" assuming all .qpic files as dependencies.
-# 
-#   Required in main document preamble:
-#   \usepackage{tikz}
-#
-#   Include "diagram.tikz" using:
-#   \input{diagram.tikz}
+clean: clean-build clean-pyc clean-test
 
-# Identify <q|pic> and TeX files
-QPIC       = $(wildcard *.qpic) # List all <q|pic> files in directory
-TEX        = $(wildcard *.tex)  # List all TeX files in directory
+clean-build:
+	rm -fr build/
+	rm -fr dist/
+	rm -fr .eggs/
+	find . -name '*.egg-info' -exec rm -fr {} +
+	find . -name '*.egg' -exec rm -f {} +
 
-# Secondary files created by <q|pic> that can safely be removed by "make clean"
-QPIC_tikz  = $(QPIC:.qpic=.tikz) 
-QPIC_tex   = $(QPIC:.qpic=.tex)
-QPIC_pdf   = $(QPIC:.qpic=.pdf)
-QPIC_files = $(QPIC_tikz) $(QPIC_tex) $(QPIC_pdf)
+clean-pyc:
+	find . -name '*.pyc' -exec rm -f {} +
+	find . -name '*.pyo' -exec rm -f {} +
+	find . -name '*~' -exec rm -f {} +
+	find . -name '__pycache__' -exec rm -fr {} +
 
-# All TeX files
-TEX_all    = $(TEX) $(QPIC_tex)
+clean-test:
+	rm -fr .tox/
+	rm -f .coverage
+	rm -fr htmlcov/
 
-# Secondary files created by LaTeX that can be safely removed by "make clean"
-TEX_files  = texput.log $(TEX_all:.tex=.aux) $(TEX_all:.tex=.brf) $(TEX_all:.tex=.lof) $(TEX_all:.tex=.log) $(TEX_all:.tex=.nav) $(TEX_all:.tex=.out) $(TEX_all:.tex=.snm) $(TEX_all:.tex=.toc) $(TEX_all:.tex=.vrb) $(TEX_all:.tex=.pdf)
+lint:
+	flake8 qpic tests
 
-# USER CHANGE: Name of your LaTeX document (without the .tex) 
-MAIN = mainfile
+test:
+	python setup.py test
 
-all:	$(MAIN).pdf
+test-all:
+	tox
 
-# USER CHANGE: Document dependencies on the next line 
-$(MAIN).pdf:	$(TEX) $(QPIC_pdf) 
-	pdflatex -interaction=nonstopmode $(MAIN).tex
-#Rerun if references are not up to date
-ifeq ($(grep 'LaTeX Warning: .* may have changed' $(MAIN).log),)
-	pdflatex -interaction=nonstopmode $(MAIN).tex
-endif
+coverage:
+	coverage run --source qpic setup.py test
+	coverage report -m
+	coverage html
+	$(BROWSER) htmlcov/index.html
 
-%.tikz:	%.qpic
-	python qpic.py < $< >$@
+docs:
+	rm -f docs/qpic.rst
+	rm -f docs/modules.rst
+	sphinx-apidoc -o docs/ qpic
+	$(MAKE) -C docs clean
+	$(MAKE) -C docs html
+	$(BROWSER) docs/_build/html/index.html
 
-%.tex:	%.tikz
-	python tikz2preview $< > $@
+servedocs: docs
+	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
 
-%.pdf:	%.tex
-	pdflatex -interaction=nonstopmode $<
+release: clean
+	python setup.py sdist upload
+	python setup.py bdist_wheel upload
 
-clean:
-	/bin/rm -f $(QPIC_files) $(TEX_files)
+dist: clean
+	python setup.py sdist
+	python setup.py bdist_wheel
+	ls -l dist
 
-.SECONDARY:	$(QPIC_files) $(TEX_files)
-.PHONY:		all clean 
-
+install: clean
+	python setup.py install
