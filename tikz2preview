@@ -17,7 +17,6 @@ import sys
 header=r'''\documentclass{article}
 \usepackage[pdftex,active,tightpage]{preview}
 \usepackage{tikz}
-\usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing}
 \usepackage{hyperref}
 %\usepackage{geometry}
 \definecolor{bg}{rgb}{1,1,1}

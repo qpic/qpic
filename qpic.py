@@ -299,6 +299,19 @@ BARRIER_STYLE="decorate,decoration={zigzag,amplitude=1pt,segment length=4}"
 
 valid_prefixes = ['+', '-']
 
+def add_to_predocument(what):
+        global predocument_list
+        if what == "decorate":
+                the_str = "\\usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing}"
+        elif what == "hyperref":
+                the_str = "\\usepackage{hyperref}"
+        elif what == "bg":
+                the_str = "\\definecolor{bg}{rgb}{1,1,1}"
+        else:
+                sys.exit("Error: unknown predocument item %s (this should never happend)" % what)
+        if the_str not in predocument_list:
+                predocument_list.append(the_str)
+
 def parse_options(word):
 	global legal_options
 	# look for =
@@ -849,11 +862,13 @@ class WireLabel:
 		if self.text[0] in ['<', '>']:
 			self.start_brace = self.text[0]
 			self.text = self.text[1:]
+                        add_to_predocument("decorate")
 		else:
 			self.start_brace = ''
 		if self.text[-1] in ['<', '>']:
 			self.end_brace = self.text[-1]
 			self.text = self.text[:-1]
+                        add_to_predocument("decorate")
 		else:
 			self.end_brace = ''
 	def register(self, pos, loc, breadth, color, info):
@@ -1418,6 +1433,8 @@ class Gate:
 				self.label_string = args[0]
 			self.targets = copy.copy(targets)
 			self.controls = []
+                        if self.type != '=':
+                                add_to_predocument("decorate")
 		elif self.type == 'PHANTOM':
 			self.targets = copy.copy(targets)
 			self.controls = []
@@ -2748,6 +2765,8 @@ for (words, line_options, gate_options, comment0, comment1) in get_command_from_
 			if len(controls) >= 1 and controls[0] in depth_marks:
 				start_depth += 1
 			braces_list.append((start_depth, end_depth, copy.copy(targets), comment0, comment1, current_input_line, copy.copy(line_options)))
+                        if (comment0 or comment1) and not (line_options.get('style', None) or line_options.get('fill', None)):
+                                add_to_predocument("decorate")
 			continue
 		# Use dots-only form for controlled-Z, S
 		# now unnecessary -- just list the controls
@@ -2771,6 +2790,7 @@ for (words, line_options, gate_options, comment0, comment1) in get_command_from_
 			gate_type = 'N'
 		if gate_type == 'BARRIER':
 			gate_type = 'TOUCH'
+                        add_to_predocument("decorate")
 			if line_options.get('style',None):
 				line_options['style'] = BARRIER_STYLE + "," + line_options['style']
 			else:
