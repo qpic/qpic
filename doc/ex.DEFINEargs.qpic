@@ -1,0 +1,25 @@
+BGCOLOR blue!10!white
+
+
+
+
+
+
+
+
+
+x y z DEFINE Noffoli x N ; x T y z ;
+a b c Noffoli
+c a b Noffoli color=red
+b a a Noffoli # repeated a ignored
+
+
+
+
+
+
+
+
+
+
+

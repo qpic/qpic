@@ -1,0 +1,39 @@
+W d
+W a0
+W a1
+W a2
+W a3
+W a4
+W a5
+W b0
+W b1
+W c {} ?
+
+VERTICAL
++a0 a3
+c d PHANTOM
++a1 a4
++a2 a5
+LB
++b0 b1
+b0 LABEL ! breadth=6
+LE
++c 
+
+a0 a1 a2 >=<
+a3 a4 =>
+a5 <=
++b0 b1 length=12
+d START
+LB
++c
+c LABEL length=-3
++c d
+LE
+R
+TOUCH
+b0 b1 c END length=0
+a0 a1 a2 a3 a4 a5 M
+a0 a5 LABEL ... length=20
+a0 a5 @ 1 %% End
+a0 a5 @ 0 0 % Start

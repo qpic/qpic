@@ -1,0 +1,15 @@
+VERTICAL 0
+SCALE 1
+COMMENTSIZE 170
+PREAMBLE \providecommand{\ket}[1]{{\left\vert{#1}\right\rangle}}
+W aa color=white
+W a \ket{A} \ket{A}
+W b \ket{B} \ket{S}
+W m \ket{M} \ket{M}
+W c \ket{0} \ket{0}
+W zz color=white
+
+a b G $\rightarrow{}+$ % Add first register to second% $\ket{A}\ket{A+B}\ket{M}\ket{0}$ 
+b m G $\ge$ +c % Compare sum $A{+}B$ to $M$ % $\ket{A}\ket{A{+}B}\ket{M}\ket{?(A{+}B{\ge}M)}$ 
+b m G $-\leftarrow$ c % Conditionally subtract $M$ from $A{+}B$% $\ket{A}\ket{A{+}B\bmod{}M}\ket{M}\ket{?(A{+}B{\ge}M)}$ 
+a b G $>$ +c % Compare $A$ to $A{+}B\bmod M$ % $\ket{A}\ket{A{+}B\bmod{}M}\ket{M}\ket{0}$ 

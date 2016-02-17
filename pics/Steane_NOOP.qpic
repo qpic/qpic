@@ -1,0 +1,258 @@
+PREAMBLE \providecommand{\ket}[1]{{\left\vert{#1}\right\rangle}}
+SCALE 0.8
+WIRES \scriptstyle
+
+W data0
+W data1
+W data2
+W data3
+W data4
+W data5
+W data6
+W x00 \ket{+} 0
+W x01 \ket{+} 0
+W x02 \ket{+} 0
+W x03 \ket{+} 0
+W a00 \ket{0}
+W a01 \ket{0}
+W a02 \ket{0}
+W a03 \ket{0}
+W a04 \ket{+}
+W a05 \ket{+}
+W a06 \ket{+}
+W x10 \ket{+} 0
+W x11 \ket{+} 0
+W x12 \ket{+} 0
+W x13 \ket{+} 0
+W a10 \ket{0}
+W a11 \ket{0}
+W a12 \ket{0}
+W a13 \ket{0}
+W a14 \ket{+}
+W a15 \ket{+}
+W a16 \ket{+}
+W x20 \ket{+} 0
+W x21 \ket{+} 0
+W x22 \ket{+} 0
+W x23 \ket{+} 0
+W a20 \ket{0}
+W a21 \ket{0}
+W a22 \ket{0}
+W a23 \ket{0}
+W a24 \ket{+}
+W a25 \ket{+}
+W a26 \ket{+}
+W x30 \ket{+} 0
+W x31 \ket{+} 0
+W x32 \ket{+} 0
+W x33 \ket{+} 0
+W a30 \ket{0}
+W a31 \ket{0}
+W a32 \ket{0}
+W a33 \ket{0}
+W a34 \ket{+}
+W a35 \ket{+}
+W a36 \ket{+}
+
+CUT color=green!50!black
+CUT 1 color=white
+
+data0 data6 =< color=blue \emph{Data} length=60
+a00 a01 a02 a03 a04 a05 a06 =< color=blue length=60 \emph{\begin{tabular}{c}Ancilla \\ \#1\end{tabular}}
+a10 a11 a12 a13 a14 a15 a16 =< color=blue length=60 \emph{\begin{tabular}{c}Ancilla \\ \#2\end{tabular}}
+a20 a21 a22 a23 a24 a25 a26 =< color=blue length=60 \emph{\begin{tabular}{c}Ancilla \\ \#3\end{tabular}}
+a30 a31 a32 a33 a34 a35 a36 =< color=blue length=60 \emph{\begin{tabular}{c}Ancilla \\ \#4\end{tabular}}
+
+a00 a01 a02 a03 a04 a05 a06 data0 data1 data2 data3 data4 data5 data6 START 
+
++a00 a04
++a01 a05
++a02 a06
+a10 a11 a12 a13 a14 a15 a16 START
+
++a00 a05
++a01 a04
++a03 a06
++a10 a14
++a11 a15
++a12 a16
+a20 a21 a22 a23 a24 a25 a26 START
+
++a00 a06
++a02 a04
++a03 a05
++a10 a15
++a11 a14
++a13 a16
++a20 a24
++a21 a25
++a22 a26
+a30 a31 a32 a33 a34 a35 a36 START
+x00 x01 x02 x03 START
+
++a10 a16
++a12 a14
++a13 a15
++a20 a25
++a21 a24
++a23 a26
++a30 a34
++a31 a35
++a32 a36
+a00 x00 #Z
+a01 x01 #Z
+a02 x02 #Z
+a03 x03 #Z
+x10 x11 x12 x13 START
+
++a20 a26
++a22 a24
++a23 a25
++a30 a35
++a31 a34
++a33 a36
+a10 x10 #Z
+a11 x11 #Z
+a12 x12 #Z
+a13 x13 #Z
+a04 x00 #Z
+a05 x01 #Z
+a06 x02 #Z
+x20 x21 x22 x23 START
+
++a30 a36
++a32 a34
++a33 a35
+a20 x20 #Z
+a21 x21 #Z
+a22 x22 #Z
+a23 x23 #Z
+a14 x10 #Z
+a15 x11 #Z
+a16 x12 #Z
+a05 x00 #Z
+a04 x01 #Z
+a06 x03 #Z
+x30 x31 x32 x33 START
+
+a30 x30 #Z
+a31 x31 #Z
+a32 x32 #Z
+a33 x33 #Z
+a24 x20 #Z
+a25 x21 #Z
+a26 x22 #Z
+a15 x10 #Z
+a14 x11 #Z
+a16 x13 #Z
+a06 x00 #Z
+a04 x02 #Z
+a05 x03 #Z
+
+a34 x30 #Z
+a35 x31 #Z
+a36 x32 #Z
+a25 x20 #Z
+a24 x21 #Z
+a26 x23 #Z
+a16 x10 #Z
+a14 x12 #Z
+a15 x13 #Z
+LB
+x00 x01 x02 x03 M
+x00 x01 x02 x03 END
+LE
+data0 TOUCH
+
+a35 x30 #Z
+a34 x31 #Z
+a36 x33 #Z
+a26 x20 #Z
+a24 x22 #Z
+a25 x23 #Z
+LB
+x10 x11 x12 x13 M
+x10 x11 x12 x13 END length=9
+LE
+LB
+data0 a00 #Z
+data1 a01 #Z
+data2 a02 #Z
+data3 a03 #Z
+data4 a04 #Z
+data5 a05 #Z
+data6 a06 #Z
+LE
+
+a36 x30 #Z
+a34 x32 #Z
+a35 x33 #Z
+LB
+x20 x21 x22 x23 M
+x20 x21 x22 x23 END length=9
+LE
+LB
+a00 a01 a02 a03 a04 a05 a06 M
+a00 a01 a02 a03 a04 a05 a06 END length=9
+LE
+LB
+data0 a10 #Z
+data1 a11 #Z
+data2 a12 #Z
+data3 a13 #Z
+data4 a14 #Z
+data5 a15 #Z
+data6 a16 #Z
+LE
+
+LB
+x30 x31 x32 x33 M
+x30 x31 x32 x33 END length=9
+LE
+LB
+a10 a11 a12 a13 a14 a15 a16 M
+a10 a11 a12 a13 a14 a15 a16 END length=9
+LE
+LB
++data0 a20
++data1 a21
++data2 a22
++data3 a23
++data4 a24
++data5 a25
++data6 a26
+LE
+
+LB
+a20 a21 a22 a23 a24 a25 a26 M
+a20 a21 a22 a23 a24 a25 a26 END length=9
+LE
+LB
++data0 a30
++data1 a31
++data2 a32
++data3 a33
++data4 a34
++data5 a35
++data6 a36
+LE
+
+LB
+a30 a31 a32 a33 a34 a35 a36 M
+a30 a31 a32 a33 a34 a35 a36 END length=9
+LE
+
+OPACITY 0.1
+data0 data1 data2 data3 data4 data5 data6 G \rotatebox{-90}{RECOVER}
+a00 a06 @ 1 4 fill=blue color=blue %% \emph{Create ancilla \#1}
+a10 a16 @ 2 5 fill=blue color=blue %% \emph{Create ancilla \#2}
+a20 a26 @ 3 6 fill=blue color=blue %% \emph{Create ancilla \#3}
+a30 a36 @ 4 7 fill=blue color=blue %% \emph{Create ancilla \#4}
+x00 a06 @ 5 9 fill=brown color=brown
+x10 a16 @ 6 10 fill=brown color=brown
+x20 a26 @ 7 11 fill=brown color=brown
+x30 a36 @ 8 12 fill=brown color=brown %% \emph{Verify ancilla \#4}
+@ -5 -5 color=blue % \emph{X-error \\ syndrome \\ \#1}
+@ -4 -4 color=blue % \emph{X-error \\ syndrome \\ \#2}
+@ -3 -3 color=blue % \emph{Z-error \\ syndrome \\ \#1}
+@ -2 -2 color=blue % \emph{Z-error \\ syndrome \\ \#2}

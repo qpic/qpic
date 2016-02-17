@@ -1,0 +1,20 @@
+BGCOLOR blue!10!white
+
+
+
+
+
+
+
+
+
+DEFINE on color=red:style=very_thick
+W a a
+W b b
+W c c on
++b a
++b c on b:on
++a b on a:on
+
+
+

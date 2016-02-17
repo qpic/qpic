@@ -1,0 +1,11 @@
+PREAMBLE \providecommand{\ket}[1]{\left|#1\right\rangle}
+W a2 \ket{x_2} \ket{t_0}
+W a1 \ket{x_1} \ket{t_1}
+W a0 \ket{x_0} \ket{t_2}
+a2 H 
+#a2 P $\scriptstyle{2}$ a1 
+a1 P $2$ a2 
+a0 P $3$ a2 
+a1 H 
+a0 P $2$ a1 
+a0 H 

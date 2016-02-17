@@ -1,0 +1,7 @@
+BGCOLOR blue!10!white
+a0 a1 W A
+b0 b1 b2 W |0\rangle^{\otimes 3}<
+a1 b0 W >B
+b1 b2 W >|0\rangle^{\otimes 2}
+
+LABEL

@@ -1,0 +1,6 @@
+BGCOLOR blue!10!white
+W a x_1 y_1
+W ...b
+W c x_n y_n
+
+LABEL

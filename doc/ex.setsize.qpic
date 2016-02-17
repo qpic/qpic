@@ -1,0 +1,19 @@
+BGCOLOR blue!10!white
+
+
+
+
+
+
+
+
+
+a G {} size=5 b
+b P $g$ size=20 a
++a b
++a:size=15 b:size=8
+
+
+
+
+

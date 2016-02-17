@@ -1,0 +1,25 @@
+BGCOLOR blue!10!white
+
+
+
+
+
+
+
+
+
+a P 2 b
+a H ; b H ; c H
+c T a b ; c N; color=red
+c T a b ; c N color=red
+
+
+
+
+
+
+
+
+
+
+

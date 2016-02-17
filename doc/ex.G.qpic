@@ -1,0 +1,14 @@
+BGCOLOR blue!10!white
+
+
+
+
+
+
+
+
+
+a G A
+b G B
+a b G $\tau$
+a G GATE b width=35

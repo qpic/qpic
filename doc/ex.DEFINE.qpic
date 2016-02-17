@@ -1,0 +1,14 @@
+BGCOLOR blue!10!white
+
+
+
+
+
+
+
+
+
+DEFINE loud color=red:style=very_thick
+DEFINE phase P 2 loud
+a phase b
+b phase

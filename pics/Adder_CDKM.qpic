@@ -1,0 +1,27 @@
+W c0 0=c_0 0
+W b0 b_0 s_0
+W a0 a_0 a_0
+W b1 b_1 s_1
+W a1 a_1 a_1
+W z1 color=white
+W ...
+W z2 color=white
+W bn1 b_{n-1} s_{n-1}
+W an1 a_{n-1} a_{n-1}
+W bn b_n s_n
+W an a_n a_n
+W z z z\oplus{}s_{n+1}
+
+c0 b0 a0 G \rotatebox{90}{MAJ}
+a0 b1 a1 G \rotatebox{90}{MAJ}
+LABEL ...
+z2 bn1 an1 G \rotatebox{90}{MAJ}
+an1 bn an G \rotatebox{90}{MAJ}
++z an
+an1 bn an G \rotatebox{90}{UMA}
+z2 bn1 an1 G \rotatebox{90}{UMA}
+LABEL ...
+a0 b1 a1 G \rotatebox{90}{UMA}
+c0 b0 a0 G \rotatebox{90}{UMA}
+
+

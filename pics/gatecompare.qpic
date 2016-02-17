@@ -1,0 +1,78 @@
+HEADER \usepackage{amssymb}
+W a a a
+W b b b
+W c c c
+W d d d
+W e e e breadth=25
+W f f f
+
+b c SWAP a
++b +c a op=x:shape=0
+
+e G:color=blue R +f shape=6
++d:op=*
+d:op=*:sh=4
+c:op=*:sh=0 color=green
+LB
+d G:shape=box $S$
+e:size=17:op=$\curvearrowright$:shape=-4
+f:size=17:op=$\circlearrowright$:shape=-4
+LE
+
+TOUCH
+b P $\phi$ a
++b a op=$\phi$ size=12
+d G $S^\dagger$
+e G:shape=-4 $\curvearrowleft$
+f G $\circlearrowleft$ shape=-4
+d G:shape=8 $T$
+e P $\curvearrowright$ shape=8
+f P $\circlearrowright$ shape=8
+d G $\scriptstyle T^{1/2}$ shape=16 width=15
+e G $\curvearrowright$ shape=16 height=15
+f G $\circlearrowright$ shape=16 size=15
+
++b:size=12 a op=$\phi$
+
+a G x shape=8
+a b G x shape=8
+
+d H c
+d:size=16.9706:op=$H$:shape=box c
+
+LB
+a G:sh=6 s size=15
+b G:sh=6 l length=15
+c G:sh=6 b breadth=15
+d G:sh=-6 s size=15
+e G:sh=-6 l length=15
+f G:sh=-6 b breadth=15
+LE
+
+TOUCH
+MIXGATES 0
+
++a
++a b
++c d
+
++a b c
++d
+
+LB
+a b SWAP
++b +d op=x:shape=0
+LE
+
+TOUCH
+a:op=*:sh=3
+b:op=*:sh=5
+c:op=*:sh=6
+d:op=*:sh=8
+
+a:op=-*:sh=3
+b:op=-*:sh=5
+c:op=-*:sh=6
+d:op=-*:sh=8
+
+e:op="\draw[fill=yellow] (0,0) -- (30:3pt) arc (30:330:3pt) -- cycle;":sh=0:style=dotted

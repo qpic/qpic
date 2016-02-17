@@ -1,0 +1,16 @@
+BGCOLOR blue!10!white
+
+
+
+
+
+
+
+
+
+a G| $f$ +b
+b CHANGE style=dotted
+a b G| $g$ +c
+R 0 0
+c +b
+R

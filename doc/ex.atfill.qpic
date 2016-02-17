@@ -1,0 +1,16 @@
+BGCOLOR blue!10!white
+W a a
+W b b
+W c c
+
+
+
+
+
+
++b a
++a b
++c b
++b c
+a b @ 0 1 fill=red
+b c @ 2 3 color=black style=dotted,rounded_corners=10pt

@@ -1,0 +1,19 @@
+VERTICAL 0
+PREAMBLE \providecommand{\ket}[1]{\left|#1\right\rangle}
+DEFINE Bob color=blue
+
+W 0 \ket{\phi} color=red
+W 1 \ket{0}
+W 2 \ket{0} \ket{\phi}
+
+1 H
++2:Bob 1:color=red
+@ 2 %% Alice and Bob form an \\ entangled pair of qubits
+CUT 2
++1 0 color=red
+0 H color=red
+0 1 M color=red
+@ 2 4 color=red % Alice entangles and measures
+2 X 1:owire Bob 
+2 Z 0:owire Bob
+@ 5 6 Bob %% Bob applies gates based on Alice's measurements

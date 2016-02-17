@@ -1,0 +1,19 @@
+BGCOLOR blue!10!white
+
+
+
+
+
+
+
+
+
++b a op=/
++d c shape=4 op=x
++a shape=3 op=* size=8
++b shape=-3 op=* size=8
++c shape=3 op=-* size=8
++d shape=-3 op=-* size=8
+a b G:op=x
+c d G:op=\\
+

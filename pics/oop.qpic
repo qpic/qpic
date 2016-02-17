@@ -1,0 +1,132 @@
+W Z_0 0 s_0
+W A_0 a_0
+W B_0 b_0
+W Z_1 0 s_1
+W A_1 a_1
+W B_1 b_1
+W Z_2 0 s_2
+W A_2 a_2
+W B_2 b_2
+W X_0 0
+W Z_3 0 s_3
+W A_3 a_3
+W B_3 b_3
+W Z_4 0 s_4
+W A_4 a_4
+W B_4 b_4
+W X_1 0
+W Z_5 0 s_5
+W A_5 a_5
+W B_5 b_5
+W X_4 0
+W Z_6 0 s_6
+W A_6 a_6
+W B_6 b_6
+W X_2 0
+W Z_7 0 s_7
+W A_7 a_7
+W B_7 b_7
+W Z_8 0 s_8
+W A_8 a_8
+W B_8 b_8
+W X_3 0
+W Z_9 0 s_9
+W A_9 a_9
+W B_9 b_9
+W Z_10 0 s_{10}
+COLOR darkgreen 0 .5 0
+
+GATESIZE 13.5
+DEPTHPAD 7.5
+LB
+Z_1 T A_0 B_0
+Z_2 T A_1 B_1
+Z_3 T A_2 B_2
+Z_4 T A_3 B_3
+Z_5 T A_4 B_4
+Z_6 T A_5 B_5
+Z_7 T A_6 B_6
+Z_8 T A_7 B_7
+Z_9 T A_8 B_8
+Z_10 T A_9 B_9
+LE
+LB
+B_1 C A_1
+B_2 C A_2
+B_3 C A_3
+B_4 C A_4
+B_5 C A_5
+B_6 C A_6
+B_7 C A_7
+B_8 C A_8
+B_9 C A_9
+LE
+LB color=blue
+X_0 T B_2 B_3
+X_1 T B_4 B_5
+X_2 T B_6 B_7
+X_3 T B_8 B_9
+LE
+LB color=blue
+X_4 T X_1 X_2
+PHANTOM
+LE
+LB color=red
+Z_2 T B_1 Z_1
+Z_4 T B_3 Z_3
+Z_6 T B_5 Z_5
+Z_8 T B_7 Z_7
+Z_10 T B_9 Z_9
+LE
+LB color=red
+Z_4 T X_0 Z_2
+Z_8 T X_2 Z_6
+LE
+LB color=red
+Z_8 T X_4 Z_4
+LE
+LABEL 0 a_0 b_0 g[0,1] a_1 p[1,2] g[0,2] a_2 p[2,3] p[2,4] g[2,3] a_3 p[3,4] g[0,4] a_4 p[4,5] p[4,6] g[4,5] a_5 p[5,6] p[4,8] g[4,6] a_6 p[6,7] p[6,8] g[6,7] a_7 p[7,8] g[0,8] a_8 p[8,9] p[8,10] g[8,9] a_9 p[9,10] g[8,10]
+LB color=darkgreen
+Z_6 T X_1 Z_4
+Z_10 T X_3 Z_8
+LE
+LB color=darkgreen
+Z_3 T B_2 Z_2
+Z_5 T B_4 Z_4
+Z_7 T B_6 Z_6
+Z_9 T B_8 Z_8
+LE
+PHANTOM
+LB color=blue
+X_4 T X_1 X_2
+LE
+LB color=blue
+X_0 T B_2 B_3
+X_1 T B_4 B_5
+X_2 T B_6 B_7
+X_3 T B_8 B_9
+LE
+LB
+Z_0 C B_0
+Z_1 C B_1
+Z_2 C B_2
+Z_3 C B_3
+Z_4 C B_4
+Z_5 C B_5
+Z_6 C B_6
+Z_7 C B_7
+Z_8 C B_8
+Z_9 C B_9
+LE
+LB
+Z_0 C A_0
+B_1 C A_1
+B_2 C A_2
+B_3 C A_3
+B_4 C A_4
+B_5 C A_5
+B_6 C A_6
+B_7 C A_7
+B_8 C A_8
+B_9 C A_9
+LE

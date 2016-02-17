@@ -1,0 +1,14 @@
+BGCOLOR blue!10!white
+
+
+
+
+
+
+
+
+
++b a
+LABEL a {a \oplus b}
++b a
+b LABEL b width=6

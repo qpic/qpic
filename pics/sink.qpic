@@ -1,0 +1,32 @@
+VERTICAL 0
+W 0 a b
+W 1 color=blue c d
+W color=red 2 e f
+W ...
+W 3 g h
+W 4 color=orange i j
+COLOR grey .5 .5 .5
+DEFINE yellowblack color=yellow!50!black
+
+2 T 0 1 color=green!50!black
+4:color=cyan C -3 color=cyan
+0 X
+2 color=grey H 1
+4 Z 0 1 2 3 fill=cyan!50!white
+
+2 G| $A A A$ 0 width=25 fill=purple!50!white
+
+LABEL length=30 u {v + w} x {} y 123456789 %% This comment is a lot longer than it probably should be, but doesn't really convey any information
+
+3:yellowblack 4 |G color=yellow!50!black B +0:size=6 2:size=3
+
+3 OUT 0 yellowblack
+4 P F +1
+
+@ 7 % The first half
+
+LABEL ...
+
+0 4 G CD 1 -2 color=purple % The middle gate
+R
+@ 10 16 %% The second half

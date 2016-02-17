@@ -1,0 +1,17 @@
+W a a a breadth=30
+W b b b style=dashed
+W c c c color=green
+W d d d type=c
+
+#CORNERS 2
++a b c
+c a PERMUTE c:color=red
+LABEL a b c d
+R
+LABEL a b c d
+
+d a b c PERMUTE
+LABEL a b c d
+R -2 -1
+R -4 -1
+

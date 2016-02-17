@@ -1,0 +1,25 @@
+PREAMBLE \providecommand{\ket}[1]{\left|#1\right\rangle}
+W a \ket{\phi} [x]
+W x1 type=o
+W x0 style=dashed
+W x2 type=o
+W b0 \ket{0} [y]
+W b1 \ket{0} \ket{\phi}
+
+VERTICAL 0
+b1 H    % $\ket{\phi}\ket{0}(\ket{0}{+}\ket{1})$
+b0 b1   % $(\alpha\ket{0}{+}\beta\ket{1})(\ket{00}{+}\ket{11})$
+b0 x1 PERMUTE
+b0 a    %$\scriptstyle \alpha\ket{0}(\ket{00}{+}\ket{11}){+}\beta\ket{1}(\ket{10}{+}\ket{01})$
+#a H     % $\ket{00}(\alpha\ket{0}{+}\beta\ket{1}{+}\ket{01}(\alpha\ket{1}{+}\beta\ket{0}){+}\ket{10}(\alpha\ket{0}{-}\beta\ket{1}{+}\ket{01}(\alpha\ket{1}{-}\beta\ket{0})$
+a H     % $\sum_{x,y}\ket{xy}(\alpha\ket{y}{+}(-1)^x\beta\ket{\bar{y}})$
+a b0 M  % $[xy](\alpha\ket{y}{+}(-1)^x\beta\ket{\bar{y}})$
+x1 x2 a b0 PERMUTE
+b1 b0   % $[xy](\alpha\ket{0}{+}(-1)^x\beta\ket{1})$
+b1 a  % $[xy](\alpha\ket{0}{+}\beta\ket{1})$
+
+# Colored boxes
+b0 b1 x1 x2 @ 0 2 fill=green style=rounded_corners %% $[qq]$ Quantum entanglement
+a b0 x2 x1 @ 6 6 fill=blue style=rounded_corners %% \hspace{.5cm}$2[c\rightarrow c]$ Classical channel
+# b c @ 5 6 color=black style=dotted % a dotted region
+

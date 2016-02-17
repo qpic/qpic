@@ -1,0 +1,16 @@
+W a #a\oplus{c}
+W b #b\oplus{c}
+W c #\mbox{MAJ}(a,b,c)
+
+a b c G \rotatebox{90}{UMA}
+=
++c a b
++a c
++b a
+=
++b
++b a
++c a b
++b
++a c
++b c

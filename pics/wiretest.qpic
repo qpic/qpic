@@ -1,0 +1,27 @@
+W a a
+...a W
+b W b
+c ...cd d W cd<
+
+e W e< e< e> e>
+f W <f <f >f >f
+
+g h i j k W x< <x> >x< >x breadth=4
+
+#VERTICAL
+
+a b W ab
+W c c
+W d d
+
+LB
+LE
+LABEL 1
+e f END
+g h i j k END length=20
+a ...a b END a:cwire
+LABEL 2
+e f START
+g h i j k START length=20
+LABEL 3
+LABEL 4

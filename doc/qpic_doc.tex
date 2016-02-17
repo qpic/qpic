@@ -1,0 +1,1256 @@
+\documentclass[twoside,12pt]{article} 
+\usepackage{amsmath,amssymb,varioref}
+\usepackage{xspace,verbatim,listings,fullpage}
+\usepackage{color,tikz}
+\lstset{basicstyle=\ttfamily\footnotesize,numbers=left,numberstyle=\scriptsize,columns=fullflexible,backgroundcolor=\color{purple!10!white}}
+\newcommand{\qpic}{$\langle\mathsf{q}|\mathsf{pic}\rangle$\xspace}
+\newcommand{\TikZ}{Ti\emph{k}Z\xspace}
+\providecommand{\ket}[1]{\left|#1\right\rangle}
+\usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing}
+\usepackage{hyperref}
+
+\title{$\langle\mathsf{q}|\mathsf{pic}\rangle$: Quantum Circuit Diagrams in \LaTeX}
+\author{Thomas G. Draper \and Samuel A. Kutin}
+\date{February 2016}
+
+\begin{document}
+\maketitle
+\begin{abstract} 
+{$\langle\mathsf{q}|\mathsf{pic}\rangle$\xspace} is a system
+for preparing circuit diagrams in \LaTeX, with an emphasis on diagrams
+used in quantum computing.  The user prepares a description of the
+circuit in the human-readable
+``{$\langle\mathsf{q}|\mathsf{pic}\rangle$\xspace} language'':\ a
+python program then converts this into {\LaTeX} code using the
+{Ti\emph{k}Z\xspace} graphics package.  This note serves as a manual
+for the language as of
+{$\langle\mathsf{q}|\mathsf{pic}\rangle$\xspace} version~5.0.1a
+(February 2016).
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+A picture is worth approximately a thousand words.  For example, Figure~\ref{fig-rev} depicts a
+circuit~\cite{kutin-moulton-smithline} for reversing the information on $n$ wires in depth $2n+2$,
+where the allowed operation is adding one wire to an adjacent wire.  The proof that this circuit
+is correct takes a page and a half (and over 600 words), but the main idea of the proof is conveyed
+entirely by the red coloring in Figure~\ref{fig-rev}.
+
+\begin{figure}[h!]
+\begin{center}
+\input reverse-8.tikz
+\end{center}
+\caption{Reversing the contents of nine wires in depth~20~\cite{kutin-moulton-smithline} using controlled NOTs.  The red wires and gates are those affected by the value of $a_3$.}
+\label{fig-rev}
+\end{figure}
+
+
+This diagram was created using the graphics software \qpic.  The user creates a description of the
+circuit in a simple, human-readable language, with one line declaring each wire and one line specifying each
+logical operation, or ``gate''.  The main ingredient in \qpic is a python script that parses this description
+and produces {\LaTeX} code using the \TikZ graphics package.\footnote{The bulk of our testing has been with \TikZ version 2.10.}
+
+One design principle behind \qpic is to keep the language simple.  The user can draw a number of
+elements common to quantum circuit diagrams, including wires with single or double lines, rectangular
+gates with text on them, and measurement boxes.  The code is interpreted by \LaTeX, so any math expressions
+are passed directly through.  The goal is not to handle everything anyone might ever want; instead,
+commands can be passed directly through to {\LaTeX} or to \TikZ, so the user can supplement the \qpic output
+as needed.  (\qpic produces heavily commented \TikZ code to facilitate this process.)
+
+
+There are, of course, some limitations on what \qpic can achieve in this framework.  The python code
+that creates the \TikZ commands needs to know how large all the elements are; so, for example, to make
+a box large enough to contain some text, the user must explicitly specify the width.  Hence, it may
+take several iterations to line up the diagram perfectly, as is normal when constructing diagrams in \LaTeX.
+
+
+Another design principle is that, to the extent possible, \qpic first creates an internal representation
+of the circuit from the user's input, and then produces \TikZ code from that representation.  One example
+of this is the {\tt VERTICAL} command; with one line, the user can change the default flow of time in the
+diagram (left to right) to a vertical flow (top to bottom).  The internal representation of the circuit is
+the same in horizontal or vertical mode; only the output changes.  In practice, the line between
+representation and code is not always as clear-cut as one would like.
+
+
+In this paper we give a brief, but complete, description of \qpic.  We begin with some simple examples in
+Section~\ref{sec-example}; the discussion should serve as a beginning tutorial.  
+We give a complete list of commands of the \qpic circuit specification language
+in Section~\ref{sec-qpic}.  We then briefly describe the other components of \qpic in Section~\ref{sec-tools};
+these are tools to help users use \qpic within a {\LaTeX} document.  Finally, we complete our definition of the
+\qpic language by listing the gory details of parsing and tokenizing in Section~\ref{sec-tokens}.
+
+Like any software, \qpic is a work in progress.  This paper represents a description of the state of
+the program as of June 2015.  Please see [TO DO:  Where will it be?]  for the most up-to-date version of \qpic.  [TO DO:  Copyright IDA?]
+Please feel free to contact the authors with suggestions for further improvement.
+
+\section{Simple Examples}
+\label{sec-example}
+\subsection{Example 1:\ Majority}
+\label{sec-example-maj}
+We begin with a simple in-place majority circuit~\cite{CDKM} in Figure~\ref{fig-maj}.  The figure includes the diagram and also the \qpic code used to generate it.
+\begin{figure}[h!]
+\begin{center}
+\input Adder_CDKM_MAJ.tikz
+
+\begin{minipage}{2in}
+%\footnotesize\verbatiminput{Adder_CDKM_MAJ.qpic}
+\lstinputlisting{Adder_CDKM_MAJ.qpic}
+\end{minipage}
+\end{center}
+\caption{In-place majority vote:\ diagram and code.}
+\label{fig-maj}
+\end{figure}
+
+TO DO:  Would it be cleaner to make all the {\tt W} commands put the wire first?
+Should we deprecate the wire second option?  (Speaking of deprecating, should we
+document {\tt CHANGE}, take it out, or neither?)
+
+The first three lines of the \qpic code use the {\tt W} command, which declares a wire.  The first argument, which is required, is the name of the wire, to be used internally.  The formal rules for wire names can be found in
+Section~\ref{sec-qpic-wire-name-rules}---in brief, a wire name can be anything that doesn't mean something else to \qpic---but any string of numbers and lowercase
+letters is safe.  Here, the wires are given the names {\tt a}, {\tt b}, and
+{\tt c}.
+
+
+If a {\tt W} command has a second argument, it is interpreted as a label to be
+typeset in math mode and placed at the start of the wire.  A third argument (if any) is treated the same way but placed at the end.  Here, each wire has a starting and ending label, representing its starting and ending value.
+
+
+Normally, the \qpic parser breaks up each line by whitespace.  However,
+an expression like {\tt \{a{\textvisiblespace}{\char92}oplus{\textvisiblespace}c\}} is not
+broken up.  \qpic knows that it will be producing {\LaTeX} code, so curly
+braces (and dollar signs) can be used to group text with whitespace into
+a single entity.  See Section~\ref{sec-tokens} for more about \qpic's parsing
+rules.
+
+
+After a blank line (ignored by \qpic), line 5 contains our first gate.
+The basic syntax of a gate line is a list of targets, the gate (possibly
+with a required argument), and then a list of controls (if any).  In this case,
+the gate type is {\tt G}, which means a rectangle drawn around the targets.
+The required argument following the {\tt G} is the name of the gate, which
+is placed in the center of the rectangle.  It is processed by \TikZ, so it
+may include graphics commands (here, {\tt {\char92}rotatebox}).  Gate names
+may be enclosed in dollar signs to be typeset in math mode.
+
+
+In addition to wires and gates, \qpic allows for several other common
+elements of circuit diagrams.  The {\tt =} command in line 6 takes one
+optional argument and draws it in the center of the circuit with a white
+background.  If, as in this case, no argument is given, an equals sign is
+drawn.
+
+
+The three remaining lines contain additional gates: two controlled NOTs and
+one Toffoli.  One can use {\tt C} for controlled NOT and {\tt T} for
+Toffoli; for example, line 7 could have been written {\tt b C c}, a
+controlled NOT with target $b$ and control $c$.  However, since these gates
+are so common, \qpic interprets a line containing only a list of wires as
+such a gate:  {\tt +} indicates that the operator $\oplus$ should be
+applied to that wire, and any other wires are treated as controls.
+Notice that the target may occur anywhere in the list.  If no target is
+listed, all wires are drawn as controlled (this indicates a (controlled)
+$Z$ gate).
+
+\subsection{Example 2:\ Quantum Fourier Transform}
+\label{sec-example-QFT}
+
+Our second example is a 3-bit QFT, shown in Figure~\ref{fig-QFT}.
+
+%moved figure after another paragraph because of page endings.
+
+
+The {\tt PREAMBLE} commands insert {\LaTeX} code before the
+\TikZ environment; in this case, we define the commands {\tt {\char92}ket}
+and {\tt {\char92}phase}, which we will use in the wire labels.
+({\tt {\char92}providecommand} is
+useful for this construct, since it defines the command only if it is not
+already defined.)
+
+
+
+The {\tt SCALE} command scales the graphical elements in the picture,
+here by a factor of 1.5.  Note that text is not scaled.
+
+
+In lines 4--6 we declare the wires, as discussed in
+Section~\ref{sec-example-maj}.  Note that the internal wire names have
+nothing to do with the depiction in the diagram.
+
+The remaining lines contain two types of gates:
+{\tt H} (Hadamard) and {\tt P} (phase shift).  {\tt H} is required to have
+one target, and {\tt P} typically does as well.
+For a Hadamard, the {\tt H} completely specifies the gate;
+for a phase shift (as with the rectangle in Section~\ref{sec-example-maj})
+we must also specify something to be written inside the circle.  In this
+example the phase shifts have controls and the Hadamard gates do not, but
+either gate type is allowed to have an arbitrary number of controls.
+\begin{figure}[h!]
+\begin{center}
+\input QFT3v1.tikz
+
+\begin{minipage}{5in}
+\lstinputlisting{QFT3v1.qpic}
+\end{minipage}
+\end{center}
+\caption{Quantum Fourier transform on three bits:\ diagram and code.}
+\label{fig-QFT}
+\end{figure}
+
+
+It is worth looking at the spacing between gates in Figure~\ref{fig-QFT}.
+Most of the gates are separated by horizontal space, but there is less space
+between the second phase gate and the Hadamard on $\ket{x_1}$.  This is
+because \qpic detects that these two gates operate on disjoint sets of
+wires and may be performed in parallel.  (If we changed the order of the
+wires, \qpic would draw the Hadamard directly above or below the
+phase shift; in Figure~\ref{fig-QFT}, the two gates are simply next to each other.)
+
+
+\qpic uses a simple greedy algorithm to determine gate sequences:  it
+divides the circuit into a series of time slices, or \emph{slices}, placing each gate
+in the earliest possible slice.  This is one of the key features of
+\qpic; the user can specify the list of gates in logical order without
+worrying about exactly how they will appear on the page.  Of course, there
+are ways to override this default behavior as needed; see
+Section~\ref{sec-qpic-touch} for more information.
+
+\subsection{Example 3:\ Shor's Algorithm}
+
+
+Figure~\ref{fig-Shor} illustrates some additional features of \qpic, and
+also a different application:\ a high-level schematic of an algorithm.
+
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics{ShorNutshell}
+\begin{minipage}{5.4in}
+\lstinputlisting[basicstyle=\scriptsize\ttfamily,numberstyle=\tiny,breaklines=true]{ShorNutshell.qpic}
+\end{minipage}
+\end{center}
+\caption{Shor's algorithm:\ diagram and code.}
+\label{fig-Shor}
+\end{figure}
+
+
+Line 1 contains the {\tt VERTICAL} command; this tells \qpic to render the
+circuit vertically, with time flowing downward.  By default the top and
+bottom labels on the wires are typeset at a 45-degree angle; the {\tt 0}
+indicates that they should instead be written horizontally.  The other
+new command at the top, {\tt DEPTHPAD 3}, changes the spacing between
+slices to 3 points.
+
+
+Lines 6 and 7 look like standard wire declarations, except for the
+{\tt width=25} on line 7.  This indicates that \qpic needs to leave more space
+for this wire on the page, to accomodate the wider exponentiation gate.
+As we will discuss in Section~\ref{sec-qpic-style}, we could also have said
+{\tt breadth=25}.  Note that {\tt \#} is a comment
+character in \qpic; the remainder of the line is discarded.
+
+
+Line 9 draws the slashes on the wires (a common way to indicate that a
+wire carries more than one qubit); the list of wires comes first, and the
+optional argument at the end is written in math mode in the diagram.
+(For \qpic's purposes this is a ``gate'', even though it does not
+correspond to any computation.)  This line also contains specifications
+for the width and height of the gate; these can be applied to any gate to
+override the defaults, most commonly to accommodate extra text.
+
+
+The next few lines incorporate another \qpic capability:\ comments.  Text after
+a percent sign is written to the left of the circuit (or above a horizontal
+circuit); if there is a second percent sign, that text is written to the
+right of (or below) the circuit.  As we see in this example, the comments
+are processed by \LaTeX.  Long comments tend to work better with
+vertical circuits.
+
+
+Aside from the comments, lines 10, 11, and 14 contain no new ideas; we
+have several {\tt G} gates, one with a control and a width parameter.
+Line 12 introduces a measurement operator; this draws a meter on each
+specified wire.  If an optional argument follows the {\tt M}, the meter
+is replaced by a bullet shape with the specified text inside; see
+Section~\ref{sec-qpic-measure} for an example.
+
+
+A \qpic wire can have one of three types:\ {\tt qwire} (quantum, or single line),
+{\tt cwire} (classical, or double line), and {\tt owire} (off).
+Since measurement changes a wire from quantum to classical, the {\tt M}
+operator automatically changes any affected wires from {\tt qwire} to
+{\tt cwire}.  As we will see in Section~\ref{sec-example-teleport},
+we can also change wire types (and colors and styles) directly.
+
+
+As noted in Section~\ref{sec-example-QFT}, \qpic tries to place gates
+within the same slice when possible---for example, the gates on
+lines 12 and 14 could be drawn next to each other.  In this diagram
+the comments would then be on top of each other, which would look bad.
+The solution is line 13, {\tt x TOUCH}, which is essentially a
+``no-op''.  It tells \qpic to ``touch''
+the {\tt x} wire at this time (i.e., during the measurement), forcing
+the final gate to occur in a later slice.  {\tt TOUCH} with no
+arguments would touch all wires.  See Section~\ref{sec-qpic-depth} for
+some other ways to manipulate which gates occur at the same time.
+
+\subsection{Example 4:\ Teleportation}
+\label{sec-example-teleport}
+
+In Figure~\ref{fig-teleport} we introduce a few more things \qpic can do: color, changing wire styles with a colon, and specifying ranges of slices.
+
+\begin{figure}[h!] 
+\begin{center}
+\input teleport.tikz
+\begin{minipage}{5in}
+\lstinputlisting{teleport.qpic}
+\end{minipage}
+\end{center}
+\caption{Teleportation from {\color{red}Alice} to {\color{blue}Bob}:\ diagram and code.}
+\label{fig-teleport}
+\end{figure}
+
+The first use of the {\tt color=} syntax is when we declare wire {\tt 0}
+in line 5.  This sets the (initial) color of the wire to red.
+Similarly, line 13 specifies a red gate.  One can use the similar {\tt style=}
+syntax to pass style commands to \TikZ; this can change the
+thickness of a wire or gate.  (See Section~\ref{sec-qpic-style} for details.)
+
+For Bob's gates on lines 17 and 18, we instead use a macro, {\tt Bob},
+which we defined in line 3.  Roughly speaking, the
+{\tt DEFINE} command tells \qpic to replace the next word ({\tt Bob})
+with the rest of the line ({\tt color=blue}) wherever it is used.  (Note that
+this expansion affects \qpic commands, but not the comments on lines 11 and 23.)
+In the bottom two gates, the connectors are blue (the gate color) but drawn
+with double lines (since the controls are classical).
+
+Line 10 uses the {\tt :} syntax to change the colors of the two wires.  This
+means that, as of this gate, {\tt color=red} is applied to wire 1, and
+{\tt Bob} (i.e., {\tt color=blue}) is applied to wire 2.  Lines 17 and 18 use
+the same syntax to change the wire type to {\tt owire}, which means those
+wire are ``off'' (not drawn) starting from those points.
+
+The remaining commands refer to slices; the first set of gates is
+considered slice 0, then slice 1, and so on.  In line 11,
+{\tt @ 2} specifies the most recent 2 slices (i.e., 0 and 1).  This
+command does nothing by itself, but it lets us attach a comment to this
+part of the circuit.  In lines 16 and 19 the two numbers following the
+{\tt @} are the first and last slices in the range.  Be aware that
+\qpic is happy to draw comments on top of each other; it is up to
+the user to position them appropriately.
+
+The {\tt CUT} command tells \qpic to put ``cut here'' lines before
+the specified slices; in line 12, we place a single line before
+slice 2.  If no arguments are given, {\tt CUT} draws dashed lines
+between all pairs of slices.
+
+\section{\qpic Commands}
+\label{sec-qpic}
+
+\lstset{basicstyle=\ttfamily\small,numbers=none}
+
+Where Section~\ref{sec-example} serves as a tutorial, this section serves
+as a reference.  We give a complete description of all commands in \qpic,
+sorted by categories.  Where applicable, we give an example together with
+a small diagram; in all cases, the example is a valid input that
+generates the accompanying diagram.
+
+TO DO: Fix ex.atfill so this is actually true.
+
+Throughout, we use ``gate'' in the \qpic sense to mean
+something that is drawn on a wire, whether or not it corresponds
+to some quantum operation.
+
+\subsection{Wires}
+\subsubsection{Wire Declarations}
+\label{sec-qpic-wire-name-rules}
+
+\begin{description}
+\item[{\tt W name [labels]}] Declare a wire with the given name.  If one label is
+  given, it is used at the start; if two labels are given, the second is used at the
+  end.  Additional labels are normally ignored, but may appear if {\tt START} and
+  {\tt END} are used (see Section~\ref{sec-qpic-start-end}).  Subsequent declarations
+  of the same wire simply append additional labels (if any) to the wire's list.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=2,lastline=4]{ex.W.qpic}
+\end{minipage} \hfill \input ex.W.tikz
+\item[{\tt W ...name}] Declare an ellipsis wire with the given name.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=2,lastline=4]{ex.ellipsis.qpic}
+\end{minipage} \hfill \input ex.ellipsis.tikz
+
+\item[{\tt name(s) W [labels]}] The specified labels are applied to all the wires
+  listed.  If a label begins and/or ends with {\tt <} or {\tt >}, it is instead
+  drawn with an open or close brace before and/or after it.  With one name,
+  {\tt name W [labels]} is equivalent to {\tt W name [labels]}.
+  
+\begin{minipage}[b]{2.7in}
+\lstinputlisting[firstline=2,lastline=5]{ex.nW.qpic}
+\end{minipage} \hfill \input ex.nW.tikz
+\end{description}
+
+The wire name does not appear in the diagram, but is used by \qpic internally.
+One useful convention is for wire names to be made up of numbers, lowercase letters,
+and underscores.  Technically, a wire name can be any non-whitespace string, except:
+\begin{itemize}
+\item Wire names should not contain any of the characters that \qpic handles specially:
+{\tt \char92\#\$\{\}\%=@":;}.
+\item  Any name of a built-in or user-defined \qpic command is a reserved word and may not be used.
+\item  A wire name may not begin with {\tt -} or {\tt +}.  A wire name preceded by a
+  minus sign is interpreted as a negated control; one preceded by a plus sign is
+  interpreted as a target.
+\item  If a wire name starts with {\tt ...} it is treated as an ellipsis.
+\end{itemize}
+
+Wires appear in the diagram in the order they are declared.  If the same wire is declared
+more than once, later declarations are ignored, except that additional labels (if any)
+are appended to the list of labels associated to the wire, as in the example above.
+
+\subsubsection{Undeclared Wires}
+
+\qpic also allows the option of undeclared wires.  This is useful for larger,
+computer-generated circuits, where you don't need the extra check to catch
+typos.  By default, \qpic starts processing the file in ``autowires'' mode, allowing
+these undeclared wires.  As soon as a single {\tt W} declaration is seen, \qpic
+switches to a ``declared'' mode where all wires must be explicitly declared.
+A typical file will use one of the two modes exclusively.
+
+\begin{itemize}
+\item A valid name for an undeclared wire is either non-negative integer,
+  or a string of the form
+  $$
+  \text{\tt lowers[\_][num[,num[,num...]]]}
+  $$
+  That is, a lowercase string, an optional underscore, and then a (possibly empty)
+  comma-separated list of numbers.
+\item Undeclared wires appear on the page after any declared wires.  Wires with integer
+  labels are listed in numerical order; other undeclared wires are then sorted first by
+  lowercase string, then by number of subscripts, and then lexicographically.
+\item An undeclared wire with an integer name has no label.
+  Otherwise, an undeclared wire is given a starting label: the
+  lowercase string, followed by the numbers as subscripts.
+\item Note that \qpic converts the undeclared wire name to a standard representation.  If
+  declared, {\tt a\_0} and {\tt a00} are different strings and refer to different wires,
+  but if undeclared they have the same representation and refer to the same wire.
+\item The command {\tt AUTOWIRES} sets \qpic to ``autowires'' mode for the rest
+  of the circuit.  This lets you mix declared and undeclared wires.
+\end{itemize}
+
+\subsection{Gates}
+
+\subsubsection{Controlled NOT}
+
+\begin{description}
+\item[{\tt target N}] Negate the target wire.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.N.qpic}
+\end{minipage} \hfill \input ex.N.tikz
+
+\item[{\tt target C control}] Controlled NOT.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.C.qpic}
+\end{minipage} \hfill \input ex.C.tikz
+
+\item[{\tt target T control1 control2}] Toffoli gate.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.T.qpic}
+\end{minipage} \hfill \input ex.T.tikz
+
+\item[{\tt controls}]  If a list of wires is given without a gate, it is assumed to be a (generalized) controlled Z or NOT.  A target of NOT is specified
+  with a {\tt +}.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.none.qpic}
+\end{minipage} \hfill \input ex.none.tikz
+\end{description}
+
+Note the negated control in the last example.  In general, any time a wire is
+used as a control, we can use a {\tt -} to change it to a negated control.
+
+\subsubsection{General Gates}
+
+\qpic provides two ways to do a general gate: {\tt G} for rectangles and
+{\tt P} for circles (or, more precisely, ellipses).  In theory, each of these
+can be used with the right attributes (Section~\ref{sec-qpic-style}) to
+simulate the other, but their default behavior is different.
+      
+\begin{description}
+\item[{\tt targets G name [controls]}] General rectangular gate.  It must have at
+least one target.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.G.qpic}
+\end{minipage} \hfill \input ex.G.tikz
+
+\item[{\tt targets P name [controls]}] Circular gate.  It typically has one target but may have more.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.P.qpic}
+\end{minipage} \hfill \input ex.P.tikz
+
+\item[{\tt targets G| name [controls]} or {\tt targets |G name [controls]}] The same idea as {\tt G}, but the indicated
+side of the rectangle is thicker to indicate directionality.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.Gbar.qpic}
+\end{minipage} \hfill \input ex.Gbar.tikz
+
+\item[{\tt targets G name targets G name ...}] One can combine more than
+  one {\tt G}, {\tt P}, {\tt G|}, or {\tt |G} into a single gate.
+  Each subsequent rectangle (or ellipse) is applied to all wires since the
+previous one.
+
+\begin{minipage}[b]{3in}
+\lstinputlisting[firstline=11]{ex.GG.qpic}
+\end{minipage} \hfill \input ex.GG.tikz
+\end{description}
+
+In this last example, note that {\tt :width=20} applies only to that
+rectangle, but the other has the default width.
+
+\subsubsection{Other predefined Gates}
+
+\begin{description}
+\item[{\tt target H [controls]} or {\tt target X [controls]}] Hadamard or $X$ gate.
+It must have exactly one target.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.HX.qpic}
+\end{minipage} \hfill \input ex.HX.tikz
+
+\item[{\tt target Z [controls]}] $Z$ gate.  As with Hadamard and $X$, it must
+  have exactly one target.  However, controlled Z can also be depicted with
+  dots.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.Z.qpic}
+\end{minipage} \hfill \input ex.Z.tikz
+
+It is worth noting that a two-wire gate with no controls is also useful for
+sorting networks.  (See Section~\ref{sec-qpic-R} for the {\tt R} command.)
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.S.qpic}
+\end{minipage} \hfill \input ex.S.tikz
+
+\item[{\tt target1 target2 SWAP [controls]}] Swap gate.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.SWAP.qpic}
+\end{minipage} \hfill \input ex.SWAP.tikz
+
+\item[{\tt +}] Any time a wire would normally be a control but is preceded
+  by {\tt +}, it is drawn as a target.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.plus.qpic}
+\end{minipage} \hfill \input ex.plus.tikz
+
+\end{description}
+
+\subsection{Attributes}
+\label{sec-qpic-style}
+
+Attributes are of the form {\tt attribute=value}, and can affect different
+properties of a wire or gate:
+\begin{itemize}
+\item Size: {\tt height}, {\tt width}, {\tt length}, {\tt breadth}, {\tt size}.
+\item Appearance: {\tt color}, {\tt fill}, {\tt style}.
+\item Other properties: {\tt type}, {\tt hyperlink}, {\tt operator}, {\tt shape}.
+\end{itemize}
+
+Attribute names may be abbreviated; e.g., {\tt oper} for {\tt operator} or
+{\tt co} for {\tt color}.  At least two letters must be used.
+
+Attributes can be used in one of three ways:
+\begin{itemize}
+\item Anywhere on a line, separated from other elements by spaces.  This represents a property of the gate (or wire, if it's a {\tt W} declaration).
+\item After to a gate or other circuit element, separated by a colon.  This represents a property of that particular element.
+\item After a wire name in a gate, separated by a colon.  This represents a
+  change in the wire's properties, effective as of that gate.  If this
+  part of the circuit is repeated or reversed (see
+  Section~\ref{sec-qpic-R}), \qpic will try to repeat or undo the change.
+\end{itemize}
+Note that not all attributes can be applied in all situations.
+
+\subsubsection{Size Attributes}
+
+There are two different coordinate systems for specifying gate sizes:  \emph{height} v.\ \emph{width} and
+\emph{length} v.\ \emph{breadth}.  \emph{Height} is always vertical on the page, and \emph{width} is horizontal; for example,
+if a rectangle needs to be larger to fit multiple characters, one can increase its width.  \emph{Length} refers to the direction
+of time, and \emph{breadth} refers to the perpendicular direction; for example, if a rectangle needs to be larger to convey
+that it takes a long time, one can increase its length.\footnote{For horizontal circuits, length is width and breadth is height.  For vertical circuits, length is height and breadth is width.}
+
+\begin{description}
+\item[{\tt height=value}, {\tt width=value}, {\tt length=value}, {\tt breadth=value}] Change the size of a gate.\footnote{For controlled NOTs, length affects only spacing.}
+Units are in points (although scaling may change this); the default value for a rectangle is 12 in both directions.
+\qpic will treat the specified value as a minimum and increase it if necessary to span the indicated wires.
+
+\begin{minipage}[b]{1.8in}
+\lstinputlisting[firstline=11]{ex.size.qpic}
+\end{minipage} \hfill \input ex.size.tikz 
+
+\begin{minipage}[b]{1.8in}
+\lstinputlisting[firstline=11]{ex.sizevert.qpic}
+\end{minipage} \hfill \input ex.sizevert.tikz
+
+\item[{\tt W breadth=value}] Set the breadth of a wire.  The breadth can only be changed in the initial declaration, not during the circuit.  You can instead use {\tt width} in a vertical circuit or {\tt height} in a horizontal circuit.  You cannot set the length of a wire; it is determined by the circuit.
+  Wires are automatically separated by a distance of {\tt WIREPAD}, which
+  defaults to 3 (Section~\ref{sec-parameters}).
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.breadth.qpic}
+\end{minipage} \hfill \input ex.breadth.tikz
+
+\item[{\tt size=value}] Change the height and width of a gate simultaneously.
+  If applied to a target or control wire this instead changes the size of
+  the target or control.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.setsize.qpic}
+\end{minipage} \hfill \input ex.setsize.tikz
+  
+\item [{\tt target P width=value [controls]}] The only difference between
+  {\tt P} and {\tt G} is how they are affected by size changes.
+  \qpic tries to keep a single-target {\tt P} a circle; changing height or width
+  affects both.  To make it an ellipse, one needs to give both
+  attributes explicitly.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.Pwidth.qpic}
+\end{minipage} \hfill \input ex.Pwidth.tikz
+
+  
+\end{description}
+
+\subsubsection{Appearance Attributes}
+
+\begin{description}
+\item[{\tt color=value}] Change the color of a gate or wire.
+
+\begin{minipage}[b]{3in}
+\lstinputlisting[firstline=11]{ex.color.qpic}
+\end{minipage} \hfill \input ex.color.tikz
+
+\item[{\tt fill=value}] Change the fill color of part of a gate.  Wires and
+  controlled nots do not have fills, but targets can.
+
+\begin{minipage}[b]{3.3in}
+\lstinputlisting[firstline=11]{ex.fill.qpic}
+\end{minipage} \hfill \input ex.fill.tikz
+
+\item[{\tt style=value}] Change the style of a gate or wire.  The style parameter is passed directly to \TikZ,
+  except that underscores are replaced by spaces.  Multiple styles can be separated
+  by commas (and are passed to \TikZ as a group); multiple attributes are separated by
+  colons.
+
+\begin{minipage}[b]{3in}
+\lstinputlisting[firstline=11]{ex.style.qpic}
+\end{minipage} \hfill \input ex.style.tikz
+
+\end{description}
+
+The last gate above illustrates another rule:
+If a wire is specified multiple times in a single gate, only the first
+appearance matters to draw the gate, but the later ones can be used to attach
+attributes.  This can make the code cleaner.
+
+\begin{minipage}[b]{3in}
+\lstinputlisting[firstline=11]{ex.delay.qpic}
+\end{minipage} \hfill \input ex.delay.tikz
+
+\subsubsection{Other attributes}
+
+\begin{description}
+\item[{\tt type=value}, {\tt qwire}, {\tt cwire}, {\tt owire}] There are
+  three types of wires:\ quantum (single line), classical (double line),
+  or off (no line).  By default, all wires are quantum.  You can set or change
+  the type using the {\tt type} command (\qpic looks only at the first letter
+  of value) or using the shorthand {\tt qwire}, {\tt cwire}, {\tt owire}.
+  (These have the same syntax with colons as {\tt attribute=value}.)
+  {\tt type} applies only to wires, but the quantum/classical status of
+  wires affects how gates are drawn.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.qcowire.qpic}
+\end{minipage} \hfill \input ex.qcowire.tikz
+
+\item[{\tt shape=value}] You can change the shape of
+  a $G$, $P$, or target.  Value is a integer, or possibly {\tt box} or {\tt circle}:
+  \begin{center}
+    \begin{tabular}{r|ll}
+      $0$ & no boundary \\
+      $1$ & control \\
+      $-1$ & negated control \\
+      {\tt circle}, $2$ & circle \\
+      {\tt box}, $n$ & $n$-sided polygon with a flat bottom & (for $n \ge 3$) (${\tt box}=4$)\\
+      $-n$ & $n$-sided polygon with a vertex on the bottom & (for $n \ge 3$)
+    \end{tabular}
+  \end{center}
+  \qpic will draw a regular polygon on a single wire, or stretch the polygon if it
+  spans multiple wires or if a size is specified.
+  If not attached to any particular element, {\tt shape} affects
+  any $G$ or $P$ on the line, or (if there is no $G$ or $P$) the target.
+
+\begin{minipage}[b]{3in}
+\lstinputlisting[firstline=11]{ex.shape.qpic}
+\end{minipage} \hfill \input ex.shape.tikz
+
+\item[{\tt operator=value}] This can be used to specify the operator for
+  {\tt G}, {\tt P}, {\tt M}, or a target.  For {\tt G}, {\tt P}, {\tt M}, this is
+  an alternative to having the operator be the next item on the line.
+
+\begin{minipage}[b]{3in}
+\lstinputlisting[firstline=11]{ex.operator.qpic}
+\end{minipage} \hfill \input ex.operator.tikz
+
+Certain values of {\tt operator} are treated specially.  (Note the need for a
+double backslash.)
+\begin{center}
+  \begin{tabular}{r|ll}
+    {\tt 0} & none \\
+    {\tt -} {\tt |} {\tt /} {\tt \char92\char92} & a single line \\
+    {\tt +} {\tt x} {\tt X} & two perpendicular lines \\
+    {\tt *} & four lines if {\tt shape} is $2$, $4$, or $-4$, otherwise one line to each vertex \\
+    {\tt -*} & same as {\tt *}, but one line to each side. \\    
+  \end{tabular}
+\end{center}
+
+\begin{minipage}[b]{3in}
+\lstinputlisting[firstline=11]{ex.operator2.qpic}
+\end{minipage} \hfill \input ex.operator2.tikz
+
+Finally, if the operator is enclosed in double quotes, it is drawn by \TikZ (with (0,0) as the
+center of the desired location):
+
+\begin{center}
+\begin{minipage}[b]{5.55in}
+\lstinputlisting[basicstyle=\scriptsize\ttfamily,firstline=2]{ex.operatorquotes.qpic}
+\end{minipage}
+
+\input ex.operatorquotes.tikz
+\end{center}
+
+\item[{\tt hyperlink=value}] This specifies that a gate\footnote{There is a known bug: in some older versions of \TeX, only one edge of the gate is the link.}
+  is a hyperlink to a target
+  elsewhere in the document, possibly declared with {\tt HYPERTARGET}
+  (see Section~\ref{sec-hypertarget}).
+
+\begin{minipage}[b]{4in}
+\lstinputlisting[firstline=11]{ex.hyperlink.qpic}
+\end{minipage} \hfill \input ex.hyperlink.tikz
+
+\end{description}
+
+\subsection{Measurement and Other Wire Type Changes}
+\label{sec-qpic-measure}\label{sec-qpic-start-end}
+\begin{description}
+
+\item[{\tt wires M [name]}] Measure the wires.  If the optional argument is given, \qpic draws a D-shaped ``bullet''
+containing the name; if not, \qpic draws a meter.  Measurement automatically changes its targets to {\tt cwire}.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.M.qpic}
+\end{minipage} \hfill \input ex.M.tikz
+
+\item[{\tt MEASURESHAPE tag}] Change the default shape of the measurement gate.
+  {\tt MEASURESHAPE} must be followed by {\tt D} (the default) or {\tt tag}.
+  Meters are unaffected.  Only one shape may be used throughout a circuit.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.Mtag.qpic}
+\end{minipage} \hfill \input ex.Mtag.tikz
+
+\item[{\tt wire:cwire}] If a wire is changed to a classical wire, \qpic draws a meter in place of a control.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.CHANGEcwire.qpic}
+\end{minipage} \hfill \input ex.CHANGEcwire.tikz
+
+\item[{\tt target OUT value} or {\tt target IN value}] Drop a wire out or bring it back in, generally because it has a known
+value.  The wire type is changed to {\tt owire} (by {\tt OUT}) or {\tt qwire} (by {\tt IN}).
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.INOUT.qpic}
+\end{minipage} \hfill \input ex.INOUT.tikz
+
+\item[{\tt target(s) START} or {\tt target(s) END}] Start or end a wire later in the
+  circuit, possibly because it is not relevant at certain times.  The labels are not
+  specified by these commands, but in a {\tt W} declaration.  The wire type is changed
+  to {\tt owire} (by {\tt END}) or {\tt qwire} (by {\tt START}).  If the first of these
+  gates to apply to a wire is {\tt START}, then its initial start is deferred.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.STARTEND.qpic}
+\end{minipage} \hfill \input ex.STARTEND.tikz
+
+Certain commands (e.g., {\tt TOUCH}, {\tt LABEL}) apply by default to all wires.  More
+precisely, wires that are not currently ``active'' (as determined by {\tt START} and
+{\tt END}) are excluded.
+
+\end{description}
+
+\subsection{Managing Slices}
+\label{sec-qpic-touch}
+\label{sec-qpic-depth}
+
+\qpic greedily divides a circuit into \emph{slices}.  Each gate is placed into the earliest possible slice\footnote{Except that {\tt START} is always as late as possible.}, with
+the constraint that different gates applying to the same wire must occur (in order) in different slices.
+Each slice is further subdivided into \emph{subslices} to avoid having gates overlap on the page.  Within each
+subslice, all gates are placed on top of one another (in horizontal mode) or next to each other (in vertical mode).
+\qpic places padding to separate slices, but subslices are immediately adjacent to one another.
+
+
+Most of the time, \qpic's default behavior will look fine.  The commands in this section can be used to modify this behavior.
+
+\begin{description}
+\item[{\tt [wires] TOUCH}] Pretend that the given wires were ``touched'' by the most recent gate (or the last time any of its targets was used, whichever is later), forcing subsequent gates
+  to be in later slices.  If no wires are given, touch all wires.  Technically,
+  {\tt TOUCH} draws an invisible line, which can be made visible with attributes.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.TOUCH.qpic}
+\end{minipage} \hfill \input ex.TOUCH.tikz
+
+\item[{\tt [wires] PHANTOM}] The same idea as {\tt TOUCH}, but with subslices rather than slices.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.PHANTOM.qpic}
+\end{minipage} \hfill \input ex.PHANTOM.tikz
+
+\item[{\tt [wires] BARRIER}] The same idea as {\tt TOUCH} (i.e., affecting slices),
+  but with a zigzag line.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.BARRIER.qpic}
+\end{minipage} \hfill \input ex.BARRIER.tikz
+
+\item[{\tt LB} and {\tt LE}] Begin and end a \emph{level}: a set of gates required to be in the
+same slice.  No checking is done to see whether gates in a level use the
+same wires.  Attributes placed on the {\tt LB} line will be passed on to the gates.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.level.qpic}
+\end{minipage} \hfill \input ex.level.tikz
+
+\item[{;}] Multiple gates may be listed on one line, separated by semicolons.
+  They will all be at the same depth; more precisely, \qpic will
+  enclose them in {\tt LB} and {\tt LE}.
+  If any command (typically the first or last) contains nothing but an
+  attribute, that attribute is passed on to all gates.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.semicolon.qpic}
+\end{minipage} \hfill \input ex.semicolon.tikz
+
+\item[{\tt MARK name(s)}] Place a ``mark'' with the given name at the depth of the
+  most recent gate in the circuit.  This has no effect by itself, but the marks can be
+  used as arguments to {\tt R} (Section~\ref{sec-qpic-R}) or {\tt @}
+  (Section~\ref{sec-comment}).
+
+\item[{\tt MIXGATES value}] If {\tt MIXGATES} is set to $0$, \qpic will not mix different types of gates within the
+same slice.  The default value is~1.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.MIXGATES.qpic}
+\end{minipage} \hfill \input ex.MIXGATES.tikz
+\end{description}
+
+\subsection{Reversing and Repeating}
+\label{sec-qpic-R}
+
+One common quantum operation is to reverse or repeat part of a circuit.  In \qpic, this can be done by
+selecting sets of slices.  The first slice in the circuit is $0$, then $1$, and so on.  For
+the {\tt R} command, $-1$ refers to the most recent slice, $-2$ to the one before that, and so on.
+
+\begin{description}
+\item[{\tt R start end}] If $\mathtt{start} < \mathtt{end}$, repeat the specified range of
+slices (those between {\tt start} and {\tt end}, including both endpoints).  We replay the slices in order.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.R1.qpic}
+\end{minipage} \hfill \input ex.R1.tikz
+
+\item[{\tt R [start end]}] If $\mathtt{start} \ge \mathtt{end}$, reverse the specified range of slices
+(those between {\tt end} and {\tt start}, including both endpoints).  We replay the slices
+in reverse order, swapping {\tt G|} with {\tt |G} and undoing wire changes.  If the endpoints are not included,
+we take {\tt start} to be $-2$ and {\tt end} to be $0$ (i.e., we undo everything but the most recent slice).
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.R2.qpic}
+\end{minipage} \hfill \input ex.R2.tikz
+
+\item[{\tt R [name name]}] We can also use names set by the {\tt MARK} command in place
+  of numbers.  We will replay the slices either forward or in reverse, depending on
+  whether the first or second mark is the earlier one.  If names are used, the earlier
+  mark is \emph{excluded}.  (You can also specify one slice with a mark and one with\
+  a number; again, if the earlier slice is a mark, it is excluded.)
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.Rmark.qpic}
+\end{minipage} \hfill \input ex.Rmark.tikz
+
+\end{description}
+
+\subsection{Other Circuit Elements}
+
+These next few items are all considered ``gates'' by \qpic.  They do not
+correspond to any computation, but they take up space on the page and are assigned to
+slices.
+
+\begin{description}
+\item[{\tt wires / [name]}] Draw a slash across each wire; the optional argument is written (in math mode) next to the
+slash.  This is sometimes used to denote the number of qubits represented by a wire.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.slash.qpic}
+\end{minipage} \hfill \input ex.slash.tikz
+
+TO DO: Should slash be drawn the other way in vertical mode?  (See figure 4.)
+
+\item[{\tt [targets] LABEL [labels]}] Place the given labels (in math mode) on the wires.
+  If no targets are given, the command applies to all wires.
+  There should be (1) one label for each wire,
+  or (2) just one label (to be repeated on each wires),
+  or (3) no labels (the empty label is placed on all wires).  The label {\tt ...}
+  is turned into {\tt \char92 cdots}.
+  In vertical circuits, labels are rotated by 90 degrees.
+  The empty label is sometimes useful to pad with space, especially in conjunction
+  with a {\tt length} attribute.
+  
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.label.qpic}
+\end{minipage} \hfill \input ex.label.tikz
+
+\item[{\tt [targets] = [label]}] Place a single label, centered across the specified targets.  If no targets are specified, use all wires.  If no label is specified, use $=$.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.equals.qpic}
+\end{minipage} \hfill \input ex.equals.tikz
+
+\item[{\tt [targets] [<|>]=[<|>] [label]}] If {\tt =} is preceded and/or followed by
+  {\tt <} or {\tt >}, then a curly brace is drawn before and/or after the label, in the
+  indicated direction.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.equals2.qpic}
+\end{minipage} \hfill \input ex.equals2.tikz
+
+\item[{\tt wires PERMUTE}] Change the order of the specified wires on the page.  The
+  left-to-right order on the line will be the new top-to-bottom (or left-to-right) order.
+  \qpic will draw smooth lines for each wire, with the rounded corners specified by
+  the global parameter {\tt CORNERS} (Section~\ref{sec-parameters}).
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.PERMUTE.qpic}
+\end{minipage} \hfill \input ex.PERMUTE.tikz
+
+  
+\end{description}
+
+\subsection{Comments}
+\label{sec-comment}
+
+These next few commands are not considered ``gates'' by \qpic.  They do not take up
+any space
+in their circuit, and their presence does not affect the locations of other elements.
+
+\begin{description}
+
+\item[{\tt CUT [slices]}] Place ``cut here'' (dashed) lines just before each specified slice.  If no slices
+are given, place cuts in all possible places.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.CUT.qpic}
+\end{minipage} \hfill \input ex.CUT.tikz
+
+\item[{\tt \% [comment1] [\% comment2]}] Place comments next to the
+  gate (there must be a gate on the same line).  The {\tt comment1} is
+  placed above or to the left of the circuit; {\tt comment2} is placed
+  below or to the right.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.comment.qpic}
+\end{minipage} \hfill \input ex.comment.tikz
+
+Note that there are two types of comments in \qpic:  comments in the diagram, indicated by {\tt \%} and passed on to
+\LaTeX, and comments within \qpic code itself, which start with {\tt \#} and are discarded by the parser.
+
+\item[{\tt [wires] @ [num1 [num2]]}] Specify a rectangular region.  The
+  ``breadth'' dimension spans the specified wires; if none are listed, it spans all wires.
+  The ``length'' dimension is determined by the arguments after the {\tt @}.  With no
+  arguments, it spans the most recent slice; with one, it refers to the most recent
+  {\tt num1} slices; with two, it refers to slices {\tt num1} through {\tt num2}
+  (including both endpoints).  (As with {\tt R}, a name set by {\tt MARK} may be used
+  for either or both endpoints, and if the earlier slice is specified by a name it
+  is excluded.)
+
+  This region can serve as a placeholder for comments, in which case the wires are
+  usually not specified.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.at.qpic}
+\end{minipage} \hfill \input ex.at.tikz
+
+The region can also be made visible using attributes like {\tt fill}, {\tt style},
+and {tt color}.
+
+\begin{minipage}[b]{4.5in}
+\lstinputlisting[firstline=11]{ex.atfill.qpic}
+\end{minipage} \hfill \input ex.atfill.tikz
+\end{description}
+
+
+\subsection{Macros and {\LaTeX} Code}
+\label{sec-qpic-define} \label{sec-hypertarget}
+
+The next few commands are for defining macros or for placing {\LaTeX} code before and after the \TikZ code generated
+by \qpic.  Each may be repeated as often as necessary.
+
+\begin{description}
+\item[{\tt DEFINE macro text}] Creates user-defined \qpic code.  Hereafter, wherever the word {\tt macro}
+appears, it will be replaced by {\tt text}.
+
+\begin{minipage}[b]{3.2in}
+\lstinputlisting[firstline=11]{ex.DEFINE.qpic}
+\end{minipage} \hfill \input ex.DEFINE.tikz
+
+\item[{\tt args DEFINE macro text}] If {\tt DEFINE} has $n$ arguments, then the
+  $n$ space-delimited words preceding {\tt macro} will be used to replace those
+  arguments wherever they occur (as space- or colon- or semicolon- delimited
+  words) within {\tt text}.
+
+\begin{minipage}[b]{3.2in}
+\lstinputlisting[firstline=11]{ex.DEFINEargs.qpic}
+\end{minipage} \hfill \input ex.DEFINEargs.tikz
+
+
+\item[{\tt COLOR name r g b}] Insert a {\tt \char92 definecolor} command defining {\tt name} with the
+specified rgb values (which should be between $0$ and $1$).
+
+\item[{\tt HEADER text}] Add a line which will be interpreted by {\tt tikz2preview} to place
+{\tt text} at the start of its output, before the {\tt \char92 begin\{document\}}.
+
+\item[{\tt PREAMBLE text}] Add {\tt text} to the {\LaTeX} code just before the tikzpicture.
+
+\item[{\tt PRETIKZ text}] Add {\tt text} at the start of the tikzpicture, before the diagram code.
+
+\item[{\tt POSTTIKZ text}] Add {\tt text} at the end of the tikzpicture, after the diagram code.
+
+\begin{minipage}[b]{3.5in}
+\lstinputlisting[firstline=11]{ex_latex.qpic}
+\end{minipage} \hfill \includegraphics{ex_latex}
+
+\item[{\tt HYPERTARGET name}] Add {\tt \char92hypertarget\{name\}\{\}} at the start of
+  the tikzpicture, to create a hyperref target (say, for use by {\tt hyperlink}).
+
+\begin{minipage}[b]{3.5in}
+\lstinputlisting[firstline=11]{ex.hypertarget.qpic}
+\end{minipage} \hfill \input ex.hypertarget.tikz
+
+\end{description}
+
+One of the design principles behind \qpic is that it should solve common problems, but not all
+problems.  If a user would like to include something that can't be drawn using the standard
+commands, the full power of \TikZ can be accessed via {\tt PRETIKZ} and {\tt POSTTIKZ}.  For this
+reason, \qpic produces commented \TikZ code, to make it easy to find what coordinates should be
+used to draw extra elements.
+
+% VERTICAL, HORIZONTAL
+
+\subsection{Global Parameters}
+\label{sec-parameters}
+
+The remaining commands set global parameters.  They can be used multiple times, but only
+the final instance will have any effect.\footnote{One exception:  If {\tt VERTICAL} and {\tt HORIZONTAL}
+are used throughout the circuit, this may confuse \qpic's interpretations of {\tt height=}
+and {\tt width=} attributes.}
+
+Some commands use \qpic's internal unit, which is 1 point (or $1/12$ inch).  Applying
+{\tt SCALE} changes this unit size.
+
+TO DO: Should these be command-line parameters?  If so, what's the syntax?
+
+\begin{description}
+\item[{\tt VERTICAL [deg1 [deg2]]}] Change the flow of time to vertical.  Starting labels are rotated by
+{\tt deg1} degrees, ending labels by {\tt deg2} degrees; values should be between $0$ and $90$.  If {\tt deg2}
+is absent, {\tt deg1} is used; if both are missing, the default is $45^\circ$.
+\item[{\tt HORIZONTAL}] Change the flow of time to horizontal.  This is the default.
+\item[{\tt DEPTHPAD value}] Set the amount of space between slices.  The default is~$6$.
+\item[{\tt WIREPAD value}] Set the amount of space between wires.  The default is~$3$.
+\item[{\tt GATESIZE value}] Set the default height and width of a gate.  The default is~$12$.
+\item[{\tt COMMENTSIZE value}] Set the width of the comment region outside the circuit.  The default is~$144$.
+\item[{\tt SCALE value}] Set an overall scale factor for graphical elements in the circuit (but not for text).
+  The default is~$1$.
+\item[{\tt MEASURESHAPE value}] Set the shape of an measurement with a label.  {\tt value}
+  can be {\tt D} or {\tt tag}.  The default is {\tt D}.
+\item[{\tt CORNERS value}] Set the argument to \TikZ's {\tt rounded corners} when wires
+  are permuted ($0$ means no rounding).  The default is~$4$.
+\item[{\tt OPACITY value}] Set the fill opacity for rectangles drawn with {\tt @}.
+  The default is $0.2$.
+\item[{\tt WIRES value}] Prepend {\tt value} to all wire labels within math mode (e.g., {\tt \char92 scriptstyle}).
+The default is to prepend nothing.
+\item[{\tt PREMATH value}] Prepend {\tt value} to all wire labels before math mode.  The default is to prepend nothing.
+\item[{\tt POSTMATH value}] Append {\tt value} to all wire labels after math mode.  The default is to append nothing.
+\item[{\tt BGCOLOR [value]}] Set the background color for the diagram.  The default is white; however, if {\tt BGCOLOR}
+is called with no argument, it sets the background to {\tt bg}.  This color is not defined in standard {\LaTeX},
+but in {\sc beamer} it is always equal to the background of the current template.
+
+\end{description}
+
+\section{\qpic and \LaTeX}
+\label{sec-tools}
+
+There are three major use-case scenarios for \qpic.
+\begin{enumerate}
+\item Create standalone PDF graphics from \qpic files.
+\item Include \qpic diagrams as PDF graphics in a {\LaTeX} file.
+\item Include \qpic diagrams as \TikZ code in a {\LaTeX} file.
+\end{enumerate}
+
+\noindent
+Three files are used in the document compilation process: {\tt qpic.py},\linebreak {\tt tikz2preview}, and {\tt Makefile}.
+
+\begin{itemize}
+\item {\tt qpic.py} is a python script that parses {\tt .qpic} files and produces {\tt .tikz} output.
+\item {\tt tikz2preview} is a python script that wraps {\tt .tikz} files to create stand\-alone {\tt .tex} files.
+\item {\tt Makefile} provides the action rules to create the \TikZ code and PDF files for all \qpic files in the directory. Furthermore, the {\tt Makefile} assumes that the main document (as defined in the {\tt Makefile}) depends on all \qpic files in the directory.
+\end{itemize}
+
+\subsection{Create Standalone PDF Graphics from \qpic Files}
+
+Copy the files {\tt qpic.py}, {\tt tikz2preview}, and {\tt Makefile} into the working directory and you are ready to go. To create a PDF file from the \qpic file {\tt diagram.qpic}, simply type:
+
+\begin{minipage}{5in}
+\begin{lstlisting}[basicstyle=\normalsize\ttfamily,numbers=none]
+$ make diagram.pdf
+\end{lstlisting}
+\end{minipage}%$
+
+
+\subsection{Include \qpic Diagrams as PDF Graphics in a {\LaTeX} File}
+
+
+Copy the files {\tt qpic.py}, {\tt tikz2preview}, and {\tt Makefile} into the working directory of the {\LaTeX} document. In this example, we assume the name of the {\LaTeX} document is {\tt mainfile.tex}. Edit line 48 of {\tt Makefile} to reflect the main document name without the {\tt .tex} extension. If the main document has additional dependencies (e.g., other {\LaTeX} files, PNG graphics), add these to the end of the dependency list on line 53.
+
+\begin{minipage}{5in}
+\lstinputlisting[basicstyle=\footnotesize\ttfamily,numbers=left,numberstyle=\tiny,breaklines=true,firstline=47,lastline=54]{Makefile.example}
+\end{minipage}
+
+
+The package {\tt graphicx} is required to include the PDF graphics in {\LaTeX} documents.
+Add the following line to {\tt mainfile.tex} before \verb|\begin{document}|.
+
+\begin{minipage}{5in}
+\begin{lstlisting}[basicstyle=\normalsize\ttfamily]
+\usepackage{graphicx}
+\end{lstlisting}
+\end{minipage}
+
+
+The \qpic PDF graphic {\tt diagram.pdf} is included in the document using the command:
+
+\begin{minipage}{5in}
+\begin{lstlisting}[basicstyle=\normalsize\ttfamily]
+\includegraphics{diagram}
+\end{lstlisting}
+\end{minipage}
+
+\subsection{Include \qpic Diagrams as \TikZ Code in a {\LaTeX} File}
+
+The {\tt makefile} preparation is identical to the previous case; however the package requirement and input method are different. The package {\tt tikz} is required to compile \TikZ code in {\LaTeX} documents.
+Add the following line to {\tt mainfile.tex} before \verb|\begin{document}|.
+
+\begin{minipage}{5in}
+\begin{lstlisting}[basicstyle=\normalsize\ttfamily]
+\usepackage{tikz}
+\end{lstlisting}
+\end{minipage}
+
+
+The \qpic \TikZ code {\tt diagram.tikz} is included in the document using the command:
+
+\begin{minipage}{5in}
+\begin{lstlisting}[basicstyle=\ttfamily]
+\include{diagram.tikz}
+\end{lstlisting}
+\end{minipage}
+
+\subsection{Comparing PDF and \TikZ Inclusion Methods}
+These two approaches to including \qpic diagrams in {\LaTeX} files each have their strengths and weaknesses.  Both were used in the preparation of this document.
+
+
+Advantages of PDF inclusion:
+\begin{itemize}
+\item Only modified graphics need to be recompiled, resulting in a faster {\LaTeX} compilation. With \TikZ inclusion, every \TikZ graphic must be reconstructed as part of the document build process.
+\item Graphics can be scaled using the \verb|\includegraphics| command. This scaling is independent of the \qpic scaling and makes it easier to generate graphics of a specific size.
+\end{itemize}
+
+
+Advantages of \TikZ inclusion:
+\begin{itemize}
+\item The graphics are aware of the document settings, including font style, when they are created. Thus a slightly different graphic is created from the same \qpic file if it is in a slide environment as opposed to a document environment.
+\item On systems where pdf{\LaTeX} is not available (or is not recent enough to support the \verb|preview| environment), PDF inclusion is not possible and \TikZ inclusion must be used.
+\end{itemize}
+
+
+
+\section{Tokenizing}
+\label{sec-tokens}
+
+The parsing rules for \qpic can be a bit confusing.  Both {\tt \#} and {\tt \%} are used to delimit different
+types of comments.  Backslash is not technically an escape character---it is passed on to \LaTeX---but \qpic
+uses it for parsing; for example, {\tt \char92\#} is not treated as initiating a comment.  For completeness,
+we simply list, in order, the steps \qpic takes to parse a line.
+
+\begin{enumerate}
+\item Split the line into \emph{entities}.  Typically, an entity is a character.  When {\tt \char92} is found, it
+is combined with the following character as a single entity.  Also, text within dollar signs, braces, or double quotes (which
+may be nested) is combined into a single entity, even if it contains whitespace.
+\item Discard the first entity equal to {\tt \#} and anything following it.
+\item Split the line using the entity {\tt \%}.  The second and third portions will be used as comments;
+  all subsequent parsing applies only to the first portion.
+\item Group the entities into \emph{subwords} by splitting on whitespace,
+  colons, and semicolons.  (A colon or semicolon is considered its own
+  subword; whitespace is ignored.)  A \emph{word} is a collection of
+  colon-delimited subwords.
+\item If any subword is a user-defined macro (see Section~\ref{sec-qpic-define}), replace the macro with its expansion.\footnote{Except that if the
+  user-defined macro is immediately preceded by {\tt DEFINE} then this is
+  treated as a redefintion and the macro is not expanded.}  If the macro
+  has $n$ arguments, the $n$ preceding words are removed and then used
+  in place of the arguments in the macro expansion.
+\item If one of the words is {\tt DEFINE}, then define the macro; the next word
+  will hereafter expand to the rest of the line.  Any words preceding
+  {\tt DEFINE} are arguments to the macro.
+\item Split the line using the word {\tt ;}.  Each portion will be processed
+  as a different command, and all these commands will be grouped inside a
+  {\tt LB} and {\tt LE}.  Subsequent parsing applies separately to each command.
+\item Pull out any attribute specifiers ({\tt attribute=value} for attributes
+  discussed in Section~\ref{sec-qpic-style}, or {\tt qwire}, {\tt cwire},
+  {\tt owire}).  Remember these so they can be passed to the appropriate
+  gate or wire.  (If attributes occur in an otherwise empty semicolon-delimited
+  command, they are attached to the implicit {\tt LB}.)  Complain if a subword
+  following a colon is not an attribute specifier.
+\item Parse the remaining words as one of the commands in
+  Section~\ref{sec-qpic}.  First, check if the first word is a \qpic command.
+  If not, assume the first word is a wire, and search for a word that is a
+  valid \qpic gate.  If there is none, interpret the line as a (controlled) Z
+  or NOT (depending on targets).
+\end{enumerate} 
+
+% Gory details of tokenizer
+% If other gory details needed, then ``Gory details'' section with tokenizing subsection
+
+\bibliography{qpic}
+\bibliographystyle{plain}
+
+\end{document}
+
+

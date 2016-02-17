@@ -1,0 +1,16 @@
+BGCOLOR blue!10!white
+
+
+
+
+
+
+
+
+
+a +b
++a b
+R 0 1
+R 0 1
+CUT 2 4
+

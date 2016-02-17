@@ -1,0 +1,18 @@
+BGCOLOR blue!10!white
+
+
+
+
+
+
+
+
+
+HEADER \usepackage{times}
+PREAMBLE \newcommand{\name}{FONT}
+PRETIKZ {\draw[fill=red] (79,0) circle(5pt);}
+POSTTIKZ {\draw[fill=blue] (9,0) circle(5pt);}
+a +b
+a b G \name width=40
+a +b
+

@@ -1,0 +1,25 @@
+W a a_0 a_1
+W ...x
+W b b_0 b_1
+W c c_0 c_1 c_2 c_3
+W d d_0 d_1
+W d d_2 d_3
+W d d_4 d_5 d_n
+
+#VERTICAL
++b a
+c START
+...x END
+d END
++c a b
+d START
+c M
+c END
++b a
+LABEL ...
+R
+a c @ 1 2 fill=blue style=rounded_corners color=green
+
+b c @ 5 6 color=black style=dotted % a dotted region
+
+d @ 4 fill=red

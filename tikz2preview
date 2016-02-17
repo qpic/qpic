@@ -1,0 +1,49 @@
+#!/usr/bin/env python
+
+#############################################################################
+#Copyright (c) 2013, Institute for Defense Analyses, 4850 Mark Center Drive;#
+#               Alexandria, VA 22311-1882; 703-845-2500                     #
+#                                                                           #
+#This material may be reproduced by or for the US Government pursuant to the#
+#copyright license under the clauses at DFARS 252.227-7013 and 252.227-7014.#
+#                                                                           #
+#    Do not distribute without express written permission of the authors    #
+#############################################################################
+
+from __future__ import print_function
+
+import sys
+
+header=r'''\documentclass{article}
+\usepackage[pdftex,active,tightpage]{preview}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing}
+\usepackage{hyperref}
+%\usepackage{geometry}
+\definecolor{bg}{rgb}{1,1,1}
+'''
+
+prescript=r'''\begin{document}
+\begin{preview}
+'''
+
+postscript=r'''\end{preview}
+\end{document}
+'''
+
+header_flag = '% HEADER '
+
+print(header, end='')
+prescript_done = 0
+
+with open(sys.argv[1]) as file:
+    for line in file.readlines():
+        if line.startswith(header_flag):
+            print(line[len(header_flag):],end='')
+            continue
+        if not prescript_done:
+            print(prescript,end='')
+            prescript_done = 1
+        print(line,end='')
+    
+print(postscript,end='')

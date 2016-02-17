@@ -1,0 +1,30 @@
+BGCOLOR blue!10!white
+
+
+
+
+
+
+
+
+
+a P 2 b
+LB
+a H
+b H
+c H
+LE
+LB color=green!50!black
+c T a b
+c N
+LE
+
+
+
+
+
+
+
+
+
+

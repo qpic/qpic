@@ -1,0 +1,116 @@
+DEFINE on color=red style=very_thick
+DEFINE off color=black style=thin
+PREAMBLE \providecommand{\bit}[1]{{\left\langle{#1}\right\rangle}}
+
+W 1 a_1 a_9
+W 2 a_2 a_8
+W 3 a_3 a_7 on
+W 4 a_4 a_6
+W 5 a_5 a_5
+W 6 a_6 a_4
+W 7 a_7 a_3
+W 8 a_8 a_2
+W 9 a_9 a_1
+
+CUT 2 4 6 8 10 12 14 16 18
+# on: 4
++1 2
++3 4
++5 6
++7 8
++3 2
++5 4
++7 6
++9 8
+
+# on: 4
++2 1
++4 3 on 4:on
++6 5
++8 7
++2 3 on 2:on
++4 5
++6 7
++8 9
+
+# on: 2 3 4
++1 2 on 1:on
++3 4 on 3:off
++5 6
++7 8
++3 2 on 3:on
++5 4 on 5:on
++7 6
++9 8
+
+# on: 1 2 3 4 5
++2 1 on 2:off
++4 3 on 4:off
++6 5 on 6:on
++8 7
++2 3 on 2:on
++4 5 on 4:on
++6 7
++8 9
+
+# on: 1 2 3 4 5 6
++1 2 on 1:off
++3 4 on 3:off
++5 6 on 5:off
++7 8
++3 2 on 3:on
++5 4 on 5:on
++7 6 on 7:on
++9 8
+
+# on: 2 3 4 5 6 7
++2 1
++4 3 on 4:off
++6 5 on 6:off
++8 7 on 8:on
++2 3 on 2:off
++4 5 on 4:on
++6 7 on 6:on
++8 9
+
+# on: 3 4 5 6 7 8
++1 2
++3 4 on 3:off
++5 6 on 5:off
++7 8 on 7:off
++3 2
++5 4 on 5:on
++7 6 on 7:on
++9 8 on 9:on
+
+# on: 4 5 6 7 8 9
++2 1
++4 3
++6 5 on 6:off
++8 7 on 8:off
++2 3
++4 5 on 4:off
++6 7 on 6:on
++8 9 on 8:on
+
+# on: 5 6 7 8 9
++1 2
++3 4
++5 6 on 5:off
++7 8 on 7:off
++3 2
++5 4
++7 6 on 7:on
++9 8 on 9:off
+
+# on: 6 7 8
++2 1
++4 3
++6 5
++8 7 on 8:off
++2 3
++4 5
++6 7 on 6:off
++8 9
+
+

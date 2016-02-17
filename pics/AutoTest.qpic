@@ -1,0 +1,10 @@
+AUTOWIRES
++0 1 2:color=purple
+W a
++a
+1 2 +3
++c -a -b:color=blue
+2 b @ 1 fill=red
+a2 M
+a0,0 TOUCH
+

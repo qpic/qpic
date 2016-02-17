@@ -1,0 +1,23 @@
+PREAMBLE \providecommand{\ket}[1]{\left|#1\right\rangle}
+W a0 [x] [x] type=c
+W a1 [y] [y] type=c
+W x1 type=o
+W x0 style=dashed
+W b0 \ket{0} \ket{x}
+W b1 \ket{0} \ket{y}
+
+VERTICAL 0
+b1 H    % $[xy]\ket{0}(\ket{0}{+}\ket{1})$
+b0 b1   % $[xy](\ket{00}{+}\ket{11})$
+b0 x1 PERMUTE
+a1 b0   % $[xy](\ket{00}{+}(-1)^{y}\ket{11})$
+b0 a0   % $[xy](\ket{x 0}{+}(-1)^{y}\ket{\bar{x} 1})$
+x1 b0 PERMUTE
+b0 b1   % $[xy]\ket{x}(\ket{0}{+}(-1)^{y}\ket{1})$
+b1 H    % $[xy]\ket{x y}$
+
+# Colored boxes
+x1 b1 @ 0 2 fill=green style=rounded_corners %% $[qq]$ Quantum entanglement
+b0 x1 @ 5 5 fill=red style=rounded_corners %% \hspace{.5cm}$[q\rightarrow q]$ Quantum channel
+# b c @ 5 6 color=black style=dotted % a dotted region
+

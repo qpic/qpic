@@ -1,0 +1,27 @@
+BGCOLOR blue!10!white
+
+
+
+
+
+
+
+
+
+W a a A a' A'
+W b b B
+W c c C
+b START
+b a G $f$
+a END
+c START
+c b G $g$
+b END
+a START
+a c G $h$
+
+
+
+
+
+

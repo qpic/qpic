@@ -1,0 +1,16 @@
+BGCOLOR blue!10!white
+
+
+
+
+
+
+
+
+
++c a
++c b
+c a b PERMUTE
+R 0 1
+
+

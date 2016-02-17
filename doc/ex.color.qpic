@@ -1,0 +1,17 @@
+BGCOLOR blue!10!white
+
+
+
+
+
+
+
+
+
+color=purple W a a
+W b b
++a color=green!50!black b:color=red
+a H:color=orange b color=blue
+
+
+

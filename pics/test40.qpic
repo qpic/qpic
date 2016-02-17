@@ -1,0 +1,44 @@
+W a a a
+W b b b
+W c c c
+W d d d
+
++d a:cwire -b -c:color=red
+
+d P P size=20
+a G G si=20
+b c G G size=20
+
+a shape=3:size=10:color=red
+
+b:shape=0:operator=$g$ color=blue +c
+
++d:operator=/
+
++a +b operator=x shape=box
+
++c:operator=\\ +d:operator=.
+
+c d G:op=5 +a +b operator=* shape=5
+
+c:shape=-4:size=20
+
+a:shape=-5:op=|
+
+b:shape=-3:op=*
+
+d:shape=0:op=x
+
+LB
+a:sh=6:op={\tiny 6}
+b:sh=7:op={\tiny 7}
+c:sh=8:op={\tiny 8}
+d:sh=9:op={\tiny 9}
+LE
+
+a:sh=box:op=*
+b:sh=circle:op=x
+c:sh=-4:op=x
+d:sh=-4
+
+

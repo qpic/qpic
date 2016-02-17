@@ -1,0 +1,127 @@
+# with apologies to Lucasfilm and Randall Munroe
+
+DEFINE VADER \textrm{\sc{vader}}
+DEFINE BOBA \textrm{\sc{boba fett}}
+DEFINE YODA \textrm{\sc{yoda}}
+DEFINE LEIA \textrm{\sc{leia}}
+DEFINE R2 \textrm{\sc{r2d2}}
+DEFINE C3PO \textrm{\sc{c3po}}
+DEFINE BEN \textrm{\sc{obi-wan}}
+DEFINE LUKE \textrm{\sc{luke}}
+DEFINE GREEDO \textrm{\sc{greedo}}
+DEFINE LANDO \textrm{\sc{lando}}
+DEFINE HAN \textrm{\sc{han}}
+DEFINE CHEWIE \textrm{\sc{chewie}}
+DEFINE JABBA \textrm{\sc{jabba}}
+DEFINE EMPEROR \textrm{\sc{emperor}}
+
+W vader VADER style=very_thick
+W boba BOBA color=green!75!black
+W yoda YODA color=green!75!black
+W leia LEIA LEIA
+W r2 R2 R2 color=blue!75!black
+W c3po C3PO C3PO color=yellow!75!black
+W emperor EMPEROR style=very_thick
+W ben BEN
+W x3 type=o
+W x4 type=o
+W x5 type=o
+W luke LUKE LUKE
+W greedo GREEDO color=green!75!black
+W x7 type=o
+W lando LANDO LANDO
+W han HAN HAN
+W chewie CHEWIE CHEWIE color=brown
+W x9 type=o
+W jabba JABBA color=green!75!black
+DEFINE DUEL G $\times$
+
+x4 x5 r2 c3po PERMUTE
+yoda vader PERMUTE
+LABEL
+greedo START
+x3 ben PERMUTE
+LB
+greedo:type=o M
+jabba:style=dashed LABEL length=0
+han chewie jabba greedo x7 lando x9 PERMUTE
+LE
+x7 lando x9 jabba PERMUTE
+x4 luke leia han chewie x5 ben emperor r2 c3po x3 PERMUTE
+jabba:style=solid TOUCH
+ben x4 x5 x3 luke r2 emperor leia c3po han chewie PERMUTE
+chewie x4 @ 2 fill=gray style=rounded_corners=10pt %% {\sc leia rescued}
+LB
+vader ben DUEL
+ben LABEL length=18
+ben:type=o M
+luke leia han c3po r2 chewie jabba LABEL length=30 LUKE LEIA HAN C3PO R2 CHEWIE JABBA
+LE
+ben x4 vader luke r2 x5 x3 emperor leia c3po x7 greedo han chewie PERMUTE
+han chewie x5 x3 PERMUTE
+vader x4 emperor luke r2 han chewie PERMUTE
+vader emperor @ 3 fill=gray style=rounded_corners=10pt % {\sc death star}
+LABEL
+MARK start5
+luke emperor PERMUTE
+han emperor r2 PERMUTE
+x4 emperor vader luke han PERMUTE
+vader c3po @ 1 fill=gray style=rounded_corners=10pt % {\sc hoth}
+lando START
+
+luke r2 ben boba vader lando x4 emperor han chewie leia c3po x7 greedo x5 x3 PERMUTE
+yoda START
+vader luke leia han c3po r2 chewie jabba lando LABEL length=30 VADER LUKE LEIA HAN C3PO R2 CHEWIE JABBA LANDO
+boba START
+x4 emperor x7 boba vader han chewie leia c3po lando PERMUTE
+yoda r2 @ 2 fill=gray style=rounded_corners=10pt % {\sc luke's entire jedi training}
+vader x7 @ 1 fill=gray style=rounded_corners=10pt %% {\sc han frozen}
+ben x4 emperor x7 luke vader x5 greedo r2 chewie leia c3po lando  x3 x9 han boba PERMUTE
+vader luke DUEL
+vader x7 x5 greedo luke PERMUTE
+LABEL
+MARK start6
+LB
+x3 x9 lando PERMUTE
+x3 luke chewie leia x9 r2 c3po PERMUTE
+#boba LABEL BOBA
+LE
+LB
+x9 chewie leia PERMUTE
+luke boba LABEL LUKE BOBA length=35
+LE
+LB
+yoda vader LABEL YODA VADER
+x9 luke PERMUTE
+boba:type=0 M
+boba jabba PHANTOM
+jabba:type=0 M
+LE
+luke jabba @ 2 fill=gray style=rounded_corners=10pt % {\sc sail barge}
+LB
+luke ben PERMUTE
+yoda:type=0 M
+leia han c3po r2 chewie jabba lando LABEL length=30 LEIA HAN C3PO R2 CHEWIE JABBA LANDO
+ben luke PERMUTE
+LE
+luke chewie leia r2 c3po han x3 x9 PERMUTE
+emperor START length=30
+x7 vader luke x5 greedo PERMUTE
+vader luke x7 PERMUTE
+chewie han @ 2  fill=gray style=rounded_corners=10pt %% {\sc endor}
+LB
+emperor vader luke DUEL
+lando x7 PERMUTE
+LE
+LB
+emperor:type=0 M
+emperor vader PHANTOM
+vader:type=0 M
+LE
+TOUCH
+x5 greedo luke lando PERMUTE
+@ 0 start5 color=blue %% Episode IV: A New Hope
+@ start5 start6 color=blue %% Episode V: The Empire Strikes Back
+@ start6 color=blue %% Episode VI: The Return of the Jedi
+COMMENTSIZE 288
+CUT start5 start6 color=red

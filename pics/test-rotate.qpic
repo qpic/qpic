@@ -1,0 +1,12 @@
+W a a
+W b b
+W c c 
+W k z
+
+DEFINE Pk1 P $k\!-\!1$ length=20
+
+a P $k$
+b P 1 a
+k P 2 +c
+k P $\scriptstyle\lceil\frac\ell2\rceil$ a b c
+b Pk1 a

@@ -1,0 +1,10 @@
+W a a a\oplus{c}
+W b b b\oplus{c}
+W c c \mbox{MAJ}(a,b,c)
+
+a b c G \rotatebox{90}{MAJ}
+=
++b c
++a c
++c a b
+

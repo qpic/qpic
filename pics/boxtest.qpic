@@ -1,0 +1,41 @@
+DEFINE a1 a:color=blue
+DEFINE G1 G|:color=blue
+
+W a
+W b
+W c
+W d
+W e
+W f
+
+# VERTICAL
+
+a b G|:color=red A +c color=blue shape=circle
++d e P W f
+a P:shape=4:size=8 x b G:shape=4:size=8 x +c:shape=4:size=8:op=x
+e P e f
+a P a b P b
+
+c d P d
+
+a b G|:shape=3 1 c d |G:shape=-6 2 e f style=dotted color=brown
+
+a f G G b -c width=50
+
+a e G 1 b f G 2
+
++a1:style=dashed
+
+b G1:fill=blue!20!white:shape=circle color=green B c
+
+d M:fill=red!30!white color=red
+
+d G $\oplus$
+e M:op=Y A B
+
+f |G:width=50:op=F:shape=-8 width=5
+
++a b c d e f color=blue
++b a c d e f color=red
+LABEL length=-30
++c a b d e f color=green

@@ -1,0 +1,22 @@
+W a
+W b
+W c
+
+LB color=blue
++a b
++a c
+LB color=red
++c b a
++c
+LE
++b c
+LE
+
+LB
+LB
++a b
++a c
+LE
+LE
+
+R

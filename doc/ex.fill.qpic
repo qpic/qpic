@@ -1,0 +1,19 @@
+BGCOLOR blue!10!white
+
+
+
+
+
+
+
+
+
+a G $f$ b fill=red!50!white
+a P:fill=blue {} b P:fill=green {}
++a fill=yellow # applies to (absent) gate
++b:fill=yellow # applies to target
+
+
+
+
+

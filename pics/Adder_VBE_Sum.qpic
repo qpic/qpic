@@ -1,0 +1,9 @@
+HYPERTARGET VBE-sum
+W 1 a a
+W 2 b b
+W 3 0 a\oplus{b}
+
+1 2 3  G \rotatebox{90}{SUM}
+=
++3 2
++3 1

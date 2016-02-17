@@ -1,0 +1,17 @@
+SCALE 1.5
+
+W a a
+W b b
+W c c
+W d d
+W ee e
+
+a M breadth=10
+b c
+LB color=blue
++b d
++c a b d:type=c
++c d
+LE
++a d
+ee M X
