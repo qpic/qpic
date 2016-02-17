@@ -308,7 +308,7 @@ def add_to_predocument(what):
         elif what == "bg":
                 the_str = "\\definecolor{bg}{rgb}{1,1,1}"
         else:
-                sys.exit("Error: unknown predocument item %s (this should never happend)" % what)
+                sys.exit("Error: unknown predocument item %s (this should never happen)" % what)
         if the_str not in predocument_list:
                 predocument_list.append(the_str)
 
@@ -2679,6 +2679,7 @@ for (words, line_options, gate_options, comment0, comment1) in get_command_from_
 			bgcolor = words[1]
 		else:
 			bgcolor = 'bg'
+                        add_to_predocument("bg")
 	elif (words[0] == 'AUTOWIRES'):
 		auto_wires = 'on'
 	elif (words[0] == 'MARK'):

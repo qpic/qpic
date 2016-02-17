@@ -7,6 +7,7 @@ import glob
 prelude=r'''\documentclass{article}
 \usepackage{tikz}
 \usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing}
+\definecolor{bg}{rgb}{1,1,1}
 \usepackage{hyperref}
 \usepackage{fancyvrb}
 \usepackage{amssymb}
