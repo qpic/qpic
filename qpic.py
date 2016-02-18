@@ -2845,11 +2845,14 @@ def process_one_command(words, line_options, gate_options, comment0, comment1):
         else:
             new_gate.do_gate()
 
-initialize_globals()
-for (words, line_options, gate_options, comment0, comment1) in get_command_from_file():
-    process_one_command(words, line_options, gate_options, comment0, comment1)
+def main():
+    initialize_globals()
+    for (words, line_options, gate_options, comment0, comment1) in get_command_from_file():
+        process_one_command(words, line_options, gate_options, comment0, comment1)
+    # ready to end circuit
+    if level_stack:
+        sys.exit("Error:  Line %i: Unclosed level\n" % line_num)
+    end_circuit()
 
-# ready to end circuit
-if level_stack:
-    sys.exit("Error:  Line %i: Unclosed level\n" % line_num)
-end_circuit()
+if __name__ == "__main__":
+    main()
