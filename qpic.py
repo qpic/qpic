@@ -245,7 +245,7 @@
 #      comma-separated numbers).  Default is 'on' until first 'W' declaration
 #
 ########################################################
-# WARNING: CHANGE is deprecated; use colon instead
+# WARNING: no longer allowed (use : syntax)
 # wires CHANGE options
 # Apply options (e.g., "color=???") to wires as of the most recent gate
 #
@@ -2576,12 +2576,16 @@ def get_command_from_file():
         in_file.close()
     return
 
-    
-last_gate = None
-for (words, line_options, gate_options, comment0, comment1) in get_command_from_file():
+def process_one_command(words, line_options, gate_options, comment0, comment1):
+    global overall_depth, depth_marks, last_depth, braces_list
+    global allow_different_gates, cut_info, wires, declared_wires_in_order
+    global DEPTH_PAD, GATE_SIZE, BRACE_AMPLITUDE, WIRE_PAD, ROUNDED_CORNERS
+    global OPACITY, COMMENT_SIZE, wire_prefix, premath_str, postmath_str
+    global overall_scale, new_colors, preamble_list, pretikz_list
+    global posttikz_list, orientation, start_degrees, end_degrees
+    global measure_shape, bgcolor, auto_wires
+    global level_stack, level_list
     original_line_options = copy.copy(line_options)
-    #if (words[0] == 'DEFINE'):
-    #    defined_symbols[words[1]] = (words[2:],line_options, gate_options)
     if (words[0] == 'R'):
         if len(words) == 1:
             repeat_section(overall_depth-2,0)
@@ -2682,7 +2686,7 @@ for (words, line_options, gate_options, comment0, comment1) in get_command_from_
         pos = 0
         while pos < len(words):
             word = words[pos]
-            if word in ['W', 'T', 'C', 'N', 'X', 'H', 'Z', 'LABEL', 'PHANTOM', 'M', 'IN', 'OUT', 'SWAP', '/', 'TOUCH', 'BARRIER', 'CHANGE', 'START', 'END', 'PERMUTE', '@'] + EQUALS:
+            if word in ['W', 'T', 'C', 'N', 'X', 'H', 'Z', 'LABEL', 'PHANTOM', 'M', 'IN', 'OUT', 'SWAP', '/', 'TOUCH', 'BARRIER', 'START', 'END', 'PERMUTE', '@'] + EQUALS:
                 gate_type = word
                 controls = words[pos+1:]
                 if boxes:
@@ -2721,7 +2725,7 @@ for (words, line_options, gate_options, comment0, comment1) in get_command_from_
                 w.add_labels(labels)
             if auto_wires == 'default': # disallow
                 auto_wires = 'off'
-            continue
+            return
         if gate_type:
             if gate_type == 'N' and len(controls) != 0:
                 sys.exit("Error:  Line %i: N should have no control\n" % line_num)
@@ -2758,7 +2762,7 @@ for (words, line_options, gate_options, comment0, comment1) in get_command_from_
             braces_list.append((start_depth, end_depth, copy.copy(targets), comment0, comment1, current_input_line, copy.copy(line_options)))
             if (comment0 or comment1) and not (line_options.get('style', None) or line_options.get('fill', None)):
                 add_to_predocument("decorate")
-            continue
+            return
         # Use dots-only form for controlled-Z, S
         # now unnecessary -- just list the controls
         #if gate_type == 'Z' and len(targets) != 1:
@@ -2786,7 +2790,7 @@ for (words, line_options, gate_options, comment0, comment1) in get_command_from_
                 line_options['style'] = BARRIER_STYLE + "," + line_options['style']
             else:
                 line_options['style'] = BARRIER_STYLE
-        if gate_type in ['PHANTOM', 'TOUCH', 'CHANGE', 'PERMUTE'] and len(controls) != 0:
+        if gate_type in ['PHANTOM', 'TOUCH', 'PERMUTE'] and len(controls) != 0:
             real_control_count = 0
             for w in controls:
                 if w not in targets:
@@ -2803,16 +2807,15 @@ for (words, line_options, gate_options, comment0, comment1) in get_command_from_
             targets = []
             gate_type = 'G'
             line_options = original_line_options # strip off anything box-specific                
-        if (gate_type == 'CHANGE'):
-            last_gate.change_wires(targets, line_options)
+        new_gate = Gate(gate_type, targets, controls, boxes, options=line_options,
+                        comments=[comment0,comment1])
+        if level_stack:
+            level_list.append(new_gate)
         else:
-            new_gate = Gate(gate_type, targets, controls, boxes, options=line_options,
-                            comments=[comment0,comment1])
-            if level_stack:
-                level_list.append(new_gate)
-            else:
-                new_gate.do_gate()
-            last_gate = new_gate
+            new_gate.do_gate()
+
+for (words, line_options, gate_options, comment0, comment1) in get_command_from_file():
+    process_one_command(words, line_options, gate_options, comment0, comment1)
 
 # ready to end circuit
 if level_stack:
