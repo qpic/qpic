@@ -256,48 +256,75 @@ from __future__ import print_function
 
 import sys, string, copy, math, collections, types
 
-DEPTH_PAD = 6
-GATE_SIZE = 12
-BRACE_AMPLITUDE = 4
-WIRE_PAD = 3
-COMMENT_SIZE = 144
-wire_prefix = ''
-cut_info = {}
-premath_str = ''
-postmath_str = ''
-overall_scale = 1.0
-preamble_list = []
-pretikz_list = []
-posttikz_list = []
-predocument_list = []
-measure_shape = 'D'
-ROUNDED_CORNERS = 4
-OPACITY = 0.2
+def initialize_globals():
+    global line_num
+    global DEPTH_PAD, GATE_SIZE, BRACE_AMPLITUDE, WIRE_PAD, COMMENT_SIZE
+    global wire_prefix, cut_info, premath_str, postmath_str, overall_scale
+    global preamble_list, pretikz_list, posttikz_list, predocument_list
+    global measure_shape, ROUNDED_CORNERS, OPACITY, allow_different_gates
+    global orientation, start_degrees, end_degrees, bgcolor, auto_wires
+    global CLASSICAL_SEP, EQUALS, legal_options, BARRIER_STYLE
+    global valid_prefixes
+    global master_depth_list, overall_depth, last_depth
+    global wires, wires_in_order, declared_wires_in_order, level_stack
+    global defined_symbols, new_colors, braces_list, depth_marks
+    global new_wire_depth
 
-allow_different_gates = 1
+    line_num = 0
 
-line_num = 0
+    DEPTH_PAD = 6
+    GATE_SIZE = 12
+    BRACE_AMPLITUDE = 4
+    WIRE_PAD = 3
+    COMMENT_SIZE = 144
+    wire_prefix = ''
+    cut_info = {}
+    premath_str = ''
+    postmath_str = ''
+    overall_scale = 1.0
+    preamble_list = []
+    pretikz_list = []
+    posttikz_list = []
+    predocument_list = []
+    measure_shape = 'D'
+    ROUNDED_CORNERS = 4
+    OPACITY = 0.2
 
-orientation = 'horizontal'
-start_degrees = 45
-end_degrees = 45
-bgcolor = 'white'
+    allow_different_gates = 1
+    orientation = 'horizontal'
+    start_degrees = 45
+    end_degrees = 45
+    bgcolor = 'white'
+    # choices: 'off' = disallow; 'on' = allow; 'default' = allow until wire declaration occurs
+    auto_wires = 'default'
 
-CLASSICAL_SEP = 0.5
+    CLASSICAL_SEP = 0.5
 
-EQUALS = []
-for s1 in ['<', '', '>']:
-    for s2 in ['<', '', '>']:
-        EQUALS.append(s1+'='+s2)
+    EQUALS = []
+    for s1 in ['<', '', '>']:
+        for s2 in ['<', '', '>']:
+            EQUALS.append(s1+'='+s2)
 
-legal_options = ['color', 'length', 'breadth', 'size', 'width', 'height', 'style', 'fill', 'hyperlink', 'type', 'shape', 'operator']
+    legal_options = ['color', 'length', 'breadth', 'size', 'width', 'height', 'style', 'fill', 'hyperlink', 'type', 'shape', 'operator']
 
-# choices: 'off' = disallow; 'on' = allow; 'default' = allow until wire declaration occurs
-auto_wires = 'default'
+    BARRIER_STYLE="decorate,decoration={zigzag,amplitude=1pt,segment length=4}"
 
-BARRIER_STYLE="decorate,decoration={zigzag,amplitude=1pt,segment length=4}"
+    valid_prefixes = ['+', '-']
 
-valid_prefixes = ['+', '-']
+    master_depth_list = []
+    overall_depth = 0
+    last_depth = 0
+    wires = {}
+    wires_in_order = []
+    declared_wires_in_order = []
+    level_stack = []
+    defined_symbols = {}
+    for c in ['o', 'c', 'q']:
+        defined_symbols[c+'wire'] = ([], ['type=%s' % c])
+    new_colors = []
+    braces_list = []
+    depth_marks = {}
+    new_wire_depth = -1 # start at depth 0
 
 def add_to_predocument(what):
     global predocument_list
@@ -468,6 +495,8 @@ def draw_breadthwise_brace_old(start, end, pos, delta, color=None):
 # shapes: 0 = none, 1 = control, -1 = negated control, 2 = circle,
 # otherwise n = num sides (flat down), -n = num sides (flat up)
 def get_draw_options(gate_options, wname, default_spec):
+    global bgcolor
+
     draw_options = {}
     wire_options = gate_options['wires'].get(wname,{})
     if 'shape' in wire_options:
@@ -581,7 +610,7 @@ def write_operator_name(x,y,operator):
         print("\\draw (%f, %f) node {%s};" % (x,y,operator))
 
 def draw_xor(x,y,options):
-    global orientation
+    global orientation, bgcolor
     if isinstance(options['size'], tuple):
         xradius = 0.5*options['size'][0]
         yradius = 0.5*options['size'][1]
@@ -691,6 +720,7 @@ def draw_xor(x,y,options):
 def draw_control(x,y,size):
     print("\\filldraw (%f, %f) circle(%fpt);" % (x,y,0.5*size))
 def draw_negated_control(x,y,size):
+    global bgcolor
     print("\\draw[fill=%s] (%f, %f) circle(%fpt);" % (bgcolor,x,y,0.5*size))
 def draw_xor_or_control(x,y,options):
     if options['shape'] == 1:
@@ -700,7 +730,10 @@ def draw_xor_or_control(x,y,options):
     else:
         draw_xor(x,y,options)
 
-def draw_rectangle(x,y,dx,dy,name,style=None,fill=bgcolor):
+def draw_rectangle(x,y,dx,dy,name,style=None,fill='bgcolor'):
+    global bgcolor
+    if fill == 'bgcolor':
+        fill = bgcolor
     tikz_str = 'fill=%s' % fill
     if style:
         tikz_str += ',' + style
@@ -723,9 +756,13 @@ def draw_slash(x,y,dx,dy,name=None,style=None):
             print("\\draw%s (%f, %f) node[right] {$\\scriptstyle{%s}$};" % (style_str,x+0.25*dx,y+0.25*dy,name))
         
 def draw_equals(x,y,dx,dy,name):
+    global bgcolor
     draw_rectangle(x,y,dx,dy,name,style='color=%s'%bgcolor,fill=bgcolor)
 
-def draw_meter(x,y,dx,dy,style=None,fill=bgcolor):
+def draw_meter(x,y,dx,dy,style=None,fill='bgcolor'):
+    global bgcolor
+    if fill == 'bgcolor':
+        fill = bgcolor
     draw_rectangle(x,y,dx,dy,None,style=style,fill=fill)
     # center of arc at x,z; radius is r.  Need r <= dx/2.
     # need x-z, x-z+r in box, so also
@@ -738,7 +775,10 @@ def draw_meter(x,y,dx,dy,style=None,fill=bgcolor):
     print("\\draw[very thin%s] (%f, %f) arc (90:30:%fpt);" % (style_str,x,y-.45*dy+radius,radius))
     print("\\draw[->,>=stealth%s] (%f, %f) -- +(%i:%fpt);" % (style_str,x, y-.45*dy, 80, radius*math.sqrt(3)))
 
-def draw_measure_D(x,y,dx,dy,name,style=None,fill=bgcolor):
+def draw_measure_D(x,y,dx,dy,name,style=None,fill='bgcolor'):
+    global bgcolor
+    if fill == 'bgcolor':
+        fill = bgcolor
     tikz_str = 'fill=%s' % fill
     if style:
            tikz_str += ',' + style
@@ -748,7 +788,10 @@ def draw_measure_D(x,y,dx,dy,name,style=None,fill=bgcolor):
         print("\\draw[%s] (%f, %f) -- (%f,%f) arc (-90:90:%fpt) -- (%f,%f) -- cycle;" % (tikz_str,x-0.5*dx,y-0.5*dy,x+0.5*(dx-dy),y-0.5*dy,0.5*dy,x-0.5*dx,y+0.5*dy))
     write_operator_name(x,y,name)
 
-def draw_measure_tag(x,y,dx,dy,name,style=None,fill=bgcolor):
+def draw_measure_tag(x,y,dx,dy,name,style=None,fill='bgcolor'):
+    global bgcolor
+    if fill == 'bgcolor':
+        fill = bgcolor
     tikz_str = 'fill=%s' % fill
     if style:
         tikz_str += ',' + style
@@ -758,8 +801,10 @@ def draw_measure_tag(x,y,dx,dy,name,style=None,fill=bgcolor):
         print("\\draw[%s] (%f, %f) -- (%f,%f) -- (%f,%f) -- (%f, %f) -- (%f, %f) -- cycle;" % (tikz_str,x-0.5*(dx+dy),y,x-0.5*dx,y+0.5*dy,x+0.5*dx,y+0.5*dy,x+0.5*dx,y-0.5*dy,x-0.5*dx,y-0.5*dy))
     write_operator_name(x,y,name)
 
-def draw_measurement(x,y,dx,dy,name=None,style=None,fill=bgcolor):
-    global measure_shape
+def draw_measurement(x,y,dx,dy,name=None,style=None,fill='bgcolor'):
+    global measure_shape, bgcolor
+    if fill == 'bgcolor':
+        fill = bgcolor
     if not name:
         draw_meter(x,y,dx,dy,style=style,fill=fill)
     elif measure_shape == 'TAG':
@@ -768,6 +813,7 @@ def draw_measurement(x,y,dx,dy,name=None,style=None,fill=bgcolor):
         draw_measure_D(x,y,dx,dy,name,style=style,fill=fill)
         
 def draw_drop(x,y,dx,dy,name,dir,style=None):
+    global bgcolor
     print("\\filldraw[color=%s] (%f, %f) rectangle (%f, %f);" % (bgcolor,x-0.5*dx, y-0.5*dy, x+0.5*dx, y+0.5*dy))
     if style:
         style_str = '[%s]' % style
@@ -885,7 +931,7 @@ class WireLabel:
         return self.ready
 
     def draw_label(self):
-        global orientation, premath_str, wire_prefix, postmath_str
+        global orientation, premath_str, wire_prefix, postmath_str, bgcolor
         
         if not self.ready: # should not occur
             sys.exit("Error: label %s is not ready\n")
@@ -1261,15 +1307,10 @@ class Wire:
             print("\\draw[%s] (%f, %f) -- (%f, %f);" % ((big_tikz_str,) + get_x_y(pos1, sub_loc) +
                                                         get_x_y(pos2, sub_loc)))
 
-# This used to be in begin_circuit()
-master_depth_list = []
-overall_depth = 0
-last_depth = 0
-
 # one "rectangle" (or other shape)
 class Box:
     def __init__(self, box_type, targets, name, options={}):
-        global level_stack, orientation
+        global level_stack, orientation, bgcolor
         self.type = box_type
         self.options = copy.deepcopy(options)
         if self.type == 'G|':
@@ -1842,7 +1883,7 @@ class Gate:
         return self.options['attach_to'].already_drawn
     
     def draw_gate(self):
-        global wires, orientation
+        global wires, orientation, bgcolor
         print(self.input_line)
         self.already_drawn = 1
         if self.type == 'PHANTOM':
@@ -1981,7 +2022,7 @@ def new_depth(depth_to_copy=None,direction=1):
     master_depth_list.append(Depth(depth_to_copy=depth_to_copy,direction=direction))
 
 def begin_level(options):
-    global level_stack, level_list
+    global level_stack, level_list, bgcolor
     if not level_stack: # starting the outer level
         level_list = []
         default_level_color = None
@@ -2167,7 +2208,8 @@ def end_circuit():
     print_circuit(current_pos, cut_lines)
 
 def print_circuit(circuit_length, cut_lines):
-    global wires, master_depth_list, orientation, braces_list, circuit_bottom, circuit_top
+    global wires, master_depth_list, orientation, braces_list
+    global circuit_bottom, circuit_top, bgcolor
 
     for pre in predocument_list:
         print("%! " + pre)
@@ -2263,18 +2305,6 @@ def print_circuit(circuit_length, cut_lines):
         print(post)
     print("\\end{tikzpicture}")
         
-wires = {}
-wires_in_order = []
-declared_wires_in_order = []
-level_stack = []
-defined_symbols = {}
-for c in ['o', 'c', 'q']:
-    defined_symbols[c+'wire'] = ([], ['type=%s' % c])
-new_colors = []
-braces_list = []
-depth_marks = {}
-new_wire_depth = -1 # start at depth 0
-
 def interpret_depth(ref, interpret_as_length = 0):
     global depth_marks, last_depth, line_num
     if ref in depth_marks:
@@ -2577,13 +2607,14 @@ def get_command_from_file():
     return
 
 def process_one_command(words, line_options, gate_options, comment0, comment1):
+    global line_num, EQUALS
     global overall_depth, depth_marks, last_depth, braces_list
     global allow_different_gates, cut_info, wires, declared_wires_in_order
     global DEPTH_PAD, GATE_SIZE, BRACE_AMPLITUDE, WIRE_PAD, ROUNDED_CORNERS
     global OPACITY, COMMENT_SIZE, wire_prefix, premath_str, postmath_str
     global overall_scale, new_colors, preamble_list, pretikz_list
     global posttikz_list, orientation, start_degrees, end_degrees
-    global measure_shape, bgcolor, auto_wires
+    global measure_shape, bgcolor, auto_wires, predocument_list
     global level_stack, level_list
     original_line_options = copy.copy(line_options)
     if (words[0] == 'R'):
@@ -2814,6 +2845,7 @@ def process_one_command(words, line_options, gate_options, comment0, comment1):
         else:
             new_gate.do_gate()
 
+initialize_globals()
 for (words, line_options, gate_options, comment0, comment1) in get_command_from_file():
     process_one_command(words, line_options, gate_options, comment0, comment1)
 
