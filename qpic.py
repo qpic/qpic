@@ -6,7 +6,7 @@
 #This material may be reproduced by or for the US Government pursuant to the#
 #copyright license under the clauses at DFARS 252.227-7013 and 252.227-7014.#
 #                                                                           #
-#    Do not distribute without express written permission of the authors.   #
+#         Distributed under GNU General Public License, version 3.          #
 #############################################################################
 
 # qpic.py, by Tom Draper and Sandy Kutin
