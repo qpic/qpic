@@ -1,5 +1,5 @@
 BGCOLOR blue!10!white
-W a owire
+a W owire
 a LABEL width=100
 a:op="\draw[fill=yellow] (0,0) -- (30:5pt) arc (30:330:5pt) -- cycle;":sh=0:style=dotted:qwire
 a LABEL width=100

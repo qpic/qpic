@@ -3,8 +3,8 @@ SCALE 2.1
 DEPTHPAD 3
 PREAMBLE \providecommand{\ket}[1]{\left| #1 \right\rangle}
 
-W x \ket{0\cdots 0} ?
-W y \ket{0\cdots 0} y width=25 # this wire needs to be wider
+x W \ket{0\cdots 0} ?
+y W \ket{0\cdots 0} y width=25 # this wire needs to be wider
 
 x y / width=10 height=5
 x G $H^{{\otimes} n}$ %Quantum Hadamard Transform% $\displaystyle\sum_{x=0}^{2^n-1}\ket{x}\ket{0}$

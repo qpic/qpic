@@ -1,6 +1,6 @@
 BGCOLOR blue!10!white
-W a a \phi
-W b b
-W c
+a W a \phi
+b W b
+c W
 
 LABEL
