@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from __future__ import print_function
+
+import argparse
+import os
+import shutil
+import subprocess
+import tempfile
+import sys
+
+import qpic
+
+parser = argparse.ArgumentParser(description='Command line utility to creat TikZ from <q|pic> code.')
+parser.add_argument('infile', nargs='?', type=argparse.FileType('r'), default=sys.stdin,
+                help='File to read. Uses stdin if no filename is provided.')
+parser.add_argument('--outfile', '-o', nargs='?', type=argparse.FileType('w'),
+                help='File to write. Default output is <stdout>.', default=sys.stdout)
+args = parser.parse_args()
+print(args)
+
+for line in args.infile:
+    args.outfile.write(line)
