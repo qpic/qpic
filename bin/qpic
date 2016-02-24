@@ -4,10 +4,6 @@
 from __future__ import print_function
 
 import argparse
-import os
-import shutil
-import subprocess
-import tempfile
 import sys
 
 import qpic
@@ -18,7 +14,6 @@ parser.add_argument('infile', nargs='?', type=argparse.FileType('r'), default=sy
 parser.add_argument('--outfile', '-o', nargs='?', type=argparse.FileType('w'),
                 help='File to write. Default output is <stdout>.', default=sys.stdout)
 args = parser.parse_args()
-print(args)
 
-for line in args.infile:
-    args.outfile.write(line)
+# TODO: Match outfile to qpic output
+qpic.main(args.infile)
