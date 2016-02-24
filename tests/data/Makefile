@@ -18,8 +18,7 @@ PYTHON = python # Set Python version - test direct versions using "make python2"
 
 DIR  = Graphics # Name of directory. Used by "make tar".
 
-# Because we have two versions of TeX
-PDFLATEX_FOR_PREVIEW = /usr/bin/pdflatex
+PDFLATEX_FOR_PREVIEW = pdflatex
 
 # SEPARATE FILETYPES INTO GROUPS
 TEX       = $(wildcard *.tex) # List all TeX files in directory
@@ -50,10 +49,10 @@ all:	IncludeTeX.pdf IncludePDF.pdf
 
 # If <q|pic> fails, remove output file
 %.tikz:	%.qpic
-	$(PYTHON) qpic.py < $< >$@ || (rm $@ ; false)
+	qpic $< >$@ || (rm $@ ; false)
 
 %.tex:	%.tikz
-	./tikz2preview $< > $@
+	tikz2preview $< > $@
 
 %.pdf:	%.tex
 	$(PDFLATEX_FOR_PREVIEW) -interaction=nonstopmode $<
