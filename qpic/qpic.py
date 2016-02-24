@@ -2855,6 +2855,6 @@ def main(infile):
         sys.exit("Error:  Line %i: Unclosed level\n" % line_num)
     end_circuit()
 
-# Delete if succesful
-# if __name__ == "__main__":
-    # main()
+# Delete eventually
+if __name__ == "__main__":
+    main(sys.stdin)

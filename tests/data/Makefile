@@ -50,7 +50,7 @@ all:	IncludeTeX.pdf IncludePDF.pdf
 
 # If <q|pic> fails, remove output file
 %.tikz:	%.qpic
-	$(PYTHON) qpic.py $< >$@ || (rm $@ ; false)
+	$(PYTHON) qpic.py < $< >$@ || (rm $@ ; false)
 
 %.tex:	%.tikz
 	./tikz2preview $< > $@

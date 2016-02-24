@@ -1,1 +1,1 @@
-../qpic.py
+../qpic/qpic.py
