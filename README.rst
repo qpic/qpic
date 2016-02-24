@@ -1,5 +1,5 @@
 ===============================
-qpic
+:math:`\\langle\\mathsf{q}|\\mathsf{pic}\\rangle`
 ===============================
 
 .. image:: https://img.shields.io/pypi/v/qpic.svg
