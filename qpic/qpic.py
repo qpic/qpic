@@ -2579,12 +2579,7 @@ def tokenize(line):
 
 def get_command_from_file(in_file):
     global line_num, current_input_line
-    
-    # Delete if success
-    # if len(sys.argv) == 1:
-        # in_file = sys.stdin
-    # else:
-        # in_file = open(sys.argv[1],"r")
+
     for line in in_file:
         line_num += 1
         current_input_line = "%% Line %i: " % line_num + line.strip()
@@ -2603,8 +2598,6 @@ def get_command_from_file(in_file):
                 the_comment0 = ''
                 the_comment1 = ''
             yield (words, line_options, gate_options, the_comment0, the_comment1)
-    if len(sys.argv) > 1:
-        in_file.close()
     return
 
 def process_one_command(words, line_options, gate_options, comment0, comment1):
@@ -2854,7 +2847,3 @@ def main(infile):
     if level_stack:
         sys.exit("Error:  Line %i: Unclosed level\n" % line_num)
     end_circuit()
-
-# Delete if succesful
-# if __name__ == "__main__":
-    # main()
