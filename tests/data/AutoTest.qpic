@@ -1,6 +1,6 @@
 AUTOWIRES
 +0 1 2:color=purple
-W a
+a W
 +a
 1 2 +3
 +c -a -b:color=blue

@@ -1,9 +1,9 @@
-W 0 a_0 a_0
-W 1 a_1 a_1
-W 2 b_0 b_0
-W 3 b_1 b_1
-W 4 c_0=0 ?(a<b) 
-W 7 owire
+0 W a_0 a_0
+1 W a_1 a_1
+2 W b_0 b_0
+3 W b_1 b_1
+4 W c_0=0 ?(a<b) 
+7 W owire
 +0 
 +1 
 7 IN 0

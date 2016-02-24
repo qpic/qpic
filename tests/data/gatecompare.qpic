@@ -1,10 +1,10 @@
 HEADER \usepackage{amssymb}
-W a a a
-W b b b
-W c c c
-W d d d
-W e e e breadth=25
-W f f f
+a W a a
+b W b b
+c W c c
+d W d d
+e W e e breadth=25
+f W f f
 
 b c SWAP a
 +b +c a op=x:shape=0

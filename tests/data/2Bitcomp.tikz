@@ -1,22 +1,22 @@
 \begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
 \filldraw[color=white] (0.000000, -7.500000) rectangle (228.000000, 82.500000);
 % Drawing wires
-% Line 2: W 1 a_1 a_1
+% Line 2: 1 W a_1 a_1
 \draw[color=black] (0.000000,60.000000) -- (228.000000,60.000000);
 \draw[color=black] (0.000000,60.000000) node[left] {$a_1$};
-% Line 1: W 0 a_0 a_0
+% Line 1: 0 W a_0 a_0
 \draw[color=black] (0.000000,75.000000) -- (228.000000,75.000000);
 \draw[color=black] (0.000000,75.000000) node[left] {$a_0$};
-% Line 4: W 3 b_1 b_1
+% Line 4: 3 W b_1 b_1
 \draw[color=black] (0.000000,30.000000) -- (228.000000,30.000000);
 \draw[color=black] (0.000000,30.000000) node[left] {$b_1$};
-% Line 3: W 2 b_0 b_0
+% Line 3: 2 W b_0 b_0
 \draw[color=black] (0.000000,45.000000) -- (228.000000,45.000000);
 \draw[color=black] (0.000000,45.000000) node[left] {$b_0$};
-% Line 5: W 4 c_0=0 ?(a<b)
+% Line 5: 4 W c_0=0 ?(a<b)
 \draw[color=black] (0.000000,15.000000) -- (228.000000,15.000000);
 \draw[color=black] (0.000000,15.000000) node[left] {$c_0=0$};
-% Line 6: W 7 owire
+% Line 6: 7 W owire
 \draw[color=black] (9.000000,0.000000) -- (219.000000,0.000000);
 % Done with wires; drawing gates
 % Line 7: +0

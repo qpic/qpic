@@ -1,4 +1,4 @@
-W a a
+a W a
 ...a W
 b W b
 c ...cd d W cd<
@@ -11,8 +11,8 @@ g h i j k W x< <x> >x< >x breadth=4
 #VERTICAL
 
 a b W ab
-W c c
-W d d
+c W c
+d W d
 
 LB
 LE

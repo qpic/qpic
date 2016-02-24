@@ -1,9 +1,9 @@
 VERTICAL
 PREAMBLE \providecommand{\ket}[1]{\left|#1\right\rangle}
-W a3 \ket{x_3} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_3x_2x_1x_0}\ket{1})
-W a2 \ket{x_2} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_2x_1x_0}\ket{1})
-W a1 \ket{x_1} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_1x_0}\ket{1})
-W a0 \ket{x_0} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_0}\ket{1})
+a3 W \ket{x_3} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_3x_2x_1x_0}\ket{1})
+a2 W \ket{x_2} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_2x_1x_0}\ket{1})
+a1 W \ket{x_1} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_1x_0}\ket{1})
+a0 W \ket{x_0} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_0}\ket{1})
 a3 H
 a3 P $2$ a2 
 a3 P $3$ a1 

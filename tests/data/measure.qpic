@@ -1,10 +1,10 @@
 SCALE 1.5
 
-W a a
-W b b
-W c c
-W d d
-W ee e
+a W a
+b W b
+c W c
+d W d
+ee W e
 
 a M breadth=10
 b c

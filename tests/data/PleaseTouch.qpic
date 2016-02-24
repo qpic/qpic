@@ -1,9 +1,9 @@
 BGCOLOR
-W 0
-W 1
-W 2
-W 3
-W 4
+0 W
+1 W
+2 W
+3 W
+4 W
 
 CUT style=dotted
 +0 1
@@ -21,9 +21,9 @@ LABEL a b c d e f g
 4 TOUCH color=red
 4 H color=blue
 TOUCH color=green style=thick
-W 5
+5 W
 5 N
 PHANTOM
-W 6
+6 W
 +6
 0 1 2 4 5 6 BARRIER style=thick

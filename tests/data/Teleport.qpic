@@ -1,9 +1,9 @@
 VERTICAL 0
 PREAMBLE \providecommand{\ket}[1]{\left|#1\right\rangle}
 
-W 0 \ket{\phi} color=red
-W 1 \ket{0}
-W 2 \ket{0} \ket{\phi}
+0 W \ket{\phi} color=red
+1 W \ket{0}
+2 W \ket{0} \ket{\phi}
 
 1 H
 +2 1

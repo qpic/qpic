@@ -1,7 +1,7 @@
-W a a
-W b b
-W c c 
-W k z
+a W a
+b W b
+c W c 
+k W z
 
 DEFINE Pk1 P $k\!-\!1$ length=20
 

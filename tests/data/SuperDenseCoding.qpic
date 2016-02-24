@@ -1,10 +1,10 @@
 PREAMBLE \providecommand{\ket}[1]{\left|#1\right\rangle}
-W a0 [x] [x] type=c
-W a1 [y] [y] type=c
-W x1 type=o
-W x0 style=dashed
-W b0 \ket{0} \ket{x}
-W b1 \ket{0} \ket{y}
+a0 W [x] [x] type=c
+a1 W [y] [y] type=c
+x1 W type=o
+x0 W style=dashed
+b0 W \ket{0} \ket{x}
+b1 W \ket{0} \ket{y}
 
 VERTICAL 0
 b1 H    % $[xy]\ket{0}(\ket{0}{+}\ket{1})$

@@ -1,19 +1,19 @@
-W c0 0=c_0 0
-W a0 a_0 a_0
-W b0 b_0 s_0
-W c1 0=c_1 0
-W a1 a_1 a_1
-W b1 b_1 s_1
-W z1 color=white
-W ...
-W z2 color=white
-W cn1 0=c_{n-1} 0
-W an1 a_{n-1} a_{n-1}
-W bn1 b_{n-1} s_{n-1}
-W cn 0=c_n 0
-W an a_n a_n
-W bn b_n s_n
-W cnc 0=c_{n+1} c_{n+1}
+c0 W 0=c_0 0
+a0 W a_0 a_0
+b0 W b_0 s_0
+c1 W 0=c_1 0
+a1 W a_1 a_1
+b1 W b_1 s_1
+z1 W color=white
+... W
+z2 W color=white
+cn1 W 0=c_{n-1} 0
+an1 W a_{n-1} a_{n-1}
+bn1 W b_{n-1} s_{n-1}
+cn W 0=c_n 0
+an W a_n a_n
+bn W b_n s_n
+cnc W 0=c_{n+1} c_{n+1}
 
 c0 a0 b0 c1  G| \rotatebox{90}{CARRY} hyperlink=VBE-carry
 c1 a1 b1 z1  G| \rotatebox{90}{CARRY} hyperlink=VBE-carry

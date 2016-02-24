@@ -1,10 +1,10 @@
 PREAMBLE \providecommand{\ket}[1]{\left|#1\right\rangle}
-W a \ket{\phi} [x]
-W x1 type=o
-W x0 style=dashed
-W x2 type=o
-W b0 \ket{0} [y]
-W b1 \ket{0} \ket{\phi}
+a W \ket{\phi} [x]
+x1 W type=o
+x0 W style=dashed
+x2 W type=o
+b0 W \ket{0} [y]
+b1 W \ket{0} \ket{\phi}
 
 VERTICAL 0
 b1 H    % $\ket{\phi}\ket{0}(\ket{0}{+}\ket{1})$

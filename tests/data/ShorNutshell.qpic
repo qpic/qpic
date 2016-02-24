@@ -4,8 +4,8 @@ DEPTHPAD 3
 #GATESIZE 8
 PREAMBLE \newcommand{\ket}[1]{\left| #1 \right\rangle}
 
-W x \ket{0\cdots{}0} ?
-W y \ket{0\cdots{}0} y width=25
+x W \ket{0\cdots{}0} ?
+y W \ket{0\cdots{}0} y width=25
 
 
 MIXGATES 0
