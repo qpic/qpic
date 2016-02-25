@@ -50,7 +50,7 @@ Examples
 Basic quantum teleportation circuit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: docs/images/BasicTeleportation.svg
+.. image:: https://github.com/KutinS/qpic/blob/tom/docs/images/BasicTeleportation.svg
 
 This classic diagram derives from the following code:
 
