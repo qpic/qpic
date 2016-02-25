@@ -8,9 +8,9 @@ qpic
 ![qpic logo](docs/images/qpic.pdf)
 
 
-[qpic_svg](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.svg)
+[qpic_svg](https://raw.github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.svg)
 
-[qpic_svg](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)
+[qpic_svg](https://raw.github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)
 
 [qpic_svg2](docs/images/BasicTeleportation.png)
 
