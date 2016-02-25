@@ -68,7 +68,7 @@ all:	$(MAIN).pdf
 	python $< >$@
 
 %.tikz:	%.qpic
-	qpic < $< >$@
+	qpic $< >$@ # qpic < $< >$@
 
 %.tex:  %.tikz
 	tikz2preview $< > $@
