@@ -7,7 +7,20 @@ qpic
 
 ![qpic logo](docs/images/qpic.pdf)
 
+
 [qpic_svg](https://github.com/KutinS/qpic/blob/tom/docs/images/BasicTeleportation.svg)
+
+[qpic_svg](https://github.com/KutinS/qpic/blob/tom/docs/images/BasicTeleportation.png)
+
+[qpic_svg2](docs/images/BasicTeleportation.png)
+
+[qpic_svg2](/docs/images/BasicTeleportation.png)
+
+
+
+[local ref](/docs/images/BasicTeleportation.png)
+
+[local ref2](docs/images/BasicTeleportation.png)
 
 .. image:: docs/images/typeset_qpic.pdf
    :scale: 200
