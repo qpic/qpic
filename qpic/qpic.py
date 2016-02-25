@@ -1960,11 +1960,11 @@ class Gate:
                         if loc < box_min or box_max < loc:
                             continue
                         if wn in self.controls:
-                            tikz_str = 'dashed'
+                            tikz_str = None
                         elif wn in self.all_wires():
                             continue
                         else:
-                            tikz_str = None
+                            tikz_str = 'dashed'
                         wires[wn].fix_wire(pos-pos_s,pos+pos_s, tikz_str=tikz_str)
                         fixed_wires.append(wn)
                 # deal with other gate types
