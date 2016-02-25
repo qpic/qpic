@@ -1,6 +1,14 @@
-===============================
 qpic
 ===============================
+
+![qpic logo](docs/images/typeset_qpic.pdf)
+
+## Quantum circuits made easy
+
+![qpic logo](docs/images/qpic.pdf)
+
+[qpic_svg](https://github.com/KutinS/qpic/blob/tom/docs/images/BasicTeleportation.svg)
+
 .. image:: docs/images/typeset_qpic.pdf
    :scale: 200
 
