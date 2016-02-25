@@ -14,7 +14,6 @@
 # commands
 
 # basic commands
-# W name [labels]
 # name W [labels]
 # names W [labels]
 #    Declares a wire or wires.  Wires appear on the page in the order in which
@@ -2737,8 +2736,8 @@ def process_one_command(words, line_options, gate_options, comment0, comment1):
                 targets.append(word)
                 pos += 1
         if gate_type == 'W': # not a gate, just easier to handle it here
-            if not targets: # grab the first control
-                targets = [controls.pop(0)]
+            if not targets: # must be at least one wire
+                sys.exit("Error: Line %i: W needs a target\n" % line_num)
             num_targets = len(targets)
             labels = [WireLabel(s,num_targets) for s in controls]
             for wname in targets:
@@ -2847,3 +2846,7 @@ def main(infile):
     if level_stack:
         sys.exit("Error:  Line %i: Unclosed level\n" % line_num)
     end_circuit()
+
+# Delete eventually
+if __name__ == "__main__":
+    main(sys.stdin)

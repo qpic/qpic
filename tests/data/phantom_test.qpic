@@ -1,13 +1,13 @@
-W d
-W a0
-W a1
-W a2
-W a3
-W a4
-W a5
-W b0
-W b1
-W c {} ?
+d W
+a0 W
+a1 W
+a2 W
+a3 W
+a4 W
+a5 W
+b0 W
+b1 W
+c W {} ?
 
 VERTICAL
 +a0 a3

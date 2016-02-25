@@ -2,15 +2,15 @@ DEFINE on color=red style=very_thick
 DEFINE off color=black style=thin
 PREAMBLE \providecommand{\bit}[1]{{\left\langle{#1}\right\rangle}}
 
-W 1 a_1 a_9
-W 2 a_2 a_8
-W 3 a_3 a_7 on
-W 4 a_4 a_6
-W 5 a_5 a_5
-W 6 a_6 a_4
-W 7 a_7 a_3
-W 8 a_8 a_2
-W 9 a_9 a_1
+1 W a_1 a_9
+2 W a_2 a_8
+3 W a_3 a_7 on
+4 W a_4 a_6
+5 W a_5 a_5
+6 W a_6 a_4
+7 W a_7 a_3
+8 W a_8 a_2
+9 W a_9 a_1
 
 CUT 2 4 6 8 10 12 14 16 18
 # on: 4

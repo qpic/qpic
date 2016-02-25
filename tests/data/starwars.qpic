@@ -15,25 +15,25 @@ DEFINE CHEWIE \textrm{\sc{chewie}}
 DEFINE JABBA \textrm{\sc{jabba}}
 DEFINE EMPEROR \textrm{\sc{emperor}}
 
-W vader VADER style=very_thick
-W boba BOBA color=green!75!black
-W yoda YODA color=green!75!black
-W leia LEIA LEIA
-W r2 R2 R2 color=blue!75!black
-W c3po C3PO C3PO color=yellow!75!black
-W emperor EMPEROR style=very_thick
-W ben BEN
-W x3 type=o
-W x4 type=o
-W x5 type=o
-W luke LUKE LUKE
-W greedo GREEDO color=green!75!black
-W x7 type=o
-W lando LANDO LANDO
-W han HAN HAN
-W chewie CHEWIE CHEWIE color=brown
-W x9 type=o
-W jabba JABBA color=green!75!black
+vader W VADER style=very_thick
+boba W BOBA color=green!75!black
+yoda W YODA color=green!75!black
+leia W LEIA LEIA
+r2 W R2 R2 color=blue!75!black
+c3po W C3PO C3PO color=yellow!75!black
+emperor W EMPEROR style=very_thick
+ben W BEN
+x3 W type=o
+x4 W type=o
+x5 W type=o
+luke W LUKE LUKE
+greedo W GREEDO color=green!75!black
+x7 W type=o
+lando W LANDO LANDO
+han W HAN HAN
+chewie W CHEWIE CHEWIE color=brown
+x9 W type=o
+jabba W JABBA color=green!75!black
 DEFINE DUEL G $\times$
 
 x4 x5 r2 c3po PERMUTE

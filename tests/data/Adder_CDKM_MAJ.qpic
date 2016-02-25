@@ -1,6 +1,6 @@
-W a a a\oplus{c}
-W b b b\oplus{c}
-W c c \mbox{MAJ}(a,b,c)
+a W a a\oplus{c}
+b W b b\oplus{c}
+c W c \mbox{MAJ}(a,b,c)
 
 a b c G \rotatebox{90}{MAJ}
 =

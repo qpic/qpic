@@ -104,18 +104,14 @@ We begin with a simple in-place majority circuit~\cite{CDKM} in Figure~\ref{fig-
 \label{fig-maj}
 \end{figure}
 
-TO DO:  Would it be cleaner to make all the {\tt W} commands put the wire first?
-Should we deprecate the wire second option?  (Speaking of deprecating, should we
-document {\tt CHANGE}, take it out, or neither?)
-
-The first three lines of the \qpic code use the {\tt W} command, which declares a wire.  The first argument, which is required, is the name of the wire, to be used internally.  The formal rules for wire names can be found in
+The first three lines of the \qpic code use the {\tt W} command, which declares a wire.  The string before {\tt W}, which is required, is the name of the wire, to be used internally.  The formal rules for wire names can be found in
 Section~\ref{sec-qpic-wire-name-rules}---in brief, a wire name can be anything that doesn't mean something else to \qpic---but any string of numbers and lowercase
 letters is safe.  Here, the wires are given the names {\tt a}, {\tt b}, and
 {\tt c}.
 
 
-If a {\tt W} command has a second argument, it is interpreted as a label to be
-typeset in math mode and placed at the start of the wire.  A third argument (if any) is treated the same way but placed at the end.  Here, each wire has a starting and ending label, representing its starting and ending value.
+If a {\tt W} command has an argument after the {\tt W}, it is interpreted as a label to be
+typeset in math mode and placed at the start of the wire.  A second argument (if any) is treated the same way but placed at the end.  Here, each wire has a starting and ending label, representing its starting and ending value.
 
 
 Normally, the \qpic parser breaks up each line by whitespace.  However,
@@ -357,8 +353,6 @@ sorted by categories.  Where applicable, we give an example together with
 a small diagram; in all cases, the example is a valid input that
 generates the accompanying diagram.
 
-TO DO: Fix ex.atfill so this is actually true.
-
 Throughout, we use ``gate'' in the \qpic sense to mean
 something that is drawn on a wire, whether or not it corresponds
 to some quantum operation.
@@ -368,7 +362,7 @@ to some quantum operation.
 \label{sec-qpic-wire-name-rules}
 
 \begin{description}
-\item[{\tt W name [labels]}] Declare a wire with the given name.  If one label is
+\item[{\tt name W [labels]}] Declare a wire with the given name.  If one label is
   given, it is used at the start; if two labels are given, the second is used at the
   end.  Additional labels are normally ignored, but may appear if {\tt START} and
   {\tt END} are used (see Section~\ref{sec-qpic-start-end}).  Subsequent declarations
@@ -377,23 +371,22 @@ to some quantum operation.
 \begin{minipage}[b]{2in}
 \lstinputlisting[firstline=2,lastline=4]{ex.W.qpic}
 \end{minipage} \hfill \input ex.W.tikz
-\item[{\tt W ...name}] Declare an ellipsis wire with the given name.
+\item[{\tt ...name W}] Declare an ellipsis wire with the given name.
 
 \begin{minipage}[b]{2in}
 \lstinputlisting[firstline=2,lastline=4]{ex.ellipsis.qpic}
 \end{minipage} \hfill \input ex.ellipsis.tikz
 
-\item[{\tt name(s) W [labels]}] The specified labels are applied to all the wires
+\item[{\tt names W [labels]}] The specified labels are applied to all the wires
   listed.  If a label begins and/or ends with {\tt <} or {\tt >}, it is instead
-  drawn with an open or close brace before and/or after it.  With one name,
-  {\tt name W [labels]} is equivalent to {\tt W name [labels]}.
+  drawn with an open or close brace before and/or after it.
   
 \begin{minipage}[b]{2.7in}
 \lstinputlisting[firstline=2,lastline=5]{ex.nW.qpic}
 \end{minipage} \hfill \input ex.nW.tikz
 \end{description}
 
-The wire name does not appear in the diagram, but is used by \qpic internally.
+The wire name does not appear in the diagram, but is used by \qpic to identify the wire.
 One useful convention is for wire names to be made up of numbers, lowercase letters,
 and underscores.  Technically, a wire name can be any non-whitespace string, except:
 \begin{itemize}

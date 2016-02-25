@@ -2,57 +2,57 @@ PREAMBLE \providecommand{\ket}[1]{{\left\vert{#1}\right\rangle}}
 SCALE 0.8
 WIRES \scriptstyle
 
-W data0
-W data1
-W data2
-W data3
-W data4
-W data5
-W data6
-W x00 \ket{+} 0
-W x01 \ket{+} 0
-W x02 \ket{+} 0
-W x03 \ket{+} 0
-W a00 \ket{0}
-W a01 \ket{0}
-W a02 \ket{0}
-W a03 \ket{0}
-W a04 \ket{+}
-W a05 \ket{+}
-W a06 \ket{+}
-W x10 \ket{+} 0
-W x11 \ket{+} 0
-W x12 \ket{+} 0
-W x13 \ket{+} 0
-W a10 \ket{0}
-W a11 \ket{0}
-W a12 \ket{0}
-W a13 \ket{0}
-W a14 \ket{+}
-W a15 \ket{+}
-W a16 \ket{+}
-W x20 \ket{+} 0
-W x21 \ket{+} 0
-W x22 \ket{+} 0
-W x23 \ket{+} 0
-W a20 \ket{0}
-W a21 \ket{0}
-W a22 \ket{0}
-W a23 \ket{0}
-W a24 \ket{+}
-W a25 \ket{+}
-W a26 \ket{+}
-W x30 \ket{+} 0
-W x31 \ket{+} 0
-W x32 \ket{+} 0
-W x33 \ket{+} 0
-W a30 \ket{0}
-W a31 \ket{0}
-W a32 \ket{0}
-W a33 \ket{0}
-W a34 \ket{+}
-W a35 \ket{+}
-W a36 \ket{+}
+data0 W
+data1 W
+data2 W
+data3 W
+data4 W
+data5 W
+data6 W
+x00 W \ket{+} 0
+x01 W \ket{+} 0
+x02 W \ket{+} 0
+x03 W \ket{+} 0
+a00 W \ket{0}
+a01 W \ket{0}
+a02 W \ket{0}
+a03 W \ket{0}
+a04 W \ket{+}
+a05 W \ket{+}
+a06 W \ket{+}
+x10 W \ket{+} 0
+x11 W \ket{+} 0
+x12 W \ket{+} 0
+x13 W \ket{+} 0
+a10 W \ket{0}
+a11 W \ket{0}
+a12 W \ket{0}
+a13 W \ket{0}
+a14 W \ket{+}
+a15 W \ket{+}
+a16 W \ket{+}
+x20 W \ket{+} 0
+x21 W \ket{+} 0
+x22 W \ket{+} 0
+x23 W \ket{+} 0
+a20 W \ket{0}
+a21 W \ket{0}
+a22 W \ket{0}
+a23 W \ket{0}
+a24 W \ket{+}
+a25 W \ket{+}
+a26 W \ket{+}
+x30 W \ket{+} 0
+x31 W \ket{+} 0
+x32 W \ket{+} 0
+x33 W \ket{+} 0
+a30 W \ket{0}
+a31 W \ket{0}
+a32 W \ket{0}
+a33 W \ket{0}
+a34 W \ket{+}
+a35 W \ket{+}
+a36 W \ket{+}
 
 CUT color=green!50!black
 CUT 1 color=white

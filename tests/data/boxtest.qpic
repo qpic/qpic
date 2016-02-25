@@ -1,12 +1,12 @@
 DEFINE a1 a:color=blue
 DEFINE G1 G|:color=blue
 
-W a
-W b
-W c
-W d
-W e
-W f
+a W
+b W
+c W
+d W
+e W
+f W
 
 # VERTICAL
 

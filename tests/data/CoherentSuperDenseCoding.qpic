@@ -1,12 +1,12 @@
 PREAMBLE \providecommand{\ket}[1]{\left|#1\right\rangle}
-W a0 \ket{x} \ket{x}
-W a1 \ket{y} \ket{y}
-W x1 style=dashed
-#W x0 style=dashed
-W b0 \ket{0} \ket{x}
-W b1 \ket{0} \ket{y}
-W x2 style=dashed
-W blank type=o
+a0 W \ket{x} \ket{x}
+a1 W \ket{y} \ket{y}
+x1 W style=dashed
+#x0 W style=dashed
+b0 W \ket{0} \ket{x}
+b1 W \ket{0} \ket{y}
+x2 W style=dashed
+blank W type=o
 
 VERTICAL 0
 b1 H    % $\ket{xy}\ket{0}(\ket{0}{+}\ket{1})$

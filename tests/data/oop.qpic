@@ -1,39 +1,39 @@
-W Z_0 0 s_0
-W A_0 a_0
-W B_0 b_0
-W Z_1 0 s_1
-W A_1 a_1
-W B_1 b_1
-W Z_2 0 s_2
-W A_2 a_2
-W B_2 b_2
-W X_0 0
-W Z_3 0 s_3
-W A_3 a_3
-W B_3 b_3
-W Z_4 0 s_4
-W A_4 a_4
-W B_4 b_4
-W X_1 0
-W Z_5 0 s_5
-W A_5 a_5
-W B_5 b_5
-W X_4 0
-W Z_6 0 s_6
-W A_6 a_6
-W B_6 b_6
-W X_2 0
-W Z_7 0 s_7
-W A_7 a_7
-W B_7 b_7
-W Z_8 0 s_8
-W A_8 a_8
-W B_8 b_8
-W X_3 0
-W Z_9 0 s_9
-W A_9 a_9
-W B_9 b_9
-W Z_10 0 s_{10}
+Z_0 W 0 s_0
+A_0 W a_0
+B_0 W b_0
+Z_1 W 0 s_1
+A_1 W a_1
+B_1 W b_1
+Z_2 W 0 s_2
+A_2 W a_2
+B_2 W b_2
+X_0 W 0
+Z_3 W 0 s_3
+A_3 W a_3
+B_3 W b_3
+Z_4 W 0 s_4
+A_4 W a_4
+B_4 W b_4
+X_1 W 0
+Z_5 W 0 s_5
+A_5 W a_5
+B_5 W b_5
+X_4 W 0
+Z_6 W 0 s_6
+A_6 W a_6
+B_6 W b_6
+X_2 W 0
+Z_7 W 0 s_7
+A_7 W a_7
+B_7 W b_7
+Z_8 W 0 s_8
+A_8 W a_8
+B_8 W b_8
+X_3 W 0
+Z_9 W 0 s_9
+A_9 W a_9
+B_9 W b_9
+Z_10 W 0 s_{10}
 COLOR darkgreen 0 .5 0
 
 GATESIZE 13.5

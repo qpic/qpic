@@ -1,7 +1,7 @@
-W a a a
-W b b b
-W c c c
-W d d d
+a W a a
+b W b b
+c W c c
+d W d d
 
 +d a:cwire -b -c:color=red
 

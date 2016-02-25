@@ -1,7 +1,7 @@
-W 0 c_{in} c_{in} 
-W 1 a a
-W 2 b a\oplus{b}
-W 3 0 c_{out}
+0 W c_{in} c_{in} 
+1 W a a
+2 W b a\oplus{b}
+3 W 0 c_{out}
 
 0 1 2 3  G| \rotatebox{90}{CARRY}
 =

@@ -8,9 +8,9 @@ BGCOLOR blue!10!white
 
 
 
-W a a A a' A'
-W b b B
-W c c C
+a W a A a' A'
+b W b B
+c W c C
 b START
 b a G $f$
 a END

@@ -1,10 +1,10 @@
 VERTICAL 0
-W 0 a b
-W 1 color=blue c d
-W color=red 2 e f
-W ...
-W 3 g h
-W 4 color=orange i j
+0 W a b
+1 W color=blue c d
+color=red 2 W e f
+... W
+3 W g h
+4 W color=orange i j
 COLOR grey .5 .5 .5
 DEFINE yellowblack color=yellow!50!black
 

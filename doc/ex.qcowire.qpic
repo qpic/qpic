@@ -8,8 +8,8 @@ BGCOLOR blue!10!white
 
 
 
-W a a cwire
-W b b
+a W a cwire
+b W b
 b H a:owire
 
 

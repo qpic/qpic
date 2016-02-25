@@ -8,8 +8,8 @@ BGCOLOR blue!10!white
 
 
 
-style=dotted W a a
-W b b style=very_thick
+style=dotted a W a
+b W b style=very_thick
 a b G style=dashed:fill=yellow $G$
 +a b a:style=densely_dotted,thick
 

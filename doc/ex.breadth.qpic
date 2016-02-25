@@ -8,9 +8,9 @@ BGCOLOR blue!10!white
 
 
 
-W a a breadth=20
-W b b
-W c c breadth=2
+a W a breadth=20
+b W b
+c W c breadth=2
 a b +c
 
 

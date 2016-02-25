@@ -1,11 +1,11 @@
 PREAMBLE \newcommand{\ket}[1]{\left| #1 \right\rangle}
-W n \ket{s_n} \ket{t_1}
-W n-1 \ket{s_{n-1}} \ket{t_2}
-W ...1
-W i \ket{s_{i}} \ket{t_{n-i+1}}
-W ...2
-W 2 \ket{s_2} \ket{t_{n-1}}
-W 1 \ket{s_1} \ket{t_{n}}
+n W \ket{s_n} \ket{t_1}
+n-1 W \ket{s_{n-1}} \ket{t_2}
+...1 W
+i W \ket{s_{i}} \ket{t_{n-i+1}}
+...2 W
+2 W \ket{s_2} \ket{t_{n-1}}
+1 W \ket{s_1} \ket{t_{n}}
 VERTICAL
 
 n n-1 ...1 i 2 G $\hbox{QFT}_{n-1}$ width=40
