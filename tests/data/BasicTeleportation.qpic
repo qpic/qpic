@@ -1,8 +1,8 @@
 a W |\psi\rangle
 b c W |\beta_{00}\rangle<
+c W |\psi\rangle
 a +b
 a H
 a b M
 c X b:owire
 c Z a:owire
-c LABEL |\psi\rangle

@@ -31,7 +31,7 @@ qpic
 .. image:: docs/images/qpic.pdf
    :scale: 300
 
-* Free software: GPL license
+* Free software: GNU GPLv3 license
 * Documentation: https://qpic.readthedocs.org.
 
 Features
@@ -58,12 +58,12 @@ This classic diagram derives from the following code:
 
   a W |\psi\rangle
   b c W |\beta_{00}\rangle<
+  c W |\psi\rangle
   a +b
   a H
   a b M
   c X b:owire
   c Z a:owire
-  c LABEL |\psi\rangle
 
 Decorated quantum teleportation circuit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
