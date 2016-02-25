@@ -1,49 +1,27 @@
----
-title: Solarized
-description: Precision colors for machines and people
-author: Ethan Schoonover
-tags: test, testing, test123
-colors: light yellow
-created:  2011 Mar 15
-modified: 2011 Apr 16
+qpic
+===============================
 
----
+## Quantum circuits made easy
 
-Solarized
-=========
-
-## Precision colors for machines and people
-
-[![solarized dualmode](https://github.com/altercation/solarized/raw/master/img/solarized-yinyang.png)](#features)
 
 [![qpic dualmode](https://raw.githubusercontent.com/KutinS/qpic/tom/docs/images/BasicTeleportation.png)](#features)
 
 [![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)](#features)
 
-[![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)]
+[![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/QuantumTeleportation.png)](#tag1)
+
+[![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/qpic.png)](#tag2)
 
 Are braces needed around the outside?
 
 ![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)
 
-What about PDF?
-![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.pdf)
-
 Another graphic?
-![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/QuantumTeleportation.pdf)
-
 [![qpic dualmode](docs/images/BasicTeleportation.png)](#features1)
 
 [![qpic dualmode](/docs/images/BasicTeleportation.png)](#features2)
 
 [![qpic dualmode](/docs/images/BasicTeleportation.png?raw=true)](#features3)
-
-qpic
-===============================
-
-![qpic logo](docs/images/typeset_qpic.pdf)
-
-## Quantum circuits made easy
 
 ![qpic logo](docs/images/qpic.pdf)
 
