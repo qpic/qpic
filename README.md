@@ -23,7 +23,14 @@ Solarized
 [![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)]
 
 Are braces needed around the outside?
+
 ![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)
+
+What about PDF?
+![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.pdf)
+
+Another graphic?
+![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/QuantumTeleportation.pdf)
 
 [![qpic dualmode](docs/images/BasicTeleportation.png)](#features1)
 
@@ -41,9 +48,9 @@ qpic
 ![qpic logo](docs/images/qpic.pdf)
 
 
-[![qpic dualmode](https://raw.github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.svg)](#f1)
+[![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.svg)](#f1)
 
-[![qpic dualmode](https://raw.github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)](#f2)
+[![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)](#f2)
 
 [qpic dualmode](docs/images/BasicTeleportation.png)
 
