@@ -16,6 +16,10 @@ Solarized
 
 [![solarized dualmode](https://github.com/altercation/solarized/raw/master/img/solarized-yinyang.png)](#features)
 
+[![qpic dualmode](https://raw.githubusercontent.com/KutinS/qpic/tom/docs/images/BasicTeleportation.png)](#features)
+
+[![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)](#features)
+
 qpic
 ===============================
 
