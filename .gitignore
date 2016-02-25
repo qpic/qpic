@@ -58,6 +58,11 @@ docs/_build/
 # PyBuilder
 target/
 
+# TeX extensions
+*.aux
+*.log
+*.out
+
 # Editor files
 *~
 *.swp
