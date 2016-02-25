@@ -1,9 +1,18 @@
-1:color=green 2:color=green color=green
-+1:color=black 2:color=black 3 color=green
+DEFINE r_on color=red:style=very_thick,solid
+DEFINE g_on color=green!80!black:style=very_thick
+DEFINE b_on color=blue:style=very_thick
+DEFINE k_on color=black:style=very_thin
+DEFINE p_on color=purple:style=very_thick
+1 2 3 W style=very_thin
+
+1:g_on 2:g_on g_on
++1:k_on 2:k_on 3 g_on
 CUT 2
-+1:color=blue 2:color=blue 3 color=blue
-1:color=black 2:color=black color=blue
-+1 2 color=yellow
-1:color=red 2:color=red color=red
-+1:color=black color=red
-+2:color=black color=red
++1:b_on 2:b_on 3 b_on
+1:k_on 2:k_on b_on
++1:style=dotted 2:style=dotted p_on
+2:r_on 1:r_on PERMUTE
+TOUCH
+# 1:r_on 2:r_on r_on
+# 1:k_on r_on
+# 2:k_on r_on
