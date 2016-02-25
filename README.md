@@ -20,6 +20,10 @@ Solarized
 
 [![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)](#features)
 
+[![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)]
+
+[![qpic dualmode](docs/images/BasicTeleportation.png)](#features)
+
 qpic
 ===============================
 
