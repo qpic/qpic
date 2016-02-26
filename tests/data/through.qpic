@@ -1,0 +1,8 @@
+a W a
+b W b
+c W c
+d W d
+e W e
+f W f
+
+a f G {} b -c +e:color=red width=100
