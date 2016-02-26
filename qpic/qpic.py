@@ -746,7 +746,7 @@ def draw_slash(x,y,dx,dy,name=None,style=None):
     else:
         style_str = ''
     if orientation == 'vertical':
-        print("\\draw%s (%f, %f) -- (%f, %f);" % (style_str, x-0.5*dx, y+0.5*dy, x+0.5*dx, y-0.5*dy))
+        print("\\draw%s (%f, %f) -- (%f, %f);" % (style_str, x-0.5*dx, y-0.5*dy, x+0.5*dx, y+0.5*dy))
         if name:
             print("\\draw%s (%f, %f) node[below] {$\\scriptstyle{%s}$};" % (style_str,x+0.25*dx,y-0.25*dy,name))
     else:
