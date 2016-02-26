@@ -15,5 +15,5 @@ BGCOLOR blue!10!white
 +c shape=3 op=-* size=8
 +d shape=-3 op=-* size=8
 a b G:op=x
-c d G:op=\\
+c d G:op=\\:shape=>
 

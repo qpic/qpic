@@ -15,5 +15,6 @@ x TOUCH
 a b G:op=$f$ +c:sh=box d:sh=6:op=* fi=blue!20!white
 a b G|:shape=3 $g$ c d G|:shape=-3 $g$
 x:sh=1
-
+a G:op=*:sh=> b G:op=-*:sh=< c G:op=+:sh=> d G:op=x breadth=8
+R -1 -1
 
