@@ -4,11 +4,24 @@
 
 [![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/qpic.png)](#features)
 
-
 **qpic** converts the ⟨q|pic⟩ description of a quantum circuit into LaTeX as a TikZ graphic.
 
 * Free software: GNU GPLv3 license
 * Documentation: https://qpic.readthedocs.org.
+<p align="center">
+    <a href="https://img.shields.io/pypi/v/qpic.svg">
+        <img src="https://img.shields.io/pypi/v/qpic.svg"
+             alt="build status">
+    </a>
+    <a href="https://travis-ci.org/SmoothDragon/qpic">
+        <img src="https://img.shields.io/travis/SmoothDragon/qpic.svg"
+             alt="build status">
+    </a>
+    <a href="https://readthedocs.org/projects/qpic/?badge=latest">
+        <img src="https://readthedocs.org/projects/qpic/badge/?version=latest"
+             alt="documentation status">
+    </a>
+</p>
 
 .. image:: https://img.shields.io/pypi/v/qpic.svg
         :target: https://pypi.python.org/pypi/qpic
@@ -32,6 +45,8 @@ The ⟨q|pic⟩ language provides a concise, readable, ASCII format for describi
 ## Examples
 
 ### Basic quantum teleportation circuit
+
+The teleportation circuit is very useful and well known.
 
 [![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)](#features)
 
@@ -88,35 +103,3 @@ Credits
 ---------
 
 This package was created with Cookiecutter and the `audreyr/cookiecutter-pypackage` project template.
-
-[![qpic dualmode](https://raw.githubusercontent.com/KutinS/qpic/tom/docs/images/BasicTeleportation.png)](#features)
-
-[![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/QuantumTeleportation.png)](#tag1)
-
-Are braces needed around the outside?
-
-![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)
-
-Another graphic?
-[![qpic dualmode](docs/images/BasicTeleportation.png)](#features1)
-
-[![qpic dualmode](/docs/images/BasicTeleportation.png)](#features2)
-
-[![qpic dualmode](/docs/images/BasicTeleportation.png?raw=true)](#features3)
-
-![qpic logo](docs/images/qpic.pdf)
-
-
-[![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.svg)](#f1)
-
-[![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)](#f2)
-
-[qpic dualmode](docs/images/BasicTeleportation.png)
-
-[qpic dualmode](/docs/images/BasicTeleportation.png)
-
-
-
-[local ref](/docs/images/BasicTeleportation.png?raw=true)
-
-[local ref2](docs/images/BasicTeleportation.png?raw=true)
