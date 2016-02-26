@@ -1,12 +1,11 @@
-⟨q|pic⟩
-===============================
+# ⟨q|pic⟩
 
 ## Quantum circuits made easy
 
 [![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/qpic.png)](#features)
 
 
-`qpic` converts the ⟨q|pic⟩ description of a quantum circuit into LaTeX as a TikZ graphic.
+**qpic** converts the ⟨q|pic⟩ description of a quantum circuit into LaTeX as a TikZ graphic.
 
 * Free software: GNU GPLv3 license
 * Documentation: https://qpic.readthedocs.org.
@@ -21,21 +20,18 @@
         :target: https://readthedocs.org/projects/qpic/?badge=latest
         :alt: Documentation Status
 
-Features
---------
+## Features
 
-The ⟨q|pic⟩ language provides a concise, readable, `ASCII` format for describing quantum circuits. `qpic` converts ⟨q|pic⟩ files to the scientific paper standard of LaTeX using TikZ graphic commands.
+The ⟨q|pic⟩ language provides a concise, readable, ASCII format for describing quantum circuits. **qpic** converts ⟨q|pic⟩ files to the scientific paper standard of LaTeX using TikZ graphic commands.
 
 * Automatic placement of circuit components.
 * Human readable.
 * Input ⟨q|pic⟩ syntax can be produced by other scripts.
 * Can be included in LaTeX documents in TikZ or PDF form.
 
-Examples
---------
+## Examples
 
-Basic quantum teleportation circuit
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### Basic quantum teleportation circuit
 
 [![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)](#features)
 
@@ -52,8 +48,7 @@ c X b:owire
 c Z a:owire
 ```
 
-Decorated quantum teleportation circuit
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### Decorated quantum teleportation circuit
 
 ⟨q|pic⟩ has additional features for commenting or highlighting parts of a circuit. 
 
