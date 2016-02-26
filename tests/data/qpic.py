@@ -1,1 +1,0 @@
-../../qpic/qpic.py

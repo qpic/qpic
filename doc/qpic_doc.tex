@@ -4,6 +4,7 @@
 \usepackage{color,tikz}
 \lstset{basicstyle=\ttfamily\footnotesize,numbers=left,numberstyle=\scriptsize,columns=fullflexible,backgroundcolor=\color{purple!10!white}}
 \newcommand{\qpic}{$\langle\mathsf{q}|\mathsf{pic}\rangle$\xspace}
+\newcommand{\qpicpy}{{\tt qpic}\xspace}
 \newcommand{\TikZ}{Ti\emph{k}Z\xspace}
 \providecommand{\ket}[1]{\left|#1\right\rangle}
 \usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing}
@@ -21,7 +22,7 @@ for preparing circuit diagrams in \LaTeX, with an emphasis on diagrams
 used in quantum computing.  The user prepares a description of the
 circuit in the human-readable
 ``{$\langle\mathsf{q}|\mathsf{pic}\rangle$\xspace} language'':\ a
-python program then converts this into {\LaTeX} code using the
+Python program then converts this into {\LaTeX} code using the
 {Ti\emph{k}Z\xspace} graphics package.  This note serves as a manual
 for the language as of
 {$\langle\mathsf{q}|\mathsf{pic}\rangle$\xspace} version~5.0.1a
@@ -48,9 +49,11 @@ entirely by the red coloring in Figure~\ref{fig-rev}.
 \end{figure}
 
 
-This diagram was created using the graphics software \qpic.  The user creates a description of the
-circuit in a simple, human-readable language, with one line declaring each wire and one line specifying each
-logical operation, or ``gate''.  The main ingredient in \qpic is a python script that parses this description
+This diagram was created using \qpic.  The user creates a description of the
+circuit in \qpic: a simple, human-readable language, with one line declaring each wire and one line specifying each
+logical operation, or ``gate''.  A Python script, which we
+call\footnote{\qpicpy stands for ``\qpic Python-interpreted compiler''.}
+\qpicpy, parses this description
 and produces {\LaTeX} code using the \TikZ graphics package.\footnote{The bulk of our testing has been with \TikZ version 2.10.}
 
 One design principle behind \qpic is to keep the language simple.  The user can draw a number of
@@ -58,16 +61,17 @@ elements common to quantum circuit diagrams, including wires with single or doub
 gates with text on them, and measurement boxes.  The code is interpreted by \LaTeX, so any math expressions
 are passed directly through.  The goal is not to handle everything anyone might ever want; instead,
 commands can be passed directly through to {\LaTeX} or to \TikZ, so the user can supplement the \qpic output
-as needed.  (\qpic produces heavily commented \TikZ code to facilitate this process.)
+as needed.  (\qpicpy produces heavily commented \TikZ code to facilitate this process.)
 
 
-There are, of course, some limitations on what \qpic can achieve in this framework.  The python code
+There are, of course, some limitations on what \qpic can achieve in this framework.  The Python code
 that creates the \TikZ commands needs to know how large all the elements are; so, for example, to make
 a box large enough to contain some text, the user must explicitly specify the width.  Hence, it may
 take several iterations to line up the diagram perfectly, as is normal when constructing diagrams in \LaTeX.
 
 
-Another design principle is that, to the extent possible, \qpic first creates an internal representation
+Another design principle is that, to the extent possible, the \qpic interpreter
+first creates an internal representation
 of the circuit from the user's input, and then produces \TikZ code from that representation.  One example
 of this is the {\tt VERTICAL} command; with one line, the user can change the default flow of time in the
 diagram (left to right) to a vertical flow (top to bottom).  The internal representation of the circuit is
@@ -78,12 +82,13 @@ representation and code is not always as clear-cut as one would like.
 In this paper we give a brief, but complete, description of \qpic.  We begin with some simple examples in
 Section~\ref{sec-example}; the discussion should serve as a beginning tutorial.  
 We give a complete list of commands of the \qpic circuit specification language
-in Section~\ref{sec-qpic}.  We then briefly describe the other components of \qpic in Section~\ref{sec-tools};
-these are tools to help users use \qpic within a {\LaTeX} document.  Finally, we complete our definition of the
+in Section~\ref{sec-qpic}.  We then briefly describe \qpicpy in Section~\ref{sec-tools}, including
+tools to help users use \qpic within a {\LaTeX} document.  Finally, we complete our definition of the
 \qpic language by listing the gory details of parsing and tokenizing in Section~\ref{sec-tokens}.
 
 Like any software, \qpic is a work in progress.  This paper represents a description of the state of
-the program as of June 2015.  Please see [TO DO:  Where will it be?]  for the most up-to-date version of \qpic.  [TO DO:  Copyright IDA?]
+the program as of June 2015.  Please see {\tt github} for the most up-to-date version of \qpicpy and \qpic.  \qpic is copyright IDA/CCR-P, and is distributed
+under GNU General Public License v3. 
 Please feel free to contact the authors with suggestions for further improvement.
 
 \section{Simple Examples}
@@ -116,7 +121,7 @@ typeset in math mode and placed at the start of the wire.  A second argument (if
 
 Normally, the \qpic parser breaks up each line by whitespace.  However,
 an expression like {\tt \{a{\textvisiblespace}{\char92}oplus{\textvisiblespace}c\}} is not
-broken up.  \qpic knows that it will be producing {\LaTeX} code, so curly
+broken up.  \qpic's target language is {\LaTeX}, so curly
 braces (and dollar signs) can be used to group text with whitespace into
 a single entity.  See Section~\ref{sec-tokens} for more about \qpic's parsing
 rules.
@@ -147,8 +152,8 @@ are so common, \qpic interprets a line containing only a list of wires as
 such a gate:  {\tt +} indicates that the operator $\oplus$ should be
 applied to that wire, and any other wires are treated as controls.
 Notice that the target may occur anywhere in the list.  If no target is
-listed, all wires are drawn as controlled (this indicates a (controlled)
-$Z$ gate).
+listed, all wires are drawn as controls, indicating a (controlled)
+$Z$ gate.
 
 \subsection{Example 2:\ Quantum Fourier Transform}
 \label{sec-example-QFT}
@@ -407,7 +412,7 @@ are appended to the list of labels associated to the wire, as in the example abo
 
 \qpic also allows the option of undeclared wires.  This is useful for larger,
 computer-generated circuits, where you don't need the extra check to catch
-typos.  By default, \qpic starts processing the file in ``autowires'' mode, allowing
+typos.  By default, \qpic starts in ``autowires'' mode, allowing
 these undeclared wires.  As soon as a single {\tt W} declaration is seen, \qpic
 switches to a ``declared'' mode where all wires must be explicitly declared.
 A typical file will use one of the two modes exclusively.
@@ -426,7 +431,8 @@ A typical file will use one of the two modes exclusively.
 \item An undeclared wire with an integer name has no label.
   Otherwise, an undeclared wire is given a starting label: the
   lowercase string, followed by the numbers as subscripts.
-\item Note that \qpic converts the undeclared wire name to a standard representation.  If
+\item Note that \qpic interprets the undeclared wire name in terms of a
+standard representation.  If
   declared, {\tt a\_0} and {\tt a00} are different strings and refer to different wires,
   but if undeclared they have the same representation and refer to the same wire.
 \item The command {\tt AUTOWIRES} sets \qpic to ``autowires'' mode for the rest
@@ -435,7 +441,7 @@ A typical file will use one of the two modes exclusively.
 
 \subsection{Gates}
 
-\subsubsection{Controlled NOT}
+\subsubsection{Controlled NOT and controlled $Z$}
 
 \begin{description}
 \item[{\tt target N}] Negate the target wire.
@@ -456,7 +462,7 @@ A typical file will use one of the two modes exclusively.
 \lstinputlisting[firstline=11]{ex.T.qpic}
 \end{minipage} \hfill \input ex.T.tikz
 
-\item[{\tt controls}]  If a list of wires is given without a gate, it is assumed to be a (generalized) controlled Z or NOT.  A target of NOT is specified
+\item[{\tt controls}]  If a list of wires is given without a gate, it is assumed to be a (generalized) controlled $Z$ or NOT.  A target of NOT is specified
   with a {\tt +}.
 
 \begin{minipage}[b]{2in}
@@ -582,7 +588,7 @@ of time, and \emph{breadth} refers to the perpendicular direction; for example, 
 that it takes a long time, one can increase its length.\footnote{For horizontal circuits, length is width and breadth is height.  For vertical circuits, length is height and breadth is width.}
 
 \begin{description}
-\item[{\tt height=value}, {\tt width=value}, {\tt length=value}, {\tt breadth=value}] Change the size of a gate.\footnote{For controlled NOTs, length affects only spacing.}
+\item[{\tt height=value}, {\tt width=value}, {\tt length=value}, {\tt breadth=value}] Change the size of a gate.\footnote{For controlled NOT or $Z$, length affects only spacing.}
 Units are in points (although scaling may change this); the default value for a rectangle is 12 in both directions.
 \qpic will treat the specified value as a minimum and increase it if necessary to span the indicated wires.
 
@@ -659,7 +665,7 @@ attributes.  This can make the code cleaner.
 \lstinputlisting[firstline=11]{ex.delay.qpic}
 \end{minipage} \hfill \input ex.delay.tikz
 
-\subsubsection{Other attributes}
+\subsubsection{Other attributes}\label{sec-attributes-other}
 
 \begin{description}
 \item[{\tt type=value}, {\tt qwire}, {\tt cwire}, {\tt owire}] There are
@@ -678,17 +684,19 @@ attributes.  This can make the code cleaner.
 \item[{\tt shape=value}] You can change the shape of
   a $G$, $P$, or target.  Value is a integer, or possibly {\tt box} or {\tt circle}:
   \begin{center}
-    \begin{tabular}{r|ll}
+    \begin{tabular}{r|l}
       $0$ & no boundary \\
       $1$ & control \\
       $-1$ & negated control \\
       {\tt circle}, $2$ & circle \\
-      {\tt box}, $n$ & $n$-sided polygon with a flat bottom & (for $n \ge 3$) (${\tt box}=4$)\\
-      $-n$ & $n$-sided polygon with a vertex on the bottom & (for $n \ge 3$)
+      {\tt box}, $n$ & $n$-sided polygon with a flat bottom/right (${\tt box}=4$) (for $n \ge 3$) \\
+      $-n$ & $n$-sided polygon with a vertex on the bottom/right (for $n \ge 3$)
     \end{tabular}
   \end{center}
   \qpic will draw a regular polygon on a single wire, or stretch the polygon if it
-  spans multiple wires or if a size is specified.
+  spans multiple wires or if a size is specified.  In horizontal mode,
+the shape is drawn either with a side or a vertex on the bottom;
+in vertical mode, the side or vertex is on the right of the circuit.
   If not attached to any particular element, {\tt shape} affects
   any $G$ or $P$ on the line, or (if there is no $G$ or $P$) the target.
 
@@ -796,12 +804,15 @@ precisely, wires that are not currently ``active'' (as determined by {\tt START}
 
 \qpic greedily divides a circuit into \emph{slices}.  Each gate is placed into the earliest possible slice\footnote{Except that {\tt START} is always as late as possible.}, with
 the constraint that different gates applying to the same wire must occur (in order) in different slices.
-Each slice is further subdivided into \emph{subslices} to avoid having gates overlap on the page.  Within each
-subslice, all gates are placed on top of one another (in horizontal mode) or next to each other (in vertical mode).
+Within a slice, \qpic arranges gates as efficiently as possible without overlapping on the page.
 \qpic places padding to separate slices, but subslices are immediately adjacent to one another.
 
-
 Most of the time, \qpic's default behavior will look fine.  The commands in this section can be used to modify this behavior.
+
+\begin{minipage}[b]{2in}
+\lstinputlisting[firstline=11]{ex.noTOUCH.qpic}
+\end{minipage} \hfill \input ex.noTOUCH.tikz
+
 
 \begin{description}
 \item[{\tt [wires] TOUCH}] Pretend that the given wires were ``touched'' by the most recent gate (or the last time any of its targets was used, whichever is later), forcing subsequent gates
@@ -906,8 +917,6 @@ slash.  This is sometimes used to denote the number of qubits represented by a w
 \lstinputlisting[firstline=11]{ex.slash.qpic}
 \end{minipage} \hfill \input ex.slash.tikz
 
-TO DO: Should slash be drawn the other way in vertical mode?  (See figure 4.)
-
 \item[{\tt [targets] LABEL [labels]}] Place the given labels (in math mode) on the wires.
   If no targets are given, the command applies to all wires.
   There should be (1) one label for each wire,
@@ -993,7 +1002,7 @@ Note that there are two types of comments in \qpic:  comments in the diagram, in
 \end{minipage} \hfill \input ex.at.tikz
 
 The region can also be made visible using attributes like {\tt fill}, {\tt style},
-and {tt color}.
+and {\tt color}.
 
 \begin{minipage}[b]{4.5in}
 \lstinputlisting[firstline=11]{ex.atfill.qpic}
@@ -1037,7 +1046,7 @@ specified rgb values (which should be between $0$ and $1$).
 
 \item[{\tt POSTTIKZ text}] Add {\tt text} at the end of the tikzpicture, after the diagram code.
 
-\begin{minipage}[b]{3.5in}
+\begin{minipage}[b]{4in}
 \lstinputlisting[firstline=11]{ex_latex.qpic}
 \end{minipage} \hfill \includegraphics{ex_latex}
 
@@ -1052,7 +1061,8 @@ specified rgb values (which should be between $0$ and $1$).
 
 One of the design principles behind \qpic is that it should solve common problems, but not all
 problems.  If a user would like to include something that can't be drawn using the standard
-commands, the full power of \TikZ can be accessed via {\tt PRETIKZ} and {\tt POSTTIKZ}.  For this
+commands, the full power of \TikZ can be accessed via {\tt PRETIKZ} and {\tt POSTTIKZ} (and via {\tt operator=''...''} in Section~\ref{sec-attributes-other}.
+For this
 reason, \qpic produces commented \TikZ code, to make it easy to find what coordinates should be
 used to draw extra elements.
 
@@ -1098,10 +1108,10 @@ but in {\sc beamer} it is always equal to the background of the current template
 
 \end{description}
 
-\section{\qpic and \LaTeX}
+\section{\qpicpy and \LaTeX}
 \label{sec-tools}
 
-There are three major use-case scenarios for \qpic.
+There are three major use-case scenarios for the \qpicpy program:
 \begin{enumerate}
 \item Create standalone PDF graphics from \qpic files.
 \item Include \qpic diagrams as PDF graphics in a {\LaTeX} file.
@@ -1112,8 +1122,8 @@ There are three major use-case scenarios for \qpic.
 Three files are used in the document compilation process: {\tt qpic.py},\linebreak {\tt tikz2preview}, and {\tt Makefile}.
 
 \begin{itemize}
-\item {\tt qpic.py} is a python script that parses {\tt .qpic} files and produces {\tt .tikz} output.
-\item {\tt tikz2preview} is a python script that wraps {\tt .tikz} files to create stand\-alone {\tt .tex} files.
+\item {\tt qpic.py} is a Python script that parses {\tt .qpic} files and produces {\tt .tikz} output.
+\item {\tt tikz2preview} is a Python script that wraps {\tt .tikz} files to create stand\-alone {\tt .tex} files.
 \item {\tt Makefile} provides the action rules to create the \TikZ code and PDF files for all \qpic files in the directory. Furthermore, the {\tt Makefile} assumes that the main document (as defined in the {\tt Makefile}) depends on all \qpic files in the directory.
 \end{itemize}
 
