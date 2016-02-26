@@ -12,7 +12,7 @@ BGCOLOR blue!10!white
 +c shape=6
 d P $T$ shape=8
 a b G:shape=3 $f$ c d G:shape=-3 $f$
-a b G 5 c +d shape=5
+a b G| 5 c +d shape=5
 
 
 
