@@ -6,8 +6,6 @@
 
 **qpic** converts the ⟨q|pic⟩ description of a quantum circuit into LaTeX as a TikZ graphic.
 
-* Free software: GNU GPLv3 license
-* Documentation: https://qpic.readthedocs.org.
 <p align="center">
     <a href="https://img.shields.io/pypi/v/qpic.svg">
         <img src="https://img.shields.io/pypi/v/qpic.svg"
@@ -23,6 +21,9 @@
     </a>
 </p>
 
+* Free software: GNU GPLv3 license
+* Documentation: https://qpic.readthedocs.org.
+
 <!---
 .. image:: https://img.shields.io/pypi/v/qpic.svg
         :target: https://pypi.python.org/pypi/qpic
@@ -37,7 +38,7 @@
 
 ## Features
 
-The ⟨q|pic⟩ language provides a concise, readable, ASCII format for describing quantum circuits. **qpic** converts ⟨q|pic⟩ files to the scientific paper standard of LaTeX using TikZ graphic commands.
+The ⟨q|pic⟩ language provides a concise, readable, ASCII format for describing quantum circuits. `qpic` converts ⟨q|pic⟩ files to the scientific paper standard of LaTeX using TikZ graphic commands.
 
 * Automatic placement of circuit components.
 * Human readable.
@@ -72,7 +73,7 @@ c Z a:owire
 This diagram derives from the following:
 
 ```
-PREAMBLE \providecommand{\K}[1]{\left|#1\right\rangle}
+PREAMBLE \providecommand{\K}[1]{\left|#1\right\rangle} # Define ket command
 a  W \K{\phi} [x]
 x1 W type=o # Empty wire used for positioning
 x0 W style=dashed # Dividing line
@@ -82,24 +83,22 @@ b1 W \K{0} \K{\phi}
 
 VERTICAL 0
 b1 H    % $\K{\phi}\K{0}(\K{0}{+}\K{1})$
-+b0 b1   % $(\alpha\K{0}{+}\beta\K{1})(\K{00}{+}\K{11})$
++b0 b1  % $(\alpha\K{0}{+}\beta\K{1})(\K{00}{+}\K{11})$
 b0 x1 PERMUTE
-+b0 a %$\scriptstyle\alpha\K{0}(\K{00}{+}\K{11}){+}\beta\K{1}(\K{10}{+}\K{01})$
++b0 a   %$\scriptstyle\alpha\K{0}(\K{00}{+}\K{11}){+}\beta\K{1}(\K{10}{+}\K{01})$
 a H     % $\sum_{x,y}\K{xy}(\alpha\K{y}{+}(-1)^x\beta\K{\bar{y}})$
 a b0 M  % $[xy](\alpha\K{y}{+}(-1)^x\beta\K{\bar{y}})$
 x1 x2 a b0 PERMUTE
-+b1 b0   % $[xy](\alpha\K{0}{+}(-1)^x\beta\K{1})$
-b1 a  % $[xy](\alpha\K{0}{+}\beta\K{1})$
++b1 b0  % $[xy](\alpha\K{0}{+}(-1)^x\beta\K{1})$
+b1 a    % $[xy](\alpha\K{0}{+}\beta\K{1})$
 
 # Colored boxes
-DEFINE qq fill=green style=rounded_corners
-DEFINE cc fill=blue style=rounded_corners
-b0 b1 x1 x2 @ 0 2 qq %% $[qq]$ Quantum entanglement
-a b0 x2 x1 @ 6 6 cc %% \hspace{.5cm}$2[c\rightarrow c]$ Classical channel
+b0 b1 x1 x2 @ 0 2 fill=green style=rounded_corners %% $[qq]$ Quantum entanglement
+a b0 x2 x1 @ 6 6 fill=blue style=rounded_corners %% \hspace{.5cm}$2[c\rightarrow c]$ Classical channel
 ```
 
 For an explanation of `qpic` commands and more examples, see the official documentation.
 
 ## Credits
 
-This package was created with Cookiecutter and the `audreyr/cookiecutter-pypackage` project template.
+This package was created with `Cookiecutter` and the `audreyr/cookiecutter-pypackage` project template.
