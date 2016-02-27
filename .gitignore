@@ -62,6 +62,10 @@ target/
 *.aux
 *.log
 *.out
+tests/data/*.tex
+tests/data/*.tikz
+tests/data/*.pdf
+tests/data/*.png
 
 # Editor files
 *~
