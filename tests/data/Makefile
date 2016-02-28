@@ -57,6 +57,9 @@ all:	IncludeTeX.pdf IncludePDF.pdf
 %.pdf:	%.tex
 	$(PDFLATEX_FOR_PREVIEW) -interaction=nonstopmode $<
 
+%.png:	%.pdf
+	convert -density 800 $< -quality 100 $@
+
 # Special case where base TeX file is created by a program
 IncludePDF.tex: IncludePDF.tex.py $(QPIC) $(TIKZ)
 	$(PYTHON) $< > $@ 
