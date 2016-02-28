@@ -2,7 +2,7 @@
 
 ## Quantum circuits made easy
 
-[![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/qpic.png)](#features)
+[![qpic logo](docs/images/qpic.png)](#features)
 
 ### A compiler from quantum circuits to graphical representations.
 
@@ -70,7 +70,7 @@ a b +c
 
 ### Basic quantum teleportation circuit
 
-[![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/BasicTeleportation.png)](#features)
+[![basic teleport](docs/images/BasicTeleportation.png)](#features)
 
 This classic diagram derives from the following code:
 
@@ -89,7 +89,7 @@ c Z a:owire
 
 ⟨q|pic⟩ has additional features for commenting or highlighting parts of a circuit. 
 
-[![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/QuantumTeleportation.png)](#features)
+[![fancy teleport](docs/images/QuantumTeleportation.png)](#features)
 
 This diagram derives from the following:
 
@@ -123,7 +123,7 @@ For an explanation of `qpic` commands and more examples, see the official docume
 # Using ⟨q|pic⟩
 * [Installation](#installation)
 * [Running ⟨q|pic⟩](#running-qpic) 
-* [Using ⟨q|pic⟩ in LaTeX](#using-qpic-in-latex)
+* [Using ⟨q|pic⟩ with LaTeX](#using-qpic-with-latex)
 
 ## Installation
 
@@ -146,7 +146,7 @@ To try out the basic script without installation:
 
 ## Running ⟨q|pic⟩ 
 
-## Using ⟨q|pic⟩ in LaTeX 
+## Using ⟨q|pic⟩ with LaTeX 
 
 ### Including graphics in LaTeX documents
 
