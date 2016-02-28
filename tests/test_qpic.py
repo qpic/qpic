@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 
 """
-test_tikz2pdf
+test_qpic
 ----------------------------------
 
-Tests for `tikz2pdf` module.
+Tests for `qpic` module.
 """
 
 from __future__ import print_function
@@ -80,10 +80,10 @@ class Test_qpic(unittest.TestCase):
                 with Capturing() as result: # TODO: Remove hack to capture stdout
                     qpic.main(source)
                 with open(target_file) as target:
-                    # compare = zip_longest(result, target)
-                    # for item in compare:
-                        # print(item)
-                    self.assertTrue(all(a == b for a, b in zip_longest(result, target)))
+                    compare = zip_longest(result, target)
+                    for lineno, item in enumerate(compare):
+                        self.assertEqual(item[0], item[1], '%s differs at line %d'%(target_file, lineno))
+                    # self.assertTrue(all(a == b for a, b in zip_longest(result, target)))
 
 
 if __name__ == '__main__':
