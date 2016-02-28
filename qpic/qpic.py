@@ -1450,13 +1450,15 @@ class Box:
         else:
             style_str = ''
         breadth_shift *= 0.5*the_breadth/bratio
+        length_shift *= 0.5*self.get_length()/lratio
         draw_options['thick_side'] = self.thick_side * dir
         draw_options['direction'] = dir
-        (x,y) = get_x_y(pos, 0.5*(target_min + target_max) - breadth_shift)
+        (x,y) = get_x_y(pos - length_shift,
+                        0.5*(target_min + target_max) - breadth_shift)
         draw_xor(x,y,draw_options)
         if self.hyperlink:
-            corner1 = get_x_y(pos-pos_s, target_start - breadth_shift)
-            corner2 = get_x_y(pos+pos_s, target_end - breadth_shift)
+            corner1 = get_x_y(pos-pos_s-length_shift, target_start - breadth_shift)
+            corner2 = get_x_y(pos+pos_s-length_shift, target_end - breadth_shift)
             lower_left = (min(corner1[0], corner2[0]), min(corner1[1], corner2[1]))
             box_width = corner1[0] + corner2[0] - 2*lower_left[0]
             box_height = corner1[1] + corner2[1] - 2*lower_left[1]
