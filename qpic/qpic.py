@@ -537,13 +537,20 @@ def find_vertical_start(horizontal_start, num_sides):
             break
     return vertical_start
 
-def calculate_diameter(in_len, in_bre, in_size, shape, allow_breadth_shift=0):
+def calculate_diameter(in_len, in_bre, in_size, shape, dir, allow_shift=0):
     global orientation
 
     if shape > 2 or shape < -2 or shape in ['<', '>']:
         if shape in ['<', '>']:
             num_sides = 3
-            start = 0 # can ignore forward, backward for this calculation
+            if shape == '>':
+                point_dir = dir
+            else:
+                point_dir = -1 * dir
+            if point_dir == 1:
+                start = 0
+            else:
+                start = -60
         elif shape > 2:
             num_sides = shape
             start=-90+360.0/(2*num_sides)
@@ -555,31 +562,33 @@ def calculate_diameter(in_len, in_bre, in_size, shape, allow_breadth_shift=0):
         angles = []
         for i in range(0, num_sides):
             angles.append(start + (i*360.0/num_sides))
-        width_ratio = max([math.fabs(math.cos(a*2*math.pi/360)) for a in angles])
-        height_ratio = max([math.fabs(math.sin(a*2*math.pi/360)) for a in angles])
+        cosines = [math.cos(a*2*math.pi/360) for a in angles]
+        sines = [math.sin(a*2*math.pi/360) for a in angles]
         if orientation == 'vertical':
-            breadth_ratio = width_ratio
-            length_ratio = height_ratio
+            locations = cosines
+            positions = sines
         else:
-            breadth_ratio = height_ratio
-            length_ratio = width_ratio
-        if allow_breadth_shift:
-            if orientation == 'vertical':
-                locations = [math.cos(a*2*math.pi/360) for a in angles]
-            else:
-                locations = [math.sin(a*2*math.pi/360) for a in angles]
-            min_loc = min(locations)
-            max_loc = max(locations)
-            breadth_shift = (max_loc + min_loc)/2 # subtract this from the location
+            locations = sines
+            positions = cosines
+        #breadth_ratio = max([math.fabs(x) for x in locations])
+        #length_ratio = max([math.fabs(x) for x in positions])
+        breadth_ratio = (max(locations) - min(locations))/2
+        length_ratio = (max(positions) - min(positions))/2
+        if allow_shift:
+            breadth_shift = (max(locations) + min(locations))/2 # subtract this from the location
+            length_shift = (max(positions) + min(positions))/2
             if orientation == 'vertical':
                 breadth_shift *= -1 # because positive location is +x, not -y
-            breadth_ratio = (max_loc - min_loc)/2
+                length_shift *= -1 # because positive location is +x, not -y
+            # breadth_ratio = (max_loc - min_loc)/2
         else:
             breadth_shift = 0
+            length_shift = 0
     else:
         breadth_ratio = 1
         length_ratio = 1
         breadth_shift = 0
+        length_shift = 0
     if in_size:
         diameter = in_size
     else:
@@ -601,7 +610,7 @@ def calculate_diameter(in_len, in_bre, in_size, shape, allow_breadth_shift=0):
         breadth = diameter * breadth_ratio
     else:
         breadth = in_bre
-    return (length, breadth, diameter, breadth_shift)
+    return (length, breadth, diameter, breadth_shift, length_shift)
 
 def write_operator_name(x,y,operator):
     if operator[0] == '"':
@@ -1365,8 +1374,8 @@ class Box:
         if self.type == 'P':
             if 'shape' not in self.options:
                 self.options['shape'] = 2 # circle
-            # calculate size; breadth_shift will not be used
-            (length, breadth, self.size, breadth_shift) = calculate_diameter(length, breadth, size, self.options['shape'])
+            # calculate size; breadth_shift will not be used; assume dir=1
+            (length, breadth, self.size, breadth_shift, length_shift) = calculate_diameter(length, breadth, size, self.options['shape'], 1)
         else: # self.type == 'G'
             if 'shape' not in self.options:
                 self.options['shape'] = 4 # box
@@ -1428,8 +1437,8 @@ class Box:
             the_breadth = max(the_breadth, target_max - target_min + GATE_SIZE)
         target_start = 0.5*(target_min + target_max - the_breadth)
         target_end = 0.5*(target_min + target_max + the_breadth)
-        (lratio, bratio, dratio, breadth_shift) = calculate_diameter(None, None, 1,
-                                                                         draw_options['shape'], allow_breadth_shift=1)
+        (lratio, bratio, dratio, breadth_shift, length_shift) = calculate_diameter(None, None, 1,
+                                                                                   draw_options['shape'], dir, allow_shift=1)
         if the_breadth/bratio == self.get_length()/lratio:
             draw_options['size'] = the_breadth/bratio
         elif orientation == 'vertical':
