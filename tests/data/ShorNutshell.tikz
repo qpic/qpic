@@ -1,0 +1,52 @@
+\newcommand{\ket}[1]{\left| #1 \right\rangle}
+\begin{tikzpicture}[scale=2.100000,x=1pt,y=1pt]
+\filldraw[color=white] (12.500000, 0.000000) rectangle (-27.500000, -72.000000);
+% Drawing wires
+% Line 8: y W \ket{0\cdots{}0} y width=25
+\draw[color=black] (-0.000000,0.000000) -- (-0.000000,-45.000000);
+\draw[color=black] (0.500000,-45.000000) -- (0.500000,-72.000000);
+\draw[color=black] (-0.500000,-45.000000) -- (-0.500000,-72.000000);
+\draw[color=black] (-0.000000,0.000000) node[above] {$\ket{0\cdots{}0}$};
+% Line 7: x W \ket{0\cdots{}0} ?
+\draw[color=black] (-20.000000,0.000000) -- (-20.000000,-72.000000);
+\draw[color=black] (-20.000000,0.000000) node[above] {$\ket{0\cdots{}0}$};
+% Done with wires; drawing gates
+% Line 15: x G $H^{{\otimes}n}$ %Quantum Hadamard Transform% $\displaystyle\sum_{x=0}^{2^n-1}\ket{x}\ket{0}$
+\draw (-27.500000, -9.000000) node[text width=144pt,left,text ragged left] {Quantum Hadamard Transform};
+\draw (12.500000, -9.000000) node[text width=144pt,right] {$\displaystyle\sum_{x=0}^{2^n-1}\ket{x}\ket{0}$};
+\begin{scope}
+\draw[fill=white] (-20.000000, -9.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (-20.000000, -9.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (-20.000000, -9.000000) node {$H^{{\otimes}n}$};
+\end{scope}
+% Line 17: y G $a^x\bmod{}N$ x width=25 % Exponentiation% $\displaystyle\sum_{x=0}^{2^n-1}\ket{x}\ket{a^x\bmod{}N}$
+\draw (-27.500000, -27.000000) node[text width=144pt,left,text ragged left] {Exponentiation};
+\draw (12.500000, -27.000000) node[text width=144pt,right] {$\displaystyle\sum_{x=0}^{2^n-1}\ket{x}\ket{a^x\bmod{}N}$};
+\draw (-20.000000,-27.000000) -- (-0.000000,-27.000000);
+\begin{scope}
+\draw[fill=white] (0.000000, -27.000000) +(-45.000000:17.677670pt and 8.485281pt) -- +(45.000000:17.677670pt and 8.485281pt) -- +(135.000000:17.677670pt and 8.485281pt) -- +(225.000000:17.677670pt and 8.485281pt) -- cycle;
+\clip (0.000000, -27.000000) +(-45.000000:17.677670pt and 8.485281pt) -- +(45.000000:17.677670pt and 8.485281pt) -- +(135.000000:17.677670pt and 8.485281pt) -- +(225.000000:17.677670pt and 8.485281pt) -- cycle;
+\draw (0.000000, -27.000000) node {$a^x\bmod{}N$};
+\end{scope}
+\filldraw (-20.000000, -27.000000) circle(1.500000pt);
+% Line 19: y M % Measure $y{=}a^b$% $\displaystyle\sum_{j=0}^{\left\lfloor\frac{2^n-1}{r}\right\rfloor}\ket{b+jr}[y]$
+\draw (-27.500000, -45.000000) node[text width=144pt,left,text ragged left] {Measure $y{=}a^b$};
+\draw (12.500000, -45.000000) node[text width=144pt,right] {$\displaystyle\sum_{j=0}^{\left\lfloor\frac{2^n-1}{r}\right\rfloor}\ket{b+jr}[y]$};
+\draw[fill=white] (-6.000000, -51.000000) rectangle (6.000000, -39.000000);
+\draw[very thin] (-0.000000, -44.400000) arc (90:150:6.000000pt);
+\draw[very thin] (-0.000000, -44.400000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (-0.000000, -50.400000) -- +(80:10.392305pt);
+% Line 21: x G QFT %Quantum Fourier Transform% $\displaystyle\sum_{x=0}^{2^n-1}\left(\sum_{j=0}^{\left\lfloor\frac{2^n-1}{r}\right\rfloor}\omega^{x*(b+jr)}\right)\ket{x}$
+\draw (-27.500000, -63.000000) node[text width=144pt,left,text ragged left] {Quantum Fourier Transform};
+\draw (12.500000, -63.000000) node[text width=144pt,right] {$\displaystyle\sum_{x=0}^{2^n-1}\left(\sum_{j=0}^{\left\lfloor\frac{2^n-1}{r}\right\rfloor}\omega^{x*(b+jr)}\right)\ket{x}$};
+\begin{scope}
+\draw[fill=white] (-20.000000, -63.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (-20.000000, -63.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (-20.000000, -63.000000) node {QFT};
+\end{scope}
+% Done with gates; drawing ending labels
+\draw[color=black] (-0.000000,-72.000000) node[below] {$y$};
+\draw[color=black] (-20.000000,-72.000000) node[below] {$?$};
+% Done with ending labels; drawing cut lines and comments
+% Done with comments
+\end{tikzpicture}

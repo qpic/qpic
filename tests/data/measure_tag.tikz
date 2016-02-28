@@ -1,0 +1,28 @@
+\begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
+\filldraw[color=white] (0.000000, -7.500000) rectangle (72.000000, 7.500000);
+% Drawing wires
+% Line 1: ee W e
+\draw[color=black] (0.000000,0.000000) -- (12.000000,0.000000);
+\draw[color=black] (12.000000,-0.500000) -- (36.000000,-0.500000);
+\draw[color=black] (12.000000,0.500000) -- (36.000000,0.500000);
+\draw[color=black] (36.000000,-0.500000) -- (60.000000,-0.500000);
+\draw[color=black] (36.000000,0.500000) -- (60.000000,0.500000);
+\draw[color=black] (60.000000,-0.500000) -- (72.000000,-0.500000);
+\draw[color=black] (60.000000,0.500000) -- (72.000000,0.500000);
+\draw[color=black] (0.000000,0.000000) node[left] {$e$};
+% Done with wires; drawing gates
+% Line 4: ee M X
+\draw[fill=white] (2.000000, 0.000000) -- (6.000000,4.000000) -- (18.000000,4.000000) -- (18.000000, -4.000000) -- (6.000000, -4.000000) -- cycle;
+\draw (12.000000, 0.000000) node {X};
+% Line 5: ee M Y
+\draw[fill=white] (26.000000, 0.000000) -- (30.000000,4.000000) -- (42.000000,4.000000) -- (42.000000, -4.000000) -- (30.000000, -4.000000) -- cycle;
+\draw (36.000000, 0.000000) node {Y};
+% Line 6: ee M "\filldraw[color=red] (0,0) ellipse(5pt and 3pt);"
+\draw[fill=white] (50.000000, 0.000000) -- (54.000000,4.000000) -- (66.000000,4.000000) -- (66.000000, -4.000000) -- (54.000000, -4.000000) -- cycle;
+\begin{scope}[shift={(60.000000,0.000000)}]
+\filldraw[color=red] (0,0) ellipse(5pt and 3pt);
+\end{scope}
+% Done with gates; drawing ending labels
+% Done with ending labels; drawing cut lines and comments
+% Done with comments
+\end{tikzpicture}

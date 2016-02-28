@@ -1,0 +1,117 @@
+%! \usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing}
+\providecommand{\ket}[1]{\left|#1\right\rangle}
+\begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
+\filldraw[color=white] (7.500000, 0.000000) rectangle (-37.500000, -183.000000);
+% Drawing wires
+% Line 5: 1 W \ket{0}
+\draw[color=black] (-15.000000,0.000000) -- (-15.000000,-42.000000);
+\draw[color=red] (-15.000000,-42.000000) -- (-15.000000,-123.000000);
+\draw[color=red] (-14.500000,-123.000000) -- (-14.500000,-147.000000);
+\draw[color=red] (-15.500000,-123.000000) -- (-15.500000,-147.000000);
+\draw[color=black] (-15.000000,0.000000) node[above] {$\ket{0}$};
+% Line 4: 0 W \ket{\phi} color=red
+\draw[color=red] (-30.000000,-55.500000) -- (-30.000000,-123.000000);
+\draw[color=red] (-29.500000,-123.000000) -- (-29.500000,-171.000000);
+\draw[color=red] (-30.500000,-123.000000) -- (-30.500000,-171.000000);
+% Line 6: 2 W \ket{0} \ket{\phi}
+\draw[color=black] (-0.000000,0.000000) -- (-0.000000,-42.000000);
+\draw[color=blue] (-0.000000,-42.000000) -- (-0.000000,-183.000000);
+\draw[color=black] (-0.000000,0.000000) node[above] {$\ket{0}$};
+% Done with wires; drawing gates
+% Line 8: 1 H
+\begin{scope}
+\draw[fill=white] (-15.000000, -12.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (-15.000000, -12.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (-15.000000, -12.000000) node {$H$};
+\end{scope}
+% Line 9: +2 1
+\draw (-15.000000,-33.000000) -- (-0.000000,-33.000000);
+\begin{scope}
+\draw[fill=white] (-0.000000, -33.000000) circle(3.000000pt);
+\clip (-0.000000, -33.000000) circle(3.000000pt);
+\draw (-3.000000, -33.000000) -- (3.000000, -33.000000);
+\draw (-0.000000, -36.000000) -- (-0.000000, -30.000000);
+\end{scope}
+\filldraw (-15.000000, -33.000000) circle(1.500000pt);
+% Line 12: TOUCH
+% Line 13: 1:color=red 2:color=blue TOUCH
+% Line 14: 0 START
+\draw[color=red] (-30.000000,-63.000000) node[fill=white,above,minimum width=15.000000pt,minimum height=15.000000pt,inner sep=0pt] {\phantom{$\ket{\phi}$}};
+\draw[color=red] (-30.000000,-63.000000) node[above] {$\ket{\phi}$};
+% Line 18: +1 0 color=red
+\begin{scope}[color=red]
+\draw (-30.000000,-78.000000) -- (-15.000000,-78.000000);
+\begin{scope}
+\draw[fill=white] (-15.000000, -78.000000) circle(3.000000pt);
+\clip (-15.000000, -78.000000) circle(3.000000pt);
+\draw (-18.000000, -78.000000) -- (-12.000000, -78.000000);
+\draw (-15.000000, -81.000000) -- (-15.000000, -75.000000);
+\end{scope}
+\filldraw (-30.000000, -78.000000) circle(1.500000pt);
+\end{scope}
+% Line 19: 0 H color=red
+\begin{scope}[color=red]
+\begin{scope}[color=red]
+\begin{scope}
+\draw[fill=white] (-30.000000, -99.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (-30.000000, -99.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (-30.000000, -99.000000) node {$H$};
+\end{scope}
+\end{scope}
+\end{scope}
+% Line 20: 1 TOUCH
+% Line 21: 0 M color=red
+\begin{scope}[color=red]
+\draw[fill=white] (-36.000000, -129.000000) rectangle (-24.000000, -117.000000);
+\draw[very thin] (-30.000000, -122.400000) arc (90:150:6.000000pt);
+\draw[very thin] (-30.000000, -122.400000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (-30.000000, -128.400000) -- +(80:10.392305pt);
+\end{scope}
+% Line 22: 1 M color=red
+\begin{scope}[color=red]
+\draw[fill=white] (-21.000000, -129.000000) rectangle (-9.000000, -117.000000);
+\draw[very thin] (-15.000000, -122.400000) arc (90:150:6.000000pt);
+\draw[very thin] (-15.000000, -122.400000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (-15.000000, -128.400000) -- +(80:10.392305pt);
+\end{scope}
+% Line 26: 2 X 1:type=o co=blue
+\begin{scope}[color=blue]
+\draw (-15.000000,-146.500000) -- (-0.000000,-146.500000);
+\draw (-15.000000,-147.500000) -- (-0.000000,-147.500000);
+\begin{scope}[color=blue]
+\begin{scope}
+\draw[fill=white] (0.000000, -147.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (0.000000, -147.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (0.000000, -147.000000) node {$X$};
+\end{scope}
+\end{scope}
+\filldraw (-15.000000, -147.000000) circle(1.500000pt);
+\end{scope}
+% Line 27: 2 Z 0:type=o co=blue
+\begin{scope}[color=blue]
+\draw (-30.000000,-170.500000) -- (-0.000000,-170.500000);
+\draw (-30.000000,-171.500000) -- (-0.000000,-171.500000);
+\begin{scope}[color=blue]
+\begin{scope}
+\draw[fill=white] (0.000000, -171.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (0.000000, -171.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (0.000000, -171.000000) node {$Z$};
+\end{scope}
+\end{scope}
+\filldraw (-30.000000, -171.000000) circle(1.500000pt);
+\end{scope}
+% Done with gates; drawing ending labels
+\draw[color=blue] (-0.000000,-183.000000) node[below] {$\ket{\phi}$};
+% Done with ending labels; drawing cut lines and comments
+\draw[dashed] (7.500000, -42.000000) -- (-37.500000, -42.000000);
+% Line 10: @ 2 %% Alice and Bob form an entangled pair of qubits
+\draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick] (7.500000,-3.000000) -- (7.500000,-39.000000);
+\draw (11.500000, -21.000000) node[text width=144pt,right] {Alice and Bob form an entangled pair of qubits};
+% Line 23: @ Astart color=red % Alice entangles and measures
+\draw[decorate,decoration={brace,mirror,amplitude = 4.000000pt},very thick,color=red] (-37.500000,-72.000000) -- (-37.500000,-132.000000);
+\draw (-41.500000, -102.000000) node[text width=144pt,left,text ragged left,color=red] {Alice entangles and measures};
+% Line 28: @ Bstart color=blue %% Bob applies gates based on Alice's measurements
+\draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick,color=blue] (7.500000,-138.000000) -- (7.500000,-180.000000);
+\draw (11.500000, -159.000000) node[text width=144pt,right,color=blue] {Bob applies gates based on Alice's measurements};
+% Done with comments
+\end{tikzpicture}

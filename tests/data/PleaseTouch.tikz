@@ -1,0 +1,138 @@
+%! \definecolor{bg}{rgb}{1,1,1}
+%! \usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing}
+\begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
+\filldraw[color=bg] (0.000000, -7.500000) rectangle (219.000000, 97.500000);
+% Drawing wires
+% Line 3: 1 W
+\draw[color=black] (0.000000,75.000000) -- (219.000000,75.000000);
+% Line 2: 0 W
+\draw[color=black] (0.000000,90.000000) -- (219.000000,90.000000);
+% Line 5: 3 W
+\draw[color=black] (0.000000,45.000000) -- (219.000000,45.000000);
+% Line 4: 2 W
+\draw[color=black] (0.000000,60.000000) -- (147.000000,60.000000);
+\draw[color=black,dashed] (147.000000,60.000000) -- (219.000000,60.000000);
+% Line 24: 5 W
+\draw[color=black] (0.000000,15.000000) -- (219.000000,15.000000);
+% Line 6: 4 W
+\draw[color=black] (0.000000,30.000000) -- (219.000000,30.000000);
+% Line 27: 6 W
+\draw[color=black] (0.000000,0.000000) -- (219.000000,0.000000);
+% Done with wires; drawing gates
+% Line 9: +0 1
+\draw (9.000000,90.000000) -- (9.000000,75.000000);
+\begin{scope}
+\draw[fill=bg] (9.000000, 90.000000) circle(3.000000pt);
+\clip (9.000000, 90.000000) circle(3.000000pt);
+\draw (6.000000, 90.000000) -- (12.000000, 90.000000);
+\draw (9.000000, 87.000000) -- (9.000000, 93.000000);
+\end{scope}
+\filldraw (9.000000, 75.000000) circle(1.500000pt);
+% Line 10: BARRIER
+\draw[decorate,decoration={zigzag,amplitude=1pt,segment length=4}] (18.000000,-7.500000) -- (18.000000,97.500000);
+% Line 11: 2 H
+\begin{scope}
+\draw[fill=bg] (30.000000, 60.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (30.000000, 60.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (30.000000, 60.000000) node {$H$};
+\end{scope}
+% Line 12: LABEL x
+\draw[color=black] (55.500000, 90.000000) node [fill=bg] {$x$};
+\draw[color=black] (55.500000, 75.000000) node [fill=bg] {$x$};
+\draw[color=black] (55.500000, 60.000000) node [fill=bg] {$x$};
+\draw[color=black] (55.500000, 45.000000) node [fill=bg] {$x$};
+\draw[color=black] (55.500000, 30.000000) node [fill=bg] {$x$};
+\draw[color=black] (55.500000, 15.000000) node [fill=bg] {$x$};
+\draw[color=black] (55.500000, 0.000000) node [fill=bg] {$x$};
+% Line 13: >=<
+\draw[fill=bg,color=bg] (75.000000, -6.000000) rectangle (90.000000, 96.000000);
+\draw (82.500000, 45.000000) node {$=$};
+\draw[decorate,decoration={brace,mirror,amplitude = 4.000000pt},very thick] (75.000000,-6.000000) -- (75.000000,96.000000);
+\draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick] (90.000000,-6.000000) -- (90.000000,96.000000);
+% Line 14: 1 2 4 BARRIER color=red
+\begin{scope}[color=red]
+\draw[decorate,decoration={zigzag,amplitude=1pt,segment length=4}] (96.000000,22.500000) -- (96.000000,37.500000);
+\draw[decorate,decoration={zigzag,amplitude=1pt,segment length=4}] (96.000000,52.500000) -- (96.000000,82.500000);
+\end{scope}
+% Line 15: LABEL a b c d e f g
+\draw[color=black] (109.500000, 90.000000) node [fill=bg] {$a$};
+\draw[color=black] (109.500000, 75.000000) node [fill=bg] {$b$};
+\draw[color=black] (109.500000, 60.000000) node [fill=bg] {$c$};
+\draw[color=black] (109.500000, 45.000000) node [fill=bg] {$d$};
+\draw[color=black] (109.500000, 30.000000) node [fill=bg] {$e$};
+\draw[color=black] (109.500000, 15.000000) node [fill=bg] {$f$};
+\draw[color=black] (109.500000, 0.000000) node [fill=bg] {$g$};
+% Line 16: 0 2 3 TOUCH style=decorate,decoration=snake
+\draw[decorate,decoration=snake] (123.000000,37.500000) -- (123.000000,67.500000);
+\draw[decorate,decoration=snake] (123.000000,82.500000) -- (123.000000,97.500000);
+% Line 17: 0 H
+\begin{scope}
+\draw[fill=bg] (135.000000, 90.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (135.000000, 90.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (135.000000, 90.000000) node {$H$};
+\end{scope}
+% Line 18: 1 H
+\begin{scope}
+\draw[fill=bg] (135.000000, 75.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (135.000000, 75.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (135.000000, 75.000000) node {$H$};
+\end{scope}
+% Line 19: 0 1 2:style=dashed 3 4 TOUCH
+% Line 20: 3 H color=red
+\begin{scope}[color=red]
+\begin{scope}[color=red]
+\begin{scope}
+\draw[fill=bg] (159.000000, 45.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (159.000000, 45.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (159.000000, 45.000000) node {$H$};
+\end{scope}
+\end{scope}
+\end{scope}
+% Line 21: 4 TOUCH color=red
+\begin{scope}[color=red]
+\draw (171.000000,22.500000) -- (171.000000,37.500000);
+\end{scope}
+% Line 22: 4 H color=blue
+\begin{scope}[color=blue]
+\begin{scope}[color=blue]
+\begin{scope}
+\draw[fill=bg] (183.000000, 30.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (183.000000, 30.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (183.000000, 30.000000) node {$H$};
+\end{scope}
+\end{scope}
+\end{scope}
+% Line 23: TOUCH color=green style=thick
+\begin{scope}[color=green]
+\draw[thick] (195.000000,-7.500000) -- (195.000000,97.500000);
+\end{scope}
+% Line 25: 5 N
+\begin{scope}
+\draw[fill=bg] (204.000000, 15.000000) circle(3.000000pt);
+\clip (204.000000, 15.000000) circle(3.000000pt);
+\draw (201.000000, 15.000000) -- (207.000000, 15.000000);
+\draw (204.000000, 12.000000) -- (204.000000, 18.000000);
+\end{scope}
+% Line 26: PHANTOM
+% Line 28: +6
+\begin{scope}
+\draw[fill=bg] (210.000000, 0.000000) circle(3.000000pt);
+\clip (210.000000, 0.000000) circle(3.000000pt);
+\draw (207.000000, 0.000000) -- (213.000000, 0.000000);
+\draw (210.000000, -3.000000) -- (210.000000, 3.000000);
+\end{scope}
+% Line 29: 0 1 2 4 5 6 BARRIER style=thick
+\draw[decorate,decoration={zigzag,amplitude=1pt,segment length=4},thick] (219.000000,-7.500000) -- (219.000000,37.500000);
+\draw[decorate,decoration={zigzag,amplitude=1pt,segment length=4},thick] (219.000000,52.500000) -- (219.000000,97.500000);
+% Done with gates; drawing ending labels
+% Done with ending labels; drawing cut lines and comments
+\draw[dotted] (18.000000, -7.500000) -- (18.000000, 97.500000);
+\draw[dotted] (42.000000, -7.500000) -- (42.000000, 97.500000);
+\draw[dotted] (69.000000, -7.500000) -- (69.000000, 97.500000);
+\draw[dotted] (96.000000, -7.500000) -- (96.000000, 97.500000);
+\draw[dotted] (123.000000, -7.500000) -- (123.000000, 97.500000);
+\draw[dotted] (147.000000, -7.500000) -- (147.000000, 97.500000);
+\draw[dotted] (171.000000, -7.500000) -- (171.000000, 97.500000);
+\draw[dotted] (195.000000, -7.500000) -- (195.000000, 97.500000);
+% Done with comments
+\end{tikzpicture}

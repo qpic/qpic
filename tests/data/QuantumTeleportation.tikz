@@ -1,0 +1,111 @@
+\providecommand{\K}[1]{\left|#1\right\rangle}
+\begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
+\filldraw[color=white] (7.500000, 0.000000) rectangle (-82.500000, -198.000000);
+% Drawing wires
+% Line 2: a  W \K{\phi} [x]
+\draw[color=black] (-75.000000,0.000000) -- (-75.000000,-123.000000);
+\draw[color=black,rounded corners=4.000000pt] (-74.500000,-123.000000) -- (-74.500000,-141.000000) -- (-52.000000,-148.500000);
+\draw[color=black,rounded corners=4.000000pt] (-75.500000,-123.000000) -- (-75.500000,-141.000000) -- (-53.000000,-148.500000);
+\draw[color=black,rounded corners=4.000000pt] (-52.000000,-148.500000) -- (-29.500000,-156.000000) -- (-29.500000,-198.000000);
+\draw[color=black,rounded corners=4.000000pt] (-53.000000,-148.500000) -- (-30.500000,-156.000000) -- (-30.500000,-198.000000);
+\draw[color=black] (-75.000000,0.000000) node[above] {$\K{\phi}$};
+% Line 6: b0 W \K{0} [y]
+\draw[color=black,rounded corners=4.000000pt] (-15.000000,0.000000) -- (-15.000000,-48.000000) -- (-37.500000,-55.500000);
+\draw[color=black,rounded corners=4.000000pt] (-37.500000,-55.500000) -- (-60.000000,-63.000000) -- (-60.000000,-123.000000);
+\draw[color=black,rounded corners=4.000000pt] (-59.500000,-123.000000) -- (-59.500000,-141.000000) -- (-37.000000,-148.500000);
+\draw[color=black,rounded corners=4.000000pt] (-60.500000,-123.000000) -- (-60.500000,-141.000000) -- (-38.000000,-148.500000);
+\draw[color=black,rounded corners=4.000000pt] (-37.000000,-148.500000) -- (-14.500000,-156.000000) -- (-14.500000,-198.000000);
+\draw[color=black,rounded corners=4.000000pt] (-38.000000,-148.500000) -- (-15.500000,-156.000000) -- (-15.500000,-198.000000);
+\draw[color=black] (-15.000000,0.000000) node[above] {$\K{0}$};
+% Line 7: b1 W \K{0} \K{\phi}
+\draw[color=black] (-0.000000,0.000000) -- (-0.000000,-198.000000);
+\draw[color=black] (-0.000000,0.000000) node[above] {$\K{0}$};
+% Line 5: x2 W type=o # Empty wire used for positioning
+% Line 4: x0 W style=dashed # Dividing line
+\draw[color=black,dashed] (-45.000000,0.000000) -- (-45.000000,-48.000000);
+\draw[color=black,dashed] (-45.000000,-48.000000) -- (-45.000000,-55.500000);
+\draw[color=black,dashed] (-45.000000,-55.500000) -- (-45.000000,-63.000000);
+\draw[color=black,dashed] (-45.000000,-63.000000) -- (-45.000000,-141.000000);
+\draw[color=black,dashed] (-45.000000,-141.000000) -- (-45.000000,-148.500000);
+\draw[color=black,dashed] (-45.000000,-148.500000) -- (-45.000000,-156.000000);
+\draw[color=black,dashed] (-45.000000,-156.000000) -- (-45.000000,-198.000000);
+% Line 3: x1 W type=o # Empty wire used for positioning
+% Done with wires; drawing gates
+% Line 10: b1 H    % $\K{\phi}\K{0}(\K{0}{+}\K{1})$
+\draw (-82.500000, -12.000000) node[text width=144pt,left,text ragged left] {$\K{\phi}\K{0}(\K{0}{+}\K{1})$};
+\begin{scope}
+\draw[fill=white] (0.000000, -12.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (0.000000, -12.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (0.000000, -12.000000) node {$H$};
+\end{scope}
+% Line 11: +b0 b1   % $(\alpha\K{0}{+}\beta\K{1})(\K{00}{+}\K{11})$
+\draw (-82.500000, -33.000000) node[text width=144pt,left,text ragged left] {$(\alpha\K{0}{+}\beta\K{1})(\K{00}{+}\K{11})$};
+\draw (-15.000000,-33.000000) -- (-0.000000,-33.000000);
+\begin{scope}
+\draw[fill=white] (-15.000000, -33.000000) circle(3.000000pt);
+\clip (-15.000000, -33.000000) circle(3.000000pt);
+\draw (-18.000000, -33.000000) -- (-12.000000, -33.000000);
+\draw (-15.000000, -36.000000) -- (-15.000000, -30.000000);
+\end{scope}
+\filldraw (-0.000000, -33.000000) circle(1.500000pt);
+% Line 12: b0 x1 PERMUTE
+% Line 13: +b0 a %$\scriptstyle\alpha\K{0}(\K{00}{+}\K{11}){+}\beta\K{1}(\K{10}{+}\K{01})$
+\draw (-82.500000, -78.000000) node[text width=144pt,left,text ragged left] {$\scriptstyle\alpha\K{0}(\K{00}{+}\K{11}){+}\beta\K{1}(\K{10}{+}\K{01})$};
+\draw (-75.000000,-78.000000) -- (-60.000000,-78.000000);
+\begin{scope}
+\draw[fill=white] (-60.000000, -78.000000) circle(3.000000pt);
+\clip (-60.000000, -78.000000) circle(3.000000pt);
+\draw (-63.000000, -78.000000) -- (-57.000000, -78.000000);
+\draw (-60.000000, -81.000000) -- (-60.000000, -75.000000);
+\end{scope}
+\filldraw (-75.000000, -78.000000) circle(1.500000pt);
+% Line 14: a H     % $\sum_{x,y}\K{xy}(\alpha\K{y}{+}(-1)^x\beta\K{\bar{y}})$
+\draw (-82.500000, -99.000000) node[text width=144pt,left,text ragged left] {$\sum_{x,y}\K{xy}(\alpha\K{y}{+}(-1)^x\beta\K{\bar{y}})$};
+\begin{scope}
+\draw[fill=white] (-75.000000, -99.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (-75.000000, -99.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (-75.000000, -99.000000) node {$H$};
+\end{scope}
+% Line 15: a b0 M  % $[xy](\alpha\K{y}{+}(-1)^x\beta\K{\bar{y}})$
+\draw (-82.500000, -123.000000) node[text width=144pt,left,text ragged left] {$[xy](\alpha\K{y}{+}(-1)^x\beta\K{\bar{y}})$};
+\draw[fill=white] (-81.000000, -129.000000) rectangle (-69.000000, -117.000000);
+\draw[very thin] (-75.000000, -122.400000) arc (90:150:6.000000pt);
+\draw[very thin] (-75.000000, -122.400000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (-75.000000, -128.400000) -- +(80:10.392305pt);
+\draw[fill=white] (-66.000000, -129.000000) rectangle (-54.000000, -117.000000);
+\draw[very thin] (-60.000000, -122.400000) arc (90:150:6.000000pt);
+\draw[very thin] (-60.000000, -122.400000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (-60.000000, -128.400000) -- +(80:10.392305pt);
+% Line 16: x1 x2 a b0 PERMUTE
+% Line 17: +b1 b0   % $[xy](\alpha\K{0}{+}(-1)^x\beta\K{1})$
+\draw (-82.500000, -171.000000) node[text width=144pt,left,text ragged left] {$[xy](\alpha\K{0}{+}(-1)^x\beta\K{1})$};
+\draw (-15.000000,-170.500000) -- (-0.000000,-170.500000);
+\draw (-15.000000,-171.500000) -- (-0.000000,-171.500000);
+\begin{scope}
+\draw[fill=white] (-0.000000, -171.000000) circle(3.000000pt);
+\clip (-0.000000, -171.000000) circle(3.000000pt);
+\draw (-3.000000, -171.000000) -- (3.000000, -171.000000);
+\draw (-0.000000, -174.000000) -- (-0.000000, -168.000000);
+\end{scope}
+\filldraw (-15.000000, -171.000000) circle(1.500000pt);
+% Line 18: b1 a  % $[xy](\alpha\K{0}{+}\beta\K{1})$
+\draw (-82.500000, -189.000000) node[text width=144pt,left,text ragged left] {$[xy](\alpha\K{0}{+}\beta\K{1})$};
+\draw (-30.000000,-188.500000) -- (-0.000000,-188.500000);
+\draw (-30.000000,-189.500000) -- (-0.000000,-189.500000);
+\filldraw (-0.000000, -189.000000) circle(1.500000pt);
+\filldraw (-30.000000, -189.000000) circle(1.500000pt);
+% Done with gates; drawing ending labels
+\draw[color=black] (-30.000000,-198.000000) node[below] {$[x]$};
+\draw[color=black] (-15.000000,-198.000000) node[below] {$[y]$};
+\draw[color=black] (-0.000000,-198.000000) node[below] {$\K{\phi}$};
+% Done with ending labels; drawing cut lines and comments
+% Line 23: b0 b1 x1 x2 @ 0 2 qq %% $[qq]$ Quantum entanglement
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=green,rounded corners] (-67.500000,-3.000000) rectangle (7.500000,-66.000000);
+\draw (7.500000, -34.500000) node[text width=144pt,right] {$[qq]$ Quantum entanglement};
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=green,rounded corners] (-67.500000,-3.000000) rectangle (7.500000,-66.000000);
+% Line 24: a b0 x2 x1 @ 6 6 cc %% \hspace{.5cm}$2[c\rightarrow c]$ Classical channel
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=blue,rounded corners] (-82.500000,-138.000000) rectangle (-7.500000,-159.000000);
+\draw (-7.500000, -148.500000) node[text width=144pt,right] {\hspace{.5cm}$2[c\rightarrow c]$ Classical channel};
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=blue,rounded corners] (-82.500000,-138.000000) rectangle (-7.500000,-159.000000);
+% Done with comments
+\end{tikzpicture}

@@ -1,0 +1,95 @@
+\begin{tikzpicture}[scale=1.500000,x=1pt,y=1pt]
+\filldraw[color=white] (0.000000, -7.500000) rectangle (78.000000, 67.500000);
+% Drawing wires
+% Line 3: a W a
+\draw[color=black] (0.000000,60.000000) -- (12.000000,60.000000);
+\draw[color=black] (12.000000,59.500000) -- (78.000000,59.500000);
+\draw[color=black] (12.000000,60.500000) -- (78.000000,60.500000);
+\draw[color=black] (0.000000,60.000000) node[left] {$a$};
+% Line 7: ee W e
+\draw[color=black] (0.000000,0.000000) -- (12.000000,0.000000);
+\draw[color=black] (12.000000,-0.500000) -- (78.000000,-0.500000);
+\draw[color=black] (12.000000,0.500000) -- (78.000000,0.500000);
+\draw[color=black] (0.000000,0.000000) node[left] {$e$};
+% Line 5: c W c
+\draw[color=black] (0.000000,30.000000) -- (78.000000,30.000000);
+\draw[color=black] (0.000000,30.000000) node[left] {$c$};
+% Line 4: b W b
+\draw[color=black] (0.000000,45.000000) -- (78.000000,45.000000);
+\draw[color=black] (0.000000,45.000000) node[left] {$b$};
+% Line 6: d W d
+\draw[color=black] (0.000000,15.000000) -- (42.000000,15.000000);
+\draw[color=black] (42.000000,14.500000) -- (78.000000,14.500000);
+\draw[color=black] (42.000000,15.500000) -- (78.000000,15.500000);
+\draw[color=black] (0.000000,15.000000) node[left] {$d$};
+% Done with wires; drawing gates
+% Line 9: a M breadth=10
+\draw[fill=white] (6.000000, 55.000000) rectangle (18.000000, 65.000000);
+\draw[very thin] (12.000000, 60.500000) arc (90:150:5.000000pt);
+\draw[very thin] (12.000000, 60.500000) arc (90:30:5.000000pt);
+\draw[->,>=stealth] (12.000000, 55.500000) -- +(80:8.660254pt);
+% Line 10: b c
+\draw (12.000000,45.000000) -- (12.000000,30.000000);
+\filldraw (12.000000, 45.000000) circle(1.500000pt);
+\filldraw (12.000000, 30.000000) circle(1.500000pt);
+% Line 17: ee M X
+\draw[fill=white] (6.000000, -4.000000) -- (14.000000,-4.000000) arc (-90:90:4.000000pt) -- (6.000000,4.000000) -- cycle;
+\draw (12.000000, 0.000000) node {X};
+% Line 12: +b d
+\begin{scope}[color=blue]
+\draw (33.000000,45.000000) -- (33.000000,15.000000);
+\begin{scope}
+\draw[fill=white] (33.000000, 45.000000) circle(3.000000pt);
+\clip (33.000000, 45.000000) circle(3.000000pt);
+\draw (30.000000, 45.000000) -- (36.000000, 45.000000);
+\draw (33.000000, 42.000000) -- (33.000000, 48.000000);
+\end{scope}
+\filldraw (33.000000, 15.000000) circle(1.500000pt);
+\end{scope}
+% Line 13: +c a b d:type=c
+\begin{scope}[color=blue]
+\draw (41.500000,60.000000) -- (41.500000,45.000000);
+\draw (42.500000,60.000000) -- (42.500000,45.000000);
+\draw (42.000000,45.000000) -- (42.000000,30.000000);
+\draw (41.500000,30.000000) -- (41.500000,15.000000);
+\draw (42.500000,30.000000) -- (42.500000,15.000000);
+\begin{scope}
+\draw[fill=white] (42.000000, 30.000000) circle(3.000000pt);
+\clip (42.000000, 30.000000) circle(3.000000pt);
+\draw (39.000000, 30.000000) -- (45.000000, 30.000000);
+\draw (42.000000, 27.000000) -- (42.000000, 33.000000);
+\end{scope}
+\filldraw (42.000000, 60.000000) circle(1.500000pt);
+\filldraw (42.000000, 45.000000) circle(1.500000pt);
+\filldraw (42.000000, 15.000000) circle(1.500000pt);
+\draw[fill=white] (36.000000, 9.000000) rectangle (48.000000, 21.000000);
+\draw[very thin] (42.000000, 15.600000) arc (90:150:6.000000pt);
+\draw[very thin] (42.000000, 15.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (42.000000, 9.600000) -- +(80:10.392305pt);
+\end{scope}
+% Line 14: +c d
+\begin{scope}[color=blue]
+\draw (50.500000,30.000000) -- (50.500000,15.000000);
+\draw (51.500000,30.000000) -- (51.500000,15.000000);
+\begin{scope}
+\draw[fill=white] (51.000000, 30.000000) circle(3.000000pt);
+\clip (51.000000, 30.000000) circle(3.000000pt);
+\draw (48.000000, 30.000000) -- (54.000000, 30.000000);
+\draw (51.000000, 27.000000) -- (51.000000, 33.000000);
+\end{scope}
+\filldraw (51.000000, 15.000000) circle(1.500000pt);
+\end{scope}
+% Line 16: +a d
+\draw (68.500000,60.000000) -- (68.500000,15.000000);
+\draw (69.500000,60.000000) -- (69.500000,15.000000);
+\begin{scope}
+\draw[fill=white] (69.000000, 60.000000) circle(3.000000pt);
+\clip (69.000000, 60.000000) circle(3.000000pt);
+\draw (66.000000, 60.000000) -- (72.000000, 60.000000);
+\draw (69.000000, 57.000000) -- (69.000000, 63.000000);
+\end{scope}
+\filldraw (69.000000, 15.000000) circle(1.500000pt);
+% Done with gates; drawing ending labels
+% Done with ending labels; drawing cut lines and comments
+% Done with comments
+\end{tikzpicture}

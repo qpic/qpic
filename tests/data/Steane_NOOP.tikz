@@ -1,0 +1,1327 @@
+%! \usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing}
+\providecommand{\ket}[1]{{\left\vert{#1}\right\rangle}}
+\begin{tikzpicture}[scale=0.800000,x=1pt,y=1pt]
+\filldraw[color=white] (0.000000, -7.500000) rectangle (684.000000, 757.500000);
+% Drawing wires
+% Line 38: a20 W \ket{0}
+\draw[color=black] (144.000000,255.000000) -- (588.000000,255.000000);
+\draw[color=black] (588.000000,254.500000) -- (598.500000,254.500000);
+\draw[color=black] (588.000000,255.500000) -- (598.500000,255.500000);
+% Line 39: a21 W \ket{0}
+\draw[color=black] (144.000000,240.000000) -- (588.000000,240.000000);
+\draw[color=black] (588.000000,239.500000) -- (598.500000,239.500000);
+\draw[color=black] (588.000000,240.500000) -- (598.500000,240.500000);
+% Line 40: a22 W \ket{0}
+\draw[color=black] (144.000000,225.000000) -- (588.000000,225.000000);
+\draw[color=black] (588.000000,224.500000) -- (598.500000,224.500000);
+\draw[color=black] (588.000000,225.500000) -- (598.500000,225.500000);
+% Line 41: a23 W \ket{0}
+\draw[color=black] (144.000000,210.000000) -- (588.000000,210.000000);
+\draw[color=black] (588.000000,209.500000) -- (598.500000,209.500000);
+\draw[color=black] (588.000000,210.500000) -- (598.500000,210.500000);
+% Line 42: a24 W \ket{+}
+\draw[color=black] (144.000000,195.000000) -- (588.000000,195.000000);
+\draw[color=black] (588.000000,194.500000) -- (598.500000,194.500000);
+\draw[color=black] (588.000000,195.500000) -- (598.500000,195.500000);
+% Line 43: a25 W \ket{+}
+\draw[color=black] (144.000000,180.000000) -- (588.000000,180.000000);
+\draw[color=black] (588.000000,179.500000) -- (598.500000,179.500000);
+\draw[color=black] (588.000000,180.500000) -- (598.500000,180.500000);
+% Line 44: a26 W \ket{+}
+\draw[color=black] (144.000000,165.000000) -- (588.000000,165.000000);
+\draw[color=black] (588.000000,164.500000) -- (598.500000,164.500000);
+\draw[color=black] (588.000000,165.500000) -- (598.500000,165.500000);
+% Line 51: a32 W \ket{0}
+\draw[color=black] (174.000000,60.000000) -- (663.000000,60.000000);
+\draw[color=black] (663.000000,59.500000) -- (673.500000,59.500000);
+\draw[color=black] (663.000000,60.500000) -- (673.500000,60.500000);
+% Line 18: a02 W \ket{0}
+\draw[color=black] (85.500000,555.000000) -- (438.000000,555.000000);
+\draw[color=black] (438.000000,554.500000) -- (448.500000,554.500000);
+\draw[color=black] (438.000000,555.500000) -- (448.500000,555.500000);
+% Line 19: a03 W \ket{0}
+\draw[color=black] (85.500000,540.000000) -- (438.000000,540.000000);
+\draw[color=black] (438.000000,539.500000) -- (448.500000,539.500000);
+\draw[color=black] (438.000000,540.500000) -- (448.500000,540.500000);
+% Line 16: a00 W \ket{0}
+\draw[color=black] (85.500000,585.000000) -- (438.000000,585.000000);
+\draw[color=black] (438.000000,584.500000) -- (448.500000,584.500000);
+\draw[color=black] (438.000000,585.500000) -- (448.500000,585.500000);
+% Line 17: a01 W \ket{0}
+\draw[color=black] (85.500000,570.000000) -- (438.000000,570.000000);
+\draw[color=black] (438.000000,569.500000) -- (448.500000,569.500000);
+\draw[color=black] (438.000000,570.500000) -- (448.500000,570.500000);
+% Line 22: a06 W \ket{+}
+\draw[color=black] (85.500000,495.000000) -- (438.000000,495.000000);
+\draw[color=black] (438.000000,494.500000) -- (448.500000,494.500000);
+\draw[color=black] (438.000000,495.500000) -- (448.500000,495.500000);
+% Line 20: a04 W \ket{+}
+\draw[color=black] (85.500000,525.000000) -- (438.000000,525.000000);
+\draw[color=black] (438.000000,524.500000) -- (448.500000,524.500000);
+\draw[color=black] (438.000000,525.500000) -- (448.500000,525.500000);
+% Line 21: a05 W \ket{+}
+\draw[color=black] (85.500000,510.000000) -- (438.000000,510.000000);
+\draw[color=black] (438.000000,509.500000) -- (448.500000,509.500000);
+\draw[color=black] (438.000000,510.500000) -- (448.500000,510.500000);
+% Line 49: a30 W \ket{0}
+\draw[color=black] (174.000000,90.000000) -- (663.000000,90.000000);
+\draw[color=black] (663.000000,89.500000) -- (673.500000,89.500000);
+\draw[color=black] (663.000000,90.500000) -- (673.500000,90.500000);
+% Line 55: a36 W \ket{+}
+\draw[color=black] (174.000000,0.000000) -- (663.000000,0.000000);
+\draw[color=black] (663.000000,-0.500000) -- (673.500000,-0.500000);
+\draw[color=black] (663.000000,0.500000) -- (673.500000,0.500000);
+% Line 52: a33 W \ket{0}
+\draw[color=black] (174.000000,45.000000) -- (663.000000,45.000000);
+\draw[color=black] (663.000000,44.500000) -- (673.500000,44.500000);
+\draw[color=black] (663.000000,45.500000) -- (673.500000,45.500000);
+% Line 54: a35 W \ket{+}
+\draw[color=black] (174.000000,15.000000) -- (663.000000,15.000000);
+\draw[color=black] (663.000000,14.500000) -- (673.500000,14.500000);
+\draw[color=black] (663.000000,15.500000) -- (673.500000,15.500000);
+% Line 53: a34 W \ket{+}
+\draw[color=black] (174.000000,30.000000) -- (663.000000,30.000000);
+\draw[color=black] (663.000000,29.500000) -- (673.500000,29.500000);
+\draw[color=black] (663.000000,30.500000) -- (673.500000,30.500000);
+% Line 15: x03 W \ket{+} 0
+\draw[color=black] (174.000000,600.000000) -- (345.000000,600.000000);
+\draw[color=black] (345.000000,599.500000) -- (358.500000,599.500000);
+\draw[color=black] (345.000000,600.500000) -- (358.500000,600.500000);
+% Line 14: x02 W \ket{+} 0
+\draw[color=black] (174.000000,615.000000) -- (345.000000,615.000000);
+\draw[color=black] (345.000000,614.500000) -- (358.500000,614.500000);
+\draw[color=black] (345.000000,615.500000) -- (358.500000,615.500000);
+% Line 13: x01 W \ket{+} 0
+\draw[color=black] (174.000000,630.000000) -- (345.000000,630.000000);
+\draw[color=black] (345.000000,629.500000) -- (358.500000,629.500000);
+\draw[color=black] (345.000000,630.500000) -- (358.500000,630.500000);
+% Line 12: x00 W \ket{+} 0
+\draw[color=black] (174.000000,645.000000) -- (345.000000,645.000000);
+\draw[color=black] (345.000000,644.500000) -- (358.500000,644.500000);
+\draw[color=black] (345.000000,645.500000) -- (358.500000,645.500000);
+% Line 6: data1 W
+\draw[color=black] (85.500000,735.000000) -- (684.000000,735.000000);
+% Line 5: data0 W
+\draw[color=black] (85.500000,750.000000) -- (684.000000,750.000000);
+% Line 8: data3 W
+\draw[color=black] (85.500000,705.000000) -- (684.000000,705.000000);
+% Line 7: data2 W
+\draw[color=black] (85.500000,720.000000) -- (684.000000,720.000000);
+% Line 32: a15 W \ket{+}
+\draw[color=black] (114.000000,345.000000) -- (513.000000,345.000000);
+\draw[color=black] (513.000000,344.500000) -- (523.500000,344.500000);
+\draw[color=black] (513.000000,345.500000) -- (523.500000,345.500000);
+% Line 31: a14 W \ket{+}
+\draw[color=black] (114.000000,360.000000) -- (513.000000,360.000000);
+\draw[color=black] (513.000000,359.500000) -- (523.500000,359.500000);
+\draw[color=black] (513.000000,360.500000) -- (523.500000,360.500000);
+% Line 50: a31 W \ket{0}
+\draw[color=black] (174.000000,75.000000) -- (663.000000,75.000000);
+\draw[color=black] (663.000000,74.500000) -- (673.500000,74.500000);
+\draw[color=black] (663.000000,75.500000) -- (673.500000,75.500000);
+% Line 33: a16 W \ket{+}
+\draw[color=black] (114.000000,330.000000) -- (513.000000,330.000000);
+\draw[color=black] (513.000000,329.500000) -- (523.500000,329.500000);
+\draw[color=black] (513.000000,330.500000) -- (523.500000,330.500000);
+% Line 28: a11 W \ket{0}
+\draw[color=black] (114.000000,405.000000) -- (513.000000,405.000000);
+\draw[color=black] (513.000000,404.500000) -- (523.500000,404.500000);
+\draw[color=black] (513.000000,405.500000) -- (523.500000,405.500000);
+% Line 27: a10 W \ket{0}
+\draw[color=black] (114.000000,420.000000) -- (513.000000,420.000000);
+\draw[color=black] (513.000000,419.500000) -- (523.500000,419.500000);
+\draw[color=black] (513.000000,420.500000) -- (523.500000,420.500000);
+% Line 30: a13 W \ket{0}
+\draw[color=black] (114.000000,375.000000) -- (513.000000,375.000000);
+\draw[color=black] (513.000000,374.500000) -- (523.500000,374.500000);
+\draw[color=black] (513.000000,375.500000) -- (523.500000,375.500000);
+% Line 29: a12 W \ket{0}
+\draw[color=black] (114.000000,390.000000) -- (513.000000,390.000000);
+\draw[color=black] (513.000000,389.500000) -- (523.500000,389.500000);
+\draw[color=black] (513.000000,390.500000) -- (523.500000,390.500000);
+% Line 36: x22 W \ket{+} 0
+\draw[color=black] (243.000000,285.000000) -- (459.000000,285.000000);
+\draw[color=black] (459.000000,284.500000) -- (469.500000,284.500000);
+\draw[color=black] (459.000000,285.500000) -- (469.500000,285.500000);
+% Line 10: data5 W
+\draw[color=black] (85.500000,675.000000) -- (684.000000,675.000000);
+% Line 46: x31 W \ket{+} 0
+\draw[color=black] (279.000000,135.000000) -- (534.000000,135.000000);
+\draw[color=black] (534.000000,134.500000) -- (544.500000,134.500000);
+\draw[color=black] (534.000000,135.500000) -- (544.500000,135.500000);
+% Line 9: data4 W
+\draw[color=black] (85.500000,690.000000) -- (684.000000,690.000000);
+% Line 47: x32 W \ket{+} 0
+\draw[color=black] (279.000000,120.000000) -- (534.000000,120.000000);
+\draw[color=black] (534.000000,119.500000) -- (544.500000,119.500000);
+\draw[color=black] (534.000000,120.500000) -- (544.500000,120.500000);
+% Line 48: x33 W \ket{+} 0
+\draw[color=black] (279.000000,105.000000) -- (534.000000,105.000000);
+\draw[color=black] (534.000000,104.500000) -- (544.500000,104.500000);
+\draw[color=black] (534.000000,105.500000) -- (544.500000,105.500000);
+% Line 45: x30 W \ket{+} 0
+\draw[color=black] (279.000000,150.000000) -- (534.000000,150.000000);
+\draw[color=black] (534.000000,149.500000) -- (544.500000,149.500000);
+\draw[color=black] (534.000000,150.500000) -- (544.500000,150.500000);
+% Line 11: data6 W
+\draw[color=black] (85.500000,660.000000) -- (684.000000,660.000000);
+% Line 35: x21 W \ket{+} 0
+\draw[color=black] (243.000000,300.000000) -- (459.000000,300.000000);
+\draw[color=black] (459.000000,299.500000) -- (469.500000,299.500000);
+\draw[color=black] (459.000000,300.500000) -- (469.500000,300.500000);
+% Line 34: x20 W \ket{+} 0
+\draw[color=black] (243.000000,315.000000) -- (459.000000,315.000000);
+\draw[color=black] (459.000000,314.500000) -- (469.500000,314.500000);
+\draw[color=black] (459.000000,315.500000) -- (469.500000,315.500000);
+% Line 37: x23 W \ket{+} 0
+\draw[color=black] (243.000000,270.000000) -- (459.000000,270.000000);
+\draw[color=black] (459.000000,269.500000) -- (469.500000,269.500000);
+\draw[color=black] (459.000000,270.500000) -- (469.500000,270.500000);
+% Line 23: x10 W \ket{+} 0
+\draw[color=black] (207.000000,480.000000) -- (394.500000,480.000000);
+\draw[color=black] (394.500000,479.500000) -- (405.000000,479.500000);
+\draw[color=black] (394.500000,480.500000) -- (405.000000,480.500000);
+% Line 24: x11 W \ket{+} 0
+\draw[color=black] (207.000000,465.000000) -- (394.500000,465.000000);
+\draw[color=black] (394.500000,464.500000) -- (405.000000,464.500000);
+\draw[color=black] (394.500000,465.500000) -- (405.000000,465.500000);
+% Line 25: x12 W \ket{+} 0
+\draw[color=black] (207.000000,450.000000) -- (394.500000,450.000000);
+\draw[color=black] (394.500000,449.500000) -- (405.000000,449.500000);
+\draw[color=black] (394.500000,450.500000) -- (405.000000,450.500000);
+% Line 26: x13 W \ket{+} 0
+\draw[color=black] (207.000000,435.000000) -- (394.500000,435.000000);
+\draw[color=black] (394.500000,434.500000) -- (405.000000,434.500000);
+\draw[color=black] (394.500000,435.500000) -- (405.000000,435.500000);
+% Done with wires; drawing gates
+% Line 60: data0 data6 =< color=blue \emph{Data} length=60
+\begin{scope}[color=blue]
+\draw[fill=white,color=white] (6.000000, 654.000000) rectangle (66.000000, 756.000000);
+\draw (36.000000, 705.000000) node {\emph{Data}};
+\draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick] (66.000000,654.000000) -- (66.000000,756.000000);
+\end{scope}
+% Line 61: a00 a01 a02 a03 a04 a05 a06 =< color=blue length=60 \emph{\begin{tabular}{c}Ancilla \\ \#1\end{tabular}}
+\begin{scope}[color=blue]
+\draw[fill=white,color=white] (6.000000, 489.000000) rectangle (66.000000, 591.000000);
+\draw (36.000000, 540.000000) node {\emph{\begin{tabular}{c}Ancilla \\ \#1\end{tabular}}};
+\draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick] (66.000000,489.000000) -- (66.000000,591.000000);
+\end{scope}
+% Line 62: a10 a11 a12 a13 a14 a15 a16 =< color=blue length=60 \emph{\begin{tabular}{c}Ancilla \\ \#2\end{tabular}}
+\begin{scope}[color=blue]
+\draw[fill=white,color=white] (6.000000, 324.000000) rectangle (66.000000, 426.000000);
+\draw (36.000000, 375.000000) node {\emph{\begin{tabular}{c}Ancilla \\ \#2\end{tabular}}};
+\draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick] (66.000000,324.000000) -- (66.000000,426.000000);
+\end{scope}
+% Line 63: a20 a21 a22 a23 a24 a25 a26 =< color=blue length=60 \emph{\begin{tabular}{c}Ancilla \\ \#3\end{tabular}}
+\begin{scope}[color=blue]
+\draw[fill=white,color=white] (6.000000, 159.000000) rectangle (66.000000, 261.000000);
+\draw (36.000000, 210.000000) node {\emph{\begin{tabular}{c}Ancilla \\ \#3\end{tabular}}};
+\draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick] (66.000000,159.000000) -- (66.000000,261.000000);
+\end{scope}
+% Line 64: a30 a31 a32 a33 a34 a35 a36 =< color=blue length=60 \emph{\begin{tabular}{c}Ancilla \\ \#4\end{tabular}}
+\begin{scope}[color=blue]
+\draw[fill=white,color=white] (6.000000, -6.000000) rectangle (66.000000, 96.000000);
+\draw (36.000000, 45.000000) node {\emph{\begin{tabular}{c}Ancilla \\ \#4\end{tabular}}};
+\draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick] (66.000000,-6.000000) -- (66.000000,96.000000);
+\end{scope}
+% Line 66: a00 a01 a02 a03 a04 a05 a06 data0 data1 data2 data3 data4 data5 data6 START
+\draw[color=black] (93.000000,585.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{0}$}};
+\draw[color=black] (93.000000,585.000000) node[left] {$\scriptstyle\ket{0}$};
+\draw[color=black] (93.000000,570.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{0}$}};
+\draw[color=black] (93.000000,570.000000) node[left] {$\scriptstyle\ket{0}$};
+\draw[color=black] (93.000000,555.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{0}$}};
+\draw[color=black] (93.000000,555.000000) node[left] {$\scriptstyle\ket{0}$};
+\draw[color=black] (93.000000,540.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{0}$}};
+\draw[color=black] (93.000000,540.000000) node[left] {$\scriptstyle\ket{0}$};
+\draw[color=black] (93.000000,525.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (93.000000,525.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (93.000000,510.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (93.000000,510.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (93.000000,495.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (93.000000,495.000000) node[left] {$\scriptstyle\ket{+}$};
+% Line 68: +a00 a04
+\draw (108.000000,585.000000) -- (108.000000,525.000000);
+\begin{scope}
+\draw[fill=white] (108.000000, 585.000000) circle(3.000000pt);
+\clip (108.000000, 585.000000) circle(3.000000pt);
+\draw (105.000000, 585.000000) -- (111.000000, 585.000000);
+\draw (108.000000, 582.000000) -- (108.000000, 588.000000);
+\end{scope}
+\filldraw (108.000000, 525.000000) circle(1.500000pt);
+% Line 69: +a01 a05
+\draw (114.000000,570.000000) -- (114.000000,510.000000);
+\begin{scope}
+\draw[fill=white] (114.000000, 570.000000) circle(3.000000pt);
+\clip (114.000000, 570.000000) circle(3.000000pt);
+\draw (111.000000, 570.000000) -- (117.000000, 570.000000);
+\draw (114.000000, 567.000000) -- (114.000000, 573.000000);
+\end{scope}
+\filldraw (114.000000, 510.000000) circle(1.500000pt);
+% Line 70: +a02 a06
+\draw (120.000000,555.000000) -- (120.000000,495.000000);
+\begin{scope}
+\draw[fill=white] (120.000000, 555.000000) circle(3.000000pt);
+\clip (120.000000, 555.000000) circle(3.000000pt);
+\draw (117.000000, 555.000000) -- (123.000000, 555.000000);
+\draw (120.000000, 552.000000) -- (120.000000, 558.000000);
+\end{scope}
+\filldraw (120.000000, 495.000000) circle(1.500000pt);
+% Line 71: a10 a11 a12 a13 a14 a15 a16 START
+\draw[color=black] (121.500000,420.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{0}$}};
+\draw[color=black] (121.500000,420.000000) node[left] {$\scriptstyle\ket{0}$};
+\draw[color=black] (121.500000,405.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{0}$}};
+\draw[color=black] (121.500000,405.000000) node[left] {$\scriptstyle\ket{0}$};
+\draw[color=black] (121.500000,390.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{0}$}};
+\draw[color=black] (121.500000,390.000000) node[left] {$\scriptstyle\ket{0}$};
+\draw[color=black] (121.500000,375.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{0}$}};
+\draw[color=black] (121.500000,375.000000) node[left] {$\scriptstyle\ket{0}$};
+\draw[color=black] (121.500000,360.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (121.500000,360.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (121.500000,345.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (121.500000,345.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (121.500000,330.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (121.500000,330.000000) node[left] {$\scriptstyle\ket{+}$};
+% Line 73: +a00 a05
+\draw (138.000000,585.000000) -- (138.000000,510.000000);
+\begin{scope}
+\draw[fill=white] (138.000000, 585.000000) circle(3.000000pt);
+\clip (138.000000, 585.000000) circle(3.000000pt);
+\draw (135.000000, 585.000000) -- (141.000000, 585.000000);
+\draw (138.000000, 582.000000) -- (138.000000, 588.000000);
+\end{scope}
+\filldraw (138.000000, 510.000000) circle(1.500000pt);
+% Line 74: +a01 a04
+\draw (144.000000,570.000000) -- (144.000000,525.000000);
+\begin{scope}
+\draw[fill=white] (144.000000, 570.000000) circle(3.000000pt);
+\clip (144.000000, 570.000000) circle(3.000000pt);
+\draw (141.000000, 570.000000) -- (147.000000, 570.000000);
+\draw (144.000000, 567.000000) -- (144.000000, 573.000000);
+\end{scope}
+\filldraw (144.000000, 525.000000) circle(1.500000pt);
+% Line 75: +a03 a06
+\draw (150.000000,540.000000) -- (150.000000,495.000000);
+\begin{scope}
+\draw[fill=white] (150.000000, 540.000000) circle(3.000000pt);
+\clip (150.000000, 540.000000) circle(3.000000pt);
+\draw (147.000000, 540.000000) -- (153.000000, 540.000000);
+\draw (150.000000, 537.000000) -- (150.000000, 543.000000);
+\end{scope}
+\filldraw (150.000000, 495.000000) circle(1.500000pt);
+% Line 76: +a10 a14
+\draw (138.000000,420.000000) -- (138.000000,360.000000);
+\begin{scope}
+\draw[fill=white] (138.000000, 420.000000) circle(3.000000pt);
+\clip (138.000000, 420.000000) circle(3.000000pt);
+\draw (135.000000, 420.000000) -- (141.000000, 420.000000);
+\draw (138.000000, 417.000000) -- (138.000000, 423.000000);
+\end{scope}
+\filldraw (138.000000, 360.000000) circle(1.500000pt);
+% Line 77: +a11 a15
+\draw (144.000000,405.000000) -- (144.000000,345.000000);
+\begin{scope}
+\draw[fill=white] (144.000000, 405.000000) circle(3.000000pt);
+\clip (144.000000, 405.000000) circle(3.000000pt);
+\draw (141.000000, 405.000000) -- (147.000000, 405.000000);
+\draw (144.000000, 402.000000) -- (144.000000, 408.000000);
+\end{scope}
+\filldraw (144.000000, 345.000000) circle(1.500000pt);
+% Line 78: +a12 a16
+\draw (150.000000,390.000000) -- (150.000000,330.000000);
+\begin{scope}
+\draw[fill=white] (150.000000, 390.000000) circle(3.000000pt);
+\clip (150.000000, 390.000000) circle(3.000000pt);
+\draw (147.000000, 390.000000) -- (153.000000, 390.000000);
+\draw (150.000000, 387.000000) -- (150.000000, 393.000000);
+\end{scope}
+\filldraw (150.000000, 330.000000) circle(1.500000pt);
+% Line 79: a20 a21 a22 a23 a24 a25 a26 START
+\draw[color=black] (151.500000,255.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{0}$}};
+\draw[color=black] (151.500000,255.000000) node[left] {$\scriptstyle\ket{0}$};
+\draw[color=black] (151.500000,240.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{0}$}};
+\draw[color=black] (151.500000,240.000000) node[left] {$\scriptstyle\ket{0}$};
+\draw[color=black] (151.500000,225.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{0}$}};
+\draw[color=black] (151.500000,225.000000) node[left] {$\scriptstyle\ket{0}$};
+\draw[color=black] (151.500000,210.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{0}$}};
+\draw[color=black] (151.500000,210.000000) node[left] {$\scriptstyle\ket{0}$};
+\draw[color=black] (151.500000,195.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (151.500000,195.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (151.500000,180.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (151.500000,180.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (151.500000,165.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (151.500000,165.000000) node[left] {$\scriptstyle\ket{+}$};
+% Line 81: +a00 a06
+\draw (168.000000,585.000000) -- (168.000000,495.000000);
+\begin{scope}
+\draw[fill=white] (168.000000, 585.000000) circle(3.000000pt);
+\clip (168.000000, 585.000000) circle(3.000000pt);
+\draw (165.000000, 585.000000) -- (171.000000, 585.000000);
+\draw (168.000000, 582.000000) -- (168.000000, 588.000000);
+\end{scope}
+\filldraw (168.000000, 495.000000) circle(1.500000pt);
+% Line 82: +a02 a04
+\draw (174.000000,555.000000) -- (174.000000,525.000000);
+\begin{scope}
+\draw[fill=white] (174.000000, 555.000000) circle(3.000000pt);
+\clip (174.000000, 555.000000) circle(3.000000pt);
+\draw (171.000000, 555.000000) -- (177.000000, 555.000000);
+\draw (174.000000, 552.000000) -- (174.000000, 558.000000);
+\end{scope}
+\filldraw (174.000000, 525.000000) circle(1.500000pt);
+% Line 83: +a03 a05
+\draw (180.000000,540.000000) -- (180.000000,510.000000);
+\begin{scope}
+\draw[fill=white] (180.000000, 540.000000) circle(3.000000pt);
+\clip (180.000000, 540.000000) circle(3.000000pt);
+\draw (177.000000, 540.000000) -- (183.000000, 540.000000);
+\draw (180.000000, 537.000000) -- (180.000000, 543.000000);
+\end{scope}
+\filldraw (180.000000, 510.000000) circle(1.500000pt);
+% Line 84: +a10 a15
+\draw (168.000000,420.000000) -- (168.000000,345.000000);
+\begin{scope}
+\draw[fill=white] (168.000000, 420.000000) circle(3.000000pt);
+\clip (168.000000, 420.000000) circle(3.000000pt);
+\draw (165.000000, 420.000000) -- (171.000000, 420.000000);
+\draw (168.000000, 417.000000) -- (168.000000, 423.000000);
+\end{scope}
+\filldraw (168.000000, 345.000000) circle(1.500000pt);
+% Line 85: +a11 a14
+\draw (174.000000,405.000000) -- (174.000000,360.000000);
+\begin{scope}
+\draw[fill=white] (174.000000, 405.000000) circle(3.000000pt);
+\clip (174.000000, 405.000000) circle(3.000000pt);
+\draw (171.000000, 405.000000) -- (177.000000, 405.000000);
+\draw (174.000000, 402.000000) -- (174.000000, 408.000000);
+\end{scope}
+\filldraw (174.000000, 360.000000) circle(1.500000pt);
+% Line 86: +a13 a16
+\draw (180.000000,375.000000) -- (180.000000,330.000000);
+\begin{scope}
+\draw[fill=white] (180.000000, 375.000000) circle(3.000000pt);
+\clip (180.000000, 375.000000) circle(3.000000pt);
+\draw (177.000000, 375.000000) -- (183.000000, 375.000000);
+\draw (180.000000, 372.000000) -- (180.000000, 378.000000);
+\end{scope}
+\filldraw (180.000000, 330.000000) circle(1.500000pt);
+% Line 87: +a20 a24
+\draw (168.000000,255.000000) -- (168.000000,195.000000);
+\begin{scope}
+\draw[fill=white] (168.000000, 255.000000) circle(3.000000pt);
+\clip (168.000000, 255.000000) circle(3.000000pt);
+\draw (165.000000, 255.000000) -- (171.000000, 255.000000);
+\draw (168.000000, 252.000000) -- (168.000000, 258.000000);
+\end{scope}
+\filldraw (168.000000, 195.000000) circle(1.500000pt);
+% Line 88: +a21 a25
+\draw (174.000000,240.000000) -- (174.000000,180.000000);
+\begin{scope}
+\draw[fill=white] (174.000000, 240.000000) circle(3.000000pt);
+\clip (174.000000, 240.000000) circle(3.000000pt);
+\draw (171.000000, 240.000000) -- (177.000000, 240.000000);
+\draw (174.000000, 237.000000) -- (174.000000, 243.000000);
+\end{scope}
+\filldraw (174.000000, 180.000000) circle(1.500000pt);
+% Line 89: +a22 a26
+\draw (180.000000,225.000000) -- (180.000000,165.000000);
+\begin{scope}
+\draw[fill=white] (180.000000, 225.000000) circle(3.000000pt);
+\clip (180.000000, 225.000000) circle(3.000000pt);
+\draw (177.000000, 225.000000) -- (183.000000, 225.000000);
+\draw (180.000000, 222.000000) -- (180.000000, 228.000000);
+\end{scope}
+\filldraw (180.000000, 165.000000) circle(1.500000pt);
+% Line 90: a30 a31 a32 a33 a34 a35 a36 START
+\draw[color=black] (181.500000,90.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{0}$}};
+\draw[color=black] (181.500000,90.000000) node[left] {$\scriptstyle\ket{0}$};
+\draw[color=black] (181.500000,75.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{0}$}};
+\draw[color=black] (181.500000,75.000000) node[left] {$\scriptstyle\ket{0}$};
+\draw[color=black] (181.500000,60.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{0}$}};
+\draw[color=black] (181.500000,60.000000) node[left] {$\scriptstyle\ket{0}$};
+\draw[color=black] (181.500000,45.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{0}$}};
+\draw[color=black] (181.500000,45.000000) node[left] {$\scriptstyle\ket{0}$};
+\draw[color=black] (181.500000,30.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (181.500000,30.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (181.500000,15.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (181.500000,15.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (181.500000,0.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (181.500000,0.000000) node[left] {$\scriptstyle\ket{+}$};
+% Line 91: x00 x01 x02 x03 START
+\draw[color=black] (181.500000,645.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (181.500000,645.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (181.500000,630.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (181.500000,630.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (181.500000,615.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (181.500000,615.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (181.500000,600.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (181.500000,600.000000) node[left] {$\scriptstyle\ket{+}$};
+% Line 93: +a10 a16
+\draw (201.000000,420.000000) -- (201.000000,330.000000);
+\begin{scope}
+\draw[fill=white] (201.000000, 420.000000) circle(3.000000pt);
+\clip (201.000000, 420.000000) circle(3.000000pt);
+\draw (198.000000, 420.000000) -- (204.000000, 420.000000);
+\draw (201.000000, 417.000000) -- (201.000000, 423.000000);
+\end{scope}
+\filldraw (201.000000, 330.000000) circle(1.500000pt);
+% Line 94: +a12 a14
+\draw (207.000000,390.000000) -- (207.000000,360.000000);
+\begin{scope}
+\draw[fill=white] (207.000000, 390.000000) circle(3.000000pt);
+\clip (207.000000, 390.000000) circle(3.000000pt);
+\draw (204.000000, 390.000000) -- (210.000000, 390.000000);
+\draw (207.000000, 387.000000) -- (207.000000, 393.000000);
+\end{scope}
+\filldraw (207.000000, 360.000000) circle(1.500000pt);
+% Line 95: +a13 a15
+\draw (213.000000,375.000000) -- (213.000000,345.000000);
+\begin{scope}
+\draw[fill=white] (213.000000, 375.000000) circle(3.000000pt);
+\clip (213.000000, 375.000000) circle(3.000000pt);
+\draw (210.000000, 375.000000) -- (216.000000, 375.000000);
+\draw (213.000000, 372.000000) -- (213.000000, 378.000000);
+\end{scope}
+\filldraw (213.000000, 345.000000) circle(1.500000pt);
+% Line 96: +a20 a25
+\draw (201.000000,255.000000) -- (201.000000,180.000000);
+\begin{scope}
+\draw[fill=white] (201.000000, 255.000000) circle(3.000000pt);
+\clip (201.000000, 255.000000) circle(3.000000pt);
+\draw (198.000000, 255.000000) -- (204.000000, 255.000000);
+\draw (201.000000, 252.000000) -- (201.000000, 258.000000);
+\end{scope}
+\filldraw (201.000000, 180.000000) circle(1.500000pt);
+% Line 97: +a21 a24
+\draw (207.000000,240.000000) -- (207.000000,195.000000);
+\begin{scope}
+\draw[fill=white] (207.000000, 240.000000) circle(3.000000pt);
+\clip (207.000000, 240.000000) circle(3.000000pt);
+\draw (204.000000, 240.000000) -- (210.000000, 240.000000);
+\draw (207.000000, 237.000000) -- (207.000000, 243.000000);
+\end{scope}
+\filldraw (207.000000, 195.000000) circle(1.500000pt);
+% Line 98: +a23 a26
+\draw (213.000000,210.000000) -- (213.000000,165.000000);
+\begin{scope}
+\draw[fill=white] (213.000000, 210.000000) circle(3.000000pt);
+\clip (213.000000, 210.000000) circle(3.000000pt);
+\draw (210.000000, 210.000000) -- (216.000000, 210.000000);
+\draw (213.000000, 207.000000) -- (213.000000, 213.000000);
+\end{scope}
+\filldraw (213.000000, 165.000000) circle(1.500000pt);
+% Line 99: +a30 a34
+\draw (201.000000,90.000000) -- (201.000000,30.000000);
+\begin{scope}
+\draw[fill=white] (201.000000, 90.000000) circle(3.000000pt);
+\clip (201.000000, 90.000000) circle(3.000000pt);
+\draw (198.000000, 90.000000) -- (204.000000, 90.000000);
+\draw (201.000000, 87.000000) -- (201.000000, 93.000000);
+\end{scope}
+\filldraw (201.000000, 30.000000) circle(1.500000pt);
+% Line 100: +a31 a35
+\draw (207.000000,75.000000) -- (207.000000,15.000000);
+\begin{scope}
+\draw[fill=white] (207.000000, 75.000000) circle(3.000000pt);
+\clip (207.000000, 75.000000) circle(3.000000pt);
+\draw (204.000000, 75.000000) -- (210.000000, 75.000000);
+\draw (207.000000, 72.000000) -- (207.000000, 78.000000);
+\end{scope}
+\filldraw (207.000000, 15.000000) circle(1.500000pt);
+% Line 101: +a32 a36
+\draw (213.000000,60.000000) -- (213.000000,0.000000);
+\begin{scope}
+\draw[fill=white] (213.000000, 60.000000) circle(3.000000pt);
+\clip (213.000000, 60.000000) circle(3.000000pt);
+\draw (210.000000, 60.000000) -- (216.000000, 60.000000);
+\draw (213.000000, 57.000000) -- (213.000000, 63.000000);
+\end{scope}
+\filldraw (213.000000, 0.000000) circle(1.500000pt);
+% Line 102: a00 x00 #Z
+\draw (198.000000,645.000000) -- (198.000000,585.000000);
+\filldraw (198.000000, 585.000000) circle(1.500000pt);
+\filldraw (198.000000, 645.000000) circle(1.500000pt);
+% Line 103: a01 x01 #Z
+\draw (204.000000,630.000000) -- (204.000000,570.000000);
+\filldraw (204.000000, 570.000000) circle(1.500000pt);
+\filldraw (204.000000, 630.000000) circle(1.500000pt);
+% Line 104: a02 x02 #Z
+\draw (210.000000,615.000000) -- (210.000000,555.000000);
+\filldraw (210.000000, 555.000000) circle(1.500000pt);
+\filldraw (210.000000, 615.000000) circle(1.500000pt);
+% Line 105: a03 x03 #Z
+\draw (216.000000,600.000000) -- (216.000000,540.000000);
+\filldraw (216.000000, 540.000000) circle(1.500000pt);
+\filldraw (216.000000, 600.000000) circle(1.500000pt);
+% Line 106: x10 x11 x12 x13 START
+\draw[color=black] (214.500000,480.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (214.500000,480.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (214.500000,465.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (214.500000,465.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (214.500000,450.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (214.500000,450.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (214.500000,435.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (214.500000,435.000000) node[left] {$\scriptstyle\ket{+}$};
+% Line 108: +a20 a26
+\draw (237.000000,255.000000) -- (237.000000,165.000000);
+\begin{scope}
+\draw[fill=white] (237.000000, 255.000000) circle(3.000000pt);
+\clip (237.000000, 255.000000) circle(3.000000pt);
+\draw (234.000000, 255.000000) -- (240.000000, 255.000000);
+\draw (237.000000, 252.000000) -- (237.000000, 258.000000);
+\end{scope}
+\filldraw (237.000000, 165.000000) circle(1.500000pt);
+% Line 109: +a22 a24
+\draw (243.000000,225.000000) -- (243.000000,195.000000);
+\begin{scope}
+\draw[fill=white] (243.000000, 225.000000) circle(3.000000pt);
+\clip (243.000000, 225.000000) circle(3.000000pt);
+\draw (240.000000, 225.000000) -- (246.000000, 225.000000);
+\draw (243.000000, 222.000000) -- (243.000000, 228.000000);
+\end{scope}
+\filldraw (243.000000, 195.000000) circle(1.500000pt);
+% Line 110: +a23 a25
+\draw (249.000000,210.000000) -- (249.000000,180.000000);
+\begin{scope}
+\draw[fill=white] (249.000000, 210.000000) circle(3.000000pt);
+\clip (249.000000, 210.000000) circle(3.000000pt);
+\draw (246.000000, 210.000000) -- (252.000000, 210.000000);
+\draw (249.000000, 207.000000) -- (249.000000, 213.000000);
+\end{scope}
+\filldraw (249.000000, 180.000000) circle(1.500000pt);
+% Line 111: +a30 a35
+\draw (237.000000,90.000000) -- (237.000000,15.000000);
+\begin{scope}
+\draw[fill=white] (237.000000, 90.000000) circle(3.000000pt);
+\clip (237.000000, 90.000000) circle(3.000000pt);
+\draw (234.000000, 90.000000) -- (240.000000, 90.000000);
+\draw (237.000000, 87.000000) -- (237.000000, 93.000000);
+\end{scope}
+\filldraw (237.000000, 15.000000) circle(1.500000pt);
+% Line 112: +a31 a34
+\draw (243.000000,75.000000) -- (243.000000,30.000000);
+\begin{scope}
+\draw[fill=white] (243.000000, 75.000000) circle(3.000000pt);
+\clip (243.000000, 75.000000) circle(3.000000pt);
+\draw (240.000000, 75.000000) -- (246.000000, 75.000000);
+\draw (243.000000, 72.000000) -- (243.000000, 78.000000);
+\end{scope}
+\filldraw (243.000000, 30.000000) circle(1.500000pt);
+% Line 113: +a33 a36
+\draw (249.000000,45.000000) -- (249.000000,0.000000);
+\begin{scope}
+\draw[fill=white] (249.000000, 45.000000) circle(3.000000pt);
+\clip (249.000000, 45.000000) circle(3.000000pt);
+\draw (246.000000, 45.000000) -- (252.000000, 45.000000);
+\draw (249.000000, 42.000000) -- (249.000000, 48.000000);
+\end{scope}
+\filldraw (249.000000, 0.000000) circle(1.500000pt);
+% Line 114: a10 x10 #Z
+\draw (234.000000,480.000000) -- (234.000000,420.000000);
+\filldraw (234.000000, 420.000000) circle(1.500000pt);
+\filldraw (234.000000, 480.000000) circle(1.500000pt);
+% Line 115: a11 x11 #Z
+\draw (240.000000,465.000000) -- (240.000000,405.000000);
+\filldraw (240.000000, 405.000000) circle(1.500000pt);
+\filldraw (240.000000, 465.000000) circle(1.500000pt);
+% Line 116: a12 x12 #Z
+\draw (246.000000,450.000000) -- (246.000000,390.000000);
+\filldraw (246.000000, 390.000000) circle(1.500000pt);
+\filldraw (246.000000, 450.000000) circle(1.500000pt);
+% Line 117: a13 x13 #Z
+\draw (252.000000,435.000000) -- (252.000000,375.000000);
+\filldraw (252.000000, 375.000000) circle(1.500000pt);
+\filldraw (252.000000, 435.000000) circle(1.500000pt);
+% Line 118: a04 x00 #Z
+\draw (237.000000,645.000000) -- (237.000000,525.000000);
+\filldraw (237.000000, 525.000000) circle(1.500000pt);
+\filldraw (237.000000, 645.000000) circle(1.500000pt);
+% Line 119: a05 x01 #Z
+\draw (243.000000,630.000000) -- (243.000000,510.000000);
+\filldraw (243.000000, 510.000000) circle(1.500000pt);
+\filldraw (243.000000, 630.000000) circle(1.500000pt);
+% Line 120: a06 x02 #Z
+\draw (249.000000,615.000000) -- (249.000000,495.000000);
+\filldraw (249.000000, 495.000000) circle(1.500000pt);
+\filldraw (249.000000, 615.000000) circle(1.500000pt);
+% Line 121: x20 x21 x22 x23 START
+\draw[color=black] (250.500000,315.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (250.500000,315.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (250.500000,300.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (250.500000,300.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (250.500000,285.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (250.500000,285.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (250.500000,270.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (250.500000,270.000000) node[left] {$\scriptstyle\ket{+}$};
+% Line 123: +a30 a36
+\draw (273.000000,90.000000) -- (273.000000,0.000000);
+\begin{scope}
+\draw[fill=white] (273.000000, 90.000000) circle(3.000000pt);
+\clip (273.000000, 90.000000) circle(3.000000pt);
+\draw (270.000000, 90.000000) -- (276.000000, 90.000000);
+\draw (273.000000, 87.000000) -- (273.000000, 93.000000);
+\end{scope}
+\filldraw (273.000000, 0.000000) circle(1.500000pt);
+% Line 124: +a32 a34
+\draw (279.000000,60.000000) -- (279.000000,30.000000);
+\begin{scope}
+\draw[fill=white] (279.000000, 60.000000) circle(3.000000pt);
+\clip (279.000000, 60.000000) circle(3.000000pt);
+\draw (276.000000, 60.000000) -- (282.000000, 60.000000);
+\draw (279.000000, 57.000000) -- (279.000000, 63.000000);
+\end{scope}
+\filldraw (279.000000, 30.000000) circle(1.500000pt);
+% Line 125: +a33 a35
+\draw (285.000000,45.000000) -- (285.000000,15.000000);
+\begin{scope}
+\draw[fill=white] (285.000000, 45.000000) circle(3.000000pt);
+\clip (285.000000, 45.000000) circle(3.000000pt);
+\draw (282.000000, 45.000000) -- (288.000000, 45.000000);
+\draw (285.000000, 42.000000) -- (285.000000, 48.000000);
+\end{scope}
+\filldraw (285.000000, 15.000000) circle(1.500000pt);
+% Line 126: a20 x20 #Z
+\draw (270.000000,315.000000) -- (270.000000,255.000000);
+\filldraw (270.000000, 255.000000) circle(1.500000pt);
+\filldraw (270.000000, 315.000000) circle(1.500000pt);
+% Line 127: a21 x21 #Z
+\draw (276.000000,300.000000) -- (276.000000,240.000000);
+\filldraw (276.000000, 240.000000) circle(1.500000pt);
+\filldraw (276.000000, 300.000000) circle(1.500000pt);
+% Line 128: a22 x22 #Z
+\draw (282.000000,285.000000) -- (282.000000,225.000000);
+\filldraw (282.000000, 225.000000) circle(1.500000pt);
+\filldraw (282.000000, 285.000000) circle(1.500000pt);
+% Line 129: a23 x23 #Z
+\draw (288.000000,270.000000) -- (288.000000,210.000000);
+\filldraw (288.000000, 210.000000) circle(1.500000pt);
+\filldraw (288.000000, 270.000000) circle(1.500000pt);
+% Line 130: a14 x10 #Z
+\draw (273.000000,480.000000) -- (273.000000,360.000000);
+\filldraw (273.000000, 360.000000) circle(1.500000pt);
+\filldraw (273.000000, 480.000000) circle(1.500000pt);
+% Line 131: a15 x11 #Z
+\draw (279.000000,465.000000) -- (279.000000,345.000000);
+\filldraw (279.000000, 345.000000) circle(1.500000pt);
+\filldraw (279.000000, 465.000000) circle(1.500000pt);
+% Line 132: a16 x12 #Z
+\draw (285.000000,450.000000) -- (285.000000,330.000000);
+\filldraw (285.000000, 330.000000) circle(1.500000pt);
+\filldraw (285.000000, 450.000000) circle(1.500000pt);
+% Line 133: a05 x00 #Z
+\draw (273.000000,645.000000) -- (273.000000,510.000000);
+\filldraw (273.000000, 510.000000) circle(1.500000pt);
+\filldraw (273.000000, 645.000000) circle(1.500000pt);
+% Line 134: a04 x01 #Z
+\draw (279.000000,630.000000) -- (279.000000,525.000000);
+\filldraw (279.000000, 525.000000) circle(1.500000pt);
+\filldraw (279.000000, 630.000000) circle(1.500000pt);
+% Line 135: a06 x03 #Z
+\draw (285.000000,600.000000) -- (285.000000,495.000000);
+\filldraw (285.000000, 495.000000) circle(1.500000pt);
+\filldraw (285.000000, 600.000000) circle(1.500000pt);
+% Line 136: x30 x31 x32 x33 START
+\draw[color=black] (286.500000,150.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (286.500000,150.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (286.500000,135.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (286.500000,135.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (286.500000,120.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (286.500000,120.000000) node[left] {$\scriptstyle\ket{+}$};
+\draw[color=black] (286.500000,105.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle\ket{+}$}};
+\draw[color=black] (286.500000,105.000000) node[left] {$\scriptstyle\ket{+}$};
+% Line 138: a30 x30 #Z
+\draw (306.000000,150.000000) -- (306.000000,90.000000);
+\filldraw (306.000000, 90.000000) circle(1.500000pt);
+\filldraw (306.000000, 150.000000) circle(1.500000pt);
+% Line 139: a31 x31 #Z
+\draw (312.000000,135.000000) -- (312.000000,75.000000);
+\filldraw (312.000000, 75.000000) circle(1.500000pt);
+\filldraw (312.000000, 135.000000) circle(1.500000pt);
+% Line 140: a32 x32 #Z
+\draw (318.000000,120.000000) -- (318.000000,60.000000);
+\filldraw (318.000000, 60.000000) circle(1.500000pt);
+\filldraw (318.000000, 120.000000) circle(1.500000pt);
+% Line 141: a33 x33 #Z
+\draw (324.000000,105.000000) -- (324.000000,45.000000);
+\filldraw (324.000000, 45.000000) circle(1.500000pt);
+\filldraw (324.000000, 105.000000) circle(1.500000pt);
+% Line 142: a24 x20 #Z
+\draw (309.000000,315.000000) -- (309.000000,195.000000);
+\filldraw (309.000000, 195.000000) circle(1.500000pt);
+\filldraw (309.000000, 315.000000) circle(1.500000pt);
+% Line 143: a25 x21 #Z
+\draw (315.000000,300.000000) -- (315.000000,180.000000);
+\filldraw (315.000000, 180.000000) circle(1.500000pt);
+\filldraw (315.000000, 300.000000) circle(1.500000pt);
+% Line 144: a26 x22 #Z
+\draw (321.000000,285.000000) -- (321.000000,165.000000);
+\filldraw (321.000000, 165.000000) circle(1.500000pt);
+\filldraw (321.000000, 285.000000) circle(1.500000pt);
+% Line 145: a15 x10 #Z
+\draw (309.000000,480.000000) -- (309.000000,345.000000);
+\filldraw (309.000000, 345.000000) circle(1.500000pt);
+\filldraw (309.000000, 480.000000) circle(1.500000pt);
+% Line 146: a14 x11 #Z
+\draw (315.000000,465.000000) -- (315.000000,360.000000);
+\filldraw (315.000000, 360.000000) circle(1.500000pt);
+\filldraw (315.000000, 465.000000) circle(1.500000pt);
+% Line 147: a16 x13 #Z
+\draw (321.000000,435.000000) -- (321.000000,330.000000);
+\filldraw (321.000000, 330.000000) circle(1.500000pt);
+\filldraw (321.000000, 435.000000) circle(1.500000pt);
+% Line 148: a06 x00 #Z
+\draw (309.000000,645.000000) -- (309.000000,495.000000);
+\filldraw (309.000000, 495.000000) circle(1.500000pt);
+\filldraw (309.000000, 645.000000) circle(1.500000pt);
+% Line 149: a04 x02 #Z
+\draw (315.000000,615.000000) -- (315.000000,525.000000);
+\filldraw (315.000000, 525.000000) circle(1.500000pt);
+\filldraw (315.000000, 615.000000) circle(1.500000pt);
+% Line 150: a05 x03 #Z
+\draw (321.000000,600.000000) -- (321.000000,510.000000);
+\filldraw (321.000000, 510.000000) circle(1.500000pt);
+\filldraw (321.000000, 600.000000) circle(1.500000pt);
+% Line 152: a34 x30 #Z
+\draw (346.500000,150.000000) -- (346.500000,30.000000);
+\filldraw (346.500000, 30.000000) circle(1.500000pt);
+\filldraw (346.500000, 150.000000) circle(1.500000pt);
+% Line 153: a35 x31 #Z
+\draw (352.500000,135.000000) -- (352.500000,15.000000);
+\filldraw (352.500000, 15.000000) circle(1.500000pt);
+\filldraw (352.500000, 135.000000) circle(1.500000pt);
+% Line 154: a36 x32 #Z
+\draw (358.500000,120.000000) -- (358.500000,0.000000);
+\filldraw (358.500000, 0.000000) circle(1.500000pt);
+\filldraw (358.500000, 120.000000) circle(1.500000pt);
+% Line 155: a25 x20 #Z
+\draw (346.500000,315.000000) -- (346.500000,180.000000);
+\filldraw (346.500000, 180.000000) circle(1.500000pt);
+\filldraw (346.500000, 315.000000) circle(1.500000pt);
+% Line 156: a24 x21 #Z
+\draw (352.500000,300.000000) -- (352.500000,195.000000);
+\filldraw (352.500000, 195.000000) circle(1.500000pt);
+\filldraw (352.500000, 300.000000) circle(1.500000pt);
+% Line 157: a26 x23 #Z
+\draw (358.500000,270.000000) -- (358.500000,165.000000);
+\filldraw (358.500000, 165.000000) circle(1.500000pt);
+\filldraw (358.500000, 270.000000) circle(1.500000pt);
+% Line 158: a16 x10 #Z
+\draw (346.500000,480.000000) -- (346.500000,330.000000);
+\filldraw (346.500000, 330.000000) circle(1.500000pt);
+\filldraw (346.500000, 480.000000) circle(1.500000pt);
+% Line 159: a14 x12 #Z
+\draw (352.500000,450.000000) -- (352.500000,360.000000);
+\filldraw (352.500000, 360.000000) circle(1.500000pt);
+\filldraw (352.500000, 450.000000) circle(1.500000pt);
+% Line 160: a15 x13 #Z
+\draw (358.500000,435.000000) -- (358.500000,345.000000);
+\filldraw (358.500000, 345.000000) circle(1.500000pt);
+\filldraw (358.500000, 435.000000) circle(1.500000pt);
+% Line 162: x00 x01 x02 x03 M
+\draw[fill=white] (339.000000, 639.000000) rectangle (351.000000, 651.000000);
+\draw[very thin] (345.000000, 645.600000) arc (90:150:6.000000pt);
+\draw[very thin] (345.000000, 645.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (345.000000, 639.600000) -- +(80:10.392305pt);
+\draw[fill=white] (339.000000, 624.000000) rectangle (351.000000, 636.000000);
+\draw[very thin] (345.000000, 630.600000) arc (90:150:6.000000pt);
+\draw[very thin] (345.000000, 630.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (345.000000, 624.600000) -- +(80:10.392305pt);
+\draw[fill=white] (339.000000, 609.000000) rectangle (351.000000, 621.000000);
+\draw[very thin] (345.000000, 615.600000) arc (90:150:6.000000pt);
+\draw[very thin] (345.000000, 615.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (345.000000, 609.600000) -- +(80:10.392305pt);
+\draw[fill=white] (339.000000, 594.000000) rectangle (351.000000, 606.000000);
+\draw[very thin] (345.000000, 600.600000) arc (90:150:6.000000pt);
+\draw[very thin] (345.000000, 600.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (345.000000, 594.600000) -- +(80:10.392305pt);
+% Line 163: x00 x01 x02 x03 END
+\draw[color=black] (351.000000,645.000000) node[fill=white,right,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle0$}};
+\draw[color=black] (351.000000,645.000000) node[right] {$\scriptstyle0$};
+\draw[color=black] (351.000000,630.000000) node[fill=white,right,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle0$}};
+\draw[color=black] (351.000000,630.000000) node[right] {$\scriptstyle0$};
+\draw[color=black] (351.000000,615.000000) node[fill=white,right,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle0$}};
+\draw[color=black] (351.000000,615.000000) node[right] {$\scriptstyle0$};
+\draw[color=black] (351.000000,600.000000) node[fill=white,right,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\scriptstyle0$}};
+\draw[color=black] (351.000000,600.000000) node[right] {$\scriptstyle0$};
+% Line 165: data0 TOUCH
+% Line 167: a35 x30 #Z
+\draw (393.000000,150.000000) -- (393.000000,15.000000);
+\filldraw (393.000000, 15.000000) circle(1.500000pt);
+\filldraw (393.000000, 150.000000) circle(1.500000pt);
+% Line 168: a34 x31 #Z
+\draw (399.000000,135.000000) -- (399.000000,30.000000);
+\filldraw (399.000000, 30.000000) circle(1.500000pt);
+\filldraw (399.000000, 135.000000) circle(1.500000pt);
+% Line 169: a36 x33 #Z
+\draw (405.000000,105.000000) -- (405.000000,0.000000);
+\filldraw (405.000000, 0.000000) circle(1.500000pt);
+\filldraw (405.000000, 105.000000) circle(1.500000pt);
+% Line 170: a26 x20 #Z
+\draw (393.000000,315.000000) -- (393.000000,165.000000);
+\filldraw (393.000000, 165.000000) circle(1.500000pt);
+\filldraw (393.000000, 315.000000) circle(1.500000pt);
+% Line 171: a24 x22 #Z
+\draw (399.000000,285.000000) -- (399.000000,195.000000);
+\filldraw (399.000000, 195.000000) circle(1.500000pt);
+\filldraw (399.000000, 285.000000) circle(1.500000pt);
+% Line 172: a25 x23 #Z
+\draw (405.000000,270.000000) -- (405.000000,180.000000);
+\filldraw (405.000000, 180.000000) circle(1.500000pt);
+\filldraw (405.000000, 270.000000) circle(1.500000pt);
+% Line 174: x10 x11 x12 x13 M
+\draw[fill=white] (388.500000, 474.000000) rectangle (400.500000, 486.000000);
+\draw[very thin] (394.500000, 480.600000) arc (90:150:6.000000pt);
+\draw[very thin] (394.500000, 480.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (394.500000, 474.600000) -- +(80:10.392305pt);
+\draw[fill=white] (388.500000, 459.000000) rectangle (400.500000, 471.000000);
+\draw[very thin] (394.500000, 465.600000) arc (90:150:6.000000pt);
+\draw[very thin] (394.500000, 465.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (394.500000, 459.600000) -- +(80:10.392305pt);
+\draw[fill=white] (388.500000, 444.000000) rectangle (400.500000, 456.000000);
+\draw[very thin] (394.500000, 450.600000) arc (90:150:6.000000pt);
+\draw[very thin] (394.500000, 450.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (394.500000, 444.600000) -- +(80:10.392305pt);
+\draw[fill=white] (388.500000, 429.000000) rectangle (400.500000, 441.000000);
+\draw[very thin] (394.500000, 435.600000) arc (90:150:6.000000pt);
+\draw[very thin] (394.500000, 435.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (394.500000, 429.600000) -- +(80:10.392305pt);
+% Line 175: x10 x11 x12 x13 END length=9
+\draw[color=black] (400.500000,480.000000) node[fill=white,right,minimum height=15.000000pt,minimum width=9.000000pt,inner sep=0pt] {\phantom{$\scriptstyle0$}};
+\draw[color=black] (400.500000,480.000000) node[right] {$\scriptstyle0$};
+\draw[color=black] (400.500000,465.000000) node[fill=white,right,minimum height=15.000000pt,minimum width=9.000000pt,inner sep=0pt] {\phantom{$\scriptstyle0$}};
+\draw[color=black] (400.500000,465.000000) node[right] {$\scriptstyle0$};
+\draw[color=black] (400.500000,450.000000) node[fill=white,right,minimum height=15.000000pt,minimum width=9.000000pt,inner sep=0pt] {\phantom{$\scriptstyle0$}};
+\draw[color=black] (400.500000,450.000000) node[right] {$\scriptstyle0$};
+\draw[color=black] (400.500000,435.000000) node[fill=white,right,minimum height=15.000000pt,minimum width=9.000000pt,inner sep=0pt] {\phantom{$\scriptstyle0$}};
+\draw[color=black] (400.500000,435.000000) node[right] {$\scriptstyle0$};
+% Line 178: data0 a00 #Z
+\draw (381.000000,750.000000) -- (381.000000,585.000000);
+\filldraw (381.000000, 750.000000) circle(1.500000pt);
+\filldraw (381.000000, 585.000000) circle(1.500000pt);
+% Line 179: data1 a01 #Z
+\draw (387.000000,735.000000) -- (387.000000,570.000000);
+\filldraw (387.000000, 735.000000) circle(1.500000pt);
+\filldraw (387.000000, 570.000000) circle(1.500000pt);
+% Line 180: data2 a02 #Z
+\draw (393.000000,720.000000) -- (393.000000,555.000000);
+\filldraw (393.000000, 720.000000) circle(1.500000pt);
+\filldraw (393.000000, 555.000000) circle(1.500000pt);
+% Line 181: data3 a03 #Z
+\draw (399.000000,705.000000) -- (399.000000,540.000000);
+\filldraw (399.000000, 705.000000) circle(1.500000pt);
+\filldraw (399.000000, 540.000000) circle(1.500000pt);
+% Line 182: data4 a04 #Z
+\draw (405.000000,690.000000) -- (405.000000,525.000000);
+\filldraw (405.000000, 690.000000) circle(1.500000pt);
+\filldraw (405.000000, 525.000000) circle(1.500000pt);
+% Line 183: data5 a05 #Z
+\draw (411.000000,675.000000) -- (411.000000,510.000000);
+\filldraw (411.000000, 675.000000) circle(1.500000pt);
+\filldraw (411.000000, 510.000000) circle(1.500000pt);
+% Line 184: data6 a06 #Z
+\draw (417.000000,660.000000) -- (417.000000,495.000000);
+\filldraw (417.000000, 660.000000) circle(1.500000pt);
+\filldraw (417.000000, 495.000000) circle(1.500000pt);
+% Line 187: a36 x30 #Z
+\draw (457.500000,150.000000) -- (457.500000,0.000000);
+\filldraw (457.500000, 0.000000) circle(1.500000pt);
+\filldraw (457.500000, 150.000000) circle(1.500000pt);
+% Line 188: a34 x32 #Z
+\draw (463.500000,120.000000) -- (463.500000,30.000000);
+\filldraw (463.500000, 30.000000) circle(1.500000pt);
+\filldraw (463.500000, 120.000000) circle(1.500000pt);
+% Line 189: a35 x33 #Z
+\draw (469.500000,105.000000) -- (469.500000,15.000000);
+\filldraw (469.500000, 15.000000) circle(1.500000pt);
+\filldraw (469.500000, 105.000000) circle(1.500000pt);
+% Line 191: x20 x21 x22 x23 M
+\draw[fill=white] (453.000000, 309.000000) rectangle (465.000000, 321.000000);
+\draw[very thin] (459.000000, 315.600000) arc (90:150:6.000000pt);
+\draw[very thin] (459.000000, 315.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (459.000000, 309.600000) -- +(80:10.392305pt);
+\draw[fill=white] (453.000000, 294.000000) rectangle (465.000000, 306.000000);
+\draw[very thin] (459.000000, 300.600000) arc (90:150:6.000000pt);
+\draw[very thin] (459.000000, 300.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (459.000000, 294.600000) -- +(80:10.392305pt);
+\draw[fill=white] (453.000000, 279.000000) rectangle (465.000000, 291.000000);
+\draw[very thin] (459.000000, 285.600000) arc (90:150:6.000000pt);
+\draw[very thin] (459.000000, 285.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (459.000000, 279.600000) -- +(80:10.392305pt);
+\draw[fill=white] (453.000000, 264.000000) rectangle (465.000000, 276.000000);
+\draw[very thin] (459.000000, 270.600000) arc (90:150:6.000000pt);
+\draw[very thin] (459.000000, 270.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (459.000000, 264.600000) -- +(80:10.392305pt);
+% Line 192: x20 x21 x22 x23 END length=9
+\draw[color=black] (465.000000,315.000000) node[fill=white,right,minimum height=15.000000pt,minimum width=9.000000pt,inner sep=0pt] {\phantom{$\scriptstyle0$}};
+\draw[color=black] (465.000000,315.000000) node[right] {$\scriptstyle0$};
+\draw[color=black] (465.000000,300.000000) node[fill=white,right,minimum height=15.000000pt,minimum width=9.000000pt,inner sep=0pt] {\phantom{$\scriptstyle0$}};
+\draw[color=black] (465.000000,300.000000) node[right] {$\scriptstyle0$};
+\draw[color=black] (465.000000,285.000000) node[fill=white,right,minimum height=15.000000pt,minimum width=9.000000pt,inner sep=0pt] {\phantom{$\scriptstyle0$}};
+\draw[color=black] (465.000000,285.000000) node[right] {$\scriptstyle0$};
+\draw[color=black] (465.000000,270.000000) node[fill=white,right,minimum height=15.000000pt,minimum width=9.000000pt,inner sep=0pt] {\phantom{$\scriptstyle0$}};
+\draw[color=black] (465.000000,270.000000) node[right] {$\scriptstyle0$};
+% Line 195: a00 a01 a02 a03 a04 a05 a06 M
+\draw[fill=white] (432.000000, 579.000000) rectangle (444.000000, 591.000000);
+\draw[very thin] (438.000000, 585.600000) arc (90:150:6.000000pt);
+\draw[very thin] (438.000000, 585.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (438.000000, 579.600000) -- +(80:10.392305pt);
+\draw[fill=white] (432.000000, 564.000000) rectangle (444.000000, 576.000000);
+\draw[very thin] (438.000000, 570.600000) arc (90:150:6.000000pt);
+\draw[very thin] (438.000000, 570.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (438.000000, 564.600000) -- +(80:10.392305pt);
+\draw[fill=white] (432.000000, 549.000000) rectangle (444.000000, 561.000000);
+\draw[very thin] (438.000000, 555.600000) arc (90:150:6.000000pt);
+\draw[very thin] (438.000000, 555.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (438.000000, 549.600000) -- +(80:10.392305pt);
+\draw[fill=white] (432.000000, 534.000000) rectangle (444.000000, 546.000000);
+\draw[very thin] (438.000000, 540.600000) arc (90:150:6.000000pt);
+\draw[very thin] (438.000000, 540.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (438.000000, 534.600000) -- +(80:10.392305pt);
+\draw[fill=white] (432.000000, 519.000000) rectangle (444.000000, 531.000000);
+\draw[very thin] (438.000000, 525.600000) arc (90:150:6.000000pt);
+\draw[very thin] (438.000000, 525.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (438.000000, 519.600000) -- +(80:10.392305pt);
+\draw[fill=white] (432.000000, 504.000000) rectangle (444.000000, 516.000000);
+\draw[very thin] (438.000000, 510.600000) arc (90:150:6.000000pt);
+\draw[very thin] (438.000000, 510.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (438.000000, 504.600000) -- +(80:10.392305pt);
+\draw[fill=white] (432.000000, 489.000000) rectangle (444.000000, 501.000000);
+\draw[very thin] (438.000000, 495.600000) arc (90:150:6.000000pt);
+\draw[very thin] (438.000000, 495.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (438.000000, 489.600000) -- +(80:10.392305pt);
+% Line 196: a00 a01 a02 a03 a04 a05 a06 END length=9
+% Line 199: data0 a10 #Z
+\draw (456.000000,750.000000) -- (456.000000,420.000000);
+\filldraw (456.000000, 750.000000) circle(1.500000pt);
+\filldraw (456.000000, 420.000000) circle(1.500000pt);
+% Line 200: data1 a11 #Z
+\draw (462.000000,735.000000) -- (462.000000,405.000000);
+\filldraw (462.000000, 735.000000) circle(1.500000pt);
+\filldraw (462.000000, 405.000000) circle(1.500000pt);
+% Line 201: data2 a12 #Z
+\draw (468.000000,720.000000) -- (468.000000,390.000000);
+\filldraw (468.000000, 720.000000) circle(1.500000pt);
+\filldraw (468.000000, 390.000000) circle(1.500000pt);
+% Line 202: data3 a13 #Z
+\draw (474.000000,705.000000) -- (474.000000,375.000000);
+\filldraw (474.000000, 705.000000) circle(1.500000pt);
+\filldraw (474.000000, 375.000000) circle(1.500000pt);
+% Line 203: data4 a14 #Z
+\draw (480.000000,690.000000) -- (480.000000,360.000000);
+\filldraw (480.000000, 690.000000) circle(1.500000pt);
+\filldraw (480.000000, 360.000000) circle(1.500000pt);
+% Line 204: data5 a15 #Z
+\draw (486.000000,675.000000) -- (486.000000,345.000000);
+\filldraw (486.000000, 675.000000) circle(1.500000pt);
+\filldraw (486.000000, 345.000000) circle(1.500000pt);
+% Line 205: data6 a16 #Z
+\draw (492.000000,660.000000) -- (492.000000,330.000000);
+\filldraw (492.000000, 660.000000) circle(1.500000pt);
+\filldraw (492.000000, 330.000000) circle(1.500000pt);
+% Line 209: x30 x31 x32 x33 M
+\draw[fill=white] (528.000000, 144.000000) rectangle (540.000000, 156.000000);
+\draw[very thin] (534.000000, 150.600000) arc (90:150:6.000000pt);
+\draw[very thin] (534.000000, 150.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (534.000000, 144.600000) -- +(80:10.392305pt);
+\draw[fill=white] (528.000000, 129.000000) rectangle (540.000000, 141.000000);
+\draw[very thin] (534.000000, 135.600000) arc (90:150:6.000000pt);
+\draw[very thin] (534.000000, 135.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (534.000000, 129.600000) -- +(80:10.392305pt);
+\draw[fill=white] (528.000000, 114.000000) rectangle (540.000000, 126.000000);
+\draw[very thin] (534.000000, 120.600000) arc (90:150:6.000000pt);
+\draw[very thin] (534.000000, 120.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (534.000000, 114.600000) -- +(80:10.392305pt);
+\draw[fill=white] (528.000000, 99.000000) rectangle (540.000000, 111.000000);
+\draw[very thin] (534.000000, 105.600000) arc (90:150:6.000000pt);
+\draw[very thin] (534.000000, 105.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (534.000000, 99.600000) -- +(80:10.392305pt);
+% Line 210: x30 x31 x32 x33 END length=9
+\draw[color=black] (540.000000,150.000000) node[fill=white,right,minimum height=15.000000pt,minimum width=9.000000pt,inner sep=0pt] {\phantom{$\scriptstyle0$}};
+\draw[color=black] (540.000000,150.000000) node[right] {$\scriptstyle0$};
+\draw[color=black] (540.000000,135.000000) node[fill=white,right,minimum height=15.000000pt,minimum width=9.000000pt,inner sep=0pt] {\phantom{$\scriptstyle0$}};
+\draw[color=black] (540.000000,135.000000) node[right] {$\scriptstyle0$};
+\draw[color=black] (540.000000,120.000000) node[fill=white,right,minimum height=15.000000pt,minimum width=9.000000pt,inner sep=0pt] {\phantom{$\scriptstyle0$}};
+\draw[color=black] (540.000000,120.000000) node[right] {$\scriptstyle0$};
+\draw[color=black] (540.000000,105.000000) node[fill=white,right,minimum height=15.000000pt,minimum width=9.000000pt,inner sep=0pt] {\phantom{$\scriptstyle0$}};
+\draw[color=black] (540.000000,105.000000) node[right] {$\scriptstyle0$};
+% Line 213: a10 a11 a12 a13 a14 a15 a16 M
+\draw[fill=white] (507.000000, 414.000000) rectangle (519.000000, 426.000000);
+\draw[very thin] (513.000000, 420.600000) arc (90:150:6.000000pt);
+\draw[very thin] (513.000000, 420.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (513.000000, 414.600000) -- +(80:10.392305pt);
+\draw[fill=white] (507.000000, 399.000000) rectangle (519.000000, 411.000000);
+\draw[very thin] (513.000000, 405.600000) arc (90:150:6.000000pt);
+\draw[very thin] (513.000000, 405.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (513.000000, 399.600000) -- +(80:10.392305pt);
+\draw[fill=white] (507.000000, 384.000000) rectangle (519.000000, 396.000000);
+\draw[very thin] (513.000000, 390.600000) arc (90:150:6.000000pt);
+\draw[very thin] (513.000000, 390.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (513.000000, 384.600000) -- +(80:10.392305pt);
+\draw[fill=white] (507.000000, 369.000000) rectangle (519.000000, 381.000000);
+\draw[very thin] (513.000000, 375.600000) arc (90:150:6.000000pt);
+\draw[very thin] (513.000000, 375.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (513.000000, 369.600000) -- +(80:10.392305pt);
+\draw[fill=white] (507.000000, 354.000000) rectangle (519.000000, 366.000000);
+\draw[very thin] (513.000000, 360.600000) arc (90:150:6.000000pt);
+\draw[very thin] (513.000000, 360.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (513.000000, 354.600000) -- +(80:10.392305pt);
+\draw[fill=white] (507.000000, 339.000000) rectangle (519.000000, 351.000000);
+\draw[very thin] (513.000000, 345.600000) arc (90:150:6.000000pt);
+\draw[very thin] (513.000000, 345.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (513.000000, 339.600000) -- +(80:10.392305pt);
+\draw[fill=white] (507.000000, 324.000000) rectangle (519.000000, 336.000000);
+\draw[very thin] (513.000000, 330.600000) arc (90:150:6.000000pt);
+\draw[very thin] (513.000000, 330.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (513.000000, 324.600000) -- +(80:10.392305pt);
+% Line 214: a10 a11 a12 a13 a14 a15 a16 END length=9
+% Line 217: +data0 a20
+\draw (531.000000,750.000000) -- (531.000000,255.000000);
+\begin{scope}
+\draw[fill=white] (531.000000, 750.000000) circle(3.000000pt);
+\clip (531.000000, 750.000000) circle(3.000000pt);
+\draw (528.000000, 750.000000) -- (534.000000, 750.000000);
+\draw (531.000000, 747.000000) -- (531.000000, 753.000000);
+\end{scope}
+\filldraw (531.000000, 255.000000) circle(1.500000pt);
+% Line 218: +data1 a21
+\draw (537.000000,735.000000) -- (537.000000,240.000000);
+\begin{scope}
+\draw[fill=white] (537.000000, 735.000000) circle(3.000000pt);
+\clip (537.000000, 735.000000) circle(3.000000pt);
+\draw (534.000000, 735.000000) -- (540.000000, 735.000000);
+\draw (537.000000, 732.000000) -- (537.000000, 738.000000);
+\end{scope}
+\filldraw (537.000000, 240.000000) circle(1.500000pt);
+% Line 219: +data2 a22
+\draw (543.000000,720.000000) -- (543.000000,225.000000);
+\begin{scope}
+\draw[fill=white] (543.000000, 720.000000) circle(3.000000pt);
+\clip (543.000000, 720.000000) circle(3.000000pt);
+\draw (540.000000, 720.000000) -- (546.000000, 720.000000);
+\draw (543.000000, 717.000000) -- (543.000000, 723.000000);
+\end{scope}
+\filldraw (543.000000, 225.000000) circle(1.500000pt);
+% Line 220: +data3 a23
+\draw (549.000000,705.000000) -- (549.000000,210.000000);
+\begin{scope}
+\draw[fill=white] (549.000000, 705.000000) circle(3.000000pt);
+\clip (549.000000, 705.000000) circle(3.000000pt);
+\draw (546.000000, 705.000000) -- (552.000000, 705.000000);
+\draw (549.000000, 702.000000) -- (549.000000, 708.000000);
+\end{scope}
+\filldraw (549.000000, 210.000000) circle(1.500000pt);
+% Line 221: +data4 a24
+\draw (555.000000,690.000000) -- (555.000000,195.000000);
+\begin{scope}
+\draw[fill=white] (555.000000, 690.000000) circle(3.000000pt);
+\clip (555.000000, 690.000000) circle(3.000000pt);
+\draw (552.000000, 690.000000) -- (558.000000, 690.000000);
+\draw (555.000000, 687.000000) -- (555.000000, 693.000000);
+\end{scope}
+\filldraw (555.000000, 195.000000) circle(1.500000pt);
+% Line 222: +data5 a25
+\draw (561.000000,675.000000) -- (561.000000,180.000000);
+\begin{scope}
+\draw[fill=white] (561.000000, 675.000000) circle(3.000000pt);
+\clip (561.000000, 675.000000) circle(3.000000pt);
+\draw (558.000000, 675.000000) -- (564.000000, 675.000000);
+\draw (561.000000, 672.000000) -- (561.000000, 678.000000);
+\end{scope}
+\filldraw (561.000000, 180.000000) circle(1.500000pt);
+% Line 223: +data6 a26
+\draw (567.000000,660.000000) -- (567.000000,165.000000);
+\begin{scope}
+\draw[fill=white] (567.000000, 660.000000) circle(3.000000pt);
+\clip (567.000000, 660.000000) circle(3.000000pt);
+\draw (564.000000, 660.000000) -- (570.000000, 660.000000);
+\draw (567.000000, 657.000000) -- (567.000000, 663.000000);
+\end{scope}
+\filldraw (567.000000, 165.000000) circle(1.500000pt);
+% Line 227: a20 a21 a22 a23 a24 a25 a26 M
+\draw[fill=white] (582.000000, 249.000000) rectangle (594.000000, 261.000000);
+\draw[very thin] (588.000000, 255.600000) arc (90:150:6.000000pt);
+\draw[very thin] (588.000000, 255.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (588.000000, 249.600000) -- +(80:10.392305pt);
+\draw[fill=white] (582.000000, 234.000000) rectangle (594.000000, 246.000000);
+\draw[very thin] (588.000000, 240.600000) arc (90:150:6.000000pt);
+\draw[very thin] (588.000000, 240.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (588.000000, 234.600000) -- +(80:10.392305pt);
+\draw[fill=white] (582.000000, 219.000000) rectangle (594.000000, 231.000000);
+\draw[very thin] (588.000000, 225.600000) arc (90:150:6.000000pt);
+\draw[very thin] (588.000000, 225.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (588.000000, 219.600000) -- +(80:10.392305pt);
+\draw[fill=white] (582.000000, 204.000000) rectangle (594.000000, 216.000000);
+\draw[very thin] (588.000000, 210.600000) arc (90:150:6.000000pt);
+\draw[very thin] (588.000000, 210.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (588.000000, 204.600000) -- +(80:10.392305pt);
+\draw[fill=white] (582.000000, 189.000000) rectangle (594.000000, 201.000000);
+\draw[very thin] (588.000000, 195.600000) arc (90:150:6.000000pt);
+\draw[very thin] (588.000000, 195.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (588.000000, 189.600000) -- +(80:10.392305pt);
+\draw[fill=white] (582.000000, 174.000000) rectangle (594.000000, 186.000000);
+\draw[very thin] (588.000000, 180.600000) arc (90:150:6.000000pt);
+\draw[very thin] (588.000000, 180.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (588.000000, 174.600000) -- +(80:10.392305pt);
+\draw[fill=white] (582.000000, 159.000000) rectangle (594.000000, 171.000000);
+\draw[very thin] (588.000000, 165.600000) arc (90:150:6.000000pt);
+\draw[very thin] (588.000000, 165.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (588.000000, 159.600000) -- +(80:10.392305pt);
+% Line 228: a20 a21 a22 a23 a24 a25 a26 END length=9
+% Line 231: +data0 a30
+\draw (606.000000,750.000000) -- (606.000000,90.000000);
+\begin{scope}
+\draw[fill=white] (606.000000, 750.000000) circle(3.000000pt);
+\clip (606.000000, 750.000000) circle(3.000000pt);
+\draw (603.000000, 750.000000) -- (609.000000, 750.000000);
+\draw (606.000000, 747.000000) -- (606.000000, 753.000000);
+\end{scope}
+\filldraw (606.000000, 90.000000) circle(1.500000pt);
+% Line 232: +data1 a31
+\draw (612.000000,735.000000) -- (612.000000,75.000000);
+\begin{scope}
+\draw[fill=white] (612.000000, 735.000000) circle(3.000000pt);
+\clip (612.000000, 735.000000) circle(3.000000pt);
+\draw (609.000000, 735.000000) -- (615.000000, 735.000000);
+\draw (612.000000, 732.000000) -- (612.000000, 738.000000);
+\end{scope}
+\filldraw (612.000000, 75.000000) circle(1.500000pt);
+% Line 233: +data2 a32
+\draw (618.000000,720.000000) -- (618.000000,60.000000);
+\begin{scope}
+\draw[fill=white] (618.000000, 720.000000) circle(3.000000pt);
+\clip (618.000000, 720.000000) circle(3.000000pt);
+\draw (615.000000, 720.000000) -- (621.000000, 720.000000);
+\draw (618.000000, 717.000000) -- (618.000000, 723.000000);
+\end{scope}
+\filldraw (618.000000, 60.000000) circle(1.500000pt);
+% Line 234: +data3 a33
+\draw (624.000000,705.000000) -- (624.000000,45.000000);
+\begin{scope}
+\draw[fill=white] (624.000000, 705.000000) circle(3.000000pt);
+\clip (624.000000, 705.000000) circle(3.000000pt);
+\draw (621.000000, 705.000000) -- (627.000000, 705.000000);
+\draw (624.000000, 702.000000) -- (624.000000, 708.000000);
+\end{scope}
+\filldraw (624.000000, 45.000000) circle(1.500000pt);
+% Line 235: +data4 a34
+\draw (630.000000,690.000000) -- (630.000000,30.000000);
+\begin{scope}
+\draw[fill=white] (630.000000, 690.000000) circle(3.000000pt);
+\clip (630.000000, 690.000000) circle(3.000000pt);
+\draw (627.000000, 690.000000) -- (633.000000, 690.000000);
+\draw (630.000000, 687.000000) -- (630.000000, 693.000000);
+\end{scope}
+\filldraw (630.000000, 30.000000) circle(1.500000pt);
+% Line 236: +data5 a35
+\draw (636.000000,675.000000) -- (636.000000,15.000000);
+\begin{scope}
+\draw[fill=white] (636.000000, 675.000000) circle(3.000000pt);
+\clip (636.000000, 675.000000) circle(3.000000pt);
+\draw (633.000000, 675.000000) -- (639.000000, 675.000000);
+\draw (636.000000, 672.000000) -- (636.000000, 678.000000);
+\end{scope}
+\filldraw (636.000000, 15.000000) circle(1.500000pt);
+% Line 237: +data6 a36
+\draw (642.000000,660.000000) -- (642.000000,0.000000);
+\begin{scope}
+\draw[fill=white] (642.000000, 660.000000) circle(3.000000pt);
+\clip (642.000000, 660.000000) circle(3.000000pt);
+\draw (639.000000, 660.000000) -- (645.000000, 660.000000);
+\draw (642.000000, 657.000000) -- (642.000000, 663.000000);
+\end{scope}
+\filldraw (642.000000, 0.000000) circle(1.500000pt);
+% Line 241: a30 a31 a32 a33 a34 a35 a36 M
+\draw[fill=white] (657.000000, 84.000000) rectangle (669.000000, 96.000000);
+\draw[very thin] (663.000000, 90.600000) arc (90:150:6.000000pt);
+\draw[very thin] (663.000000, 90.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (663.000000, 84.600000) -- +(80:10.392305pt);
+\draw[fill=white] (657.000000, 69.000000) rectangle (669.000000, 81.000000);
+\draw[very thin] (663.000000, 75.600000) arc (90:150:6.000000pt);
+\draw[very thin] (663.000000, 75.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (663.000000, 69.600000) -- +(80:10.392305pt);
+\draw[fill=white] (657.000000, 54.000000) rectangle (669.000000, 66.000000);
+\draw[very thin] (663.000000, 60.600000) arc (90:150:6.000000pt);
+\draw[very thin] (663.000000, 60.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (663.000000, 54.600000) -- +(80:10.392305pt);
+\draw[fill=white] (657.000000, 39.000000) rectangle (669.000000, 51.000000);
+\draw[very thin] (663.000000, 45.600000) arc (90:150:6.000000pt);
+\draw[very thin] (663.000000, 45.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (663.000000, 39.600000) -- +(80:10.392305pt);
+\draw[fill=white] (657.000000, 24.000000) rectangle (669.000000, 36.000000);
+\draw[very thin] (663.000000, 30.600000) arc (90:150:6.000000pt);
+\draw[very thin] (663.000000, 30.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (663.000000, 24.600000) -- +(80:10.392305pt);
+\draw[fill=white] (657.000000, 9.000000) rectangle (669.000000, 21.000000);
+\draw[very thin] (663.000000, 15.600000) arc (90:150:6.000000pt);
+\draw[very thin] (663.000000, 15.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (663.000000, 9.600000) -- +(80:10.392305pt);
+\draw[fill=white] (657.000000, -6.000000) rectangle (669.000000, 6.000000);
+\draw[very thin] (663.000000, 0.600000) arc (90:150:6.000000pt);
+\draw[very thin] (663.000000, 0.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (663.000000, -5.400000) -- +(80:10.392305pt);
+% Line 242: a30 a31 a32 a33 a34 a35 a36 END length=9
+% Line 246: data0 data1 data2 data3 data4 data5 data6 G \rotatebox{-90}{RECOVER}
+\draw (667.500000,750.000000) -- (667.500000,660.000000);
+\begin{scope}
+\draw[fill=white] (667.500000, 705.000000) +(-45.000000:8.485281pt and 72.124892pt) -- +(45.000000:8.485281pt and 72.124892pt) -- +(135.000000:8.485281pt and 72.124892pt) -- +(225.000000:8.485281pt and 72.124892pt) -- cycle;
+\clip (667.500000, 705.000000) +(-45.000000:8.485281pt and 72.124892pt) -- +(45.000000:8.485281pt and 72.124892pt) -- +(135.000000:8.485281pt and 72.124892pt) -- +(225.000000:8.485281pt and 72.124892pt) -- cycle;
+\draw (667.500000, 705.000000) node {\rotatebox{-90}{RECOVER}};
+\end{scope}
+% Done with gates; drawing ending labels
+% Done with ending labels; drawing cut lines and comments
+\draw[dashed,color=white] (72.000000, -7.500000) -- (72.000000, 757.500000);
+\draw[dashed,color=green!50!black] (99.000000, -7.500000) -- (99.000000, 757.500000);
+\draw[dashed,color=green!50!black] (129.000000, -7.500000) -- (129.000000, 757.500000);
+\draw[dashed,color=green!50!black] (159.000000, -7.500000) -- (159.000000, 757.500000);
+\draw[dashed,color=green!50!black] (189.000000, -7.500000) -- (189.000000, 757.500000);
+\draw[dashed,color=green!50!black] (225.000000, -7.500000) -- (225.000000, 757.500000);
+\draw[dashed,color=green!50!black] (261.000000, -7.500000) -- (261.000000, 757.500000);
+\draw[dashed,color=green!50!black] (297.000000, -7.500000) -- (297.000000, 757.500000);
+\draw[dashed,color=green!50!black] (333.000000, -7.500000) -- (333.000000, 757.500000);
+\draw[dashed,color=green!50!black] (372.000000, -7.500000) -- (372.000000, 757.500000);
+\draw[dashed,color=green!50!black] (426.000000, -7.500000) -- (426.000000, 757.500000);
+\draw[dashed,color=green!50!black] (501.000000, -7.500000) -- (501.000000, 757.500000);
+\draw[dashed,color=green!50!black] (576.000000, -7.500000) -- (576.000000, 757.500000);
+\draw[dashed,color=green!50!black] (651.000000, -7.500000) -- (651.000000, 757.500000);
+% Line 247: a00 a06 @ 1 4 fill=blue color=blue %% \emph{Create ancilla \#1}
+\draw[draw opacity=1.000000,fill opacity=0.100000,color=blue,fill=blue] (75.000000,592.500000) rectangle (186.000000,487.500000);
+\draw (130.500000, 487.500000) node[text width=144pt,below,text centered,color=blue] {\emph{Create ancilla \#1}};
+\draw[draw opacity=1.000000,fill opacity=0.100000,color=blue,fill=blue] (75.000000,592.500000) rectangle (186.000000,487.500000);
+% Line 248: a10 a16 @ 2 5 fill=blue color=blue %% \emph{Create ancilla \#2}
+\draw[draw opacity=1.000000,fill opacity=0.100000,color=blue,fill=blue] (102.000000,427.500000) rectangle (222.000000,322.500000);
+\draw (162.000000, 322.500000) node[text width=144pt,below,text centered,color=blue] {\emph{Create ancilla \#2}};
+\draw[draw opacity=1.000000,fill opacity=0.100000,color=blue,fill=blue] (102.000000,427.500000) rectangle (222.000000,322.500000);
+% Line 249: a20 a26 @ 3 6 fill=blue color=blue %% \emph{Create ancilla \#3}
+\draw[draw opacity=1.000000,fill opacity=0.100000,color=blue,fill=blue] (132.000000,262.500000) rectangle (258.000000,157.500000);
+\draw (195.000000, 157.500000) node[text width=144pt,below,text centered,color=blue] {\emph{Create ancilla \#3}};
+\draw[draw opacity=1.000000,fill opacity=0.100000,color=blue,fill=blue] (132.000000,262.500000) rectangle (258.000000,157.500000);
+% Line 250: a30 a36 @ 4 7 fill=blue color=blue %% \emph{Create ancilla \#4}
+\draw[draw opacity=1.000000,fill opacity=0.100000,color=blue,fill=blue] (162.000000,97.500000) rectangle (294.000000,-7.500000);
+\draw (228.000000, -7.500000) node[text width=144pt,below,text centered,color=blue] {\emph{Create ancilla \#4}};
+\draw[draw opacity=1.000000,fill opacity=0.100000,color=blue,fill=blue] (162.000000,97.500000) rectangle (294.000000,-7.500000);
+% Line 251: x00 a06 @ 5 9 fill=brown color=brown
+\draw[draw opacity=1.000000,fill opacity=0.100000,color=brown,fill=brown] (192.000000,652.500000) rectangle (369.000000,487.500000);
+\draw[draw opacity=1.000000,fill opacity=0.100000,color=brown,fill=brown] (192.000000,652.500000) rectangle (369.000000,487.500000);
+% Line 252: x10 a16 @ 6 10 fill=brown color=brown
+\draw[draw opacity=1.000000,fill opacity=0.100000,color=brown,fill=brown] (228.000000,487.500000) rectangle (423.000000,322.500000);
+\draw[draw opacity=1.000000,fill opacity=0.100000,color=brown,fill=brown] (228.000000,487.500000) rectangle (423.000000,322.500000);
+% Line 253: x20 a26 @ 7 11 fill=brown color=brown
+\draw[draw opacity=1.000000,fill opacity=0.100000,color=brown,fill=brown] (264.000000,322.500000) rectangle (498.000000,157.500000);
+\draw[draw opacity=1.000000,fill opacity=0.100000,color=brown,fill=brown] (264.000000,322.500000) rectangle (498.000000,157.500000);
+% Line 254: x30 a36 @ 8 12 fill=brown color=brown %% \emph{Verify ancilla \#4}
+\draw[draw opacity=1.000000,fill opacity=0.100000,color=brown,fill=brown] (300.000000,157.500000) rectangle (573.000000,-7.500000);
+\draw (436.500000, -7.500000) node[text width=144pt,below,text centered,color=brown] {\emph{Verify ancilla \#4}};
+\draw[draw opacity=1.000000,fill opacity=0.100000,color=brown,fill=brown] (300.000000,157.500000) rectangle (573.000000,-7.500000);
+% Line 255: @ -5 -5 color=blue % \emph{X-error \\ syndrome \\ \#1}
+\draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick,color=blue] (375.000000,757.500000) -- (423.000000,757.500000);
+\draw (399.000000, 761.500000) node[text width=144pt,above,text centered,color=blue] {\emph{X-error \\ syndrome \\ \#1}};
+% Line 256: @ -4 -4 color=blue % \emph{X-error \\ syndrome \\ \#2}
+\draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick,color=blue] (429.000000,757.500000) -- (498.000000,757.500000);
+\draw (463.500000, 761.500000) node[text width=144pt,above,text centered,color=blue] {\emph{X-error \\ syndrome \\ \#2}};
+% Line 257: @ -3 -3 color=blue % \emph{Z-error \\ syndrome \\ \#1}
+\draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick,color=blue] (504.000000,757.500000) -- (573.000000,757.500000);
+\draw (538.500000, 761.500000) node[text width=144pt,above,text centered,color=blue] {\emph{Z-error \\ syndrome \\ \#1}};
+% Line 258: @ -2 -2 color=blue % \emph{Z-error \\ syndrome \\ \#2}
+\draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick,color=blue] (579.000000,757.500000) -- (648.000000,757.500000);
+\draw (613.500000, 761.500000) node[text width=144pt,above,text centered,color=blue] {\emph{Z-error \\ syndrome \\ \#2}};
+% Done with comments
+\end{tikzpicture}

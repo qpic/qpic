@@ -38,7 +38,7 @@ TEX_pdf   = $(TEX_tmp:.tex=.pdf) $(CODE:code.tex=code.pdf)
 # TikZ FILES CREATED BY <q|pic>
 QPIC_tikz = $(QPIC:.qpic=.tikz) # Create TikZ target names for all QPIC files
 
-AUTO = IncludeTeX.tex IncludePDF.tex $(TEX_junk) $(TEX_tmp) $(QPIC_tikz)
+AUTO = IncludeTeX.tex IncludePDF.tex $(TEX_junk) $(TEX_tmp) 
 
 AUTO_pdf = $(TEX_all:.tex=.pdf) 
 
