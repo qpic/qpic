@@ -1,0 +1,50 @@
+%! \usepackage{hyperref}
+\hypertarget{VBE-sum}{}
+\begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
+\filldraw[color=white] (0.000000, -7.500000) rectangle (87.000000, 37.500000);
+% Drawing wires
+% Line 2: 1 W a a
+\draw[color=black] (0.000000,30.000000) -- (87.000000,30.000000);
+\draw[color=black] (0.000000,30.000000) node[left] {$a$};
+% Line 4: 3 W 0 a\oplus{b}
+\draw[color=black] (0.000000,0.000000) -- (87.000000,0.000000);
+\draw[color=black] (0.000000,0.000000) node[left] {$0$};
+% Line 3: 2 W b b
+\draw[color=black] (0.000000,15.000000) -- (87.000000,15.000000);
+\draw[color=black] (0.000000,15.000000) node[left] {$b$};
+% Done with wires; drawing gates
+% Line 6: 1 2 3  G \rotatebox{90}{SUM}
+\draw (12.000000,30.000000) -- (12.000000,0.000000);
+\begin{scope}
+\draw[fill=white] (12.000000, 15.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\clip (12.000000, 15.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\draw (12.000000, 15.000000) node {\rotatebox{90}{SUM}};
+\end{scope}
+% Line 7: =
+\draw[fill=white,color=white] (30.000000, -6.000000) rectangle (45.000000, 36.000000);
+\draw (37.500000, 15.000000) node {$=$};
+% Line 8: +3 2
+\draw (60.000000,15.000000) -- (60.000000,0.000000);
+\begin{scope}
+\draw[fill=white] (60.000000, 0.000000) circle(3.000000pt);
+\clip (60.000000, 0.000000) circle(3.000000pt);
+\draw (57.000000, 0.000000) -- (63.000000, 0.000000);
+\draw (60.000000, -3.000000) -- (60.000000, 3.000000);
+\end{scope}
+\filldraw (60.000000, 15.000000) circle(1.500000pt);
+% Line 9: +3 1
+\draw (78.000000,30.000000) -- (78.000000,0.000000);
+\begin{scope}
+\draw[fill=white] (78.000000, 0.000000) circle(3.000000pt);
+\clip (78.000000, 0.000000) circle(3.000000pt);
+\draw (75.000000, 0.000000) -- (81.000000, 0.000000);
+\draw (78.000000, -3.000000) -- (78.000000, 3.000000);
+\end{scope}
+\filldraw (78.000000, 30.000000) circle(1.500000pt);
+% Done with gates; drawing ending labels
+\draw[color=black] (87.000000,30.000000) node[right] {$a$};
+\draw[color=black] (87.000000,0.000000) node[right] {$a\oplus{b}$};
+\draw[color=black] (87.000000,15.000000) node[right] {$b$};
+% Done with ending labels; drawing cut lines and comments
+% Done with comments
+\end{tikzpicture}

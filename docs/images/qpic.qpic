@@ -11,8 +11,9 @@ CUT 2
 +1:b_on 2:b_on 3 b_on
 1:k_on 2:k_on b_on
 +1:style=dotted 2:style=dotted p_on
+LABEL width=-16
 2:r_on 1:r_on PERMUTE
-TOUCH
+1:k_on 2:k_on LABEL width=-9
 # 1:r_on 2:r_on r_on
 # 1:k_on r_on
 # 2:k_on r_on

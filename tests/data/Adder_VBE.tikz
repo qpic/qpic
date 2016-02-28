@@ -1,0 +1,204 @@
+%! \usepackage{hyperref}
+\begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
+\filldraw[color=white] (0.000000, -7.500000) rectangle (336.000000, 232.500000);
+% Drawing wires
+% Line 8: ... W
+\draw[color=black] (0.000000,120.000000) node[anchor=mid east] {$\vdots$};
+% Line 13: cn W 0=c_n 0
+\draw[color=black] (0.000000,45.000000) -- (336.000000,45.000000);
+\draw[color=black] (0.000000,45.000000) node[left] {$0=c_n$};
+% Line 10: cn1 W 0=c_{n-1} 0
+\draw[color=black] (0.000000,90.000000) -- (336.000000,90.000000);
+\draw[color=black] (0.000000,90.000000) node[left] {$0=c_{n-1}$};
+% Line 15: bn W b_n s_n
+\draw[color=black] (0.000000,15.000000) -- (336.000000,15.000000);
+\draw[color=black] (0.000000,15.000000) node[left] {$b_n$};
+% Line 12: bn1 W b_{n-1} s_{n-1}
+\draw[color=black] (0.000000,60.000000) -- (336.000000,60.000000);
+\draw[color=black] (0.000000,60.000000) node[left] {$b_{n-1}$};
+% Line 16: cnc W 0=c_{n+1} c_{n+1}
+\draw[color=black] (0.000000,0.000000) -- (336.000000,0.000000);
+\draw[color=black] (0.000000,0.000000) node[left] {$0=c_{n+1}$};
+% Line 14: an W a_n a_n
+\draw[color=black] (0.000000,30.000000) -- (336.000000,30.000000);
+\draw[color=black] (0.000000,30.000000) node[left] {$a_n$};
+% Line 5: a1 W a_1 a_1
+\draw[color=black] (0.000000,165.000000) -- (336.000000,165.000000);
+\draw[color=black] (0.000000,165.000000) node[left] {$a_1$};
+% Line 2: a0 W a_0 a_0
+\draw[color=black] (0.000000,210.000000) -- (336.000000,210.000000);
+\draw[color=black] (0.000000,210.000000) node[left] {$a_0$};
+% Line 3: b0 W b_0 s_0
+\draw[color=black] (0.000000,195.000000) -- (336.000000,195.000000);
+\draw[color=black] (0.000000,195.000000) node[left] {$b_0$};
+% Line 6: b1 W b_1 s_1
+\draw[color=black] (0.000000,150.000000) -- (336.000000,150.000000);
+\draw[color=black] (0.000000,150.000000) node[left] {$b_1$};
+% Line 4: c1 W 0=c_1 0
+\draw[color=black] (0.000000,180.000000) -- (336.000000,180.000000);
+\draw[color=black] (0.000000,180.000000) node[left] {$0=c_1$};
+% Line 1: c0 W 0=c_0 0
+\draw[color=black] (0.000000,225.000000) -- (336.000000,225.000000);
+\draw[color=black] (0.000000,225.000000) node[left] {$0=c_0$};
+% Line 7: z1 W color=white
+\draw[color=white] (0.000000,135.000000) -- (336.000000,135.000000);
+% Line 9: z2 W color=white
+\draw[color=white] (0.000000,105.000000) -- (336.000000,105.000000);
+% Line 11: an1 W a_{n-1} a_{n-1}
+\draw[color=black] (0.000000,75.000000) -- (336.000000,75.000000);
+\draw[color=black] (0.000000,75.000000) node[left] {$a_{n-1}$};
+% Done with wires; drawing gates
+% Line 18: c0 a0 b0 c1  G| \rotatebox{90}{CARRY} hyperlink=VBE-carry
+\draw (12.000000,225.000000) -- (12.000000,180.000000);
+\begin{scope}
+\draw[fill=white] (12.000000, 202.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt) -- +(135.000000:8.485281pt and 40.305087pt) -- +(225.000000:8.485281pt and 40.305087pt) -- cycle;
+\draw[very thick,solid] (12.000000, 202.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt);
+\clip (12.000000, 202.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt) -- +(135.000000:8.485281pt and 40.305087pt) -- +(225.000000:8.485281pt and 40.305087pt) -- cycle;
+\draw (12.000000, 202.500000) node {\rotatebox{90}{CARRY}};
+\end{scope}
+\draw (6.000000,174.000000) node[inner sep=0pt, outer sep=0pt, anchor=south west] {\hyperlink{VBE-carry}{\phantom{\rule{12.000000pt}{57.000000pt}}}};
+% Line 19: c1 a1 b1 z1  G| \rotatebox{90}{CARRY} hyperlink=VBE-carry
+\draw (36.000000,180.000000) -- (36.000000,135.000000);
+\begin{scope}
+\draw[fill=white] (36.000000, 157.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt) -- +(135.000000:8.485281pt and 40.305087pt) -- +(225.000000:8.485281pt and 40.305087pt) -- cycle;
+\draw[very thick,solid] (36.000000, 157.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt);
+\clip (36.000000, 157.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt) -- +(135.000000:8.485281pt and 40.305087pt) -- +(225.000000:8.485281pt and 40.305087pt) -- cycle;
+\draw (36.000000, 157.500000) node {\rotatebox{90}{CARRY}};
+\end{scope}
+\draw (30.000000,129.000000) node[inner sep=0pt, outer sep=0pt, anchor=south west] {\hyperlink{VBE-carry}{\phantom{\rule{12.000000pt}{57.000000pt}}}};
+% Line 20: LABEL ...
+\draw[color=black] (61.500000, 225.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 210.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 195.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 180.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 165.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 150.000000) node [fill=white] {$\cdots$};
+\draw[color=white] (61.500000, 135.000000) node [fill=white] {$\cdots$};
+\draw[color=white] (61.500000, 105.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 90.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 75.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 60.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 45.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 30.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 15.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 0.000000) node [fill=white] {$\cdots$};
+% Line 21: cn1 an1 bn1 cn  G| \rotatebox{90}{CARRY} hyperlink=VBE-carry
+\draw (87.000000,90.000000) -- (87.000000,45.000000);
+\begin{scope}
+\draw[fill=white] (87.000000, 67.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt) -- +(135.000000:8.485281pt and 40.305087pt) -- +(225.000000:8.485281pt and 40.305087pt) -- cycle;
+\draw[very thick,solid] (87.000000, 67.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt);
+\clip (87.000000, 67.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt) -- +(135.000000:8.485281pt and 40.305087pt) -- +(225.000000:8.485281pt and 40.305087pt) -- cycle;
+\draw (87.000000, 67.500000) node {\rotatebox{90}{CARRY}};
+\end{scope}
+\draw (81.000000,39.000000) node[inner sep=0pt, outer sep=0pt, anchor=south west] {\hyperlink{VBE-carry}{\phantom{\rule{12.000000pt}{57.000000pt}}}};
+% Line 22: cn an bn cnc  G| \rotatebox{90}{CARRY} hyperlink=VBE-carry
+\draw (111.000000,45.000000) -- (111.000000,0.000000);
+\begin{scope}
+\draw[fill=white] (111.000000, 22.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt) -- +(135.000000:8.485281pt and 40.305087pt) -- +(225.000000:8.485281pt and 40.305087pt) -- cycle;
+\draw[very thick,solid] (111.000000, 22.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt);
+\clip (111.000000, 22.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt) -- +(135.000000:8.485281pt and 40.305087pt) -- +(225.000000:8.485281pt and 40.305087pt) -- cycle;
+\draw (111.000000, 22.500000) node {\rotatebox{90}{CARRY}};
+\end{scope}
+\draw (105.000000,-6.000000) node[inner sep=0pt, outer sep=0pt, anchor=south west] {\hyperlink{VBE-carry}{\phantom{\rule{12.000000pt}{57.000000pt}}}};
+% Line 23: +bn an
+\draw (132.000000,30.000000) -- (132.000000,15.000000);
+\begin{scope}
+\draw[fill=white] (132.000000, 15.000000) circle(3.000000pt);
+\clip (132.000000, 15.000000) circle(3.000000pt);
+\draw (129.000000, 15.000000) -- (135.000000, 15.000000);
+\draw (132.000000, 12.000000) -- (132.000000, 18.000000);
+\end{scope}
+\filldraw (132.000000, 30.000000) circle(1.500000pt);
+% Line 24: cn an bn  G \rotatebox{90}{SUM} hyperlink=VBE-sum
+\draw (153.000000,45.000000) -- (153.000000,15.000000);
+\begin{scope}
+\draw[fill=white] (153.000000, 30.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\clip (153.000000, 30.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\draw (153.000000, 30.000000) node {\rotatebox{90}{SUM}};
+\end{scope}
+\draw (147.000000,9.000000) node[inner sep=0pt, outer sep=0pt, anchor=south west] {\hyperlink{VBE-sum}{\phantom{\rule{12.000000pt}{42.000000pt}}}};
+% Line 25: cn1 an1 bn1 cn  |G \rotatebox{90}{CARRY} hyperlink=VBE-carry
+\draw (177.000000,90.000000) -- (177.000000,45.000000);
+\begin{scope}
+\draw[fill=white] (177.000000, 67.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt) -- +(135.000000:8.485281pt and 40.305087pt) -- +(225.000000:8.485281pt and 40.305087pt) -- cycle;
+\draw[very thick,solid] (177.000000, 67.500000) +(135.000000:8.485281pt and 40.305087pt) -- +(225.000000:8.485281pt and 40.305087pt);
+\clip (177.000000, 67.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt) -- +(135.000000:8.485281pt and 40.305087pt) -- +(225.000000:8.485281pt and 40.305087pt) -- cycle;
+\draw (177.000000, 67.500000) node {\rotatebox{90}{CARRY}};
+\end{scope}
+\draw (171.000000,39.000000) node[inner sep=0pt, outer sep=0pt, anchor=south west] {\hyperlink{VBE-carry}{\phantom{\rule{12.000000pt}{57.000000pt}}}};
+% Line 26: cn1 an1 bn1  G \rotatebox{90}{SUM} hyperlink=VBE-sum
+\draw (201.000000,90.000000) -- (201.000000,60.000000);
+\begin{scope}
+\draw[fill=white] (201.000000, 75.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\clip (201.000000, 75.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\draw (201.000000, 75.000000) node {\rotatebox{90}{SUM}};
+\end{scope}
+\draw (195.000000,54.000000) node[inner sep=0pt, outer sep=0pt, anchor=south west] {\hyperlink{VBE-sum}{\phantom{\rule{12.000000pt}{42.000000pt}}}};
+% Line 27: LABEL ...
+\draw[color=black] (226.500000, 225.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (226.500000, 210.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (226.500000, 195.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (226.500000, 180.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (226.500000, 165.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (226.500000, 150.000000) node [fill=white] {$\cdots$};
+\draw[color=white] (226.500000, 135.000000) node [fill=white] {$\cdots$};
+\draw[color=white] (226.500000, 105.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (226.500000, 90.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (226.500000, 75.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (226.500000, 60.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (226.500000, 45.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (226.500000, 30.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (226.500000, 15.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (226.500000, 0.000000) node [fill=white] {$\cdots$};
+% Line 28: c1 a1 b1 z1  |G \rotatebox{90}{CARRY} hyperlink=VBE-carry
+\draw (252.000000,180.000000) -- (252.000000,135.000000);
+\begin{scope}
+\draw[fill=white] (252.000000, 157.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt) -- +(135.000000:8.485281pt and 40.305087pt) -- +(225.000000:8.485281pt and 40.305087pt) -- cycle;
+\draw[very thick,solid] (252.000000, 157.500000) +(135.000000:8.485281pt and 40.305087pt) -- +(225.000000:8.485281pt and 40.305087pt);
+\clip (252.000000, 157.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt) -- +(135.000000:8.485281pt and 40.305087pt) -- +(225.000000:8.485281pt and 40.305087pt) -- cycle;
+\draw (252.000000, 157.500000) node {\rotatebox{90}{CARRY}};
+\end{scope}
+\draw (246.000000,129.000000) node[inner sep=0pt, outer sep=0pt, anchor=south west] {\hyperlink{VBE-carry}{\phantom{\rule{12.000000pt}{57.000000pt}}}};
+% Line 29: c1 a1 b1  G \rotatebox{90}{SUM} hyperlink=VBE-sum
+\draw (276.000000,180.000000) -- (276.000000,150.000000);
+\begin{scope}
+\draw[fill=white] (276.000000, 165.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\clip (276.000000, 165.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\draw (276.000000, 165.000000) node {\rotatebox{90}{SUM}};
+\end{scope}
+\draw (270.000000,144.000000) node[inner sep=0pt, outer sep=0pt, anchor=south west] {\hyperlink{VBE-sum}{\phantom{\rule{12.000000pt}{42.000000pt}}}};
+% Line 30: c0 a0 b0 c1  G| \rotatebox{90}{CARRY} hyperlink=VBE-carry
+\draw (300.000000,225.000000) -- (300.000000,180.000000);
+\begin{scope}
+\draw[fill=white] (300.000000, 202.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt) -- +(135.000000:8.485281pt and 40.305087pt) -- +(225.000000:8.485281pt and 40.305087pt) -- cycle;
+\draw[very thick,solid] (300.000000, 202.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt);
+\clip (300.000000, 202.500000) +(-45.000000:8.485281pt and 40.305087pt) -- +(45.000000:8.485281pt and 40.305087pt) -- +(135.000000:8.485281pt and 40.305087pt) -- +(225.000000:8.485281pt and 40.305087pt) -- cycle;
+\draw (300.000000, 202.500000) node {\rotatebox{90}{CARRY}};
+\end{scope}
+\draw (294.000000,174.000000) node[inner sep=0pt, outer sep=0pt, anchor=south west] {\hyperlink{VBE-carry}{\phantom{\rule{12.000000pt}{57.000000pt}}}};
+% Line 31: c0 a0 b0  G \rotatebox{90}{SUM} hyperlink=VBE-sum
+\draw (324.000000,225.000000) -- (324.000000,195.000000);
+\begin{scope}
+\draw[fill=white] (324.000000, 210.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\clip (324.000000, 210.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\draw (324.000000, 210.000000) node {\rotatebox{90}{SUM}};
+\end{scope}
+\draw (318.000000,189.000000) node[inner sep=0pt, outer sep=0pt, anchor=south west] {\hyperlink{VBE-sum}{\phantom{\rule{12.000000pt}{42.000000pt}}}};
+% Done with gates; drawing ending labels
+\draw[color=black] (336.000000,120.000000) node[anchor=mid west] {$\vdots$};
+\draw[color=black] (336.000000,45.000000) node[right] {$0$};
+\draw[color=black] (336.000000,90.000000) node[right] {$0$};
+\draw[color=black] (336.000000,15.000000) node[right] {$s_n$};
+\draw[color=black] (336.000000,60.000000) node[right] {$s_{n-1}$};
+\draw[color=black] (336.000000,0.000000) node[right] {$c_{n+1}$};
+\draw[color=black] (336.000000,30.000000) node[right] {$a_n$};
+\draw[color=black] (336.000000,165.000000) node[right] {$a_1$};
+\draw[color=black] (336.000000,210.000000) node[right] {$a_0$};
+\draw[color=black] (336.000000,195.000000) node[right] {$s_0$};
+\draw[color=black] (336.000000,150.000000) node[right] {$s_1$};
+\draw[color=black] (336.000000,180.000000) node[right] {$0$};
+\draw[color=black] (336.000000,225.000000) node[right] {$0$};
+\draw[color=black] (336.000000,75.000000) node[right] {$a_{n-1}$};
+% Done with ending labels; drawing cut lines and comments
+% Done with comments
+\end{tikzpicture}

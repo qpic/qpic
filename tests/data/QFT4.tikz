@@ -1,0 +1,97 @@
+\providecommand{\ket}[1]{\left|#1\right\rangle}
+\begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
+\filldraw[color=white] (0.000000, -7.500000) rectangle (204.000000, 52.500000);
+% Drawing wires
+% Line 4: a1 W \ket{x_1} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_1x_0}\ket{1})
+\draw[color=black] (0.000000,15.000000) -- (204.000000,15.000000);
+\draw[color=black] (0.000000,15.000000) node[left] {$\ket{x_1}$};
+% Line 5: a0 W \ket{x_0} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_0}\ket{1})
+\draw[color=black] (0.000000,0.000000) -- (204.000000,0.000000);
+\draw[color=black] (0.000000,0.000000) node[left] {$\ket{x_0}$};
+% Line 2: a3 W \ket{x_3} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_3x_2x_1x_0}\ket{1})
+\draw[color=black] (0.000000,45.000000) -- (204.000000,45.000000);
+\draw[color=black] (0.000000,45.000000) node[left] {$\ket{x_3}$};
+% Line 3: a2 W \ket{x_2} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_2x_1x_0}\ket{1})
+\draw[color=black] (0.000000,30.000000) -- (204.000000,30.000000);
+\draw[color=black] (0.000000,30.000000) node[left] {$\ket{x_2}$};
+% Done with wires; drawing gates
+% Line 6: a3 H
+\begin{scope}
+\draw[fill=white] (12.000000, 45.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (12.000000, 45.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (12.000000, 45.000000) node {$H$};
+\end{scope}
+% Line 7: a3 P $2$ a2
+\draw (36.000000,45.000000) -- (36.000000,30.000000);
+\begin{scope}
+\draw[fill=white] (36.000000, 45.000000) circle(6.000000pt);
+\clip (36.000000, 45.000000) circle(6.000000pt);
+\draw (36.000000, 45.000000) node {$2$};
+\end{scope}
+\filldraw (36.000000, 30.000000) circle(1.500000pt);
+% Line 8: a3 P $3$ a1
+\draw (60.000000,45.000000) -- (60.000000,15.000000);
+\begin{scope}
+\draw[fill=white] (60.000000, 45.000000) circle(6.000000pt);
+\clip (60.000000, 45.000000) circle(6.000000pt);
+\draw (60.000000, 45.000000) node {$3$};
+\end{scope}
+\filldraw (60.000000, 15.000000) circle(1.500000pt);
+% Line 10: a2 H
+\begin{scope}
+\draw[fill=white] (72.000000, 30.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (72.000000, 30.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (72.000000, 30.000000) node {$H$};
+\end{scope}
+% Line 9: a3 P $4$ a0
+\draw (96.000000,45.000000) -- (96.000000,0.000000);
+\begin{scope}
+\draw[fill=white] (96.000000, 45.000000) circle(6.000000pt);
+\clip (96.000000, 45.000000) circle(6.000000pt);
+\draw (96.000000, 45.000000) node {$4$};
+\end{scope}
+\filldraw (96.000000, 0.000000) circle(1.500000pt);
+% Line 11: a2 P $2$ a1
+\draw (108.000000,30.000000) -- (108.000000,15.000000);
+\begin{scope}
+\draw[fill=white] (108.000000, 30.000000) circle(6.000000pt);
+\clip (108.000000, 30.000000) circle(6.000000pt);
+\draw (108.000000, 30.000000) node {$2$};
+\end{scope}
+\filldraw (108.000000, 15.000000) circle(1.500000pt);
+% Line 12: a2 P $3$ a0
+\draw (132.000000,30.000000) -- (132.000000,0.000000);
+\begin{scope}
+\draw[fill=white] (132.000000, 30.000000) circle(6.000000pt);
+\clip (132.000000, 30.000000) circle(6.000000pt);
+\draw (132.000000, 30.000000) node {$3$};
+\end{scope}
+\filldraw (132.000000, 0.000000) circle(1.500000pt);
+% Line 13: a1 H
+\begin{scope}
+\draw[fill=white] (144.000000, 15.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (144.000000, 15.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (144.000000, 15.000000) node {$H$};
+\end{scope}
+% Line 14: a1 P $2$ a0
+\draw (168.000000,15.000000) -- (168.000000,0.000000);
+\begin{scope}
+\draw[fill=white] (168.000000, 15.000000) circle(6.000000pt);
+\clip (168.000000, 15.000000) circle(6.000000pt);
+\draw (168.000000, 15.000000) node {$2$};
+\end{scope}
+\filldraw (168.000000, 0.000000) circle(1.500000pt);
+% Line 15: a0 H
+\begin{scope}
+\draw[fill=white] (192.000000, -0.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (192.000000, -0.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (192.000000, -0.000000) node {$H$};
+\end{scope}
+% Done with gates; drawing ending labels
+\draw[color=black] (204.000000,15.000000) node[right] {$\frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_1x_0}\ket{1})$};
+\draw[color=black] (204.000000,0.000000) node[right] {$\frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_0}\ket{1})$};
+\draw[color=black] (204.000000,45.000000) node[right] {$\frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_3x_2x_1x_0}\ket{1})$};
+\draw[color=black] (204.000000,30.000000) node[right] {$\frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_2x_1x_0}\ket{1})$};
+% Done with ending labels; drawing cut lines and comments
+% Done with comments
+\end{tikzpicture}

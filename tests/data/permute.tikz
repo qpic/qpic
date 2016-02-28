@@ -1,0 +1,99 @@
+\begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
+\filldraw[color=white] (0.000000, -7.500000) rectangle (360.000000, 67.500000);
+% Drawing wires
+% Line 1: a W a a breadth=30
+\draw[color=black,rounded corners=4.000000pt] (0.000000,52.500000) -- (24.000000,52.500000) -- (31.500000,37.500000);
+\draw[color=black,rounded corners=4.000000pt] (31.500000,37.500000) -- (39.000000,22.500000) -- (78.000000,22.500000) -- (85.500000,37.500000);
+\draw[color=black,rounded corners=4.000000pt] (85.500000,37.500000) -- (93.000000,52.500000) -- (150.000000,52.500000) -- (157.500000,45.000000);
+\draw[color=black,rounded corners=4.000000pt] (157.500000,45.000000) -- (165.000000,37.500000) -- (204.000000,37.500000) -- (211.500000,30.000000);
+\draw[color=black,rounded corners=4.000000pt] (211.500000,30.000000) -- (219.000000,22.500000) -- (258.000000,22.500000) -- (265.500000,15.000000);
+\draw[color=black,rounded corners=4.000000pt] (265.500000,15.000000) -- (273.000000,7.500000) -- (312.000000,7.500000) -- (319.500000,30.000000);
+\draw[color=black,rounded corners=4.000000pt] (319.500000,30.000000) -- (327.000000,52.500000) -- (360.000000,52.500000);
+\draw[color=black] (0.000000,52.500000) node[left] {$a$};
+% Line 3: c W c c color=green
+\draw[color=green,rounded corners=4.000000pt] (0.000000,15.000000) -- (24.000000,15.000000) -- (31.500000,37.500000);
+\draw[color=red,rounded corners=4.000000pt] (31.500000,37.500000) -- (39.000000,60.000000) -- (78.000000,60.000000) -- (85.500000,37.500000);
+\draw[color=green,rounded corners=4.000000pt] (85.500000,37.500000) -- (93.000000,15.000000) -- (150.000000,15.000000) -- (157.500000,7.500000);
+\draw[color=green,rounded corners=4.000000pt] (157.500000,7.500000) -- (165.000000,0.000000) -- (204.000000,0.000000) -- (211.500000,30.000000);
+\draw[color=green,rounded corners=4.000000pt] (211.500000,30.000000) -- (219.000000,60.000000) -- (258.000000,60.000000) -- (265.500000,52.500000);
+\draw[color=green,rounded corners=4.000000pt] (265.500000,52.500000) -- (273.000000,45.000000) -- (312.000000,45.000000) -- (319.500000,30.000000);
+\draw[color=green,rounded corners=4.000000pt] (319.500000,30.000000) -- (327.000000,15.000000) -- (360.000000,15.000000);
+\draw[color=green] (0.000000,15.000000) node[left] {$c$};
+% Line 2: b W b b style=dashed
+\draw[color=black,dashed,rounded corners=4.000000pt] (0.000000,30.000000) -- (24.000000,30.000000) -- (31.500000,37.500000);
+\draw[color=black,dashed,rounded corners=4.000000pt] (31.500000,37.500000) -- (39.000000,45.000000) -- (78.000000,45.000000) -- (85.500000,37.500000);
+\draw[color=black,dashed,rounded corners=4.000000pt] (85.500000,37.500000) -- (93.000000,30.000000) -- (150.000000,30.000000) -- (157.500000,22.500000);
+\draw[color=black,dashed,rounded corners=4.000000pt] (157.500000,22.500000) -- (165.000000,15.000000) -- (204.000000,15.000000) -- (211.500000,7.500000);
+\draw[color=black,dashed,rounded corners=4.000000pt] (211.500000,7.500000) -- (219.000000,0.000000) -- (258.000000,0.000000) -- (265.500000,30.000000);
+\draw[color=black,dashed,rounded corners=4.000000pt] (265.500000,30.000000) -- (273.000000,60.000000) -- (312.000000,60.000000) -- (319.500000,45.000000);
+\draw[color=black,dashed,rounded corners=4.000000pt] (319.500000,45.000000) -- (327.000000,30.000000) -- (360.000000,30.000000);
+\draw[color=black] (0.000000,30.000000) node[left] {$b$};
+% Line 4: d W d d type=c
+\draw[color=black,rounded corners=4.000000pt] (0.000000,-0.500000) -- (150.000000,-0.500000) -- (157.500000,29.500000);
+\draw[color=black,rounded corners=4.000000pt] (0.000000,0.500000) -- (150.000000,0.500000) -- (157.500000,30.500000);
+\draw[color=black,rounded corners=4.000000pt] (157.500000,29.500000) -- (165.000000,59.500000) -- (204.000000,59.500000) -- (211.500000,52.000000);
+\draw[color=black,rounded corners=4.000000pt] (157.500000,30.500000) -- (165.000000,60.500000) -- (204.000000,60.500000) -- (211.500000,53.000000);
+\draw[color=black,rounded corners=4.000000pt] (211.500000,52.000000) -- (219.000000,44.500000) -- (258.000000,44.500000) -- (265.500000,37.000000);
+\draw[color=black,rounded corners=4.000000pt] (211.500000,53.000000) -- (219.000000,45.500000) -- (258.000000,45.500000) -- (265.500000,38.000000);
+\draw[color=black,rounded corners=4.000000pt] (265.500000,37.000000) -- (273.000000,29.500000) -- (312.000000,29.500000) -- (319.500000,14.500000);
+\draw[color=black,rounded corners=4.000000pt] (265.500000,38.000000) -- (273.000000,30.500000) -- (312.000000,30.500000) -- (319.500000,15.500000);
+\draw[color=black,rounded corners=4.000000pt] (319.500000,14.500000) -- (327.000000,-0.500000) -- (360.000000,-0.500000);
+\draw[color=black,rounded corners=4.000000pt] (319.500000,15.500000) -- (327.000000,0.500000) -- (360.000000,0.500000);
+\draw[color=black] (0.000000,0.000000) node[left] {$d$};
+% Done with wires; drawing gates
+% Line 7: +a b c
+\draw (9.000000,52.500000) -- (9.000000,15.000000);
+\begin{scope}
+\draw[fill=white] (9.000000, 52.500000) circle(3.000000pt);
+\clip (9.000000, 52.500000) circle(3.000000pt);
+\draw (6.000000, 52.500000) -- (12.000000, 52.500000);
+\draw (9.000000, 49.500000) -- (9.000000, 55.500000);
+\end{scope}
+\filldraw (9.000000, 30.000000) circle(1.500000pt);
+\filldraw (9.000000, 15.000000) circle(1.500000pt);
+\draw (108.000000,52.500000) -- (108.000000,15.000000);
+\begin{scope}
+\draw[fill=white] (108.000000, 52.500000) circle(3.000000pt);
+\clip (108.000000, 52.500000) circle(3.000000pt);
+\draw (105.000000, 52.500000) -- (111.000000, 52.500000);
+\draw (108.000000, 49.500000) -- (108.000000, 55.500000);
+\end{scope}
+\filldraw (108.000000, 30.000000) circle(1.500000pt);
+\filldraw (108.000000, 15.000000) circle(1.500000pt);
+% Line 8: c a PERMUTE c:color=red
+% Line 9: LABEL a b c d
+\draw[color=black] (58.500000, 22.500000) node [fill=white] {$a$};
+\draw[color=black] (58.500000, 45.000000) node [fill=white] {$b$};
+\draw[color=red] (58.500000, 60.000000) node [fill=white] {$c$};
+\draw[color=black] (58.500000, 0.000000) node [fill=white] {$d$};
+% Line 11: LABEL a b c d
+\draw[color=black] (130.500000, 52.500000) node [fill=white] {$a$};
+\draw[color=black] (130.500000, 30.000000) node [fill=white] {$b$};
+\draw[color=green] (130.500000, 15.000000) node [fill=white] {$c$};
+\draw[color=black] (130.500000, 0.000000) node [fill=white] {$d$};
+% Line 13: d a b c PERMUTE
+% Line 14: LABEL a b c d
+\draw[color=black] (184.500000, 37.500000) node [fill=white] {$a$};
+\draw[color=black] (184.500000, 15.000000) node [fill=white] {$b$};
+\draw[color=green] (184.500000, 0.000000) node [fill=white] {$c$};
+\draw[color=black] (184.500000, 60.000000) node [fill=white] {$d$};
+\draw[color=black] (238.500000, 22.500000) node [fill=white] {$a$};
+\draw[color=black] (238.500000, 0.000000) node [fill=white] {$b$};
+\draw[color=green] (238.500000, 60.000000) node [fill=white] {$c$};
+\draw[color=black] (238.500000, 45.000000) node [fill=white] {$d$};
+\draw[color=black] (292.500000, 7.500000) node [fill=white] {$a$};
+\draw[color=black] (292.500000, 60.000000) node [fill=white] {$b$};
+\draw[color=green] (292.500000, 45.000000) node [fill=white] {$c$};
+\draw[color=black] (292.500000, 30.000000) node [fill=white] {$d$};
+\draw[color=black] (346.500000, 52.500000) node [fill=white] {$a$};
+\draw[color=black] (346.500000, 30.000000) node [fill=white] {$b$};
+\draw[color=green] (346.500000, 15.000000) node [fill=white] {$c$};
+\draw[color=black] (346.500000, 0.000000) node [fill=white] {$d$};
+% Done with gates; drawing ending labels
+\draw[color=black] (360.000000,52.500000) node[right] {$a$};
+\draw[color=green] (360.000000,15.000000) node[right] {$c$};
+\draw[color=black] (360.000000,30.000000) node[right] {$b$};
+\draw[color=black] (360.000000,0.000000) node[right] {$d$};
+% Done with ending labels; drawing cut lines and comments
+% Done with comments
+\end{tikzpicture}

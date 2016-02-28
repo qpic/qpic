@@ -1,0 +1,146 @@
+\begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
+\filldraw[color=white] (0.000000, -7.500000) rectangle (264.000000, 187.500000);
+% Drawing wires
+% Line 7: ... W
+\draw[color=black] (0.000000,90.000000) node[anchor=mid east] {$\vdots$};
+% Line 13: z W z z\oplus{}s_{n+1}
+\draw[color=black] (0.000000,0.000000) -- (264.000000,0.000000);
+\draw[color=black] (0.000000,0.000000) node[left] {$z$};
+% Line 11: bn W b_n s_n
+\draw[color=black] (0.000000,30.000000) -- (264.000000,30.000000);
+\draw[color=black] (0.000000,30.000000) node[left] {$b_n$};
+% Line 9: bn1 W b_{n-1} s_{n-1}
+\draw[color=black] (0.000000,60.000000) -- (264.000000,60.000000);
+\draw[color=black] (0.000000,60.000000) node[left] {$b_{n-1}$};
+% Line 12: an W a_n a_n
+\draw[color=black] (0.000000,15.000000) -- (264.000000,15.000000);
+\draw[color=black] (0.000000,15.000000) node[left] {$a_n$};
+% Line 5: a1 W a_1 a_1
+\draw[color=black] (0.000000,120.000000) -- (264.000000,120.000000);
+\draw[color=black] (0.000000,120.000000) node[left] {$a_1$};
+% Line 3: a0 W a_0 a_0
+\draw[color=black] (0.000000,150.000000) -- (264.000000,150.000000);
+\draw[color=black] (0.000000,150.000000) node[left] {$a_0$};
+% Line 2: b0 W b_0 s_0
+\draw[color=black] (0.000000,165.000000) -- (264.000000,165.000000);
+\draw[color=black] (0.000000,165.000000) node[left] {$b_0$};
+% Line 4: b1 W b_1 s_1
+\draw[color=black] (0.000000,135.000000) -- (264.000000,135.000000);
+\draw[color=black] (0.000000,135.000000) node[left] {$b_1$};
+% Line 1: c0 W 0=c_0 0
+\draw[color=black] (0.000000,180.000000) -- (264.000000,180.000000);
+\draw[color=black] (0.000000,180.000000) node[left] {$0=c_0$};
+% Line 6: z1 W color=white
+\draw[color=white] (0.000000,105.000000) -- (264.000000,105.000000);
+% Line 8: z2 W color=white
+\draw[color=white] (0.000000,75.000000) -- (264.000000,75.000000);
+% Line 10: an1 W a_{n-1} a_{n-1}
+\draw[color=black] (0.000000,45.000000) -- (264.000000,45.000000);
+\draw[color=black] (0.000000,45.000000) node[left] {$a_{n-1}$};
+% Done with wires; drawing gates
+% Line 15: c0 b0 a0 G \rotatebox{90}{MAJ}
+\draw (12.000000,180.000000) -- (12.000000,150.000000);
+\begin{scope}
+\draw[fill=white] (12.000000, 165.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\clip (12.000000, 165.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\draw (12.000000, 165.000000) node {\rotatebox{90}{MAJ}};
+\end{scope}
+% Line 16: a0 b1 a1 G \rotatebox{90}{MAJ}
+\draw (36.000000,150.000000) -- (36.000000,120.000000);
+\begin{scope}
+\draw[fill=white] (36.000000, 135.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\clip (36.000000, 135.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\draw (36.000000, 135.000000) node {\rotatebox{90}{MAJ}};
+\end{scope}
+% Line 17: LABEL ...
+\draw[color=black] (61.500000, 180.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 165.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 150.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 135.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 120.000000) node [fill=white] {$\cdots$};
+\draw[color=white] (61.500000, 105.000000) node [fill=white] {$\cdots$};
+\draw[color=white] (61.500000, 75.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 60.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 45.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 30.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 15.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (61.500000, 0.000000) node [fill=white] {$\cdots$};
+% Line 18: z2 bn1 an1 G \rotatebox{90}{MAJ}
+\draw (87.000000,75.000000) -- (87.000000,45.000000);
+\begin{scope}
+\draw[fill=white] (87.000000, 60.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\clip (87.000000, 60.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\draw (87.000000, 60.000000) node {\rotatebox{90}{MAJ}};
+\end{scope}
+% Line 19: an1 bn an G \rotatebox{90}{MAJ}
+\draw (111.000000,45.000000) -- (111.000000,15.000000);
+\begin{scope}
+\draw[fill=white] (111.000000, 30.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\clip (111.000000, 30.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\draw (111.000000, 30.000000) node {\rotatebox{90}{MAJ}};
+\end{scope}
+% Line 20: +z an
+\draw (132.000000,15.000000) -- (132.000000,0.000000);
+\begin{scope}
+\draw[fill=white] (132.000000, 0.000000) circle(3.000000pt);
+\clip (132.000000, 0.000000) circle(3.000000pt);
+\draw (129.000000, 0.000000) -- (135.000000, 0.000000);
+\draw (132.000000, -3.000000) -- (132.000000, 3.000000);
+\end{scope}
+\filldraw (132.000000, 15.000000) circle(1.500000pt);
+% Line 21: an1 bn an G \rotatebox{90}{UMA}
+\draw (153.000000,45.000000) -- (153.000000,15.000000);
+\begin{scope}
+\draw[fill=white] (153.000000, 30.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\clip (153.000000, 30.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\draw (153.000000, 30.000000) node {\rotatebox{90}{UMA}};
+\end{scope}
+% Line 22: z2 bn1 an1 G \rotatebox{90}{UMA}
+\draw (177.000000,75.000000) -- (177.000000,45.000000);
+\begin{scope}
+\draw[fill=white] (177.000000, 60.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\clip (177.000000, 60.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\draw (177.000000, 60.000000) node {\rotatebox{90}{UMA}};
+\end{scope}
+% Line 23: LABEL ...
+\draw[color=black] (202.500000, 180.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (202.500000, 165.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (202.500000, 150.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (202.500000, 135.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (202.500000, 120.000000) node [fill=white] {$\cdots$};
+\draw[color=white] (202.500000, 105.000000) node [fill=white] {$\cdots$};
+\draw[color=white] (202.500000, 75.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (202.500000, 60.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (202.500000, 45.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (202.500000, 30.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (202.500000, 15.000000) node [fill=white] {$\cdots$};
+\draw[color=black] (202.500000, 0.000000) node [fill=white] {$\cdots$};
+% Line 24: a0 b1 a1 G \rotatebox{90}{UMA}
+\draw (228.000000,150.000000) -- (228.000000,120.000000);
+\begin{scope}
+\draw[fill=white] (228.000000, 135.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\clip (228.000000, 135.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\draw (228.000000, 135.000000) node {\rotatebox{90}{UMA}};
+\end{scope}
+% Line 25: c0 b0 a0 G \rotatebox{90}{UMA}
+\draw (252.000000,180.000000) -- (252.000000,150.000000);
+\begin{scope}
+\draw[fill=white] (252.000000, 165.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\clip (252.000000, 165.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\draw (252.000000, 165.000000) node {\rotatebox{90}{UMA}};
+\end{scope}
+% Done with gates; drawing ending labels
+\draw[color=black] (264.000000,90.000000) node[anchor=mid west] {$\vdots$};
+\draw[color=black] (264.000000,0.000000) node[right] {$z\oplus{}s_{n+1}$};
+\draw[color=black] (264.000000,30.000000) node[right] {$s_n$};
+\draw[color=black] (264.000000,60.000000) node[right] {$s_{n-1}$};
+\draw[color=black] (264.000000,15.000000) node[right] {$a_n$};
+\draw[color=black] (264.000000,120.000000) node[right] {$a_1$};
+\draw[color=black] (264.000000,150.000000) node[right] {$a_0$};
+\draw[color=black] (264.000000,165.000000) node[right] {$s_0$};
+\draw[color=black] (264.000000,135.000000) node[right] {$s_1$};
+\draw[color=black] (264.000000,180.000000) node[right] {$0$};
+\draw[color=black] (264.000000,45.000000) node[right] {$a_{n-1}$};
+% Done with ending labels; drawing cut lines and comments
+% Done with comments
+\end{tikzpicture}

@@ -1,0 +1,80 @@
+\begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
+\filldraw[color=white] (0.000000, -7.500000) rectangle (48.000000, 127.500000);
+% Drawing wires
+% Line 2: +0 1 2:color=purple
+\draw[color=black] (0.000000,105.000000) -- (48.000000,105.000000);
+% Line 2: +0 1 2:color=purple
+\draw[color=black] (0.000000,90.000000) -- (48.000000,90.000000);
+% Line 2: +0 1 2:color=purple
+\draw[color=black] (0.000000,75.000000) -- (12.000000,75.000000);
+\draw[color=purple] (12.000000,75.000000) -- (48.000000,75.000000);
+% Line 5: 1 2 +3
+\draw[color=black] (0.000000,60.000000) -- (48.000000,60.000000);
+% Line 6: +c -a -b:color=blue
+\draw[color=black] (0.000000,0.000000) -- (48.000000,0.000000);
+\draw[color=black] (0.000000,0.000000) node[left] {$c$};
+% Line 6: +c -a -b:color=blue
+\draw[color=black] (0.000000,15.000000) -- (39.000000,15.000000);
+\draw[color=blue] (39.000000,15.000000) -- (48.000000,15.000000);
+\draw[color=black] (0.000000,15.000000) node[left] {$b$};
+% Line 9: a0,0 TOUCH
+\draw[color=black] (0.000000,30.000000) -- (48.000000,30.000000);
+\draw[color=black] (0.000000,30.000000) node[left] {$a_{0,0}$};
+% Line 3: a W
+\draw[color=black] (0.000000,120.000000) -- (48.000000,120.000000);
+% Line 8: a2 M
+\draw[color=black] (0.000000,45.000000) -- (12.000000,45.000000);
+\draw[color=black] (12.000000,44.500000) -- (48.000000,44.500000);
+\draw[color=black] (12.000000,45.500000) -- (48.000000,45.500000);
+\draw[color=black] (0.000000,45.000000) node[left] {$a_{2}$};
+% Done with wires; drawing gates
+% Line 2: +0 1 2:color=purple
+\draw (12.000000,105.000000) -- (12.000000,75.000000);
+\begin{scope}
+\draw[fill=white] (12.000000, 105.000000) circle(3.000000pt);
+\clip (12.000000, 105.000000) circle(3.000000pt);
+\draw (9.000000, 105.000000) -- (15.000000, 105.000000);
+\draw (12.000000, 102.000000) -- (12.000000, 108.000000);
+\end{scope}
+\filldraw (12.000000, 90.000000) circle(1.500000pt);
+\filldraw (12.000000, 75.000000) circle(1.500000pt);
+% Line 4: +a
+\begin{scope}
+\draw[fill=white] (12.000000, 120.000000) circle(3.000000pt);
+\clip (12.000000, 120.000000) circle(3.000000pt);
+\draw (9.000000, 120.000000) -- (15.000000, 120.000000);
+\draw (12.000000, 117.000000) -- (12.000000, 123.000000);
+\end{scope}
+% Line 8: a2 M
+\draw[fill=white] (6.000000, 39.000000) rectangle (18.000000, 51.000000);
+\draw[very thin] (12.000000, 45.600000) arc (90:150:6.000000pt);
+\draw[very thin] (12.000000, 45.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (12.000000, 39.600000) -- +(80:10.392305pt);
+% Line 9: a0,0 TOUCH
+% Line 5: 1 2 +3
+\draw (33.000000,90.000000) -- (33.000000,60.000000);
+\filldraw (33.000000, 90.000000) circle(1.500000pt);
+\filldraw (33.000000, 75.000000) circle(1.500000pt);
+\begin{scope}
+\draw[fill=white] (33.000000, 60.000000) circle(3.000000pt);
+\clip (33.000000, 60.000000) circle(3.000000pt);
+\draw (30.000000, 60.000000) -- (36.000000, 60.000000);
+\draw (33.000000, 57.000000) -- (33.000000, 63.000000);
+\end{scope}
+% Line 6: +c -a -b:color=blue
+\draw (39.000000,120.000000) -- (39.000000,0.000000);
+\begin{scope}
+\draw[fill=white] (39.000000, 0.000000) circle(3.000000pt);
+\clip (39.000000, 0.000000) circle(3.000000pt);
+\draw (36.000000, 0.000000) -- (42.000000, 0.000000);
+\draw (39.000000, -3.000000) -- (39.000000, 3.000000);
+\end{scope}
+\draw[fill=white] (39.000000, 120.000000) circle(2.250000pt);
+\draw[fill=white] (39.000000, 15.000000) circle(2.250000pt);
+% Done with gates; drawing ending labels
+% Done with ending labels; drawing cut lines and comments
+% Line 7: 2 b @ 1 fill=red
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=red] (27.000000,82.500000) rectangle (45.000000,7.500000);
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=red] (27.000000,82.500000) rectangle (45.000000,7.500000);
+% Done with comments
+\end{tikzpicture}

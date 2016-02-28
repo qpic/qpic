@@ -1,0 +1,63 @@
+\providecommand{\ket}[1]{\left|#1\right\rangle}
+\begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
+\filldraw[color=white] (0.000000, -7.500000) rectangle (132.000000, 37.500000);
+% Drawing wires
+% Line 3: a1 W \ket{x_1} \ket{t_1}
+\draw[color=black] (0.000000,15.000000) -- (132.000000,15.000000);
+\draw[color=black] (0.000000,15.000000) node[left] {$\ket{x_1}$};
+% Line 4: a0 W \ket{x_0} \ket{t_2}
+\draw[color=black] (0.000000,0.000000) -- (132.000000,0.000000);
+\draw[color=black] (0.000000,0.000000) node[left] {$\ket{x_0}$};
+% Line 2: a2 W \ket{x_2} \ket{t_0}
+\draw[color=black] (0.000000,30.000000) -- (132.000000,30.000000);
+\draw[color=black] (0.000000,30.000000) node[left] {$\ket{x_2}$};
+% Done with wires; drawing gates
+% Line 5: a2 H
+\begin{scope}
+\draw[fill=white] (12.000000, 30.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (12.000000, 30.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (12.000000, 30.000000) node {$H$};
+\end{scope}
+% Line 7: a1 P $2$ a2
+\draw (36.000000,30.000000) -- (36.000000,15.000000);
+\begin{scope}
+\draw[fill=white] (36.000000, 15.000000) circle(6.000000pt);
+\clip (36.000000, 15.000000) circle(6.000000pt);
+\draw (36.000000, 15.000000) node {$2$};
+\end{scope}
+\filldraw (36.000000, 30.000000) circle(1.500000pt);
+% Line 8: a0 P $3$ a2
+\draw (60.000000,30.000000) -- (60.000000,0.000000);
+\begin{scope}
+\draw[fill=white] (60.000000, 0.000000) circle(6.000000pt);
+\clip (60.000000, 0.000000) circle(6.000000pt);
+\draw (60.000000, 0.000000) node {$3$};
+\end{scope}
+\filldraw (60.000000, 30.000000) circle(1.500000pt);
+% Line 9: a1 H
+\begin{scope}
+\draw[fill=white] (72.000000, 15.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (72.000000, 15.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (72.000000, 15.000000) node {$H$};
+\end{scope}
+% Line 10: a0 P $2$ a1
+\draw (96.000000,15.000000) -- (96.000000,0.000000);
+\begin{scope}
+\draw[fill=white] (96.000000, 0.000000) circle(6.000000pt);
+\clip (96.000000, 0.000000) circle(6.000000pt);
+\draw (96.000000, 0.000000) node {$2$};
+\end{scope}
+\filldraw (96.000000, 15.000000) circle(1.500000pt);
+% Line 11: a0 H
+\begin{scope}
+\draw[fill=white] (120.000000, -0.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (120.000000, -0.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (120.000000, -0.000000) node {$H$};
+\end{scope}
+% Done with gates; drawing ending labels
+\draw[color=black] (132.000000,15.000000) node[right] {$\ket{t_1}$};
+\draw[color=black] (132.000000,0.000000) node[right] {$\ket{t_2}$};
+\draw[color=black] (132.000000,30.000000) node[right] {$\ket{t_0}$};
+% Done with ending labels; drawing cut lines and comments
+% Done with comments
+\end{tikzpicture}

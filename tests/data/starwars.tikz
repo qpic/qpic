@@ -1,0 +1,389 @@
+%! \usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing}
+\begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
+\filldraw[color=white] (0.000000, -7.500000) rectangle (1064.000000, 277.500000);
+% Drawing wires
+% Line 32: lando W LANDO LANDO
+\draw[color=black,rounded corners=4.000000pt] (433.500000,30.000000) -- (453.000000,30.000000) -- (460.500000,105.000000);
+\draw[color=black,rounded corners=4.000000pt] (460.500000,105.000000) -- (468.000000,180.000000) -- (537.000000,180.000000) -- (544.500000,127.500000);
+\draw[color=black,rounded corners=4.000000pt] (544.500000,127.500000) -- (552.000000,75.000000) -- (564.000000,75.000000);
+\draw[color=black] (564.000000,75.000000) -- (571.500000,75.000000);
+\draw[color=black] (571.500000,75.000000) -- (579.000000,75.000000);
+\draw[color=black,rounded corners=4.000000pt] (579.000000,75.000000) -- (669.000000,75.000000) -- (676.500000,60.000000);
+\draw[color=black,rounded corners=4.000000pt] (676.500000,60.000000) -- (684.000000,45.000000) -- (869.000000,45.000000);
+\draw[color=black] (869.000000,45.000000) -- (876.500000,45.000000);
+\draw[color=black] (876.500000,45.000000) -- (884.000000,45.000000);
+\draw[color=black,rounded corners=4.000000pt] (884.000000,45.000000) -- (980.000000,45.000000) -- (987.500000,112.500000);
+\draw[color=black,rounded corners=4.000000pt] (987.500000,112.500000) -- (995.000000,180.000000) -- (1043.000000,180.000000) -- (1050.500000,165.000000);
+\draw[color=black,rounded corners=4.000000pt] (1050.500000,165.000000) -- (1058.000000,150.000000) -- (1064.000000,150.000000);
+% Line 24: emperor W EMPEROR style=very_thick
+\draw[color=black,very thick] (899.000000,225.000000) -- (1013.000000,225.000000);
+% Line 25: ben W BEN
+\draw[color=black] (0.000000,165.000000) -- (6.000000,165.000000);
+\draw[color=black] (6.000000,165.000000) -- (13.500000,165.000000);
+\draw[color=black] (13.500000,165.000000) -- (21.000000,165.000000);
+\draw[color=black,rounded corners=4.000000pt] (21.000000,165.000000) -- (60.000000,165.000000) -- (67.500000,157.500000);
+\draw[color=black,rounded corners=4.000000pt] (67.500000,157.500000) -- (75.000000,150.000000) -- (141.000000,150.000000) -- (148.500000,142.500000);
+\draw[color=black,rounded corners=4.000000pt] (148.500000,142.500000) -- (156.000000,135.000000) -- (168.000000,135.000000) -- (175.500000,180.000000);
+\draw[color=black,rounded corners=4.000000pt] (175.500000,180.000000) -- (183.000000,225.000000) -- (231.000000,225.000000);
+\draw[color=black] (0.000000,165.000000) node[left] {$\textrm{\sc{obi-wan}}$};
+% Line 33: han W HAN HAN
+\draw[color=black,rounded corners=4.000000pt] (0.000000,45.000000) -- (99.000000,45.000000) -- (106.500000,67.500000);
+\draw[color=black,rounded corners=4.000000pt] (106.500000,67.500000) -- (114.000000,90.000000) -- (141.000000,90.000000) -- (148.500000,135.000000);
+\draw[color=black,rounded corners=4.000000pt] (148.500000,135.000000) -- (156.000000,180.000000) -- (168.000000,180.000000) -- (175.500000,135.000000);
+\draw[color=black,rounded corners=4.000000pt] (175.500000,135.000000) -- (183.000000,90.000000) -- (249.000000,90.000000) -- (256.500000,75.000000);
+\draw[color=black,rounded corners=4.000000pt] (256.500000,75.000000) -- (264.000000,60.000000) -- (276.000000,60.000000) -- (283.500000,112.500000);
+\draw[color=black,rounded corners=4.000000pt] (283.500000,112.500000) -- (291.000000,165.000000) -- (303.000000,165.000000) -- (310.500000,157.500000);
+\draw[color=black,rounded corners=4.000000pt] (310.500000,157.500000) -- (318.000000,150.000000) -- (384.000000,150.000000) -- (391.500000,165.000000);
+\draw[color=black,rounded corners=4.000000pt] (391.500000,165.000000) -- (399.000000,180.000000) -- (411.000000,180.000000) -- (418.500000,172.500000);
+\draw[color=black,rounded corners=4.000000pt] (418.500000,172.500000) -- (426.000000,165.000000) -- (453.000000,165.000000) -- (460.500000,150.000000);
+\draw[color=black,rounded corners=4.000000pt] (460.500000,150.000000) -- (468.000000,135.000000) -- (537.000000,135.000000);
+\draw[color=black] (537.000000,135.000000) -- (544.500000,135.000000);
+\draw[color=black] (544.500000,135.000000) -- (552.000000,135.000000);
+\draw[color=black,rounded corners=4.000000pt] (552.000000,135.000000) -- (564.000000,135.000000) -- (571.500000,82.500000);
+\draw[color=black,rounded corners=4.000000pt] (571.500000,82.500000) -- (579.000000,30.000000) -- (869.000000,30.000000) -- (876.500000,52.500000);
+\draw[color=black,rounded corners=4.000000pt] (876.500000,52.500000) -- (884.000000,75.000000) -- (980.000000,75.000000);
+\draw[color=black] (980.000000,75.000000) -- (987.500000,75.000000);
+\draw[color=black] (987.500000,75.000000) -- (995.000000,75.000000);
+\draw[color=black] (995.000000,75.000000) -- (1064.000000,75.000000);
+\draw[color=black] (0.000000,45.000000) node[left] {$\textrm{\sc{han}}$};
+% Line 22: r2 W R2 R2 color=blue!75!black
+\draw[color=blue!75!black,rounded corners=4.000000pt] (0.000000,210.000000) -- (6.000000,210.000000) -- (13.500000,172.500000);
+\draw[color=blue!75!black,rounded corners=4.000000pt] (13.500000,172.500000) -- (21.000000,135.000000) -- (141.000000,135.000000) -- (148.500000,120.000000);
+\draw[color=blue!75!black,rounded corners=4.000000pt] (148.500000,120.000000) -- (156.000000,105.000000) -- (168.000000,105.000000) -- (175.500000,127.500000);
+\draw[color=blue!75!black,rounded corners=4.000000pt] (175.500000,127.500000) -- (183.000000,150.000000) -- (249.000000,150.000000) -- (256.500000,165.000000);
+\draw[color=blue!75!black,rounded corners=4.000000pt] (256.500000,165.000000) -- (264.000000,180.000000) -- (303.000000,180.000000) -- (310.500000,172.500000);
+\draw[color=blue!75!black,rounded corners=4.000000pt] (310.500000,172.500000) -- (318.000000,165.000000) -- (384.000000,165.000000) -- (391.500000,157.500000);
+\draw[color=blue!75!black,rounded corners=4.000000pt] (391.500000,157.500000) -- (399.000000,150.000000) -- (453.000000,150.000000) -- (460.500000,195.000000);
+\draw[color=blue!75!black,rounded corners=4.000000pt] (460.500000,195.000000) -- (468.000000,240.000000) -- (564.000000,240.000000) -- (571.500000,187.500000);
+\draw[color=blue!75!black,rounded corners=4.000000pt] (571.500000,187.500000) -- (579.000000,135.000000) -- (684.000000,135.000000) -- (691.500000,105.000000);
+\draw[color=blue!75!black,rounded corners=4.000000pt] (691.500000,105.000000) -- (699.000000,75.000000) -- (869.000000,75.000000) -- (876.500000,90.000000);
+\draw[color=blue!75!black,rounded corners=4.000000pt] (876.500000,90.000000) -- (884.000000,105.000000) -- (980.000000,105.000000);
+\draw[color=blue!75!black] (980.000000,105.000000) -- (987.500000,105.000000);
+\draw[color=blue!75!black] (987.500000,105.000000) -- (995.000000,105.000000);
+\draw[color=blue!75!black] (995.000000,105.000000) -- (1064.000000,105.000000);
+\draw[color=blue!75!black] (0.000000,210.000000) node[left] {$\textrm{\sc{r2d2}}$};
+% Line 23: c3po W C3PO C3PO color=yellow!75!black
+\draw[color=yellow!75!black,rounded corners=4.000000pt] (0.000000,195.000000) -- (6.000000,195.000000) -- (13.500000,157.500000);
+\draw[color=yellow!75!black,rounded corners=4.000000pt] (13.500000,157.500000) -- (21.000000,120.000000) -- (141.000000,120.000000) -- (148.500000,105.000000);
+\draw[color=yellow!75!black,rounded corners=4.000000pt] (148.500000,105.000000) -- (156.000000,90.000000) -- (168.000000,90.000000) -- (175.500000,97.500000);
+\draw[color=yellow!75!black,rounded corners=4.000000pt] (175.500000,97.500000) -- (183.000000,105.000000) -- (249.000000,105.000000);
+\draw[color=yellow!75!black] (249.000000,105.000000) -- (256.500000,105.000000);
+\draw[color=yellow!75!black] (256.500000,105.000000) -- (264.000000,105.000000);
+\draw[color=yellow!75!black] (264.000000,105.000000) -- (276.000000,105.000000);
+\draw[color=yellow!75!black] (276.000000,105.000000) -- (283.500000,105.000000);
+\draw[color=yellow!75!black] (283.500000,105.000000) -- (291.000000,105.000000);
+\draw[color=yellow!75!black,rounded corners=4.000000pt] (291.000000,105.000000) -- (453.000000,105.000000) -- (460.500000,97.500000);
+\draw[color=yellow!75!black,rounded corners=4.000000pt] (460.500000,97.500000) -- (468.000000,90.000000) -- (537.000000,90.000000);
+\draw[color=yellow!75!black] (537.000000,90.000000) -- (544.500000,90.000000);
+\draw[color=yellow!75!black] (544.500000,90.000000) -- (552.000000,90.000000);
+\draw[color=yellow!75!black] (552.000000,90.000000) -- (564.000000,90.000000);
+\draw[color=yellow!75!black] (564.000000,90.000000) -- (571.500000,90.000000);
+\draw[color=yellow!75!black] (571.500000,90.000000) -- (579.000000,90.000000);
+\draw[color=yellow!75!black,rounded corners=4.000000pt] (579.000000,90.000000) -- (684.000000,90.000000) -- (691.500000,75.000000);
+\draw[color=yellow!75!black,rounded corners=4.000000pt] (691.500000,75.000000) -- (699.000000,60.000000) -- (869.000000,60.000000) -- (876.500000,75.000000);
+\draw[color=yellow!75!black,rounded corners=4.000000pt] (876.500000,75.000000) -- (884.000000,90.000000) -- (980.000000,90.000000);
+\draw[color=yellow!75!black] (980.000000,90.000000) -- (987.500000,90.000000);
+\draw[color=yellow!75!black] (987.500000,90.000000) -- (995.000000,90.000000);
+\draw[color=yellow!75!black] (995.000000,90.000000) -- (1064.000000,90.000000);
+\draw[color=yellow!75!black] (0.000000,195.000000) node[left] {$\textrm{\sc{c3po}}$};
+% Line 29: luke W LUKE LUKE
+\draw[color=black,rounded corners=4.000000pt] (0.000000,105.000000) -- (141.000000,105.000000) -- (148.500000,157.500000);
+\draw[color=black,rounded corners=4.000000pt] (148.500000,157.500000) -- (156.000000,210.000000) -- (168.000000,210.000000) -- (175.500000,187.500000);
+\draw[color=black,rounded corners=4.000000pt] (175.500000,187.500000) -- (183.000000,165.000000) -- (249.000000,165.000000) -- (256.500000,180.000000);
+\draw[color=black,rounded corners=4.000000pt] (256.500000,180.000000) -- (264.000000,195.000000) -- (303.000000,195.000000) -- (310.500000,187.500000);
+\draw[color=black,rounded corners=4.000000pt] (310.500000,187.500000) -- (318.000000,180.000000) -- (357.000000,180.000000) -- (364.500000,187.500000);
+\draw[color=black,rounded corners=4.000000pt] (364.500000,187.500000) -- (372.000000,195.000000) -- (411.000000,195.000000) -- (418.500000,187.500000);
+\draw[color=black,rounded corners=4.000000pt] (418.500000,187.500000) -- (426.000000,180.000000) -- (453.000000,180.000000) -- (460.500000,217.500000);
+\draw[color=black,rounded corners=4.000000pt] (460.500000,217.500000) -- (468.000000,255.000000) -- (564.000000,255.000000) -- (571.500000,225.000000);
+\draw[color=black,rounded corners=4.000000pt] (571.500000,225.000000) -- (579.000000,195.000000) -- (615.000000,195.000000) -- (622.500000,172.500000);
+\draw[color=black,rounded corners=4.000000pt] (622.500000,172.500000) -- (630.000000,150.000000) -- (684.000000,150.000000) -- (691.500000,142.500000);
+\draw[color=black,rounded corners=4.000000pt] (691.500000,142.500000) -- (699.000000,135.000000) -- (779.000000,135.000000) -- (786.500000,127.500000);
+\draw[color=black,rounded corners=4.000000pt] (786.500000,127.500000) -- (794.000000,120.000000) -- (812.000000,120.000000) -- (819.500000,187.500000);
+\draw[color=black,rounded corners=4.000000pt] (819.500000,187.500000) -- (827.000000,255.000000) -- (842.000000,255.000000) -- (849.500000,187.500000);
+\draw[color=black,rounded corners=4.000000pt] (849.500000,187.500000) -- (857.000000,120.000000) -- (869.000000,120.000000) -- (876.500000,135.000000);
+\draw[color=black,rounded corners=4.000000pt] (876.500000,135.000000) -- (884.000000,150.000000) -- (926.000000,150.000000) -- (933.500000,165.000000);
+\draw[color=black,rounded corners=4.000000pt] (933.500000,165.000000) -- (941.000000,180.000000) -- (953.000000,180.000000) -- (960.500000,187.500000);
+\draw[color=black,rounded corners=4.000000pt] (960.500000,187.500000) -- (968.000000,195.000000) -- (1043.000000,195.000000) -- (1050.500000,180.000000);
+\draw[color=black,rounded corners=4.000000pt] (1050.500000,180.000000) -- (1058.000000,165.000000) -- (1064.000000,165.000000);
+\draw[color=black] (0.000000,105.000000) node[left] {$\textrm{\sc{luke}}$};
+% Line 19: boba W BOBA color=green!75!black
+\draw[color=green!75!black,rounded corners=4.000000pt] (510.000000,210.000000) -- (537.000000,210.000000) -- (544.500000,187.500000);
+\draw[color=green!75!black,rounded corners=4.000000pt] (544.500000,187.500000) -- (552.000000,165.000000) -- (564.000000,165.000000) -- (571.500000,90.000000);
+\draw[color=green!75!black,rounded corners=4.000000pt] (571.500000,90.000000) -- (579.000000,15.000000) -- (779.000000,15.000000);
+% Line 31: x7 W type=o
+% Line 18: vader W VADER style=very_thick
+\draw[color=black,very thick,rounded corners=4.000000pt] (0.000000,270.000000) -- (6.000000,270.000000) -- (13.500000,255.000000);
+\draw[color=black,very thick,rounded corners=4.000000pt] (13.500000,255.000000) -- (21.000000,240.000000) -- (249.000000,240.000000) -- (256.500000,225.000000);
+\draw[color=black,very thick,rounded corners=4.000000pt] (256.500000,225.000000) -- (264.000000,210.000000) -- (303.000000,210.000000) -- (310.500000,217.500000);
+\draw[color=black,very thick,rounded corners=4.000000pt] (310.500000,217.500000) -- (318.000000,225.000000) -- (411.000000,225.000000) -- (418.500000,210.000000);
+\draw[color=black,very thick,rounded corners=4.000000pt] (418.500000,210.000000) -- (426.000000,195.000000) -- (453.000000,195.000000);
+\draw[color=black,very thick] (453.000000,195.000000) -- (460.500000,195.000000);
+\draw[color=black,very thick] (460.500000,195.000000) -- (468.000000,195.000000);
+\draw[color=black,very thick,rounded corners=4.000000pt] (468.000000,195.000000) -- (537.000000,195.000000) -- (544.500000,172.500000);
+\draw[color=black,very thick,rounded corners=4.000000pt] (544.500000,172.500000) -- (552.000000,150.000000) -- (564.000000,150.000000) -- (571.500000,165.000000);
+\draw[color=black,very thick,rounded corners=4.000000pt] (571.500000,165.000000) -- (579.000000,180.000000) -- (615.000000,180.000000) -- (622.500000,195.000000);
+\draw[color=black,very thick,rounded corners=4.000000pt] (622.500000,195.000000) -- (630.000000,210.000000) -- (812.000000,210.000000);
+\draw[color=black,very thick] (812.000000,210.000000) -- (819.500000,210.000000);
+\draw[color=black,very thick] (819.500000,210.000000) -- (827.000000,210.000000);
+\draw[color=black,very thick] (827.000000,210.000000) -- (842.000000,210.000000);
+\draw[color=black,very thick] (842.000000,210.000000) -- (849.500000,210.000000);
+\draw[color=black,very thick] (849.500000,210.000000) -- (857.000000,210.000000);
+\draw[color=black,very thick,rounded corners=4.000000pt] (857.000000,210.000000) -- (926.000000,210.000000) -- (933.500000,202.500000);
+\draw[color=black,very thick,rounded corners=4.000000pt] (933.500000,202.500000) -- (941.000000,195.000000) -- (953.000000,195.000000) -- (960.500000,202.500000);
+\draw[color=black,very thick,rounded corners=4.000000pt] (960.500000,202.500000) -- (968.000000,210.000000) -- (1025.000000,210.000000);
+\draw[color=black] (0.000000,270.000000) node[left] {$\textrm{\sc{vader}}$};
+% Line 35: x9 W type=o
+% Line 36: jabba W JABBA color=green!75!black
+\draw[color=green!75!black] (0.000000,0.000000) -- (87.000000,0.000000);
+\draw[color=green!75!black,dashed,rounded corners=4.000000pt] (87.000000,0.000000) -- (99.000000,0.000000) -- (106.500000,30.000000);
+\draw[color=green!75!black,dashed,rounded corners=4.000000pt] (106.500000,30.000000) -- (114.000000,60.000000) -- (126.000000,60.000000) -- (133.500000,30.000000);
+\draw[color=green!75!black,dashed,rounded corners=4.000000pt] (133.500000,30.000000) -- (141.000000,0.000000) -- (162.000000,0.000000);
+\draw[color=green!75!black,solid] (162.000000,0.000000) -- (794.000000,0.000000);
+\draw[color=green!75!black] (0.000000,0.000000) node[left] {$\textrm{\sc{jabba}}$};
+% Line 30: greedo W GREEDO color=green!75!black
+\draw[color=green!75!black] (67.500000,90.000000) -- (93.000000,90.000000);
+% Line 26: x3 W type=o
+% Line 21: leia W LEIA LEIA
+\draw[color=black,rounded corners=4.000000pt] (0.000000,225.000000) -- (141.000000,225.000000) -- (148.500000,210.000000);
+\draw[color=black,rounded corners=4.000000pt] (148.500000,210.000000) -- (156.000000,195.000000) -- (168.000000,195.000000) -- (175.500000,157.500000);
+\draw[color=black,rounded corners=4.000000pt] (175.500000,157.500000) -- (183.000000,120.000000) -- (249.000000,120.000000);
+\draw[color=black] (249.000000,120.000000) -- (256.500000,120.000000);
+\draw[color=black] (256.500000,120.000000) -- (264.000000,120.000000);
+\draw[color=black] (264.000000,120.000000) -- (276.000000,120.000000);
+\draw[color=black] (276.000000,120.000000) -- (283.500000,120.000000);
+\draw[color=black] (283.500000,120.000000) -- (291.000000,120.000000);
+\draw[color=black,rounded corners=4.000000pt] (291.000000,120.000000) -- (453.000000,120.000000) -- (460.500000,112.500000);
+\draw[color=black,rounded corners=4.000000pt] (460.500000,112.500000) -- (468.000000,105.000000) -- (537.000000,105.000000);
+\draw[color=black] (537.000000,105.000000) -- (544.500000,105.000000);
+\draw[color=black] (544.500000,105.000000) -- (552.000000,105.000000);
+\draw[color=black] (552.000000,105.000000) -- (564.000000,105.000000);
+\draw[color=black] (564.000000,105.000000) -- (571.500000,105.000000);
+\draw[color=black] (571.500000,105.000000) -- (579.000000,105.000000);
+\draw[color=black] (579.000000,105.000000) -- (684.000000,105.000000);
+\draw[color=black] (684.000000,105.000000) -- (691.500000,105.000000);
+\draw[color=black] (691.500000,105.000000) -- (699.000000,105.000000);
+\draw[color=black,rounded corners=4.000000pt] (699.000000,105.000000) -- (711.000000,105.000000) -- (718.500000,97.500000);
+\draw[color=black,rounded corners=4.000000pt] (718.500000,97.500000) -- (726.000000,90.000000) -- (869.000000,90.000000) -- (876.500000,105.000000);
+\draw[color=black,rounded corners=4.000000pt] (876.500000,105.000000) -- (884.000000,120.000000) -- (980.000000,120.000000);
+\draw[color=black] (980.000000,120.000000) -- (987.500000,120.000000);
+\draw[color=black] (987.500000,120.000000) -- (995.000000,120.000000);
+\draw[color=black] (995.000000,120.000000) -- (1064.000000,120.000000);
+\draw[color=black] (0.000000,225.000000) node[left] {$\textrm{\sc{leia}}$};
+% Line 34: chewie W CHEWIE CHEWIE color=brown
+\draw[color=brown,rounded corners=4.000000pt] (0.000000,30.000000) -- (99.000000,30.000000) -- (106.500000,52.500000);
+\draw[color=brown,rounded corners=4.000000pt] (106.500000,52.500000) -- (114.000000,75.000000) -- (141.000000,75.000000) -- (148.500000,120.000000);
+\draw[color=brown,rounded corners=4.000000pt] (148.500000,120.000000) -- (156.000000,165.000000) -- (168.000000,165.000000) -- (175.500000,120.000000);
+\draw[color=brown,rounded corners=4.000000pt] (175.500000,120.000000) -- (183.000000,75.000000) -- (249.000000,75.000000) -- (256.500000,60.000000);
+\draw[color=brown,rounded corners=4.000000pt] (256.500000,60.000000) -- (264.000000,45.000000) -- (276.000000,45.000000) -- (283.500000,97.500000);
+\draw[color=brown,rounded corners=4.000000pt] (283.500000,97.500000) -- (291.000000,150.000000) -- (303.000000,150.000000) -- (310.500000,142.500000);
+\draw[color=brown,rounded corners=4.000000pt] (310.500000,142.500000) -- (318.000000,135.000000) -- (453.000000,135.000000) -- (460.500000,127.500000);
+\draw[color=brown,rounded corners=4.000000pt] (460.500000,127.500000) -- (468.000000,120.000000) -- (537.000000,120.000000);
+\draw[color=brown] (537.000000,120.000000) -- (544.500000,120.000000);
+\draw[color=brown] (544.500000,120.000000) -- (552.000000,120.000000);
+\draw[color=brown] (552.000000,120.000000) -- (564.000000,120.000000);
+\draw[color=brown] (564.000000,120.000000) -- (571.500000,120.000000);
+\draw[color=brown] (571.500000,120.000000) -- (579.000000,120.000000);
+\draw[color=brown] (579.000000,120.000000) -- (684.000000,120.000000);
+\draw[color=brown] (684.000000,120.000000) -- (691.500000,120.000000);
+\draw[color=brown] (691.500000,120.000000) -- (699.000000,120.000000);
+\draw[color=brown,rounded corners=4.000000pt] (699.000000,120.000000) -- (711.000000,120.000000) -- (718.500000,112.500000);
+\draw[color=brown,rounded corners=4.000000pt] (718.500000,112.500000) -- (726.000000,105.000000) -- (869.000000,105.000000) -- (876.500000,120.000000);
+\draw[color=brown,rounded corners=4.000000pt] (876.500000,120.000000) -- (884.000000,135.000000) -- (980.000000,135.000000);
+\draw[color=brown] (980.000000,135.000000) -- (987.500000,135.000000);
+\draw[color=brown] (987.500000,135.000000) -- (995.000000,135.000000);
+\draw[color=brown] (995.000000,135.000000) -- (1064.000000,135.000000);
+\draw[color=brown] (0.000000,30.000000) node[left] {$\textrm{\sc{chewie}}$};
+% Line 20: yoda W YODA color=green!75!black
+\draw[color=green!75!black] (475.500000,270.000000) -- (834.500000,270.000000);
+% Line 27: x4 W type=o
+% Line 28: x5 W type=o
+% Done with wires; drawing gates
+% Line 39: x4 x5 r2 c3po PERMUTE
+% Line 40: yoda vader PERMUTE
+% Line 41: LABEL
+% Line 42: greedo START
+\draw[color=green!75!black] (75.000000,90.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\textrm{\sc{greedo}}$}};
+\draw[color=green!75!black] (75.000000,90.000000) node[left] {$\textrm{\sc{greedo}}$};
+% Line 43: x3 ben PERMUTE
+% Line 45: greedo:type=o M
+\draw[fill=white] (87.000000, 84.000000) rectangle (99.000000, 96.000000);
+\draw[very thin] (93.000000, 90.600000) arc (90:150:6.000000pt);
+\draw[very thin] (93.000000, 90.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (93.000000, 84.600000) -- +(80:10.392305pt);
+% Line 46: jabba:style=dashed LABEL length=0
+% Line 47: han chewie jabba greedo x7 lando x9 PERMUTE
+% Line 49: x7 lando x9 jabba PERMUTE
+% Line 50: x4 luke leia han chewie x5 ben emperor r2 c3po x3 PERMUTE
+% Line 51: jabba:style=solid TOUCH
+% Line 52: ben x4 x5 x3 luke r2 emperor leia c3po han chewie PERMUTE
+% Line 55: vader ben DUEL
+\draw (201.000000,240.000000) -- (201.000000,225.000000);
+\begin{scope}
+\draw[fill=white] (201.000000, 232.500000) +(-45.000000:8.485281pt and 19.091883pt) -- +(45.000000:8.485281pt and 19.091883pt) -- +(135.000000:8.485281pt and 19.091883pt) -- +(225.000000:8.485281pt and 19.091883pt) -- cycle;
+\clip (201.000000, 232.500000) +(-45.000000:8.485281pt and 19.091883pt) -- +(45.000000:8.485281pt and 19.091883pt) -- +(135.000000:8.485281pt and 19.091883pt) -- +(225.000000:8.485281pt and 19.091883pt) -- cycle;
+\draw (201.000000, 232.500000) node {$\times$};
+\end{scope}
+% Line 56: ben LABEL length=18
+% Line 57: ben:type=o M
+\draw[fill=white] (225.000000, 219.000000) rectangle (237.000000, 231.000000);
+\draw[very thin] (231.000000, 225.600000) arc (90:150:6.000000pt);
+\draw[very thin] (231.000000, 225.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (231.000000, 219.600000) -- +(80:10.392305pt);
+% Line 58: luke leia han c3po r2 chewie jabba LABEL length=30 LUKE LEIA HAN C3PO R2 CHEWIE JABBA
+\draw[color=black] (222.000000, 165.000000) node [fill=white] {$\textrm{\sc{luke}}$};
+\draw[color=black] (222.000000, 120.000000) node [fill=white] {$\textrm{\sc{leia}}$};
+\draw[color=black] (222.000000, 90.000000) node [fill=white] {$\textrm{\sc{han}}$};
+\draw[color=yellow!75!black] (222.000000, 105.000000) node [fill=white] {$\textrm{\sc{c3po}}$};
+\draw[color=blue!75!black] (222.000000, 150.000000) node [fill=white] {$\textrm{\sc{r2d2}}$};
+\draw[color=brown] (222.000000, 75.000000) node [fill=white] {$\textrm{\sc{chewie}}$};
+\draw[color=green!75!black] (222.000000, 0.000000) node [fill=white] {$\textrm{\sc{jabba}}$};
+% Line 60: ben x4 vader luke r2 x5 x3 emperor leia c3po x7 greedo han chewie PERMUTE
+% Line 61: han chewie x5 x3 PERMUTE
+% Line 62: vader x4 emperor luke r2 han chewie PERMUTE
+% Line 64: LABEL
+% Line 66: luke emperor PERMUTE
+% Line 67: han emperor r2 PERMUTE
+% Line 68: x4 emperor vader luke han PERMUTE
+% Line 70: lando START
+\draw[color=black] (441.000000,30.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\textrm{\sc{lando}}$}};
+\draw[color=black] (441.000000,30.000000) node[left] {$\textrm{\sc{lando}}$};
+% Line 72: luke r2 ben boba vader lando x4 emperor han chewie leia c3po x7 greedo x5 x3 PERMUTE
+% Line 73: yoda START
+\draw[color=green!75!black] (483.000000,270.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\textrm{\sc{yoda}}$}};
+\draw[color=green!75!black] (483.000000,270.000000) node[left] {$\textrm{\sc{yoda}}$};
+% Line 74: vader luke leia han c3po r2 chewie jabba lando LABEL length=30 VADER LUKE LEIA HAN C3PO R2 CHEWIE JABBA LANDO
+\draw[color=black] (510.000000, 195.000000) node [fill=white] {$\textrm{\sc{vader}}$};
+\draw[color=black] (510.000000, 255.000000) node [fill=white] {$\textrm{\sc{luke}}$};
+\draw[color=black] (510.000000, 105.000000) node [fill=white] {$\textrm{\sc{leia}}$};
+\draw[color=black] (510.000000, 135.000000) node [fill=white] {$\textrm{\sc{han}}$};
+\draw[color=yellow!75!black] (510.000000, 90.000000) node [fill=white] {$\textrm{\sc{c3po}}$};
+\draw[color=blue!75!black] (510.000000, 240.000000) node [fill=white] {$\textrm{\sc{r2d2}}$};
+\draw[color=brown] (510.000000, 120.000000) node [fill=white] {$\textrm{\sc{chewie}}$};
+\draw[color=green!75!black] (510.000000, 0.000000) node [fill=white] {$\textrm{\sc{jabba}}$};
+\draw[color=black] (510.000000, 180.000000) node [fill=white] {$\textrm{\sc{lando}}$};
+% Line 75: boba START
+\draw[color=green!75!black] (517.500000,210.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=15.000000pt,inner sep=0pt] {\phantom{$\textrm{\sc{boba fett}}$}};
+\draw[color=green!75!black] (517.500000,210.000000) node[left] {$\textrm{\sc{boba fett}}$};
+% Line 76: x4 emperor x7 boba vader han chewie leia c3po lando PERMUTE
+% Line 79: ben x4 emperor x7 luke vader x5 greedo r2 chewie leia c3po lando  x3 x9 han boba PERMUTE
+% Line 80: vader luke DUEL
+\draw (597.000000,195.000000) -- (597.000000,180.000000);
+\begin{scope}
+\draw[fill=white] (597.000000, 187.500000) +(-45.000000:8.485281pt and 19.091883pt) -- +(45.000000:8.485281pt and 19.091883pt) -- +(135.000000:8.485281pt and 19.091883pt) -- +(225.000000:8.485281pt and 19.091883pt) -- cycle;
+\clip (597.000000, 187.500000) +(-45.000000:8.485281pt and 19.091883pt) -- +(45.000000:8.485281pt and 19.091883pt) -- +(135.000000:8.485281pt and 19.091883pt) -- +(225.000000:8.485281pt and 19.091883pt) -- cycle;
+\draw (597.000000, 187.500000) node {$\times$};
+\end{scope}
+% Line 81: vader x7 x5 greedo luke PERMUTE
+% Line 82: LABEL
+% Line 85: x3 x9 lando PERMUTE
+% Line 86: x3 luke chewie leia x9 r2 c3po PERMUTE
+% Line 90: x9 chewie leia PERMUTE
+% Line 91: luke boba LABEL LUKE BOBA length=35
+\draw[color=black] (743.500000, 135.000000) node [fill=white] {$\textrm{\sc{luke}}$};
+\draw[color=green!75!black] (743.500000, 15.000000) node [fill=white] {$\textrm{\sc{boba fett}}$};
+% Line 94: yoda vader LABEL YODA VADER
+\draw[color=green!75!black] (786.500000, 270.000000) node [fill=white] {$\textrm{\sc{yoda}}$};
+\draw[color=black] (786.500000, 210.000000) node [fill=white] {$\textrm{\sc{vader}}$};
+% Line 95: x9 luke PERMUTE
+% Line 96: boba:type=0 M
+\draw[fill=white] (773.000000, 9.000000) rectangle (785.000000, 21.000000);
+\draw[very thin] (779.000000, 15.600000) arc (90:150:6.000000pt);
+\draw[very thin] (779.000000, 15.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (779.000000, 9.600000) -- +(80:10.392305pt);
+% Line 97: boba jabba PHANTOM
+% Line 98: jabba:type=0 M
+\draw[fill=white] (788.000000, -6.000000) rectangle (800.000000, 6.000000);
+\draw[very thin] (794.000000, 0.600000) arc (90:150:6.000000pt);
+\draw[very thin] (794.000000, 0.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (794.000000, -5.400000) -- +(80:10.392305pt);
+% Line 102: luke ben PERMUTE
+% Line 103: yoda:type=0 M
+\draw[fill=white] (828.500000, 264.000000) rectangle (840.500000, 276.000000);
+\draw[very thin] (834.500000, 270.600000) arc (90:150:6.000000pt);
+\draw[very thin] (834.500000, 270.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (834.500000, 264.600000) -- +(80:10.392305pt);
+% Line 104: leia han c3po r2 chewie jabba lando LABEL length=30 LEIA HAN C3PO R2 CHEWIE JABBA LANDO
+\draw[color=black] (827.000000, 90.000000) node [fill=white] {$\textrm{\sc{leia}}$};
+\draw[color=black] (827.000000, 30.000000) node [fill=white] {$\textrm{\sc{han}}$};
+\draw[color=yellow!75!black] (827.000000, 60.000000) node [fill=white] {$\textrm{\sc{c3po}}$};
+\draw[color=blue!75!black] (827.000000, 75.000000) node [fill=white] {$\textrm{\sc{r2d2}}$};
+\draw[color=brown] (827.000000, 105.000000) node [fill=white] {$\textrm{\sc{chewie}}$};
+\draw[color=black] (827.000000, 45.000000) node [fill=white] {$\textrm{\sc{lando}}$};
+% Line 105: ben luke PERMUTE
+% Line 107: luke chewie leia r2 c3po han x3 x9 PERMUTE
+% Line 108: emperor START length=30
+\draw[color=black] (914.000000,225.000000) node[fill=white,left,minimum height=15.000000pt,minimum width=30.000000pt,inner sep=0pt] {\phantom{$\textrm{\sc{emperor}}$}};
+\draw[color=black] (914.000000,225.000000) node[left] {$\textrm{\sc{emperor}}$};
+% Line 109: x7 vader luke x5 greedo PERMUTE
+% Line 110: vader luke x7 PERMUTE
+% Line 113: emperor vader luke DUEL
+\draw (987.500000,225.000000) -- (987.500000,195.000000);
+\begin{scope}
+\draw[fill=white] (987.500000, 210.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\clip (987.500000, 210.000000) +(-45.000000:8.485281pt and 29.698485pt) -- +(45.000000:8.485281pt and 29.698485pt) -- +(135.000000:8.485281pt and 29.698485pt) -- +(225.000000:8.485281pt and 29.698485pt) -- cycle;
+\draw (987.500000, 210.000000) node {$\times$};
+\end{scope}
+% Line 114: lando x7 PERMUTE
+% Line 117: emperor:type=0 M
+\draw[fill=white] (1007.000000, 219.000000) rectangle (1019.000000, 231.000000);
+\draw[very thin] (1013.000000, 225.600000) arc (90:150:6.000000pt);
+\draw[very thin] (1013.000000, 225.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (1013.000000, 219.600000) -- +(80:10.392305pt);
+% Line 118: emperor vader PHANTOM
+% Line 119: vader:type=0 M
+\draw[fill=white] (1019.000000, 204.000000) rectangle (1031.000000, 216.000000);
+\draw[very thin] (1025.000000, 210.600000) arc (90:150:6.000000pt);
+\draw[very thin] (1025.000000, 210.600000) arc (90:30:6.000000pt);
+\draw[->,>=stealth] (1025.000000, 204.600000) -- +(80:10.392305pt);
+% Line 121: TOUCH
+% Line 122: x5 greedo luke lando PERMUTE
+% Done with gates; drawing ending labels
+\draw[color=black] (1064.000000,150.000000) node[right] {$\textrm{\sc{lando}}$};
+\draw[color=black] (1064.000000,75.000000) node[right] {$\textrm{\sc{han}}$};
+\draw[color=blue!75!black] (1064.000000,105.000000) node[right] {$\textrm{\sc{r2d2}}$};
+\draw[color=yellow!75!black] (1064.000000,90.000000) node[right] {$\textrm{\sc{c3po}}$};
+\draw[color=black] (1064.000000,165.000000) node[right] {$\textrm{\sc{luke}}$};
+\draw[color=black] (1064.000000,120.000000) node[right] {$\textrm{\sc{leia}}$};
+\draw[color=brown] (1064.000000,135.000000) node[right] {$\textrm{\sc{chewie}}$};
+% Done with ending labels; drawing cut lines and comments
+\draw[dashed,color=red] (351.000000, -7.500000) -- (351.000000, 277.500000);
+\draw[dashed,color=red] (663.000000, -7.500000) -- (663.000000, 277.500000);
+% Line 53: chewie x4 @ 2 fill=gray style=rounded_corners=10pt %% {\sc leia rescued}
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=gray,rounded corners=10pt] (123.000000,217.500000) rectangle (186.000000,67.500000);
+\draw (154.500000, 67.500000) node[text width=288.0pt,below,text centered] {{\sc leia rescued}};
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=gray,rounded corners=10pt] (123.000000,217.500000) rectangle (186.000000,67.500000);
+% Line 63: vader emperor @ 3 fill=gray style=rounded_corners=10pt % {\sc death star}
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=gray,rounded corners=10pt] (246.000000,247.500000) rectangle (321.000000,127.500000);
+\draw (283.500000, 247.500000) node[text width=288.0pt,above,text centered] {{\sc death star}};
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=gray,rounded corners=10pt] (246.000000,247.500000) rectangle (321.000000,127.500000);
+% Line 69: vader c3po @ 1 fill=gray style=rounded_corners=10pt % {\sc hoth}
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=gray,rounded corners=10pt] (408.000000,232.500000) rectangle (444.000000,97.500000);
+\draw (426.000000, 232.500000) node[text width=288.0pt,above,text centered] {{\sc hoth}};
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=gray,rounded corners=10pt] (408.000000,232.500000) rectangle (444.000000,97.500000);
+% Line 77: yoda r2 @ 2 fill=gray style=rounded_corners=10pt % {\sc luke's entire jedi training}
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=gray,rounded corners=10pt] (492.000000,277.500000) rectangle (555.000000,232.500000);
+\draw (523.500000, 277.500000) node[text width=288.0pt,above,text centered] {{\sc luke's entire jedi training}};
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=gray,rounded corners=10pt] (492.000000,277.500000) rectangle (555.000000,232.500000);
+% Line 78: vader x7 @ 1 fill=gray style=rounded_corners=10pt %% {\sc han frozen}
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=gray,rounded corners=10pt] (534.000000,202.500000) rectangle (555.000000,67.500000);
+\draw (544.500000, 67.500000) node[text width=288.0pt,below,text centered] {{\sc han frozen}};
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=gray,rounded corners=10pt] (534.000000,202.500000) rectangle (555.000000,67.500000);
+% Line 100: luke jabba @ 2 fill=gray style=rounded_corners=10pt % {\sc sail barge}
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=gray,rounded corners=10pt] (708.000000,142.500000) rectangle (803.000000,-7.500000);
+\draw (755.500000, 142.500000) node[text width=288.0pt,above,text centered] {{\sc sail barge}};
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=gray,rounded corners=10pt] (708.000000,142.500000) rectangle (803.000000,-7.500000);
+% Line 111: chewie han @ 2  fill=gray style=rounded_corners=10pt %% {\sc endor}
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=gray,rounded corners=10pt] (923.000000,142.500000) rectangle (971.000000,67.500000);
+\draw (947.000000, 67.500000) node[text width=288.0pt,below,text centered] {{\sc endor}};
+\draw[draw opacity=0.000000,fill opacity=0.200000,fill=gray,rounded corners=10pt] (923.000000,142.500000) rectangle (971.000000,67.500000);
+% Line 123: @ 0 start5 color=blue %% Episode IV: A New Hope
+\draw[decorate,decoration={brace,mirror,amplitude = 4.000000pt},very thick,color=blue] (3.000000,-7.500000) -- (348.000000,-7.500000);
+\draw (175.500000, -11.500000) node[text width=288.0pt,below,text centered,color=blue] {Episode IV: A New Hope};
+% Line 124: @ start5 start6 color=blue %% Episode V: The Empire Strikes Back
+\draw[decorate,decoration={brace,mirror,amplitude = 4.000000pt},very thick,color=blue] (354.000000,-7.500000) -- (660.000000,-7.500000);
+\draw (507.000000, -11.500000) node[text width=288.0pt,below,text centered,color=blue] {Episode V: The Empire Strikes Back};
+% Line 125: @ start6 color=blue %% Episode VI: The Return of the Jedi
+\draw[decorate,decoration={brace,mirror,amplitude = 4.000000pt},very thick,color=blue] (666.000000,-7.500000) -- (1061.000000,-7.500000);
+\draw (863.500000, -11.500000) node[text width=288.0pt,below,text centered,color=blue] {Episode VI: The Return of the Jedi};
+% Done with comments
+\end{tikzpicture}
