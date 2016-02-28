@@ -682,7 +682,7 @@ attributes.  This can make the code cleaner.
 \end{minipage} \hfill \input ex.qcowire.tikz
 
 \item[{\tt shape=value}] You can change the shape of
-  a $G$, $P$, or target.  Value is a integer, or possibly {\tt box} or {\tt circle}:
+  a $G$, $P$, or target.  Value is a integer, or possibly {\tt box}, {\tt circle}, {\tt <}, or {\tt >}:
   \begin{center}
     \begin{tabular}{r|l}
       $0$ & no boundary \\
@@ -690,7 +690,8 @@ attributes.  This can make the code cleaner.
       $-1$ & negated control \\
       {\tt circle}, $2$ & circle \\
       {\tt box}, $n$ & $n$-sided polygon with a flat bottom/right (${\tt box}=4$) (for $n \ge 3$) \\
-      $-n$ & $n$-sided polygon with a vertex on the bottom/right (for $n \ge 3$)
+      $-n$ & $n$-sided polygon with a vertex on the bottom/right (for $n \ge 3$) \\
+      {\tt <}, {\tt >} & triangle pointing forward or backward
     \end{tabular}
   \end{center}
   \qpic will draw a regular polygon on a single wire, or stretch the polygon if it

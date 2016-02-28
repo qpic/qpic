@@ -94,6 +94,7 @@
 #   0=none, 1=control, -1=negated control
 #   2=circle; for n >=3, n=n-sided poly (flat on bottom), -n=same (point down)
 #   (in vertical mode:  n=flat on right, -n=point on right)
+#   >,<: forward/backward pointing triangle
 # attached to a wire: size, operator, shape apply
 # attached to the whole gate: size, operator, shape apply only to the targets
 # style=????: style (pass to TikZ; underscores become spaces) for gate, wire, or level
@@ -392,6 +393,8 @@ def parse_options(word):
             val = 2
         elif val_string == 'box':
             val = 4
+        elif val_string in ['>', '<']:
+            val = val_string
         else:
             val = int(val_string)
     else:
@@ -537,8 +540,11 @@ def find_vertical_start(horizontal_start, num_sides):
 def calculate_diameter(in_len, in_bre, in_size, shape, allow_breadth_shift=0):
     global orientation
 
-    if shape > 2 or shape < -2:
-        if shape > 2:
+    if shape > 2 or shape < -2 or shape in ['<', '>']:
+        if shape in ['<', '>']:
+            num_sides = 3
+            start = 0 # can ignore forward, backward for this calculation
+        elif shape > 2:
             num_sides = shape
             start=-90+360.0/(2*num_sides)
         else:
@@ -641,11 +647,22 @@ def draw_xor(x,y,options):
             thick_line = "(%f, %f) +(%f:%s) arc (%f:%f:%s);" % (x,y,theta,arc_str,theta,theta+180,arc_str)
         else:
             thick_line = ""
-    elif shape > 2 or shape < -2:
+    elif shape > 2 or shape < -2 or shape in ['<', '>']:
         shape_line_start = "(%f, %f) " % (x,y)
         quadrants = [[],[],[],[]]
         points = [] 
-        if shape > 2:
+        if shape in ['<', '>']:
+            # triangle, pointing forward (but flip for direction)
+            num_sides = 3
+            if shape == '>':
+                point_dir = options['direction']
+            else:
+                point_dir = -1 * options['direction']
+            if point_dir == 1: # 0, 120, 240
+                start = 0
+            else: # -60, 60, 180
+                start = -60
+        elif shape > 2:
             num_sides = shape
             start=-90 + 360.0/(2*num_sides)
         else:
@@ -746,7 +763,7 @@ def draw_slash(x,y,dx,dy,name=None,style=None):
     else:
         style_str = ''
     if orientation == 'vertical':
-        print("\\draw%s (%f, %f) -- (%f, %f);" % (style_str, x-0.5*dx, y+0.5*dy, x+0.5*dx, y-0.5*dy))
+        print("\\draw%s (%f, %f) -- (%f, %f);" % (style_str, x-0.5*dx, y-0.5*dy, x+0.5*dx, y+0.5*dy))
         if name:
             print("\\draw%s (%f, %f) node[below] {$\\scriptstyle{%s}$};" % (style_str,x+0.25*dx,y-0.25*dy,name))
     else:
@@ -1425,6 +1442,7 @@ class Box:
             style_str = ''
         breadth_shift *= 0.5*the_breadth/bratio
         draw_options['thick_side'] = self.thick_side * dir
+        draw_options['direction'] = dir
         (x,y) = get_x_y(pos, 0.5*(target_min + target_max) - breadth_shift)
         draw_xor(x,y,draw_options)
         if self.hyperlink:
