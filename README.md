@@ -4,7 +4,7 @@
 
 [![qpic dualmode](https://github.com/KutinS/qpic/raw/tom/docs/images/qpic.png)](#features)
 
-**qpic** converts the ⟨q|pic⟩ description of a quantum circuit into LaTeX as a TikZ graphic.
+### A compiler from quantum circuits to graphical representations.
 
 <p align="center">
     <a href="https://img.shields.io/pypi/v/qpic.svg">
@@ -35,6 +35,10 @@
         :target: https://readthedocs.org/projects/qpic/?badge=latest
         :alt: Documentation Status
 --->
+# Contents
+* [Features](#features)
+* [Examples](#examples)
+* [Using ⟨q|pic⟩](#using-qpic)
 
 ## Features
 
@@ -44,6 +48,23 @@ The ⟨q|pic⟩ language provides a concise, readable, ASCII format for describi
 * Human readable.
 * Input ⟨q|pic⟩ syntax can be produced by other scripts.
 * Can be included in LaTeX documents in TikZ or PDF form.
+
+⟨q|pic⟩ produces high quality graphics quickly. The following graphic illustrating part of a ripple carry adder
+[![MAJ](docs/images/Adder_CDKM_MAJ.png)](#features)
+
+is compiled from the ⟨q|pic⟩ code
+
+```
+a W a a\oplus{c}
+b W b b\oplus{c}
+c W c \mbox{MAJ}(a,b,c)
+
+a b c G \rotatebox{90}{MAJ}
+=
++b c
++a c
+a b +c
+```
 
 ## Examples
 
@@ -98,6 +119,73 @@ a b0 x2 x1 @ 6 6 fill=blue style=rounded_corners %% \hspace{.5cm}$2[c\rightarrow
 ```
 
 For an explanation of `qpic` commands and more examples, see the official documentation.
+
+# Using ⟨q|pic⟩
+* [Installation](#installation)
+* [Running ⟨q|pic⟩](#running-qpic) 
+* [Using ⟨q|pic⟩ in LaTeX](#using-qpic-in-latex)
+
+## Installation
+
+### Pip
+Recommended installation method is [pip](https://en.wikipedia.org/wiki/Pip_(package_manager)).
+
+`pip install qpic`
+
+Current versions of Python 2 and 3 include pip. For older version, use [pip installation instructions](https://pip.pypa.io/en/stable/installing/).
+
+### Download and install python package
+
+TODO: Add instructions
+
+### Stand alone script
+To try out the basic script without installation:
+
+1. Download the file `qpic.py`. 
+1. Run `python qpic.py your_file.qpic > your_file.tex`.
+
+## Running ⟨q|pic⟩ 
+
+## Using ⟨q|pic⟩ in LaTeX 
+
+### Including graphics in LaTeX documents
+
+There are two main methods for including ⟨q|pic⟩ in LaTeX documents. Each has its advantage in certain areas. They are:
+
+* [Include TikZ code directly](#tikz)
+* [Include as a PDF graphic](#pdf)
+
+### TikZ
+`qpic my_graphic.qpic` produces a TikZ file named `my_graphic.tikz`, which can be directly included into a normal LaTeX document. You will need to add
+
+```
+\usepackage{tikz}
+\definecolor{bg}{rbg}{1,1,1}
+```
+
+to the preamble of your paper. Graphics can then be included with the command:
+
+```
+\input{filename.tikz}
+```
+
+See the full ⟨q|pic⟩ documentation for when additional packages are required.
+
+### PDF
+
+`qpic -t pdf my_graphic.qpic` will produce a PDF file named `my_graphic.pdf`. This graphic can be viewed directly with a PDF viewer. To insert the graphic into a LaTeX document, add the following line to the preamble:
+
+```
+\usepackage{graphicx}
+```
+
+and included the file using the command:
+
+```
+\includegraphics{my_graphic.pdf}
+```
+
+This method requires the document to be processed with pdfLaTeX. For further information see the full ⟨q|pic⟩ documentation.
 
 ## Credits
 
