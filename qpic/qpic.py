@@ -2033,6 +2033,7 @@ class Gate:
                 for wn in self.controls:
                     (x,y) = get_x_y(pos, wires[wn].location(pos))
                     draw_options = get_draw_options(self.options, wn, '.')
+                    draw_options['direction'] = dir
                     draw_xor_or_control(x,y,draw_options)
                 # did we implicitly measure any wires?
                 if self.type not in ['M','/','IN','OUT','START','END'] and self.change_to_classical:
