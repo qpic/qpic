@@ -62,6 +62,27 @@ def find_test_files(dir, suffix0, suffix1):
         if suffix0 in D[basefile] and suffix1 in D[basefile]:
             yield basefile
 
+def find_test_files2(dir0, suffix0, dir1, suffix1):
+    '''Search for all matching dir0/<filename>.<suffix0> and dir1/<filename>.<suffix1>.
+    Typically used to find input file and expected output file.
+    '''
+    D = collections.defaultdict(list)
+    for root, dirnames, filenames in os.walk(dir0):
+        for filename in filenames:
+            if '.' in filename:
+                basename, suffix = filename.rsplit('.', 1)
+                if suffix == suffix0:
+                    D[basename].append(os.path.join(root,filename))
+    for root, dirnames, filenames in os.walk(dir1):
+        for filename in filenames:
+            if '.' in filename:
+                basename, suffix = filename.rsplit('.', 1)
+                if suffix == suffix1:
+                    D[basename].append(os.path.join(root,filename))
+    for basename in D:
+        if len(D[basename]) > 1:
+            yield D[basename]
+
 class Test_qpic(unittest.TestCase):
 
     def setUp(self):
@@ -71,10 +92,10 @@ class Test_qpic(unittest.TestCase):
         pass
 
     def test_all_files(self):
-        basenames = find_test_files(os.path.join(TESTDIR, 'data'), 'qpic', 'tikz')
-        for basename in basenames:
-            source_file = basename + '.qpic'
-            target_file = basename + '.tikz'
+        basenames = find_test_files2(os.path.join(TESTDIR, 'data'), 'qpic', 
+                            os.path.join(TESTDIR, 'data', 'tikz'), 'tikz')
+        for source_file, target_file in basenames:
+            print(source_file, target_file)
             with open(source_file) as source:
                 # result = multiline_yield(qpic.main(source)) # TODO: qpic should work like this
                 with Capturing() as result: # TODO: Remove hack to capture stdout
