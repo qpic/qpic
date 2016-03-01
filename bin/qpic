@@ -25,75 +25,70 @@ class Capturing(list):
 
 import qpic
 
-parser = argparse.ArgumentParser(description='Command line utility to create graphics from <q|pic> code.')
-parser.add_argument('infile', nargs='?', type=argparse.FileType('r'), default=sys.stdin,
-                help='File to read. Uses stdin if no filename is provided.')
-# parser.add_argument('--outfile', '-o', nargs='?', type=argparse.FileType('w'),
-                # help='File to write. Default output is <stdout>.', default=sys.stdout)
-parser.add_argument('--outfile', '-o', type=str,
-                help='Output file to write.', default=None)
-parser.add_argument('--filetype', '-f', type=str, default=None,
-                help='File type to write. Options are tikz, tex, pdf or png.')
-args = parser.parse_args()
+def create_parser():
+    parser = argparse.ArgumentParser(description='Command line utility to create graphics from <q|pic> code.')
+    parser.add_argument('infile', nargs='?', type=argparse.FileType('r'), default=sys.stdin,
+                    help='File to read. Uses stdin if no filename is provided.')
+    # parser.add_argument('--outfile', '-o', nargs='?', type=argparse.FileType('w'),
+                    # help='File to write. Default output is <stdout>.', default=sys.stdout)
+    parser.add_argument('--outfile', '-o', type=str,
+                    help='Output file to write.', default=None)
+    parser.add_argument('--filetype', '-f', type=str, default=None,
+                    help='File type to write. Options are tikz, tex, pdf or png.')
+    return parser
 
-valid_suffix = ['tikz', 'tex', 'pdf', 'png', None]
-if args.filetype not in valid_suffix:
-    raise SyntaxError('Valid filetypes are: pdf, png, tex and tikz.')
+def complete_args(args):
+    '''Determine unspecified args based on context.
+    '''
+    valid_suffix = ['tikz', 'tex', 'pdf', 'png', None]
+    if args.filetype not in valid_suffix:
+        raise SyntaxError('Valid filetypes are: pdf, png, tex and tikz.')
 
-# Create outfile name if reasonable to do so
-if args.outfile is None:
+    # Create outfile name if reasonable to do so
+    if args.outfile is None:
+        if args.filetype is None:
+            # Write tikz code to <stdout> and exit
+            sys.exit(qpic.main(args.infile))
+        elif args.infile.name == '<stdin>':
+            basename = 'texput'
+        else:
+            basename = args.infile.name.rsplit('.', 1)[0]
+        args.outfile = basename + '.' + args.filetype
+
+    # Derive filetype from outfile name
     if args.filetype is None:
-        # Write tikz code to <stdout> and exit
-        print('Early exit')
-        sys.exit(qpic.main(args.infile))
-        sys.exit()
-    elif args.infile.name == '<stdin>':
-        basename = 'texput'
-    else:
-        basename = args.infile.name.rsplit('.', 1)[0]
-    args.outfile = basename + '.' + args.filetype
+        args.filetype = 'tikz' # Default
+        if '.' in args.outfile:
+            basename, suffix = args.outfile.rsplit('.', 1)
+            if suffix in valid_suffix:
+                args.filetype = suffix
+    # Set basename based on end result of outfile
+    args.basename = args.outfile.rsplit('.', 1)[0]
+    return args
 
-# Derive filetype from outfile name
-if args.filetype is None:
-    args.filetype = 'tikz' # Default
-    if '.' in args.outfile:
-        basename, suffix = args.outfile.rsplit('.', 1)
-        if suffix in valid_suffix:
-            args.filetype = suffix
-
-with Capturing() as result: # TODO: Remove hack to capture stdout
-    qpic.main(args.infile)
-
-basename = args.outfile.rsplit('.', 1)[0]
-
-# final filename produced before copying to outfile
-final = basename + '.' + args.filetype
-
-# Write output in temporary directory so all intermediate files are deleted.
-currdir = os.getcwd()
-tempdir = tempfile.mkdtemp()
-os.chdir(tempdir)
-
-# Create each filetype in succession. If target met, copy to outfile and exit.
 def ExecuteShellFunctions(args):
+    '''Create each filetype in succession. If target met, copy to outfile and exit.
+    '''
+    with Capturing() as result: # TODO: Remove hack to capture stdout
+        qpic.main(args.infile)
     # Make tikz from input
-    with open(basename+'.tikz', 'w') as outfile:
+    with open(args.basename+'.tikz', 'w') as outfile:
         for line in result:
             outfile.write(line)
     if args.filetype == 'tikz':
         return True
     # Make tex file from tikz
-    command = 'tikz2preview %s'%(basename+'.tikz')
+    command = 'tikz2preview %s'%(args.basename+'.tikz')
     print(command)
     tikz = subprocess.Popen(command.split(), stdout=subprocess.PIPE)
-    with open(basename+'.tex', 'w') as texfile:
+    with open(args.basename+'.tex', 'w') as texfile:
         for line in tikz.stdout:
             texfile.write(line)
     tikz.wait()
     if args.filetype == 'tex':
         return True
     # Make pdf file from tex
-    command = 'pdflatex -interaction=batchmode %s'%(basename+'.tex')
+    command = 'pdflatex -interaction=batchmode %s'%(args.basename+'.tex')
     print(command)
     try:
         subprocess.call(command.split())
@@ -103,7 +98,7 @@ def ExecuteShellFunctions(args):
     if args.filetype == 'pdf':
         return True
     # Make png file from pdf
-    command = 'convert -density 800 -quality 100 %s %s'%(basename+'.pdf', basename+'.png')
+    command = 'convert -density 800 -quality 100 %s %s'%(args.basename+'.pdf', args.basename+'.png')
     print(command)
     try:
         subprocess.call(command.split())
@@ -113,8 +108,24 @@ def ExecuteShellFunctions(args):
     if args.filetype == 'png':
         return True
 
-if ExecuteShellFunctions(args):
-    print(args)
-    print(final, args.outfile, currdir)
-    shutil.copy(final, os.path.join(currdir, args.outfile))
-shutil.rmtree(tempdir)
+def qpic_args(args):
+    # final filename produced before copying to outfile
+    final = args.basename + '.' + args.filetype
+
+    # Write output in temporary directory so all intermediate files are deleted.
+    currdir = os.getcwd()
+    tempdir = tempfile.mkdtemp()
+    os.chdir(tempdir)
+
+    if ExecuteShellFunctions(args):
+        shutil.copy(final, os.path.join(currdir, args.outfile))
+    shutil.rmtree(tempdir)
+
+def main():
+    parser = create_parser()
+    args = parser.parse_args()
+    args = complete_args(args)
+    qpic_args(args)
+
+if __name__ == '__main__':
+    main()
