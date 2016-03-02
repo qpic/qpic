@@ -1109,55 +1109,93 @@ but in {\sc beamer} it is always equal to the background of the current template
 
 \end{description}
 
+\section{Installing \qpicpy}
+% TODO: add hyperlinks to github and pypi
+\qpicpy is available on both {\tt github.com} and {\tt pypi.org}. Installation is recommended using {\tt pip} (included
+in Python since 2.7.8 and 3.4). {\tt pip} can be installed for earlier versions of Python (2.6 and 3.3).
+Using {\tt pip}, \qpicpy can be installed by
+
+\begin{minipage}{5in}
+\begin{lstlisting}[basicstyle=\normalsize\ttfamily,numbers=none]
+pip install qpic
+\end{lstlisting}
+\end{minipage}
+
+If you wish to install \qpicpy as a single user, add {\tt \$HOME/.local/bin} to your {\$PATH} and install using
+
+\begin{minipage}{5in}
+\begin{lstlisting}[basicstyle=\normalsize\ttfamily,numbers=none]
+pip install --user qpic
+\end{lstlisting}
+\end{minipage}
+
+\section{Running \qpicpy}
+\qpicpy generates \TikZ code by default. \qpicpy can also generate {\tt pdf} files
+using {\tt pdflatex} and {\tt png} files using
+{\tt convert} (from {\tt ImageMagic}). The following commands both send \TikZ code generated from {\tt diagram.qpic} to {\tt
+<stdout>}.
+
+\begin{minipage}{5in}
+\begin{lstlisting}[basicstyle=\normalsize\ttfamily,numbers=none]
+qpic diagram.qpic
+qpic < diagram.qpic
+\end{lstlisting}
+\end{minipage}
+
+\subsection{Choosing file type with {\tt -f}}
+The {\tt -f, --filetype} flag indicates the desired output file type. Valid options are {\tt
+tikz}, {\tt tex}, {\tt pdf} or {\tt png}. Instead of using {\tt <stdout>}, qpic creates a file. The output filename is deduced from
+the input filename. If the {\tt qpic} code is provided via {\tt <stdin>} the
+default output basename is {\tt texput}.
+
+\begin{minipage}{5in}
+\begin{lstlisting}[basicstyle=\normalsize\ttfamily,numbers=none]
+qpic diagram.qpic -f tikz   # Creates diagram.tikz
+qpic diagram.qpic -f tex    # Creates diagram.tex
+qpic diagram.qpic -f pdf    # Creates diagram.pdf
+qpic diagram.qpic -f png    # Creates diagram.png
+\end{lstlisting}
+\end{minipage}
+
+\subsection{Choosing output file with {\tt -o}}
+The {\tt -o, --output} flag indicates the desired output filename. If the
+filename ends with a valid suffix, \qpicpy creates a file
+of that type.
+
+\begin{minipage}{5in}
+\begin{lstlisting}[basicstyle=\normalsize\ttfamily,numbers=none]
+qpic diagram.qpic -o other.tikz   # Creates other.tikz
+qpic diagram.qpic -o other.tex    # Creates other.tex
+qpic diagram.qpic -o other.pdf    # Creates other.pdf
+qpic diagram.qpic -o other.png    # Creates other.png
+\end{lstlisting}
+\end{minipage}
+
+Mixing {\tt -f} and {\tt -o} options is allowed, and \qpicpy tries to do what
+the authors think is reasonable, which is not guaranteed to
+correspond with what you think is reasonable.
+
 \section{\qpicpy and \LaTeX}
 \label{sec-tools}
 
 There are three major use-case scenarios for the \qpicpy program:
 \begin{enumerate}
-\item Create standalone PDF graphics from \qpic files.
+\item Create standalone PDF or PNG graphics from \qpic files.
 \item Include \qpic diagrams as PDF graphics in a {\LaTeX} file.
 \item Include \qpic diagrams as \TikZ code in a {\LaTeX} file.
 \end{enumerate}
 
-\noindent
-Three files are used in the document compilation process: {\tt qpic.py},\linebreak {\tt tikz2preview}, and {\tt Makefile}.
-
-\begin{itemize}
-\item {\tt qpic.py} is a Python script that parses {\tt .qpic} files and produces {\tt .tikz} output.
-\item {\tt tikz2preview} is a Python script that wraps {\tt .tikz} files to create stand\-alone {\tt .tex} files.
-\item {\tt Makefile} provides the action rules to create the \TikZ code and PDF files for all \qpic files in the directory. Furthermore, the {\tt Makefile} assumes that the main document (as defined in the {\tt Makefile}) depends on all \qpic files in the directory.
-\end{itemize}
-
-\subsection{Create Standalone PDF Graphics from \qpic Files}
-
-Copy the files {\tt qpic.py}, {\tt tikz2preview}, and {\tt Makefile} into the working directory and you are ready to go. To create a PDF file from the \qpic file {\tt diagram.qpic}, simply type:
-
-\begin{minipage}{5in}
-\begin{lstlisting}[basicstyle=\normalsize\ttfamily,numbers=none]
-$ make diagram.pdf
-\end{lstlisting}
-\end{minipage}%$
-
 
 \subsection{Include \qpic Diagrams as PDF Graphics in a {\LaTeX} File}
 
-
-Copy the files {\tt qpic.py}, {\tt tikz2preview}, and {\tt Makefile} into the working directory of the {\LaTeX} document. In this example, we assume the name of the {\LaTeX} document is {\tt mainfile.tex}. Edit line 48 of {\tt Makefile} to reflect the main document name without the {\tt .tex} extension. If the main document has additional dependencies (e.g., other {\LaTeX} files, PNG graphics), add these to the end of the dependency list on line 53.
-
-\begin{minipage}{5in}
-\lstinputlisting[basicstyle=\footnotesize\ttfamily,numbers=left,numberstyle=\tiny,breaklines=true,firstline=47,lastline=54]{Makefile.example}
-\end{minipage}
-
-
 The package {\tt graphicx} is required to include the PDF graphics in {\LaTeX} documents.
-Add the following line to {\tt mainfile.tex} before \verb|\begin{document}|.
+Add the following line to {\tt yourfile.tex} before \verb|\begin{document}|.
 
 \begin{minipage}{5in}
 \begin{lstlisting}[basicstyle=\normalsize\ttfamily]
 \usepackage{graphicx}
 \end{lstlisting}
 \end{minipage}
-
 
 The \qpic PDF graphic {\tt diagram.pdf} is included in the document using the command:
 
@@ -1169,8 +1207,8 @@ The \qpic PDF graphic {\tt diagram.pdf} is included in the document using the co
 
 \subsection{Include \qpic Diagrams as \TikZ Code in a {\LaTeX} File}
 
-The {\tt makefile} preparation is identical to the previous case; however the package requirement and input method are different. The package {\tt tikz} is required to compile \TikZ code in {\LaTeX} documents.
-Add the following line to {\tt mainfile.tex} before \verb|\begin{document}|.
+The package {\tt tikz} is required to compile \TikZ code in {\LaTeX} documents.
+Add the following line to {\tt yourfile.tex} before \verb|\begin{document}|.
 
 \begin{minipage}{5in}
 \begin{lstlisting}[basicstyle=\normalsize\ttfamily]
@@ -1227,7 +1265,7 @@ may be nested) is combined into a single entity, even if it contains whitespace.
   colon-delimited subwords.
 \item If any subword is a user-defined macro (see Section~\ref{sec-qpic-define}), replace the macro with its expansion.\footnote{Except that if the
   user-defined macro is immediately preceded by {\tt DEFINE} then this is
-  treated as a redefintion and the macro is not expanded.}  If the macro
+  treated as a redefinition and the macro is not expanded.}  If the macro
   has $n$ arguments, the $n$ preceding words are removed and then used
   in place of the arguments in the macro expansion.
 \item If one of the words is {\tt DEFINE}, then define the macro; the next word
