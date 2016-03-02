@@ -4,7 +4,7 @@
 % Drawing wires
 % Line 10: c W {} ?
 \draw[color=black] (-0.000000,0.000000) -- (-0.000000,-153.000000);
-\draw[color=black] (-0.000000,0.000000) node[above,anchor=south east,xshift=2pt,inner sep=0pt,rotate=-45] {${}$};
+\draw[color=black] (-0.000000,0.000000) node[above] {${}$};
 % Line 1: d W
 \draw[color=black] (-135.000000,-46.500000) -- (-135.000000,-94.500000);
 % Line 3: a1 W
@@ -182,7 +182,7 @@
 % Line 34: TOUCH
 % Line 35: b0 b1 c END length=0
 \draw[color=black] (-0.000000,-153.000000) node[fill=white,below,minimum width=15.000000pt,minimum height=0.000000pt,inner sep=0pt] {\phantom{$?$}};
-\draw[color=black] (-0.000000,-153.000000) node[below,anchor=north west,xshift=-2pt,inner sep=0pt,rotate=-45] {$?$};
+\draw[color=black] (-0.000000,-153.000000) node[below] {$?$};
 % Line 36: a0 a1 a2 a3 a4 a5 M
 \draw[fill=white] (-126.000000, -159.000000) rectangle (-114.000000, -147.000000);
 \draw[very thin] (-120.000000, -152.400000) arc (90:150:6.000000pt);

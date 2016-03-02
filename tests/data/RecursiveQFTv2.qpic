@@ -6,7 +6,7 @@ i W \ket{s_{i}} \ket{t_{n-i+1}}
 ...2 W
 2 W \ket{s_2} \ket{t_{n-1}}
 1 W \ket{s_1} \ket{t_{n}}
-VERTICAL
+VERTICAL 45
 
 n n-1 ...1 i 2 G $\hbox{QFT}_{n-1}$ width=40
 1 G $\zeta_{2^n}$ n

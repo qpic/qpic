@@ -8,7 +8,7 @@ BGCOLOR blue!10!white
 
 
 
-VERTICAL 0
+VERTICAL 45
 a b G HIGH height=40
 a b G WIDE width=40
 a b G LONG length=40

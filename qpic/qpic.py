@@ -230,7 +230,7 @@
 #   Change orientation to vertical
 #   If deg1 is set, use it as angle (in degrees) to rotate start/end labels
 #   If deg2 is set, use different ones for start and end
-#   0 is horizontal, 90 is vertical; default is 45
+#   0 is horizontal, 90 is vertical, 45 nests well; default is 0
 # HORIZONTAL
 #   Change orientation to horizontal
 # MEASURESHAPE shape
@@ -292,8 +292,8 @@ def initialize_globals():
 
     allow_different_gates = 1
     orientation = 'horizontal'
-    start_degrees = 45
-    end_degrees = 45
+    start_degrees = 0 # 45
+    end_degrees = 0 # 45
     bgcolor = 'white'
     # choices: 'off' = disallow; 'on' = allow; 'default' = allow until wire declaration occurs
     auto_wires = 'default'

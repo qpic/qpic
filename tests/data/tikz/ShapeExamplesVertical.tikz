@@ -9,13 +9,13 @@
 \draw[color=black,dotted] (-0.000000,-32.000000) -- (-0.000000,-179.000000);
 % Line 3: c W 0
 \draw[color=black] (-30.000000,0.000000) -- (-30.000000,-179.000000);
-\draw[color=black] (-30.000000,0.000000) node[above,anchor=south east,xshift=2pt,inner sep=0pt,rotate=-45] {$0$};
+\draw[color=black] (-30.000000,0.000000) node[above] {$0$};
 % Line 2: a b W a,b
 \draw[color=black] (-45.000000,0.000000) -- (-45.000000,-179.000000);
-\draw[color=black] (-52.500000,0.000000) node[above,anchor=south east,xshift=0pt,inner sep=0pt,rotate=-45] {$a,b$};
+\draw[color=black] (-52.500000,0.000000) node[above] {$a,b$};
 % Line 4: d W 0
 \draw[color=black] (-15.000000,0.000000) -- (-15.000000,-179.000000);
-\draw[color=black] (-15.000000,0.000000) node[above,anchor=south east,xshift=2pt,inner sep=0pt,rotate=-45] {$0$};
+\draw[color=black] (-15.000000,0.000000) node[above] {$0$};
 % Done with wires; drawing gates
 % Line 11: a b c x / 1
 \draw (-66.000000, -14.000000) -- (-54.000000, -6.000000);
@@ -168,12 +168,12 @@
 \draw (-19.000000, -161.000000) -- (-11.000000, -173.000000);
 \end{scope}
 % Done with gates; drawing ending labels
-\draw[color=black] (-60.000000,-179.000000) node[below,anchor=north west,xshift=-2pt,inner sep=0pt,rotate=-45] {$a$};
+\draw[color=black] (-60.000000,-179.000000) node[below] {$a$};
 %   Deferring wire label at (-30.000000,-179.000000)
-\draw[color=black] (-45.000000,-179.000000) node[below,anchor=north west,xshift=-2pt,inner sep=0pt,rotate=-45] {$b$};
+\draw[color=black] (-45.000000,-179.000000) node[below] {$b$};
 \filldraw[color=white,fill=white] (-11.250000,-179.000000) rectangle (-33.750000,-183.000000);
 \draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick] (-11.250000,-179.000000) -- (-33.750000,-179.000000);
-\draw[color=black] (-22.500000,-183.000000) node[below,anchor=north west,xshift=0pt,inner sep=0pt,rotate=-45] {$c,d$};
+\draw[color=black] (-22.500000,-183.000000) node[below] {$c,d$};
 % Done with ending labels; drawing cut lines and comments
 % Done with comments
 \end{tikzpicture}
