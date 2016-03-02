@@ -1,0 +1,21 @@
+VERTICAL
+a b W a,b
+c W 0
+d W 0
+x W owire
+
+a W a
+b W b
+c d W >c,d
+
+a b c x / 1
+x:op="\draw[fill=yellow] (0,0) -- (30:3pt) arc (30:330:3pt) -- cycle;":sh=0:style=dotted:qwire
+a b G:color=red $f$ +c +d:fill=red!50!white
+a b G $f$ c d P:size=27 + color=blue fi=green!10!white
+x TOUCH
+a b G:op=$f$ +c:sh=box d:sh=6:op=* fi=blue!20!white
+a b G|:shape=3 $g$ c d G|:shape=-3 $g$
+x:sh=1
+a G:op=*:sh=> b G:op=-*:sh=< c G:op=+:sh=> d G:op=x breadth=8
+R -1 -1
+

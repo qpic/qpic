@@ -8,7 +8,7 @@ BGCOLOR blue!10!white
 
 
 
-VERTICAL 0
+VERTICAL 90
 b c G| $M$ a
 a b c G GATE
 b c |G $M^{-1}$ a

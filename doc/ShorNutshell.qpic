@@ -1,4 +1,4 @@
-VERTICAL 0
+VERTICAL
 SCALE 2.1
 DEPTHPAD 3
 PREAMBLE \providecommand{\ket}[1]{\left| #1 \right\rangle}
