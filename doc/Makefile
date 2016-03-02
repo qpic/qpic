@@ -35,7 +35,8 @@
 # \end{figure}
 
 # Because we have two versions of TeX
-PDFLATEX_FOR_PREVIEW = /usr/bin/pdflatex
+#PDFLATEX_FOR_PREVIEW = /usr/bin/pdflatex
+PDFLATEX_FOR_PREVIEW = pdflatex
 
 # Change this to the name of your LaTeX document (without the .tex) 
 MAIN = qpic_doc
