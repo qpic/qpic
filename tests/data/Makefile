@@ -16,7 +16,7 @@
 
 PYTHON = python # Set Python version - test direct versions using "make python2" or "make python3"
 
-DIR  = Graphics # Name of directory. Used by "make tar".
+DIR  = data # Name of directory. Used by "make tar".
 
 PDFLATEX_FOR_PREVIEW = pdflatex
 
@@ -42,7 +42,8 @@ AUTO = IncludeTeX.tex IncludePDF.tex $(TEX_junk) $(TEX_tmp) $(QPIC_tikz)
 
 AUTO_pdf = $(TEX_all:.tex=.pdf) 
 
-all:	IncludeTeX.pdf IncludePDF.pdf
+# all:	IncludeTeX.pdf IncludePDF.pdf
+all:	IncludeTeX.pdf
 
 %.qpic:	%.py
 	$(PYTHON) $< >$@
