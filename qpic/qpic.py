@@ -2868,7 +2868,7 @@ def process_one_command(words, line_options, gate_options, comment0, comment1):
         else:
             new_gate.do_gate()
 
-def main(infile):
+def main(infile=sys.stdin):
     initialize_globals()
     for (words, line_options, gate_options, comment0, comment1) in get_command_from_file(infile):
         process_one_command(words, line_options, gate_options, comment0, comment1)
@@ -2879,4 +2879,4 @@ def main(infile):
 
 # Delete eventually
 if __name__ == "__main__":
-    main(sys.stdin)
+    main()
