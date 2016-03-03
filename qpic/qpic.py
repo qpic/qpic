@@ -2252,7 +2252,7 @@ def print_circuit(circuit_length, cut_lines):
         print(pre)
     # draw in the wires
     print("% Drawing wires")
-    for w in list(wires.values()):
+    for w in sorted(list(wires.values())):
         w.draw_wire(circuit_length)
     # draw in the gates
     print("% Done with wires; drawing gates")
