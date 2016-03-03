@@ -12,7 +12,7 @@
              alt="build status">
     </a>
     <a href="https://travis-ci.org/SmoothDragon/qpic">
-        <img src="https://img.shields.io/travis/SmoothDragon/qpic.svg"
+        <img src="https://img.shields.io/travis/qpic/qpic.svg"
              alt="build status">
     </a>
     <a href="https://readthedocs.org/projects/qpic/?badge=latest">
