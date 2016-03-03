@@ -115,7 +115,7 @@ def qpic_script_test_generator(source_file, target_file):
             with open(target_file) as target:
                 compare = zip_longest(result, target)
                 for lineno, item in enumerate(compare):
-                    self.assertEqual(item[0], item[1], '%s differs at line %d'%(target_file, lineno))
+                    self.assertEqual(item[0], item[1], '%s differs at line %d\n%s\n%s'%(target_file, lineno, item[0], item[1]))
     return test
 
 # Dynamic tests built from files in data/ directory
