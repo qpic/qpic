@@ -154,13 +154,11 @@ There are two main methods for including ⟨q|pic⟩ in LaTeX documents. Each ha
 
 * [Include TikZ code directly](#tikz)
 * [Include as a PDF graphic](#pdf)
-
 ### TikZ
 `qpic my_graphic.qpic` produces a TikZ file named `my_graphic.tikz`, which can be directly included into a normal LaTeX document. You will need to add
 
 ```
 \usepackage{tikz}
-\definecolor{bg}{rbg}{1,1,1}
 ```
 
 to the preamble of your paper. Graphics can then be included with the command:
@@ -169,7 +167,7 @@ to the preamble of your paper. Graphics can then be included with the command:
 \input{filename.tikz}
 ```
 
-See the full ⟨q|pic⟩ documentation for when additional packages are required.
+In some cases, additional TeX commands may be required in the preamble.  (These will be in the `.tikz` file preceded by `%!`.)  See the full ⟨q|pic⟩ documentation for when additional packages are required.
 
 ### PDF
 
