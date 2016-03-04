@@ -540,7 +540,7 @@ def find_vertical_start(horizontal_start, num_sides):
 def calculate_diameter(in_len, in_bre, in_size, shape, dir, allow_shift=0):
     global orientation
 
-    if shape > 2 or shape < -2 or shape in ['<', '>']:
+    if shape in ['<', '>'] or shape > 2 or shape < -2:
         if shape in ['<', '>']:
             num_sides = 3
             if shape == '>':
@@ -656,7 +656,7 @@ def draw_xor(x,y,options):
             thick_line = "(%f, %f) +(%f:%s) arc (%f:%f:%s);" % (x,y,theta,arc_str,theta,theta+180,arc_str)
         else:
             thick_line = ""
-    elif shape > 2 or shape < -2 or shape in ['<', '>']:
+    elif shape in ['<', '>'] or shape > 2 or shape < -2:
         shape_line_start = "(%f, %f) " % (x,y)
         quadrants = [[],[],[],[]]
         points = [] 
