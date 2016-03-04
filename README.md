@@ -11,7 +11,7 @@
         <img src="https://img.shields.io/pypi/v/qpic.svg"
              alt="build status">
     </a>
-    <a href="https://travis-ci.org/SmoothDragon/qpic">
+    <a href="https://travis-ci.org/qpic/qpic">
         <img src="https://img.shields.io/travis/qpic/qpic.svg"
              alt="build status">
     </a>
