@@ -154,6 +154,7 @@ There are two main methods for including ⟨q|pic⟩ in LaTeX documents. Each ha
 
 * [Include TikZ code directly](#tikz)
 * [Include as a PDF graphic](#pdf)
+
 ### TikZ
 `qpic my_graphic.qpic` produces a TikZ file named `my_graphic.tikz`, which can be directly included into a normal LaTeX document. You will need to add
 
