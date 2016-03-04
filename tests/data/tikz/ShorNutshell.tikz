@@ -2,14 +2,14 @@
 \begin{tikzpicture}[scale=2.100000,x=1pt,y=1pt]
 \filldraw[color=white] (12.500000, 0.000000) rectangle (-27.500000, -72.000000);
 % Drawing wires
+% Line 7: x W \ket{0\cdots{}0} ?
+\draw[color=black] (-20.000000,0.000000) -- (-20.000000,-72.000000);
+\draw[color=black] (-20.000000,0.000000) node[above] {$\ket{0\cdots{}0}$};
 % Line 8: y W \ket{0\cdots{}0} y width=25
 \draw[color=black] (-0.000000,0.000000) -- (-0.000000,-45.000000);
 \draw[color=black] (0.500000,-45.000000) -- (0.500000,-72.000000);
 \draw[color=black] (-0.500000,-45.000000) -- (-0.500000,-72.000000);
 \draw[color=black] (-0.000000,0.000000) node[above] {$\ket{0\cdots{}0}$};
-% Line 7: x W \ket{0\cdots{}0} ?
-\draw[color=black] (-20.000000,0.000000) -- (-20.000000,-72.000000);
-\draw[color=black] (-20.000000,0.000000) node[above] {$\ket{0\cdots{}0}$};
 % Done with wires; drawing gates
 % Line 15: x G $H^{{\otimes}n}$ %Quantum Hadamard Transform% $\displaystyle\sum_{x=0}^{2^n-1}\ket{x}\ket{0}$
 \draw (-27.500000, -9.000000) node[text width=144pt,left,text ragged left] {Quantum Hadamard Transform};
@@ -45,8 +45,8 @@
 \draw (-20.000000, -63.000000) node {QFT};
 \end{scope}
 % Done with gates; drawing ending labels
-\draw[color=black] (-0.000000,-72.000000) node[below] {$y$};
 \draw[color=black] (-20.000000,-72.000000) node[below] {$?$};
+\draw[color=black] (-0.000000,-72.000000) node[below] {$y$};
 % Done with ending labels; drawing cut lines and comments
 % Done with comments
 \end{tikzpicture}

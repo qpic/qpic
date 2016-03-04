@@ -7,24 +7,27 @@
 \draw[color=black] (43.000000,130.000000) -- (172.000000,130.000000);
 \draw[color=black] (43.000000,131.000000) -- (172.000000,131.000000);
 \draw[color=black] (0.000000,130.500000) node[left] {$a$};
+% Line 2: ...a W
+\draw[color=black] (0.000000,115.500000) node[anchor=mid east] {$\vdots$};
+% Line 3: b W b
+\draw[color=black] (0.000000,100.500000) -- (43.000000,100.500000);
+\draw[color=black] (0.000000,100.500000) node[left] {$b$};
 % Line 4: c ...cd d W cd<
 \draw[color=black] (0.000000,85.500000) -- (172.000000,85.500000);
 %   Deferring wire label at (0.000000,85.500000)
-% Line 2: ...a W
-\draw[color=black] (0.000000,115.500000) node[anchor=mid east] {$\vdots$};
+% Line 4: c ...cd d W cd<
+%   Deferring wire label at (0.000000,70.500000)
+% Line 4: c ...cd d W cd<
+\draw[color=black] (0.000000,55.500000) -- (172.000000,55.500000);
+\filldraw[color=white,fill=white] (0.000000,51.750000) rectangle (-4.000000,89.250000);
+\draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick] (0.000000,51.750000) -- (0.000000,89.250000);
+\draw[color=black] (-4.000000,70.500000) node[left] {$cd$};
 % Line 6: e W e< e< e> e>
 \draw[color=black] (0.000000,40.500000) -- (43.000000,40.500000);
 \draw[color=black] (102.000000,40.500000) -- (172.000000,40.500000);
 \filldraw[color=white,fill=white] (0.000000,36.750000) rectangle (-4.000000,44.250000);
 \draw[decorate,decoration={brace,amplitude = 1.875000pt},very thick] (0.000000,36.750000) -- (0.000000,44.250000);
 \draw[color=black] (-4.000000,40.500000) node[left] {$e$};
-% Line 4: c ...cd d W cd<
-\draw[color=black] (0.000000,55.500000) -- (172.000000,55.500000);
-%   Deferring wire label at (0.000000,55.500000)
-% Line 9: g h i j k W x< <x> >x< >x breadth=4
-\draw[color=black] (0.000000,16.000000) -- (43.000000,16.000000);
-\draw[color=black] (102.000000,16.000000) -- (172.000000,16.000000);
-%   Deferring wire label at (0.000000,16.000000)
 % Line 7: f W <f <f >f >f
 \draw[color=black] (0.000000,25.500000) -- (43.000000,25.500000);
 \draw[color=black] (102.000000,25.500000) -- (172.000000,25.500000);
@@ -32,30 +35,27 @@
 \draw[decorate,decoration={brace,amplitude = 1.875000pt},very thick] (-12.000000,21.750000) -- (-12.000000,29.250000);
 \draw[color=black] (0.000000,25.500000) node[left] {$f$};
 % Line 9: g h i j k W x< <x> >x< >x breadth=4
-\draw[color=black] (0.000000,8.000000) -- (43.000000,8.000000);
-\draw[color=black] (102.000000,8.000000) -- (172.000000,8.000000);
-%   Deferring wire label at (0.000000,8.000000)
+\draw[color=black] (0.000000,16.000000) -- (43.000000,16.000000);
+\draw[color=black] (102.000000,16.000000) -- (172.000000,16.000000);
+%   Deferring wire label at (0.000000,16.000000)
 % Line 9: g h i j k W x< <x> >x< >x breadth=4
 \draw[color=black] (0.000000,12.000000) -- (43.000000,12.000000);
 \draw[color=black] (102.000000,12.000000) -- (172.000000,12.000000);
 %   Deferring wire label at (0.000000,12.000000)
 % Line 9: g h i j k W x< <x> >x< >x breadth=4
-\draw[color=black] (0.000000,0.000000) -- (43.000000,0.000000);
-\draw[color=black] (102.000000,0.000000) -- (172.000000,0.000000);
-%   Deferring wire label at (0.000000,0.000000)
+\draw[color=black] (0.000000,8.000000) -- (43.000000,8.000000);
+\draw[color=black] (102.000000,8.000000) -- (172.000000,8.000000);
+%   Deferring wire label at (0.000000,8.000000)
 % Line 9: g h i j k W x< <x> >x< >x breadth=4
 \draw[color=black] (0.000000,4.000000) -- (43.000000,4.000000);
 \draw[color=black] (102.000000,4.000000) -- (172.000000,4.000000);
+%   Deferring wire label at (0.000000,4.000000)
+% Line 9: g h i j k W x< <x> >x< >x breadth=4
+\draw[color=black] (0.000000,0.000000) -- (43.000000,0.000000);
+\draw[color=black] (102.000000,0.000000) -- (172.000000,0.000000);
 \filldraw[color=white,fill=white] (0.000000,-1.000000) rectangle (-4.000000,17.000000);
 \draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick] (0.000000,-1.000000) -- (0.000000,17.000000);
 \draw[color=black] (-4.000000,8.000000) node[left] {$x$};
-% Line 4: c ...cd d W cd<
-\filldraw[color=white,fill=white] (0.000000,51.750000) rectangle (-4.000000,89.250000);
-\draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick] (0.000000,51.750000) -- (0.000000,89.250000);
-\draw[color=black] (-4.000000,70.500000) node[left] {$cd$};
-% Line 3: b W b
-\draw[color=black] (0.000000,100.500000) -- (43.000000,100.500000);
-\draw[color=black] (0.000000,100.500000) node[left] {$b$};
 % Done with wires; drawing gates
 % Line 19: LABEL 1
 \draw[color=black] (13.500000, 130.500000) node [fill=white] {$1$};
@@ -143,21 +143,21 @@
 \draw[color=black] (158.500000, 0.000000) node [fill=white] {$4$};
 % Done with gates; drawing ending labels
 \draw[color=black] (172.000000,85.500000) node[right] {$c$};
+\draw[color=black] (172.000000,70.500000) node[anchor=mid west] {$\vdots$};
+\draw[color=black] (172.000000,55.500000) node[right] {$d$};
 \filldraw[color=white,fill=white] (188.000000,36.750000) rectangle (184.000000,44.250000);
 \draw[decorate,decoration={brace,mirror,amplitude = 1.875000pt},very thick] (184.000000,36.750000) -- (184.000000,44.250000);
 \draw[color=black] (172.000000,40.500000) node[right] {$e$};
-\draw[color=black] (172.000000,55.500000) node[right] {$d$};
-%   Deferring wire label at (172.000000,16.000000)
 \filldraw[color=white,fill=white] (172.000000,21.750000) rectangle (176.000000,29.250000);
 \draw[decorate,decoration={brace,mirror,amplitude = 1.875000pt},very thick] (172.000000,21.750000) -- (172.000000,29.250000);
 \draw[color=black] (176.000000,25.500000) node[right] {$f$};
-%   Deferring wire label at (172.000000,8.000000)
+%   Deferring wire label at (172.000000,16.000000)
 %   Deferring wire label at (172.000000,12.000000)
-%   Deferring wire label at (172.000000,0.000000)
+%   Deferring wire label at (172.000000,8.000000)
+%   Deferring wire label at (172.000000,4.000000)
 \filldraw[color=white,fill=white] (172.000000,-1.000000) rectangle (176.000000,17.000000);
 \draw[decorate,decoration={brace,mirror,amplitude = 4.000000pt},very thick] (172.000000,-1.000000) -- (172.000000,17.000000);
 \draw[color=black] (176.000000,8.000000) node[right] {$x$};
-\draw[color=black] (172.000000,70.500000) node[anchor=mid west] {$\vdots$};
 % Done with ending labels; drawing cut lines and comments
 % Done with comments
 \end{tikzpicture}

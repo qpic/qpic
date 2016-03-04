@@ -4,12 +4,12 @@
 % Line 1: a W a
 \draw[color=black] (0.000000,45.000000) -- (104.000000,45.000000);
 \draw[color=black] (0.000000,45.000000) node[left] {$a$};
-% Line 3: c W c
-\draw[color=black] (0.000000,15.000000) -- (104.000000,15.000000);
-\draw[color=black] (0.000000,15.000000) node[left] {$c$};
 % Line 2: b W b
 \draw[color=black] (0.000000,30.000000) -- (104.000000,30.000000);
 \draw[color=black] (0.000000,30.000000) node[left] {$b$};
+% Line 3: c W c
+\draw[color=black] (0.000000,15.000000) -- (104.000000,15.000000);
+\draw[color=black] (0.000000,15.000000) node[left] {$c$};
 % Line 4: k W z
 \draw[color=black] (0.000000,0.000000) -- (104.000000,0.000000);
 \draw[color=black] (0.000000,0.000000) node[left] {$z$};

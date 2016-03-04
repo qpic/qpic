@@ -8,12 +8,12 @@
 \draw[color=black] (54.000000,30.500000) -- (102.000000,30.500000);
 \draw[color=black] (0.000000,30.000000) node[left] {$|\psi\rangle$};
 % Line 2: b c W |\beta_{00}\rangle<
-\draw[color=black] (0.000000,0.000000) -- (114.000000,0.000000);
-%   Deferring wire label at (0.000000,0.000000)
-% Line 2: b c W |\beta_{00}\rangle<
 \draw[color=black] (0.000000,15.000000) -- (54.000000,15.000000);
 \draw[color=black] (54.000000,14.500000) -- (78.000000,14.500000);
 \draw[color=black] (54.000000,15.500000) -- (78.000000,15.500000);
+%   Deferring wire label at (0.000000,15.000000)
+% Line 2: b c W |\beta_{00}\rangle<
+\draw[color=black] (0.000000,0.000000) -- (114.000000,0.000000);
 \filldraw[color=white,fill=white] (0.000000,-3.750000) rectangle (-4.000000,18.750000);
 \draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick] (0.000000,-3.750000) -- (0.000000,18.750000);
 \draw[color=black] (-4.000000,7.500000) node[left] {$|\beta_{00}\rangle$};

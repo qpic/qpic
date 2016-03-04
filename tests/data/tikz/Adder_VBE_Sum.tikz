@@ -6,12 +6,12 @@
 % Line 2: 1 W a a
 \draw[color=black] (0.000000,30.000000) -- (87.000000,30.000000);
 \draw[color=black] (0.000000,30.000000) node[left] {$a$};
-% Line 4: 3 W 0 a\oplus{b}
-\draw[color=black] (0.000000,0.000000) -- (87.000000,0.000000);
-\draw[color=black] (0.000000,0.000000) node[left] {$0$};
 % Line 3: 2 W b b
 \draw[color=black] (0.000000,15.000000) -- (87.000000,15.000000);
 \draw[color=black] (0.000000,15.000000) node[left] {$b$};
+% Line 4: 3 W 0 a\oplus{b}
+\draw[color=black] (0.000000,0.000000) -- (87.000000,0.000000);
+\draw[color=black] (0.000000,0.000000) node[left] {$0$};
 % Done with wires; drawing gates
 % Line 6: 1 2 3  G \rotatebox{90}{SUM}
 \draw (12.000000,30.000000) -- (12.000000,0.000000);
@@ -43,8 +43,8 @@
 \filldraw (78.000000, 30.000000) circle(1.500000pt);
 % Done with gates; drawing ending labels
 \draw[color=black] (87.000000,30.000000) node[right] {$a$};
-\draw[color=black] (87.000000,0.000000) node[right] {$a\oplus{b}$};
 \draw[color=black] (87.000000,15.000000) node[right] {$b$};
+\draw[color=black] (87.000000,0.000000) node[right] {$a\oplus{b}$};
 % Done with ending labels; drawing cut lines and comments
 % Done with comments
 \end{tikzpicture}

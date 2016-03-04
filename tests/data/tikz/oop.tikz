@@ -5,111 +5,111 @@
 % Line 1: Z_0 W 0 s_0
 \draw[color=black] (0.000000,577.500000) -- (273.000000,577.500000);
 \draw[color=black] (0.000000,577.500000) node[left] {$0$};
-% Line 4: Z_1 W 0 s_1
-\draw[color=black] (0.000000,528.000000) -- (273.000000,528.000000);
-\draw[color=black] (0.000000,528.000000) node[left] {$0$};
-% Line 7: Z_2 W 0 s_2
-\draw[color=black] (0.000000,478.500000) -- (273.000000,478.500000);
-\draw[color=black] (0.000000,478.500000) node[left] {$0$};
-% Line 11: Z_3 W 0 s_3
-\draw[color=black] (0.000000,412.500000) -- (273.000000,412.500000);
-\draw[color=black] (0.000000,412.500000) node[left] {$0$};
-% Line 14: Z_4 W 0 s_4
-\draw[color=black] (0.000000,363.000000) -- (273.000000,363.000000);
-\draw[color=black] (0.000000,363.000000) node[left] {$0$};
-% Line 18: Z_5 W 0 s_5
-\draw[color=black] (0.000000,297.000000) -- (273.000000,297.000000);
-\draw[color=black] (0.000000,297.000000) node[left] {$0$};
-% Line 22: Z_6 W 0 s_6
-\draw[color=black] (0.000000,231.000000) -- (273.000000,231.000000);
-\draw[color=black] (0.000000,231.000000) node[left] {$0$};
-% Line 26: Z_7 W 0 s_7
-\draw[color=black] (0.000000,165.000000) -- (273.000000,165.000000);
-\draw[color=black] (0.000000,165.000000) node[left] {$0$};
-% Line 29: Z_8 W 0 s_8
-\draw[color=black] (0.000000,115.500000) -- (273.000000,115.500000);
-\draw[color=black] (0.000000,115.500000) node[left] {$0$};
-% Line 33: Z_9 W 0 s_9
-\draw[color=black] (0.000000,49.500000) -- (273.000000,49.500000);
-\draw[color=black] (0.000000,49.500000) node[left] {$0$};
-% Line 27: A_7 W a_7
-\draw[color=black] (0.000000,148.500000) -- (273.000000,148.500000);
-\draw[color=black] (0.000000,148.500000) node[left] {$a_7$};
-% Line 23: A_6 W a_6
-\draw[color=black] (0.000000,214.500000) -- (273.000000,214.500000);
-\draw[color=black] (0.000000,214.500000) node[left] {$a_6$};
-% Line 19: A_5 W a_5
-\draw[color=black] (0.000000,280.500000) -- (273.000000,280.500000);
-\draw[color=black] (0.000000,280.500000) node[left] {$a_5$};
-% Line 15: A_4 W a_4
-\draw[color=black] (0.000000,346.500000) -- (273.000000,346.500000);
-\draw[color=black] (0.000000,346.500000) node[left] {$a_4$};
-% Line 12: A_3 W a_3
-\draw[color=black] (0.000000,396.000000) -- (273.000000,396.000000);
-\draw[color=black] (0.000000,396.000000) node[left] {$a_3$};
-% Line 8: A_2 W a_2
-\draw[color=black] (0.000000,462.000000) -- (273.000000,462.000000);
-\draw[color=black] (0.000000,462.000000) node[left] {$a_2$};
-% Line 5: A_1 W a_1
-\draw[color=black] (0.000000,511.500000) -- (273.000000,511.500000);
-\draw[color=black] (0.000000,511.500000) node[left] {$a_1$};
 % Line 2: A_0 W a_0
 \draw[color=black] (0.000000,561.000000) -- (273.000000,561.000000);
 \draw[color=black] (0.000000,561.000000) node[left] {$a_0$};
-% Line 34: A_9 W a_9
-\draw[color=black] (0.000000,33.000000) -- (273.000000,33.000000);
-\draw[color=black] (0.000000,33.000000) node[left] {$a_9$};
+% Line 3: B_0 W b_0
+\draw[color=black] (0.000000,544.500000) -- (273.000000,544.500000);
+\draw[color=black] (0.000000,544.500000) node[left] {$b_0$};
+% Line 4: Z_1 W 0 s_1
+\draw[color=black] (0.000000,528.000000) -- (273.000000,528.000000);
+\draw[color=black] (0.000000,528.000000) node[left] {$0$};
+% Line 5: A_1 W a_1
+\draw[color=black] (0.000000,511.500000) -- (273.000000,511.500000);
+\draw[color=black] (0.000000,511.500000) node[left] {$a_1$};
+% Line 6: B_1 W b_1
+\draw[color=black] (0.000000,495.000000) -- (273.000000,495.000000);
+\draw[color=black] (0.000000,495.000000) node[left] {$b_1$};
+% Line 7: Z_2 W 0 s_2
+\draw[color=black] (0.000000,478.500000) -- (273.000000,478.500000);
+\draw[color=black] (0.000000,478.500000) node[left] {$0$};
+% Line 8: A_2 W a_2
+\draw[color=black] (0.000000,462.000000) -- (273.000000,462.000000);
+\draw[color=black] (0.000000,462.000000) node[left] {$a_2$};
+% Line 9: B_2 W b_2
+\draw[color=black] (0.000000,445.500000) -- (273.000000,445.500000);
+\draw[color=black] (0.000000,445.500000) node[left] {$b_2$};
+% Line 10: X_0 W 0
+\draw[color=black] (0.000000,429.000000) -- (273.000000,429.000000);
+\draw[color=black] (0.000000,429.000000) node[left] {$0$};
+% Line 11: Z_3 W 0 s_3
+\draw[color=black] (0.000000,412.500000) -- (273.000000,412.500000);
+\draw[color=black] (0.000000,412.500000) node[left] {$0$};
+% Line 12: A_3 W a_3
+\draw[color=black] (0.000000,396.000000) -- (273.000000,396.000000);
+\draw[color=black] (0.000000,396.000000) node[left] {$a_3$};
+% Line 13: B_3 W b_3
+\draw[color=black] (0.000000,379.500000) -- (273.000000,379.500000);
+\draw[color=black] (0.000000,379.500000) node[left] {$b_3$};
+% Line 14: Z_4 W 0 s_4
+\draw[color=black] (0.000000,363.000000) -- (273.000000,363.000000);
+\draw[color=black] (0.000000,363.000000) node[left] {$0$};
+% Line 15: A_4 W a_4
+\draw[color=black] (0.000000,346.500000) -- (273.000000,346.500000);
+\draw[color=black] (0.000000,346.500000) node[left] {$a_4$};
+% Line 16: B_4 W b_4
+\draw[color=black] (0.000000,330.000000) -- (273.000000,330.000000);
+\draw[color=black] (0.000000,330.000000) node[left] {$b_4$};
+% Line 17: X_1 W 0
+\draw[color=black] (0.000000,313.500000) -- (273.000000,313.500000);
+\draw[color=black] (0.000000,313.500000) node[left] {$0$};
+% Line 18: Z_5 W 0 s_5
+\draw[color=black] (0.000000,297.000000) -- (273.000000,297.000000);
+\draw[color=black] (0.000000,297.000000) node[left] {$0$};
+% Line 19: A_5 W a_5
+\draw[color=black] (0.000000,280.500000) -- (273.000000,280.500000);
+\draw[color=black] (0.000000,280.500000) node[left] {$a_5$};
+% Line 20: B_5 W b_5
+\draw[color=black] (0.000000,264.000000) -- (273.000000,264.000000);
+\draw[color=black] (0.000000,264.000000) node[left] {$b_5$};
+% Line 21: X_4 W 0
+\draw[color=black] (0.000000,247.500000) -- (273.000000,247.500000);
+\draw[color=black] (0.000000,247.500000) node[left] {$0$};
+% Line 22: Z_6 W 0 s_6
+\draw[color=black] (0.000000,231.000000) -- (273.000000,231.000000);
+\draw[color=black] (0.000000,231.000000) node[left] {$0$};
+% Line 23: A_6 W a_6
+\draw[color=black] (0.000000,214.500000) -- (273.000000,214.500000);
+\draw[color=black] (0.000000,214.500000) node[left] {$a_6$};
+% Line 24: B_6 W b_6
+\draw[color=black] (0.000000,198.000000) -- (273.000000,198.000000);
+\draw[color=black] (0.000000,198.000000) node[left] {$b_6$};
+% Line 25: X_2 W 0
+\draw[color=black] (0.000000,181.500000) -- (273.000000,181.500000);
+\draw[color=black] (0.000000,181.500000) node[left] {$0$};
+% Line 26: Z_7 W 0 s_7
+\draw[color=black] (0.000000,165.000000) -- (273.000000,165.000000);
+\draw[color=black] (0.000000,165.000000) node[left] {$0$};
+% Line 27: A_7 W a_7
+\draw[color=black] (0.000000,148.500000) -- (273.000000,148.500000);
+\draw[color=black] (0.000000,148.500000) node[left] {$a_7$};
+% Line 28: B_7 W b_7
+\draw[color=black] (0.000000,132.000000) -- (273.000000,132.000000);
+\draw[color=black] (0.000000,132.000000) node[left] {$b_7$};
+% Line 29: Z_8 W 0 s_8
+\draw[color=black] (0.000000,115.500000) -- (273.000000,115.500000);
+\draw[color=black] (0.000000,115.500000) node[left] {$0$};
 % Line 30: A_8 W a_8
 \draw[color=black] (0.000000,99.000000) -- (273.000000,99.000000);
 \draw[color=black] (0.000000,99.000000) node[left] {$a_8$};
 % Line 31: B_8 W b_8
 \draw[color=black] (0.000000,82.500000) -- (273.000000,82.500000);
 \draw[color=black] (0.000000,82.500000) node[left] {$b_8$};
+% Line 32: X_3 W 0
+\draw[color=black] (0.000000,66.000000) -- (273.000000,66.000000);
+\draw[color=black] (0.000000,66.000000) node[left] {$0$};
+% Line 33: Z_9 W 0 s_9
+\draw[color=black] (0.000000,49.500000) -- (273.000000,49.500000);
+\draw[color=black] (0.000000,49.500000) node[left] {$0$};
+% Line 34: A_9 W a_9
+\draw[color=black] (0.000000,33.000000) -- (273.000000,33.000000);
+\draw[color=black] (0.000000,33.000000) node[left] {$a_9$};
 % Line 35: B_9 W b_9
 \draw[color=black] (0.000000,16.500000) -- (273.000000,16.500000);
 \draw[color=black] (0.000000,16.500000) node[left] {$b_9$};
 % Line 36: Z_10 W 0 s_{10}
 \draw[color=black] (0.000000,0.000000) -- (273.000000,0.000000);
 \draw[color=black] (0.000000,0.000000) node[left] {$0$};
-% Line 3: B_0 W b_0
-\draw[color=black] (0.000000,544.500000) -- (273.000000,544.500000);
-\draw[color=black] (0.000000,544.500000) node[left] {$b_0$};
-% Line 6: B_1 W b_1
-\draw[color=black] (0.000000,495.000000) -- (273.000000,495.000000);
-\draw[color=black] (0.000000,495.000000) node[left] {$b_1$};
-% Line 9: B_2 W b_2
-\draw[color=black] (0.000000,445.500000) -- (273.000000,445.500000);
-\draw[color=black] (0.000000,445.500000) node[left] {$b_2$};
-% Line 13: B_3 W b_3
-\draw[color=black] (0.000000,379.500000) -- (273.000000,379.500000);
-\draw[color=black] (0.000000,379.500000) node[left] {$b_3$};
-% Line 16: B_4 W b_4
-\draw[color=black] (0.000000,330.000000) -- (273.000000,330.000000);
-\draw[color=black] (0.000000,330.000000) node[left] {$b_4$};
-% Line 20: B_5 W b_5
-\draw[color=black] (0.000000,264.000000) -- (273.000000,264.000000);
-\draw[color=black] (0.000000,264.000000) node[left] {$b_5$};
-% Line 24: B_6 W b_6
-\draw[color=black] (0.000000,198.000000) -- (273.000000,198.000000);
-\draw[color=black] (0.000000,198.000000) node[left] {$b_6$};
-% Line 28: B_7 W b_7
-\draw[color=black] (0.000000,132.000000) -- (273.000000,132.000000);
-\draw[color=black] (0.000000,132.000000) node[left] {$b_7$};
-% Line 21: X_4 W 0
-\draw[color=black] (0.000000,247.500000) -- (273.000000,247.500000);
-\draw[color=black] (0.000000,247.500000) node[left] {$0$};
-% Line 25: X_2 W 0
-\draw[color=black] (0.000000,181.500000) -- (273.000000,181.500000);
-\draw[color=black] (0.000000,181.500000) node[left] {$0$};
-% Line 32: X_3 W 0
-\draw[color=black] (0.000000,66.000000) -- (273.000000,66.000000);
-\draw[color=black] (0.000000,66.000000) node[left] {$0$};
-% Line 10: X_0 W 0
-\draw[color=black] (0.000000,429.000000) -- (273.000000,429.000000);
-\draw[color=black] (0.000000,429.000000) node[left] {$0$};
-% Line 17: X_1 W 0
-\draw[color=black] (0.000000,313.500000) -- (273.000000,313.500000);
-\draw[color=black] (0.000000,313.500000) node[left] {$0$};
 % Done with wires; drawing gates
 % Line 42: Z_1 T A_0 B_0
 \draw (10.500000,561.000000) -- (10.500000,528.000000);

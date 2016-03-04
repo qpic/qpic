@@ -2,22 +2,15 @@
 \begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
 \filldraw[color=white] (7.500000, 0.000000) rectangle (-82.500000, -174.000000);
 % Drawing wires
-% Line 3: a1 W [y] [y] type=c
-\draw[color=black] (-59.500000,0.000000) -- (-59.500000,-174.000000);
-\draw[color=black] (-60.500000,0.000000) -- (-60.500000,-174.000000);
-\draw[color=black] (-60.000000,0.000000) node[above] {$[y]$};
 % Line 2: a0 W [x] [x] type=c
 \draw[color=black] (-74.500000,0.000000) -- (-74.500000,-174.000000);
 \draw[color=black] (-75.500000,0.000000) -- (-75.500000,-174.000000);
 \draw[color=black] (-75.000000,0.000000) node[above] {$[x]$};
-% Line 6: b0 W \ket{0} \ket{x}
-\draw[color=black,rounded corners=4.000000pt] (-15.000000,0.000000) -- (-15.000000,-48.000000) -- (-30.000000,-55.500000);
-\draw[color=black,rounded corners=4.000000pt] (-30.000000,-55.500000) -- (-45.000000,-63.000000) -- (-45.000000,-111.000000) -- (-30.000000,-118.500000);
-\draw[color=black,rounded corners=4.000000pt] (-30.000000,-118.500000) -- (-15.000000,-126.000000) -- (-15.000000,-174.000000);
-\draw[color=black] (-15.000000,0.000000) node[above] {$\ket{0}$};
-% Line 7: b1 W \ket{0} \ket{y}
-\draw[color=black] (-0.000000,0.000000) -- (-0.000000,-174.000000);
-\draw[color=black] (-0.000000,0.000000) node[above] {$\ket{0}$};
+% Line 3: a1 W [y] [y] type=c
+\draw[color=black] (-59.500000,0.000000) -- (-59.500000,-174.000000);
+\draw[color=black] (-60.500000,0.000000) -- (-60.500000,-174.000000);
+\draw[color=black] (-60.000000,0.000000) node[above] {$[y]$};
+% Line 4: x1 W type=o
 % Line 5: x0 W style=dashed
 \draw[color=black,dashed] (-30.000000,0.000000) -- (-30.000000,-48.000000);
 \draw[color=black,dashed] (-30.000000,-48.000000) -- (-30.000000,-55.500000);
@@ -26,7 +19,14 @@
 \draw[color=black,dashed] (-30.000000,-111.000000) -- (-30.000000,-118.500000);
 \draw[color=black,dashed] (-30.000000,-118.500000) -- (-30.000000,-126.000000);
 \draw[color=black,dashed] (-30.000000,-126.000000) -- (-30.000000,-174.000000);
-% Line 4: x1 W type=o
+% Line 6: b0 W \ket{0} \ket{x}
+\draw[color=black,rounded corners=4.000000pt] (-15.000000,0.000000) -- (-15.000000,-48.000000) -- (-30.000000,-55.500000);
+\draw[color=black,rounded corners=4.000000pt] (-30.000000,-55.500000) -- (-45.000000,-63.000000) -- (-45.000000,-111.000000) -- (-30.000000,-118.500000);
+\draw[color=black,rounded corners=4.000000pt] (-30.000000,-118.500000) -- (-15.000000,-126.000000) -- (-15.000000,-174.000000);
+\draw[color=black] (-15.000000,0.000000) node[above] {$\ket{0}$};
+% Line 7: b1 W \ket{0} \ket{y}
+\draw[color=black] (-0.000000,0.000000) -- (-0.000000,-174.000000);
+\draw[color=black] (-0.000000,0.000000) node[above] {$\ket{0}$};
 % Done with wires; drawing gates
 % Line 10: b1 H    % $[xy]\ket{0}(\ket{0}{+}\ket{1})$
 \draw (-82.500000, -12.000000) node[text width=144pt,left,text ragged left] {$[xy]\ket{0}(\ket{0}{+}\ket{1})$};
@@ -67,8 +67,8 @@
 \draw (0.000000, -162.000000) node {$H$};
 \end{scope}
 % Done with gates; drawing ending labels
-\draw[color=black] (-60.000000,-174.000000) node[below] {$[y]$};
 \draw[color=black] (-75.000000,-174.000000) node[below] {$[x]$};
+\draw[color=black] (-60.000000,-174.000000) node[below] {$[y]$};
 \draw[color=black] (-15.000000,-174.000000) node[below] {$\ket{x}$};
 \draw[color=black] (-0.000000,-174.000000) node[below] {$\ket{y}$};
 % Done with ending labels; drawing cut lines and comments

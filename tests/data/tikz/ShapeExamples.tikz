@@ -5,17 +5,17 @@
 % Line 1: a b W a,b
 \draw[color=black] (0.000000,60.000000) -- (179.000000,60.000000);
 %   Deferring wire label at (0.000000,60.000000)
-% Line 4: x W owire
-\draw[color=black,dotted] (32.000000,0.000000) -- (179.000000,0.000000);
-% Line 2: c W 0
-\draw[color=black] (0.000000,30.000000) -- (179.000000,30.000000);
-\draw[color=black] (0.000000,30.000000) node[left] {$0$};
 % Line 1: a b W a,b
 \draw[color=black] (0.000000,45.000000) -- (179.000000,45.000000);
 \draw[color=black] (0.000000,52.500000) node[left] {$a,b$};
+% Line 2: c W 0
+\draw[color=black] (0.000000,30.000000) -- (179.000000,30.000000);
+\draw[color=black] (0.000000,30.000000) node[left] {$0$};
 % Line 3: d W 0
 \draw[color=black] (0.000000,15.000000) -- (179.000000,15.000000);
 \draw[color=black] (0.000000,15.000000) node[left] {$0$};
+% Line 4: x W owire
+\draw[color=black,dotted] (32.000000,0.000000) -- (179.000000,0.000000);
 % Done with wires; drawing gates
 % Line 10: a b c x / 1
 \draw (6.000000, 54.000000) -- (14.000000, 66.000000);
@@ -169,8 +169,8 @@
 \end{scope}
 % Done with gates; drawing ending labels
 \draw[color=black] (179.000000,60.000000) node[right] {$a$};
-%   Deferring wire label at (179.000000,30.000000)
 \draw[color=black] (179.000000,45.000000) node[right] {$b$};
+%   Deferring wire label at (179.000000,30.000000)
 \filldraw[color=white,fill=white] (179.000000,11.250000) rectangle (183.000000,33.750000);
 \draw[decorate,decoration={brace,mirror,amplitude = 4.000000pt},very thick] (179.000000,11.250000) -- (179.000000,33.750000);
 \draw[color=black] (183.000000,22.500000) node[right] {$c,d$};

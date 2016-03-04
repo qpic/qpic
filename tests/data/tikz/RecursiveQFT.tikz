@@ -2,25 +2,25 @@
 \begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
 \filldraw[color=white] (7.500000, 0.000000) rectangle (-97.500000, -198.000000);
 % Drawing wires
-% Line 8: 1 W s_1 t_{n-1}
-\draw[color=black] (-15.000000,0.000000) -- (-15.000000,-198.000000);
-\draw[color=black] (-15.000000,0.000000) node[above] {$s_1$};
-% Line 4: n-1 W s_{n-1} t_1
-\draw[color=black] (-75.000000,0.000000) -- (-75.000000,-198.000000);
-\draw[color=black] (-75.000000,0.000000) node[above] {$s_{n-1}$};
-% Line 6: i W s_{i} t_{n-i}
-\draw[color=black] (-45.000000,0.000000) -- (-45.000000,-198.000000);
-\draw[color=black] (-45.000000,0.000000) node[above] {$s_{i}$};
 % Line 3: n W s_{n} t_0
 \draw[color=black] (-90.000000,0.000000) -- (-90.000000,-198.000000);
 \draw[color=black] (-90.000000,0.000000) node[above] {$s_{n}$};
+% Line 4: n-1 W s_{n-1} t_1
+\draw[color=black] (-75.000000,0.000000) -- (-75.000000,-198.000000);
+\draw[color=black] (-75.000000,0.000000) node[above] {$s_{n-1}$};
+% Line 5: ...1 W
+\draw[color=black] (-60.000000,0.000000) node[above] {$\cdots$};
+% Line 6: i W s_{i} t_{n-i}
+\draw[color=black] (-45.000000,0.000000) -- (-45.000000,-198.000000);
+\draw[color=black] (-45.000000,0.000000) node[above] {$s_{i}$};
 % Line 7: ...2 W
 \draw[color=black] (-30.000000,0.000000) node[above] {$\cdots$};
+% Line 8: 1 W s_1 t_{n-1}
+\draw[color=black] (-15.000000,0.000000) -- (-15.000000,-198.000000);
+\draw[color=black] (-15.000000,0.000000) node[above] {$s_1$};
 % Line 9: 0 W s_0 t_{n}
 \draw[color=black] (-0.000000,0.000000) -- (-0.000000,-198.000000);
 \draw[color=black] (-0.000000,0.000000) node[above] {$s_0$};
-% Line 5: ...1 W
-\draw[color=black] (-60.000000,0.000000) node[above] {$\cdots$};
 % Done with wires; drawing gates
 % Line 11: n n-1 ...1 i 1 G $\hbox{QFT}_{n}$ width=40
 \draw (-90.000000,-12.000000) -- (-15.000000,-12.000000);
@@ -80,13 +80,13 @@
 \draw (0.000000, -186.000000) node {$H$};
 \end{scope}
 % Done with gates; drawing ending labels
-\draw[color=black] (-15.000000,-198.000000) node[below] {$t_{n-1}$};
-\draw[color=black] (-75.000000,-198.000000) node[below] {$t_1$};
-\draw[color=black] (-45.000000,-198.000000) node[below] {$t_{n-i}$};
 \draw[color=black] (-90.000000,-198.000000) node[below] {$t_0$};
-\draw[color=black] (-30.000000,-198.000000) node[below] {$\cdots$};
-\draw[color=black] (-0.000000,-198.000000) node[below] {$t_{n}$};
+\draw[color=black] (-75.000000,-198.000000) node[below] {$t_1$};
 \draw[color=black] (-60.000000,-198.000000) node[below] {$\cdots$};
+\draw[color=black] (-45.000000,-198.000000) node[below] {$t_{n-i}$};
+\draw[color=black] (-30.000000,-198.000000) node[below] {$\cdots$};
+\draw[color=black] (-15.000000,-198.000000) node[below] {$t_{n-1}$};
+\draw[color=black] (-0.000000,-198.000000) node[below] {$t_{n}$};
 % Done with ending labels; drawing cut lines and comments
 % Done with comments
 \end{tikzpicture}

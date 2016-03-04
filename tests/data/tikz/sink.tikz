@@ -3,23 +3,23 @@
 \begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
 \filldraw[color=white] (7.500000, 0.000000) rectangle (-82.500000, -450.000000);
 % Drawing wires
-% Line 5: ... W
-\draw[color=black] (-30.000000,0.000000) node[above] {$\cdots$};
-% Line 3: 1 W color=blue c d
-\draw[color=blue] (-60.000000,0.000000) -- (-60.000000,-450.000000);
-\draw[color=blue] (-60.000000,0.000000) node[above] {$c$};
 % Line 2: 0 W a b
 \draw[color=black] (-75.000000,0.000000) -- (-75.000000,-450.000000);
 \draw[color=black] (-75.000000,0.000000) node[above] {$a$};
+% Line 3: 1 W color=blue c d
+\draw[color=blue] (-60.000000,0.000000) -- (-60.000000,-450.000000);
+\draw[color=blue] (-60.000000,0.000000) node[above] {$c$};
+% Line 4: color=red 2 W e f
+\draw[color=red] (-45.000000,0.000000) -- (-45.000000,-450.000000);
+\draw[color=red] (-45.000000,0.000000) node[above] {$e$};
+% Line 5: ... W
+\draw[color=black] (-30.000000,0.000000) node[above] {$\cdots$};
 % Line 6: 3 W g h
 \draw[color=black] (-15.000000,0.000000) -- (-15.000000,-144.000000);
 \draw[color=yellow!50!black] (-15.000000,-144.000000) -- (-15.000000,-165.000000);
 \draw[color=yellow!50!black] (-15.000000,-285.000000) -- (-15.000000,-306.000000);
 \draw[color=black] (-15.000000,-306.000000) -- (-15.000000,-450.000000);
 \draw[color=black] (-15.000000,0.000000) node[above] {$g$};
-% Line 4: color=red 2 W e f
-\draw[color=red] (-45.000000,0.000000) -- (-45.000000,-450.000000);
-\draw[color=red] (-45.000000,0.000000) node[above] {$e$};
 % Line 7: 4 W color=orange i j
 \draw[color=orange] (-0.000000,0.000000) -- (-0.000000,-9.000000);
 \draw[color=cyan] (-0.000000,-9.000000) -- (-0.000000,-441.000000);
@@ -243,11 +243,11 @@
 \draw[fill=white] (-45.000000, -225.000000) circle(2.250000pt);
 \end{scope}
 % Done with gates; drawing ending labels
-\draw[color=black] (-30.000000,-450.000000) node[below] {$\cdots$};
-\draw[color=blue] (-60.000000,-450.000000) node[below] {$d$};
 \draw[color=black] (-75.000000,-450.000000) node[below] {$b$};
-\draw[color=black] (-15.000000,-450.000000) node[below] {$h$};
+\draw[color=blue] (-60.000000,-450.000000) node[below] {$d$};
 \draw[color=red] (-45.000000,-450.000000) node[below] {$f$};
+\draw[color=black] (-30.000000,-450.000000) node[below] {$\cdots$};
+\draw[color=black] (-15.000000,-450.000000) node[below] {$h$};
 \draw[color=orange] (-0.000000,-450.000000) node[below] {$j$};
 % Done with ending labels; drawing cut lines and comments
 % Line 26: @ 7 % The first half

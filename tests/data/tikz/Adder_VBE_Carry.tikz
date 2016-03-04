@@ -3,18 +3,18 @@
 \begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
 \filldraw[color=white] (0.000000, -7.500000) rectangle (105.000000, 52.500000);
 % Drawing wires
-% Line 2: 1 W a a
-\draw[color=black] (0.000000,30.000000) -- (105.000000,30.000000);
-\draw[color=black] (0.000000,30.000000) node[left] {$a$};
 % Line 1: 0 W c_{in} c_{in}
 \draw[color=black] (0.000000,45.000000) -- (105.000000,45.000000);
 \draw[color=black] (0.000000,45.000000) node[left] {$c_{in}$};
-% Line 4: 3 W 0 c_{out}
-\draw[color=black] (0.000000,0.000000) -- (105.000000,0.000000);
-\draw[color=black] (0.000000,0.000000) node[left] {$0$};
+% Line 2: 1 W a a
+\draw[color=black] (0.000000,30.000000) -- (105.000000,30.000000);
+\draw[color=black] (0.000000,30.000000) node[left] {$a$};
 % Line 3: 2 W b a\oplus{b}
 \draw[color=black] (0.000000,15.000000) -- (105.000000,15.000000);
 \draw[color=black] (0.000000,15.000000) node[left] {$b$};
+% Line 4: 3 W 0 c_{out}
+\draw[color=black] (0.000000,0.000000) -- (105.000000,0.000000);
+\draw[color=black] (0.000000,0.000000) node[left] {$0$};
 % Done with wires; drawing gates
 % Line 6: 0 1 2 3  G| \rotatebox{90}{CARRY}
 \draw (12.000000,45.000000) -- (12.000000,0.000000);
@@ -57,10 +57,10 @@
 \filldraw (96.000000, 45.000000) circle(1.500000pt);
 \filldraw (96.000000, 15.000000) circle(1.500000pt);
 % Done with gates; drawing ending labels
-\draw[color=black] (105.000000,30.000000) node[right] {$a$};
 \draw[color=black] (105.000000,45.000000) node[right] {$c_{in}$};
-\draw[color=black] (105.000000,0.000000) node[right] {$c_{out}$};
+\draw[color=black] (105.000000,30.000000) node[right] {$a$};
 \draw[color=black] (105.000000,15.000000) node[right] {$a\oplus{b}$};
+\draw[color=black] (105.000000,0.000000) node[right] {$c_{out}$};
 % Done with ending labels; drawing cut lines and comments
 % Done with comments
 \end{tikzpicture}

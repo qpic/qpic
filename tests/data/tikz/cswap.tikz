@@ -8,34 +8,34 @@
 \draw[color=black,rounded corners=4.000000pt] (139.500000,45.000000) -- (147.000000,30.000000) -- (177.000000,30.000000) -- (184.500000,15.000000);
 \draw[color=black,rounded corners=4.000000pt] (184.500000,15.000000) -- (192.000000,0.000000) -- (216.000000,0.000000);
 \draw[color=black] (0.000000,120.000000) node[left] {$c$};
-% Line 4: a1 W a_1 {\bar c a_1 \oplus c b_1}
-\draw[color=black,rounded corners=4.000000pt] (0.000000,75.000000) -- (87.000000,75.000000) -- (94.500000,82.500000);
-\draw[color=black,rounded corners=4.000000pt] (94.500000,82.500000) -- (102.000000,90.000000) -- (216.000000,90.000000);
-\draw[color=black] (0.000000,75.000000) node[left] {$a_1$};
 % Line 2: a0 W a_0 {\bar c a_0 \oplus c b_0}
 \draw[color=black,rounded corners=4.000000pt] (0.000000,105.000000) -- (42.000000,105.000000) -- (49.500000,112.500000);
 \draw[color=black,rounded corners=4.000000pt] (49.500000,112.500000) -- (57.000000,120.000000) -- (216.000000,120.000000);
 \draw[color=black] (0.000000,105.000000) node[left] {$a_0$};
-% Line 8: a3 W a_3 {\bar c a_3 \oplus c b_3}
-\draw[color=black,rounded corners=4.000000pt] (0.000000,15.000000) -- (177.000000,15.000000) -- (184.500000,22.500000);
-\draw[color=black,rounded corners=4.000000pt] (184.500000,22.500000) -- (192.000000,30.000000) -- (216.000000,30.000000);
-\draw[color=black] (0.000000,15.000000) node[left] {$a_3$};
-% Line 6: a2 W a_2 {\bar c a_2 \oplus c b_2}
-\draw[color=black,rounded corners=4.000000pt] (0.000000,45.000000) -- (132.000000,45.000000) -- (139.500000,52.500000);
-\draw[color=black,rounded corners=4.000000pt] (139.500000,52.500000) -- (147.000000,60.000000) -- (216.000000,60.000000);
-\draw[color=black] (0.000000,45.000000) node[left] {$a_2$};
 % Line 3: b0 W b_0 {\bar c b_0 \oplus c a_0}
 \draw[color=black,rounded corners=4.000000pt] (0.000000,90.000000) -- (42.000000,90.000000) -- (49.500000,97.500000);
 \draw[color=black,rounded corners=4.000000pt] (49.500000,97.500000) -- (57.000000,105.000000) -- (216.000000,105.000000);
 \draw[color=black] (0.000000,90.000000) node[left] {$b_0$};
+% Line 4: a1 W a_1 {\bar c a_1 \oplus c b_1}
+\draw[color=black,rounded corners=4.000000pt] (0.000000,75.000000) -- (87.000000,75.000000) -- (94.500000,82.500000);
+\draw[color=black,rounded corners=4.000000pt] (94.500000,82.500000) -- (102.000000,90.000000) -- (216.000000,90.000000);
+\draw[color=black] (0.000000,75.000000) node[left] {$a_1$};
 % Line 5: b1 W b_1 {\bar c b_1 \oplus c a_1}
 \draw[color=black,rounded corners=4.000000pt] (0.000000,60.000000) -- (87.000000,60.000000) -- (94.500000,67.500000);
 \draw[color=black,rounded corners=4.000000pt] (94.500000,67.500000) -- (102.000000,75.000000) -- (216.000000,75.000000);
 \draw[color=black] (0.000000,60.000000) node[left] {$b_1$};
+% Line 6: a2 W a_2 {\bar c a_2 \oplus c b_2}
+\draw[color=black,rounded corners=4.000000pt] (0.000000,45.000000) -- (132.000000,45.000000) -- (139.500000,52.500000);
+\draw[color=black,rounded corners=4.000000pt] (139.500000,52.500000) -- (147.000000,60.000000) -- (216.000000,60.000000);
+\draw[color=black] (0.000000,45.000000) node[left] {$a_2$};
 % Line 7: b2 W b_2 {\bar c b_2 \oplus c a_2}
 \draw[color=black,rounded corners=4.000000pt] (0.000000,30.000000) -- (132.000000,30.000000) -- (139.500000,37.500000);
 \draw[color=black,rounded corners=4.000000pt] (139.500000,37.500000) -- (147.000000,45.000000) -- (216.000000,45.000000);
 \draw[color=black] (0.000000,30.000000) node[left] {$b_2$};
+% Line 8: a3 W a_3 {\bar c a_3 \oplus c b_3}
+\draw[color=black,rounded corners=4.000000pt] (0.000000,15.000000) -- (177.000000,15.000000) -- (184.500000,22.500000);
+\draw[color=black,rounded corners=4.000000pt] (184.500000,22.500000) -- (192.000000,30.000000) -- (216.000000,30.000000);
+\draw[color=black] (0.000000,15.000000) node[left] {$a_3$};
 % Line 9: b3 W b_3 {\bar c b_3 \oplus c a_3}
 \draw[color=black,rounded corners=4.000000pt] (0.000000,0.000000) -- (177.000000,0.000000) -- (184.500000,7.500000);
 \draw[color=black,rounded corners=4.000000pt] (184.500000,7.500000) -- (192.000000,15.000000) -- (216.000000,15.000000);
@@ -155,13 +155,13 @@
 % Line 23: a3 b3 c PERMUTE
 % Done with gates; drawing ending labels
 \draw[color=black] (216.000000,0.000000) node[right] {$c$};
-\draw[color=black] (216.000000,90.000000) node[right] {${\bar c a_1 \oplus c b_1}$};
 \draw[color=black] (216.000000,120.000000) node[right] {${\bar c a_0 \oplus c b_0}$};
-\draw[color=black] (216.000000,30.000000) node[right] {${\bar c a_3 \oplus c b_3}$};
-\draw[color=black] (216.000000,60.000000) node[right] {${\bar c a_2 \oplus c b_2}$};
 \draw[color=black] (216.000000,105.000000) node[right] {${\bar c b_0 \oplus c a_0}$};
+\draw[color=black] (216.000000,90.000000) node[right] {${\bar c a_1 \oplus c b_1}$};
 \draw[color=black] (216.000000,75.000000) node[right] {${\bar c b_1 \oplus c a_1}$};
+\draw[color=black] (216.000000,60.000000) node[right] {${\bar c a_2 \oplus c b_2}$};
 \draw[color=black] (216.000000,45.000000) node[right] {${\bar c b_2 \oplus c a_2}$};
+\draw[color=black] (216.000000,30.000000) node[right] {${\bar c a_3 \oplus c b_3}$};
 \draw[color=black] (216.000000,15.000000) node[right] {${\bar c b_3 \oplus c a_3}$};
 % Done with ending labels; drawing cut lines and comments
 % Done with comments

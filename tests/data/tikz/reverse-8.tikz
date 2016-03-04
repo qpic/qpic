@@ -7,6 +7,13 @@
 \draw[color=red,very thick] (81.000000,120.000000) -- (153.000000,120.000000);
 \draw[color=black,thin] (153.000000,120.000000) -- (360.000000,120.000000);
 \draw[color=black] (0.000000,120.000000) node[left] {$\bit{1}$};
+% Line 6: 2 W \bit{2} a_8
+\draw[color=black] (0.000000,105.000000) -- (63.000000,105.000000);
+\draw[color=red,very thick] (63.000000,105.000000) -- (117.000000,105.000000);
+\draw[color=black,thin] (117.000000,105.000000) -- (135.000000,105.000000);
+\draw[color=red,very thick] (135.000000,105.000000) -- (207.000000,105.000000);
+\draw[color=black,thin] (207.000000,105.000000) -- (360.000000,105.000000);
+\draw[color=black] (0.000000,105.000000) node[left] {$\bit{2}$};
 % Line 7: 3 W \bit{3} a_7 on
 \draw[color=red,very thick] (0.000000,90.000000) -- (81.000000,90.000000);
 \draw[color=black,thin] (81.000000,90.000000) -- (99.000000,90.000000);
@@ -15,22 +22,6 @@
 \draw[color=red,very thick] (171.000000,90.000000) -- (225.000000,90.000000);
 \draw[color=black,thin] (225.000000,90.000000) -- (360.000000,90.000000);
 \draw[color=red] (0.000000,90.000000) node[left] {$\bit{3}$};
-% Line 6: 2 W \bit{2} a_8
-\draw[color=black] (0.000000,105.000000) -- (63.000000,105.000000);
-\draw[color=red,very thick] (63.000000,105.000000) -- (117.000000,105.000000);
-\draw[color=black,thin] (117.000000,105.000000) -- (135.000000,105.000000);
-\draw[color=red,very thick] (135.000000,105.000000) -- (207.000000,105.000000);
-\draw[color=black,thin] (207.000000,105.000000) -- (360.000000,105.000000);
-\draw[color=black] (0.000000,105.000000) node[left] {$\bit{2}$};
-% Line 9: 5 W \bit{5} a_5
-\draw[color=black] (0.000000,60.000000) -- (99.000000,60.000000);
-\draw[color=red,very thick] (99.000000,60.000000) -- (153.000000,60.000000);
-\draw[color=black,thin] (153.000000,60.000000) -- (171.000000,60.000000);
-\draw[color=red,very thick] (171.000000,60.000000) -- (225.000000,60.000000);
-\draw[color=black,thin] (225.000000,60.000000) -- (243.000000,60.000000);
-\draw[color=red,very thick] (243.000000,60.000000) -- (297.000000,60.000000);
-\draw[color=black,thin] (297.000000,60.000000) -- (360.000000,60.000000);
-\draw[color=black] (0.000000,60.000000) node[left] {$\bit{5}$};
 % Line 8: 4 W \bit{4} a_6
 \draw[color=black] (0.000000,75.000000) -- (45.000000,75.000000);
 \draw[color=red,very thick] (45.000000,75.000000) -- (117.000000,75.000000);
@@ -40,14 +31,15 @@
 \draw[color=red,very thick] (207.000000,75.000000) -- (279.000000,75.000000);
 \draw[color=black,thin] (279.000000,75.000000) -- (360.000000,75.000000);
 \draw[color=black] (0.000000,75.000000) node[left] {$\bit{4}$};
-% Line 11: 7 W \bit{7} a_3
-\draw[color=black] (0.000000,30.000000) -- (171.000000,30.000000);
-\draw[color=red,very thick] (171.000000,30.000000) -- (225.000000,30.000000);
-\draw[color=black,thin] (225.000000,30.000000) -- (243.000000,30.000000);
-\draw[color=red,very thick] (243.000000,30.000000) -- (297.000000,30.000000);
-\draw[color=black,thin] (297.000000,30.000000) -- (315.000000,30.000000);
-\draw[color=red,very thick] (315.000000,30.000000) -- (360.000000,30.000000);
-\draw[color=black] (0.000000,30.000000) node[left] {$\bit{7}$};
+% Line 9: 5 W \bit{5} a_5
+\draw[color=black] (0.000000,60.000000) -- (99.000000,60.000000);
+\draw[color=red,very thick] (99.000000,60.000000) -- (153.000000,60.000000);
+\draw[color=black,thin] (153.000000,60.000000) -- (171.000000,60.000000);
+\draw[color=red,very thick] (171.000000,60.000000) -- (225.000000,60.000000);
+\draw[color=black,thin] (225.000000,60.000000) -- (243.000000,60.000000);
+\draw[color=red,very thick] (243.000000,60.000000) -- (297.000000,60.000000);
+\draw[color=black,thin] (297.000000,60.000000) -- (360.000000,60.000000);
+\draw[color=black] (0.000000,60.000000) node[left] {$\bit{5}$};
 % Line 10: 6 W \bit{6} a_4
 \draw[color=black] (0.000000,45.000000) -- (117.000000,45.000000);
 \draw[color=red,very thick] (117.000000,45.000000) -- (189.000000,45.000000);
@@ -57,11 +49,14 @@
 \draw[color=red,very thick] (279.000000,45.000000) -- (351.000000,45.000000);
 \draw[color=black,thin] (351.000000,45.000000) -- (360.000000,45.000000);
 \draw[color=black] (0.000000,45.000000) node[left] {$\bit{6}$};
-% Line 13: 9 W \bit{9} a_1
-\draw[color=black] (0.000000,0.000000) -- (243.000000,0.000000);
-\draw[color=red,very thick] (243.000000,0.000000) -- (315.000000,0.000000);
-\draw[color=black,thin] (315.000000,0.000000) -- (360.000000,0.000000);
-\draw[color=black] (0.000000,0.000000) node[left] {$\bit{9}$};
+% Line 11: 7 W \bit{7} a_3
+\draw[color=black] (0.000000,30.000000) -- (171.000000,30.000000);
+\draw[color=red,very thick] (171.000000,30.000000) -- (225.000000,30.000000);
+\draw[color=black,thin] (225.000000,30.000000) -- (243.000000,30.000000);
+\draw[color=red,very thick] (243.000000,30.000000) -- (297.000000,30.000000);
+\draw[color=black,thin] (297.000000,30.000000) -- (315.000000,30.000000);
+\draw[color=red,very thick] (315.000000,30.000000) -- (360.000000,30.000000);
+\draw[color=black] (0.000000,30.000000) node[left] {$\bit{7}$};
 % Line 12: 8 W \bit{8} a_2
 \draw[color=black] (0.000000,15.000000) -- (189.000000,15.000000);
 \draw[color=red,very thick] (189.000000,15.000000) -- (261.000000,15.000000);
@@ -69,6 +64,11 @@
 \draw[color=red,very thick] (279.000000,15.000000) -- (333.000000,15.000000);
 \draw[color=black,thin] (333.000000,15.000000) -- (360.000000,15.000000);
 \draw[color=black] (0.000000,15.000000) node[left] {$\bit{8}$};
+% Line 13: 9 W \bit{9} a_1
+\draw[color=black] (0.000000,0.000000) -- (243.000000,0.000000);
+\draw[color=red,very thick] (243.000000,0.000000) -- (315.000000,0.000000);
+\draw[color=black,thin] (315.000000,0.000000) -- (360.000000,0.000000);
+\draw[color=black] (0.000000,0.000000) node[left] {$\bit{9}$};
 % Done with wires; drawing gates
 % Line 17: +1 2
 \draw (9.000000,120.000000) -- (9.000000,105.000000);
@@ -872,14 +872,14 @@
 \filldraw (351.000000, 0.000000) circle(1.500000pt);
 % Done with gates; drawing ending labels
 \draw[color=black] (360.000000,120.000000) node[right] {$a_9$};
-\draw[color=black] (360.000000,90.000000) node[right] {$a_7$};
 \draw[color=black] (360.000000,105.000000) node[right] {$a_8$};
-\draw[color=black] (360.000000,60.000000) node[right] {$a_5$};
+\draw[color=black] (360.000000,90.000000) node[right] {$a_7$};
 \draw[color=black] (360.000000,75.000000) node[right] {$a_6$};
-\draw[color=red] (360.000000,30.000000) node[right] {$a_3$};
+\draw[color=black] (360.000000,60.000000) node[right] {$a_5$};
 \draw[color=black] (360.000000,45.000000) node[right] {$a_4$};
-\draw[color=black] (360.000000,0.000000) node[right] {$a_1$};
+\draw[color=red] (360.000000,30.000000) node[right] {$a_3$};
 \draw[color=black] (360.000000,15.000000) node[right] {$a_2$};
+\draw[color=black] (360.000000,0.000000) node[right] {$a_1$};
 % Done with ending labels; drawing cut lines and comments
 \draw[dotted,color=blue] (36.000000, -7.500000) -- (36.000000, 127.500000);
 \draw[dotted,color=blue] (72.000000, -7.500000) -- (72.000000, 127.500000);

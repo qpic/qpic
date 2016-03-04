@@ -4,19 +4,19 @@
 % Line 1: a W a
 \draw[color=black] (0.000000,75.000000) -- (112.000000,75.000000);
 \draw[color=black] (0.000000,75.000000) node[left] {$a$};
-% Line 3: c W c
-\draw[color=black] (0.000000,45.000000) -- (112.000000,45.000000);
-\draw[color=black] (0.000000,45.000000) node[left] {$c$};
 % Line 2: b W b
 \draw[color=black] (0.000000,60.000000) -- (112.000000,60.000000);
 \draw[color=black] (0.000000,60.000000) node[left] {$b$};
+% Line 3: c W c
+\draw[color=black] (0.000000,45.000000) -- (112.000000,45.000000);
+\draw[color=black] (0.000000,45.000000) node[left] {$c$};
+% Line 4: d W d
+\draw[color=black] (0.000000,30.000000) -- (112.000000,30.000000);
+\draw[color=black] (0.000000,30.000000) node[left] {$d$};
 % Line 5: e W e
 \draw[color=black] (0.000000,15.000000) -- (56.000000,15.000000);
 \draw[color=red] (56.000000,15.000000) -- (112.000000,15.000000);
 \draw[color=black] (0.000000,15.000000) node[left] {$e$};
-% Line 4: d W d
-\draw[color=black] (0.000000,30.000000) -- (112.000000,30.000000);
-\draw[color=black] (0.000000,30.000000) node[left] {$d$};
 % Line 6: f W f
 \draw[color=black] (0.000000,0.000000) -- (112.000000,0.000000);
 \draw[color=black] (0.000000,0.000000) node[left] {$f$};

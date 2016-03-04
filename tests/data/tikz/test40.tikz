@@ -6,13 +6,13 @@
 \draw[color=black] (12.000000,44.500000) -- (188.000000,44.500000);
 \draw[color=black] (12.000000,45.500000) -- (188.000000,45.500000);
 \draw[color=black] (0.000000,45.000000) node[left] {$a$};
+% Line 2: b W b b
+\draw[color=black] (0.000000,30.000000) -- (188.000000,30.000000);
+\draw[color=black] (0.000000,30.000000) node[left] {$b$};
 % Line 3: c W c c
 \draw[color=black] (0.000000,15.000000) -- (12.000000,15.000000);
 \draw[color=red] (12.000000,15.000000) -- (188.000000,15.000000);
 \draw[color=black] (0.000000,15.000000) node[left] {$c$};
-% Line 2: b W b b
-\draw[color=black] (0.000000,30.000000) -- (188.000000,30.000000);
-\draw[color=black] (0.000000,30.000000) node[left] {$b$};
 % Line 4: d W d d
 \draw[color=black] (0.000000,0.000000) -- (188.000000,0.000000);
 \draw[color=black] (0.000000,0.000000) node[left] {$d$};
@@ -212,8 +212,8 @@
 \end{scope}
 % Done with gates; drawing ending labels
 \draw[color=black] (188.000000,45.000000) node[right] {$a$};
-\draw[color=red] (188.000000,15.000000) node[right] {$c$};
 \draw[color=black] (188.000000,30.000000) node[right] {$b$};
+\draw[color=red] (188.000000,15.000000) node[right] {$c$};
 \draw[color=black] (188.000000,0.000000) node[right] {$d$};
 % Done with ending labels; drawing cut lines and comments
 % Done with comments

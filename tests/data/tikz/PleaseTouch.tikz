@@ -3,19 +3,19 @@
 \begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
 \filldraw[color=bg] (0.000000, -7.500000) rectangle (219.000000, 97.500000);
 % Drawing wires
-% Line 3: 1 W
-\draw[color=black] (0.000000,75.000000) -- (219.000000,75.000000);
 % Line 2: 0 W
 \draw[color=black] (0.000000,90.000000) -- (219.000000,90.000000);
-% Line 5: 3 W
-\draw[color=black] (0.000000,45.000000) -- (219.000000,45.000000);
+% Line 3: 1 W
+\draw[color=black] (0.000000,75.000000) -- (219.000000,75.000000);
 % Line 4: 2 W
 \draw[color=black] (0.000000,60.000000) -- (147.000000,60.000000);
 \draw[color=black,dashed] (147.000000,60.000000) -- (219.000000,60.000000);
-% Line 24: 5 W
-\draw[color=black] (0.000000,15.000000) -- (219.000000,15.000000);
+% Line 5: 3 W
+\draw[color=black] (0.000000,45.000000) -- (219.000000,45.000000);
 % Line 6: 4 W
 \draw[color=black] (0.000000,30.000000) -- (219.000000,30.000000);
+% Line 24: 5 W
+\draw[color=black] (0.000000,15.000000) -- (219.000000,15.000000);
 % Line 27: 6 W
 \draw[color=black] (0.000000,0.000000) -- (219.000000,0.000000);
 % Done with wires; drawing gates

@@ -6,19 +6,19 @@
 % Line 4: xn1 W \ket{x_{n\mynus1}} \ket{x_{n\mynus1}}
 \draw[color=black] (0.000000,75.000000) -- (190.000000,75.000000);
 \draw[color=black] (0.000000,75.000000) node[left] {$\ket{x_{n\mynus1}}$};
+% Line 5: ...1 W
+\draw[color=black] (0.000000,60.000000) node[anchor=mid east] {$\vdots$};
 % Line 6: xi W \ket{x_i} \ket{x_i}
 \draw[color=black] (0.000000,45.000000) -- (190.000000,45.000000);
 \draw[color=black] (0.000000,45.000000) node[left] {$\ket{x_i}$};
 % Line 7: ...2 W
 \draw[color=black] (0.000000,30.000000) node[anchor=mid east] {$\vdots$};
-% Line 5: ...1 W
-\draw[color=black] (0.000000,60.000000) node[anchor=mid east] {$\vdots$};
-% Line 10: y W \ket{y} \ket{y\cdot{}a^x\bmod{}N}
-\draw[color=black] (0.000000,0.000000) -- (190.000000,0.000000);
-\draw[color=black] (0.000000,0.000000) node[left] {$\ket{y}$};
 % Line 9: x0 W \ket{x_0} \ket{x_0}
 \draw[color=black] (0.000000,15.000000) -- (190.000000,15.000000);
 \draw[color=black] (0.000000,15.000000) node[left] {$\ket{x_0}$};
+% Line 10: y W \ket{y} \ket{y\cdot{}a^x\bmod{}N}
+\draw[color=black] (0.000000,0.000000) -- (190.000000,0.000000);
+\draw[color=black] (0.000000,0.000000) node[left] {$\ket{y}$};
 % Done with wires; drawing gates
 % Line 12: y G $M_N(a)$ x0 width=25
 \draw (18.500000,15.000000) -- (18.500000,0.000000);
@@ -56,11 +56,11 @@
 \filldraw (164.000000, 75.000000) circle(1.500000pt);
 % Done with gates; drawing ending labels
 \draw[color=black] (190.000000,75.000000) node[right] {$\ket{x_{n\mynus1}}$};
+\draw[color=black] (190.000000,60.000000) node[anchor=mid west] {$\vdots$};
 \draw[color=black] (190.000000,45.000000) node[right] {$\ket{x_i}$};
 \draw[color=black] (190.000000,30.000000) node[anchor=mid west] {$\vdots$};
-\draw[color=black] (190.000000,60.000000) node[anchor=mid west] {$\vdots$};
-\draw[color=black] (190.000000,0.000000) node[right] {$\ket{y\cdot{}a^x\bmod{}N}$};
 \draw[color=black] (190.000000,15.000000) node[right] {$\ket{x_0}$};
+\draw[color=black] (190.000000,0.000000) node[right] {$\ket{y\cdot{}a^x\bmod{}N}$};
 % Done with ending labels; drawing cut lines and comments
 % Done with comments
 \end{tikzpicture}

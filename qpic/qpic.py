@@ -2236,6 +2236,9 @@ def end_circuit():
             cut_lines.append((current_pos, cut_options))
     print_circuit(current_pos, cut_lines)
 
+def get_start_loc(w):
+    return w.location(0)
+
 def print_circuit(circuit_length, cut_lines):
     global wires, master_depth_list, orientation, braces_list
     global circuit_bottom, circuit_top, bgcolor
@@ -2252,7 +2255,9 @@ def print_circuit(circuit_length, cut_lines):
         print(pre)
     # draw in the wires
     print("% Drawing wires")
-    for w in list(wires.values()):
+    # sort the wires so different versions of python have the same wire order
+    sorted_wires = sorted(list(wires.values()),key=get_start_loc,reverse=True)
+    for w in sorted_wires:
         w.draw_wire(circuit_length)
     # draw in the gates
     print("% Done with wires; drawing gates")
@@ -2272,7 +2277,7 @@ def print_circuit(circuit_length, cut_lines):
             else:
                 pending_list.append(g)
     print("% Done with gates; drawing ending labels")
-    for w in list(wires.values()):
+    for w in sorted_wires:
         if w.end_at_end_of_circuit():
             w.draw_end_label(circuit_length)
         if w.labels:

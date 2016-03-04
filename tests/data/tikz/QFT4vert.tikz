@@ -2,18 +2,18 @@
 \begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
 \filldraw[color=white] (7.500000, 0.000000) rectangle (-52.500000, -204.000000);
 % Drawing wires
-% Line 5: a1 W \ket{x_1} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_1x_0}\ket{1})
-\draw[color=black] (-15.000000,0.000000) -- (-15.000000,-204.000000);
-\draw[color=black] (-15.000000,0.000000) node[above,anchor=south east,xshift=2pt,inner sep=0pt,rotate=-45] {$\ket{x_1}$};
-% Line 6: a0 W \ket{x_0} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_0}\ket{1})
-\draw[color=black] (-0.000000,0.000000) -- (-0.000000,-204.000000);
-\draw[color=black] (-0.000000,0.000000) node[above,anchor=south east,xshift=2pt,inner sep=0pt,rotate=-45] {$\ket{x_0}$};
 % Line 3: a3 W \ket{x_3} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_3x_2x_1x_0}\ket{1})
 \draw[color=black] (-45.000000,0.000000) -- (-45.000000,-204.000000);
 \draw[color=black] (-45.000000,0.000000) node[above,anchor=south east,xshift=2pt,inner sep=0pt,rotate=-45] {$\ket{x_3}$};
 % Line 4: a2 W \ket{x_2} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_2x_1x_0}\ket{1})
 \draw[color=black] (-30.000000,0.000000) -- (-30.000000,-204.000000);
 \draw[color=black] (-30.000000,0.000000) node[above,anchor=south east,xshift=2pt,inner sep=0pt,rotate=-45] {$\ket{x_2}$};
+% Line 5: a1 W \ket{x_1} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_1x_0}\ket{1})
+\draw[color=black] (-15.000000,0.000000) -- (-15.000000,-204.000000);
+\draw[color=black] (-15.000000,0.000000) node[above,anchor=south east,xshift=2pt,inner sep=0pt,rotate=-45] {$\ket{x_1}$};
+% Line 6: a0 W \ket{x_0} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_0}\ket{1})
+\draw[color=black] (-0.000000,0.000000) -- (-0.000000,-204.000000);
+\draw[color=black] (-0.000000,0.000000) node[above,anchor=south east,xshift=2pt,inner sep=0pt,rotate=-45] {$\ket{x_0}$};
 % Done with wires; drawing gates
 % Line 7: a3 H
 \begin{scope}
@@ -88,10 +88,10 @@
 \draw (0.000000, -192.000000) node {$H$};
 \end{scope}
 % Done with gates; drawing ending labels
-\draw[color=black] (-15.000000,-204.000000) node[below,anchor=north west,xshift=-2pt,inner sep=0pt,rotate=-45] {$\frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_1x_0}\ket{1})$};
-\draw[color=black] (-0.000000,-204.000000) node[below,anchor=north west,xshift=-2pt,inner sep=0pt,rotate=-45] {$\frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_0}\ket{1})$};
 \draw[color=black] (-45.000000,-204.000000) node[below,anchor=north west,xshift=-2pt,inner sep=0pt,rotate=-45] {$\frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_3x_2x_1x_0}\ket{1})$};
 \draw[color=black] (-30.000000,-204.000000) node[below,anchor=north west,xshift=-2pt,inner sep=0pt,rotate=-45] {$\frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_2x_1x_0}\ket{1})$};
+\draw[color=black] (-15.000000,-204.000000) node[below,anchor=north west,xshift=-2pt,inner sep=0pt,rotate=-45] {$\frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_1x_0}\ket{1})$};
+\draw[color=black] (-0.000000,-204.000000) node[below,anchor=north west,xshift=-2pt,inner sep=0pt,rotate=-45] {$\frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_0}\ket{1})$};
 % Done with ending labels; drawing cut lines and comments
 % Done with comments
 \end{tikzpicture}

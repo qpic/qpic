@@ -2,15 +2,15 @@
 \begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
 \filldraw[color=white] (0.000000, -7.500000) rectangle (132.000000, 37.500000);
 % Drawing wires
+% Line 2: a2 W \ket{x_2} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_2x_1x_0}\ket{1})
+\draw[color=black] (0.000000,30.000000) -- (132.000000,30.000000);
+\draw[color=black] (0.000000,30.000000) node[left] {$\ket{x_2}$};
 % Line 3: a1 W \ket{x_1} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_1x_0}\ket{1})
 \draw[color=black] (0.000000,15.000000) -- (132.000000,15.000000);
 \draw[color=black] (0.000000,15.000000) node[left] {$\ket{x_1}$};
 % Line 4: a0 W \ket{x_0} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_0}\ket{1})
 \draw[color=black] (0.000000,0.000000) -- (132.000000,0.000000);
 \draw[color=black] (0.000000,0.000000) node[left] {$\ket{x_0}$};
-% Line 2: a2 W \ket{x_2} \frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_2x_1x_0}\ket{1})
-\draw[color=black] (0.000000,30.000000) -- (132.000000,30.000000);
-\draw[color=black] (0.000000,30.000000) node[left] {$\ket{x_2}$};
 % Done with wires; drawing gates
 % Line 5: a2 H
 \begin{scope}
@@ -55,9 +55,9 @@
 \draw (120.000000, -0.000000) node {$H$};
 \end{scope}
 % Done with gates; drawing ending labels
+\draw[color=black] (132.000000,30.000000) node[right] {$\frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_2x_1x_0}\ket{1})$};
 \draw[color=black] (132.000000,15.000000) node[right] {$\frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_1x_0}\ket{1})$};
 \draw[color=black] (132.000000,0.000000) node[right] {$\frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_0}\ket{1})$};
-\draw[color=black] (132.000000,30.000000) node[right] {$\frac{1}{\sqrt{2}}(\ket{0}+e^{2{\pi}i{\cdot0}.x_2x_1x_0}\ket{1})$};
 % Done with ending labels; drawing cut lines and comments
 % Done with comments
 \end{tikzpicture}

@@ -6,22 +6,22 @@
 \draw[color=black] (12.000000,59.500000) -- (78.000000,59.500000);
 \draw[color=black] (12.000000,60.500000) -- (78.000000,60.500000);
 \draw[color=black] (0.000000,60.000000) node[left] {$a$};
-% Line 7: ee W e
-\draw[color=black] (0.000000,0.000000) -- (12.000000,0.000000);
-\draw[color=black] (12.000000,-0.500000) -- (78.000000,-0.500000);
-\draw[color=black] (12.000000,0.500000) -- (78.000000,0.500000);
-\draw[color=black] (0.000000,0.000000) node[left] {$e$};
-% Line 5: c W c
-\draw[color=black] (0.000000,30.000000) -- (78.000000,30.000000);
-\draw[color=black] (0.000000,30.000000) node[left] {$c$};
 % Line 4: b W b
 \draw[color=black] (0.000000,45.000000) -- (78.000000,45.000000);
 \draw[color=black] (0.000000,45.000000) node[left] {$b$};
+% Line 5: c W c
+\draw[color=black] (0.000000,30.000000) -- (78.000000,30.000000);
+\draw[color=black] (0.000000,30.000000) node[left] {$c$};
 % Line 6: d W d
 \draw[color=black] (0.000000,15.000000) -- (42.000000,15.000000);
 \draw[color=black] (42.000000,14.500000) -- (78.000000,14.500000);
 \draw[color=black] (42.000000,15.500000) -- (78.000000,15.500000);
 \draw[color=black] (0.000000,15.000000) node[left] {$d$};
+% Line 7: ee W e
+\draw[color=black] (0.000000,0.000000) -- (12.000000,0.000000);
+\draw[color=black] (12.000000,-0.500000) -- (78.000000,-0.500000);
+\draw[color=black] (12.000000,0.500000) -- (78.000000,0.500000);
+\draw[color=black] (0.000000,0.000000) node[left] {$e$};
 % Done with wires; drawing gates
 % Line 9: a M breadth=10
 \draw[fill=white] (6.000000, 55.000000) rectangle (18.000000, 65.000000);

@@ -5,17 +5,17 @@
 % Line 2: a b W a,b
 \draw[color=black] (-60.000000,0.000000) -- (-60.000000,-179.000000);
 %   Deferring wire label at (-60.000000,0.000000)
-% Line 5: x W owire
-\draw[color=black,dotted] (-0.000000,-32.000000) -- (-0.000000,-179.000000);
-% Line 3: c W 0
-\draw[color=black] (-30.000000,0.000000) -- (-30.000000,-179.000000);
-\draw[color=black] (-30.000000,0.000000) node[above] {$0$};
 % Line 2: a b W a,b
 \draw[color=black] (-45.000000,0.000000) -- (-45.000000,-179.000000);
 \draw[color=black] (-52.500000,0.000000) node[above] {$a,b$};
+% Line 3: c W 0
+\draw[color=black] (-30.000000,0.000000) -- (-30.000000,-179.000000);
+\draw[color=black] (-30.000000,0.000000) node[above] {$0$};
 % Line 4: d W 0
 \draw[color=black] (-15.000000,0.000000) -- (-15.000000,-179.000000);
 \draw[color=black] (-15.000000,0.000000) node[above] {$0$};
+% Line 5: x W owire
+\draw[color=black,dotted] (-0.000000,-32.000000) -- (-0.000000,-179.000000);
 % Done with wires; drawing gates
 % Line 11: a b c x / 1
 \draw (-66.000000, -14.000000) -- (-54.000000, -6.000000);
@@ -169,8 +169,8 @@
 \end{scope}
 % Done with gates; drawing ending labels
 \draw[color=black] (-60.000000,-179.000000) node[below] {$a$};
-%   Deferring wire label at (-30.000000,-179.000000)
 \draw[color=black] (-45.000000,-179.000000) node[below] {$b$};
+%   Deferring wire label at (-30.000000,-179.000000)
 \filldraw[color=white,fill=white] (-11.250000,-179.000000) rectangle (-33.750000,-183.000000);
 \draw[decorate,decoration={brace,amplitude = 4.000000pt},very thick] (-11.250000,-179.000000) -- (-33.750000,-179.000000);
 \draw[color=black] (-22.500000,-183.000000) node[below] {$c,d$};

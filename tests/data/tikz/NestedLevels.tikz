@@ -3,10 +3,10 @@
 % Drawing wires
 % Line 1: a W
 \draw[color=black] (0.000000,30.000000) -- (108.000000,30.000000);
-% Line 3: c W
-\draw[color=black] (0.000000,0.000000) -- (108.000000,0.000000);
 % Line 2: b W
 \draw[color=black] (0.000000,15.000000) -- (108.000000,15.000000);
+% Line 3: c W
+\draw[color=black] (0.000000,0.000000) -- (108.000000,0.000000);
 % Done with wires; drawing gates
 % Line 6: +a b
 \begin{scope}[color=blue]

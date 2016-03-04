@@ -3,10 +3,10 @@
 % Drawing wires
 % Line 1: a W #a\oplus{c}
 \draw[color=black] (0.000000,30.000000) -- (228.000000,30.000000);
-% Line 3: c W #\mbox{MAJ}(a,b,c)
-\draw[color=black] (0.000000,0.000000) -- (228.000000,0.000000);
 % Line 2: b W #b\oplus{c}
 \draw[color=black] (0.000000,15.000000) -- (228.000000,15.000000);
+% Line 3: c W #\mbox{MAJ}(a,b,c)
+\draw[color=black] (0.000000,0.000000) -- (228.000000,0.000000);
 % Done with wires; drawing gates
 % Line 5: a b c G \rotatebox{90}{UMA}
 \draw (12.000000,30.000000) -- (12.000000,0.000000);

@@ -7,15 +7,15 @@
 % Line 6: a W \ket{A} \ket{A}
 \draw[color=black] (-60.000000,0.000000) -- (-60.000000,-96.000000);
 \draw[color=black] (-60.000000,0.000000) node[above] {$\ket{A}$};
-% Line 9: c W \ket{0} \ket{0}
-\draw[color=black] (-15.000000,0.000000) -- (-15.000000,-96.000000);
-\draw[color=black] (-15.000000,0.000000) node[above] {$\ket{0}$};
 % Line 7: b W \ket{B} \ket{S}
 \draw[color=black] (-45.000000,0.000000) -- (-45.000000,-96.000000);
 \draw[color=black] (-45.000000,0.000000) node[above] {$\ket{B}$};
 % Line 8: m W \ket{M} \ket{M}
 \draw[color=black] (-30.000000,0.000000) -- (-30.000000,-96.000000);
 \draw[color=black] (-30.000000,0.000000) node[above] {$\ket{M}$};
+% Line 9: c W \ket{0} \ket{0}
+\draw[color=black] (-15.000000,0.000000) -- (-15.000000,-96.000000);
+\draw[color=black] (-15.000000,0.000000) node[above] {$\ket{0}$};
 % Line 10: zz W color=white
 \draw[color=white] (-0.000000,0.000000) -- (-0.000000,-96.000000);
 % Done with wires; drawing gates
@@ -70,9 +70,9 @@
 \end{scope}
 % Done with gates; drawing ending labels
 \draw[color=black] (-60.000000,-96.000000) node[below] {$\ket{A}$};
-\draw[color=black] (-15.000000,-96.000000) node[below] {$\ket{0}$};
 \draw[color=black] (-45.000000,-96.000000) node[below] {$\ket{S}$};
 \draw[color=black] (-30.000000,-96.000000) node[below] {$\ket{M}$};
+\draw[color=black] (-15.000000,-96.000000) node[below] {$\ket{0}$};
 % Done with ending labels; drawing cut lines and comments
 % Done with comments
 \end{tikzpicture}

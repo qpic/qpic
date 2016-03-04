@@ -4,12 +4,12 @@
 % Line 1: a W a a\oplus{c}
 \draw[color=black] (0.000000,30.000000) -- (105.000000,30.000000);
 \draw[color=black] (0.000000,30.000000) node[left] {$a$};
-% Line 3: c W c \mbox{MAJ}(a,b,c)
-\draw[color=black] (0.000000,0.000000) -- (105.000000,0.000000);
-\draw[color=black] (0.000000,0.000000) node[left] {$c$};
 % Line 2: b W b b\oplus{c}
 \draw[color=black] (0.000000,15.000000) -- (105.000000,15.000000);
 \draw[color=black] (0.000000,15.000000) node[left] {$b$};
+% Line 3: c W c \mbox{MAJ}(a,b,c)
+\draw[color=black] (0.000000,0.000000) -- (105.000000,0.000000);
+\draw[color=black] (0.000000,0.000000) node[left] {$c$};
 % Done with wires; drawing gates
 % Line 5: a b c G \rotatebox{90}{MAJ}
 \draw (12.000000,30.000000) -- (12.000000,0.000000);
@@ -51,8 +51,8 @@
 \end{scope}
 % Done with gates; drawing ending labels
 \draw[color=black] (105.000000,30.000000) node[right] {$a\oplus{c}$};
-\draw[color=black] (105.000000,0.000000) node[right] {$\mbox{MAJ}(a,b,c)$};
 \draw[color=black] (105.000000,15.000000) node[right] {$b\oplus{c}$};
+\draw[color=black] (105.000000,0.000000) node[right] {$\mbox{MAJ}(a,b,c)$};
 % Done with ending labels; drawing cut lines and comments
 % Done with comments
 \end{tikzpicture}

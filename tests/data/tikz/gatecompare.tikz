@@ -5,19 +5,19 @@
 % Line 2: a W a a
 \draw[color=black] (0.000000,85.000000) -- (357.970600,85.000000);
 \draw[color=black] (0.000000,85.000000) node[left] {$a$};
-% Line 4: c W c c
-\draw[color=black] (0.000000,55.000000) -- (357.970600,55.000000);
-\draw[color=black] (0.000000,55.000000) node[left] {$c$};
 % Line 3: b W b b
 \draw[color=black] (0.000000,70.000000) -- (357.970600,70.000000);
 \draw[color=black] (0.000000,70.000000) node[left] {$b$};
+% Line 4: c W c c
+\draw[color=black] (0.000000,55.000000) -- (357.970600,55.000000);
+\draw[color=black] (0.000000,55.000000) node[left] {$c$};
+% Line 5: d W d d
+\draw[color=black] (0.000000,40.000000) -- (357.970600,40.000000);
+\draw[color=black] (0.000000,40.000000) node[left] {$d$};
 % Line 6: e W e e breadth=25
 \draw[color=black] (0.000000,20.000000) -- (330.970600,20.000000);
 \draw[color=black,dotted] (330.970600,20.000000) -- (357.970600,20.000000);
 \draw[color=black] (0.000000,20.000000) node[left] {$e$};
-% Line 5: d W d d
-\draw[color=black] (0.000000,40.000000) -- (357.970600,40.000000);
-\draw[color=black] (0.000000,40.000000) node[left] {$d$};
 % Line 7: f W f f
 \draw[color=black] (0.000000,0.000000) -- (357.970600,0.000000);
 \draw[color=black] (0.000000,0.000000) node[left] {$f$};
@@ -406,10 +406,10 @@
 \end{scope}
 % Done with gates; drawing ending labels
 \draw[color=black] (357.970600,85.000000) node[right] {$a$};
-\draw[color=black] (357.970600,55.000000) node[right] {$c$};
 \draw[color=black] (357.970600,70.000000) node[right] {$b$};
-\draw[color=black] (357.970600,20.000000) node[right] {$e$};
+\draw[color=black] (357.970600,55.000000) node[right] {$c$};
 \draw[color=black] (357.970600,40.000000) node[right] {$d$};
+\draw[color=black] (357.970600,20.000000) node[right] {$e$};
 \draw[color=black] (357.970600,0.000000) node[right] {$f$};
 % Done with ending labels; drawing cut lines and comments
 % Done with comments
