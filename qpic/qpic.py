@@ -2005,6 +2005,7 @@ class Gate:
                             tikz_strs[wn] = 'dashed'
                         if wn not in fixed_wires:
                             fixed_wires.append(wn)
+                fixed_wires.sort(key=get_start_loc_from_name,reverse=True)
                 for wn in fixed_wires:
                     wires[wn].fix_wire(pos-pos_s,pos+pos_s, tikz_str=tikz_strs[wn])
                 # deal with other gate types
