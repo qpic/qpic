@@ -82,9 +82,9 @@ representation and code is not always as clear-cut as one would like.
 In this paper we give a brief, but complete, description of \qpic.  We begin with some simple examples in
 Section~\ref{sec-example}; the discussion should serve as a beginning tutorial.  
 We give a complete list of commands of the \qpic circuit specification language
-in Section~\ref{sec-qpic}.  We then briefly describe \qpicpy in Section~\ref{sec-tools}, including
-tools to help users use \qpic within a {\LaTeX} document.  Finally, we complete our definition of the
-\qpic language by listing the gory details of parsing and tokenizing in Section~\ref{sec-tokens}.
+in Section~\ref{sec-qpic}.  We then briefly describe \qpicpy in Sections~\ref{sec-install}, \ref{sec-run}, and \ref{sec-tools}, including
+instructions to help use \qpic within a {\LaTeX} document.  Finally, we complete our definition of the
+\qpic language by listing the gory details of parsing and tokenizing in Appendix~\ref{sec-tokens}.
 
 Like any software, \qpic is a work in progress.  This paper represents a description of the state of
 the program as of June 2015.  Please see {\tt github} for the most up-to-date version of \qpicpy and \qpic.  \qpic is copyright IDA/CCR-P, and is distributed
@@ -123,7 +123,7 @@ Normally, the \qpic parser breaks up each line by whitespace.  However,
 an expression like {\tt \{a{\textvisiblespace}{\char92}oplus{\textvisiblespace}c\}} is not
 broken up.  \qpic's target language is {\LaTeX}, so curly
 braces (and dollar signs) can be used to group text with whitespace into
-a single entity.  See Section~\ref{sec-tokens} for more about \qpic's parsing
+a single entity.  See Appendix~\ref{sec-tokens} for more about \qpic's parsing
 rules.
 
 
@@ -1108,7 +1108,7 @@ but in {\sc beamer} it is always equal to the background of the current template
 
 \end{description}
 
-\section{Installing \qpicpy}
+\section{Installing \qpicpy}\label{sec-install}
 % TODO: add hyperlinks to github and pypi
 \qpicpy is available on both {\tt github.com} and {\tt pypi.org}. Installation is recommended using {\tt pip} (included
 in Python since 2.7.8 and 3.4). {\tt pip} can be installed for earlier versions of Python (2.6 and 3.3).
@@ -1128,7 +1128,7 @@ pip install --user qpic
 \end{lstlisting}
 \end{minipage}
 
-\section{Running \qpicpy}
+\section{Running \qpicpy}\label{sec-run}
 \qpicpy generates \TikZ code by default. \qpicpy can also generate {\tt pdf} files
 using {\tt pdflatex} and {\tt png} files using
 {\tt convert} (from {\tt ImageMagic}). The following commands both send \TikZ code generated from {\tt diagram.qpic} to {\tt
@@ -1242,7 +1242,7 @@ Advantages of \TikZ inclusion:
 \end{itemize}
 
 
-
+\appendix
 \section{Tokenizing}
 \label{sec-tokens}
 
