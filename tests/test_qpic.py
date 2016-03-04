@@ -24,7 +24,12 @@ import unittest
 
 # Clever idea to capture stdout
 # TODO: remove after changing qpic output to be a textstream.
-from cStringIO import StringIO
+try:
+    # Python2
+    from cStringIO import StringIO
+except ImportError:
+    # Python2
+    from io import StringIO
 import sys
 
 class Capturing(list):
