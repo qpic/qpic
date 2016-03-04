@@ -1332,6 +1332,14 @@ class Wire:
             print("\\draw[%s] (%f, %f) -- (%f, %f);" % ((big_tikz_str,) + get_x_y(pos1, sub_loc) +
                                                         get_x_y(pos2, sub_loc)))
 
+# for sorting
+def get_start_loc(w):
+    return w.location(0)
+
+def get_start_loc_from_name(wn):
+    global wires
+    return wires[wn].location(0)
+
 # one "rectangle" (or other shape)
 class Box:
     def __init__(self, box_type, targets, name, options={}):
@@ -1984,18 +1992,21 @@ class Gate:
                     box_min = minw.location(pos)
                     box_max = maxw.location(pos)
                     pos_s = box.get_length() * 0.5
+                    tikz_strs = {}
                     for wn in list(wires.keys()):
                         loc = wires[wn].location(pos)
                         if loc < box_min or box_max < loc:
                             continue
                         if wn in self.controls:
-                            tikz_str = None
+                            tikz_strs[wn] = None
                         elif wn in self.all_wires():
                             continue
                         else:
-                            tikz_str = 'dashed'
-                        wires[wn].fix_wire(pos-pos_s,pos+pos_s, tikz_str=tikz_str)
-                        fixed_wires.append(wn)
+                            tikz_strs[wn] = 'dashed'
+                        if wn not in fixed_wires:
+                            fixed_wires.append(wn)
+                for wn in fixed_wires:
+                    wires[wn].fix_wire(pos-pos_s,pos+pos_s, tikz_str=tikz_strs[wn])
                 # deal with other gate types
                 if self.type in ['IN', 'OUT']:
                     if self.type == 'IN':
@@ -2235,9 +2246,6 @@ def end_circuit():
                 cut_options = cut_info['default']
             cut_lines.append((current_pos, cut_options))
     print_circuit(current_pos, cut_lines)
-
-def get_start_loc(w):
-    return w.location(0)
 
 def print_circuit(circuit_length, cut_lines):
     global wires, master_depth_list, orientation, braces_list
