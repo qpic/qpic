@@ -15,6 +15,7 @@ env:
 - TOXENV=py27
 - TOXENV=py26
 - TOXENV=pypy
+- TOXENV=jython
 install: pip install -U tox
 language: python
 script: tox
