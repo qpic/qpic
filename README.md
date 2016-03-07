@@ -22,9 +22,10 @@
 </p>
 
 * Free software: GNU GPLv3 license
-* Documentation: https://qpic.readthedocs.org.
+* Documentation: [⟨q|pic⟩ manual](doc/qpic_doc.pdf)
 
 <!---
+* Documentation: https://qpic.readthedocs.org.
 .. image:: https://img.shields.io/pypi/v/qpic.svg
         :target: https://pypi.python.org/pypi/qpic
 
