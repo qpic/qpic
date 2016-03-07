@@ -121,30 +121,51 @@ a b0 x2 x1 @ 6 6 fill=blue style=rounded_corners %% \hspace{.5cm}$2[c\rightarrow
 For an explanation of `qpic` commands and more examples, see the official documentation.
 
 # Using ⟨q|pic⟩
-* [Installation](#installation)
+* [Install](#install)
+* [Uninstall](#uninstall)
 * [Running ⟨q|pic⟩](#running-qpic) 
 * [Using ⟨q|pic⟩ with LaTeX](#using-qpic-with-latex)
 
-## Installation
+## Install
 
 ### Pip
-Recommended installation method is [pip](https://en.wikipedia.org/wiki/Pip_(package_manager)).
+Recommended installation method is [pip](https://en.wikipedia.org/wiki/Pip_(package_manager)).  Current versions of Python 2 and 3 include pip. For older versions, use [pip installation instructions](https://pip.pypa.io/en/stable/installing/).
 
 `pip install qpic`
 
-Current versions of Python 2 and 3 include pip. For older version, use [pip installation instructions](https://pip.pypa.io/en/stable/installing/).
+If you do not have permission to install, you can install `qpic` locally using:
+If you wish to install `qpic` as a single user, add `$HOME/.local/bin` to your `$PATH` and install using
 
-### Download and install python package
+`pip install --user qpic`
 
-TODO: Add instructions
+## Uninstall
+To uninstall `pic` simply type
+
+`pip uninstall qpic`
 
 ### Stand alone script
 To try out the basic script without installation:
 
-1. Download the file `qpic.py`. 
+1. Download the file `qpic.py`. (located in the `qpic` directory)
 1. Run `python qpic.py your_file.qpic > your_file.tex`.
 
 ## Running ⟨q|pic⟩ 
+
+`qpic` generates TikZ code by default. `qpic` can also generate pdf files
+using `pdflatex` and png files using `convert` (from ImageMagic).
+
+### Create TikZ file `diagram.tikz`
+
+`qpic -f tikz diagram.qpic`
+
+### Create PDF file `diagram.pdf`
+
+`qpic -f pdf diagram.qpic`
+
+### Create PNG file `diagram.png`
+
+`qpic -f png diagram.qpic`
+
 
 ## Using ⟨q|pic⟩ with LaTeX 
 
@@ -172,7 +193,7 @@ In some cases, additional TeX commands may be required in the preamble.  (These 
 
 ### PDF
 
-`qpic -t pdf my_graphic.qpic` will produce a PDF file named `my_graphic.pdf`. This graphic can be viewed directly with a PDF viewer. To insert the graphic into a LaTeX document, add the following line to the preamble:
+`qpic -f pdf my_graphic.qpic` will produce a PDF file named `my_graphic.pdf`. This graphic can be viewed directly with a PDF viewer. To insert the graphic into a LaTeX document, add the following line to the preamble:
 
 ```
 \usepackage{graphicx}
@@ -186,6 +207,3 @@ and included the file using the command:
 
 This method requires the document to be processed with pdfLaTeX. For further information see the full ⟨q|pic⟩ documentation.
 
-## Credits
-
-This package was created with `Cookiecutter` and the `audreyr/cookiecutter-pypackage` project template.
