@@ -15,10 +15,6 @@
         <img src="https://img.shields.io/travis/qpic/qpic.svg"
              alt="build status">
     </a>
-    <a href="https://readthedocs.org/projects/qpic/?badge=latest">
-        <img src="https://readthedocs.org/projects/qpic/badge/?version=latest"
-             alt="documentation status">
-    </a>
 </p>
 
 * Free software: GNU GPLv3 license
@@ -26,6 +22,11 @@
 
 <!---
 * Documentation: https://qpic.readthedocs.org.
+    <a href="https://readthedocs.org/projects/qpic/?badge=latest">
+        <img src="https://readthedocs.org/projects/qpic/badge/?version=latest"
+             alt="documentation status">
+    </a>
+
 .. image:: https://img.shields.io/pypi/v/qpic.svg
         :target: https://pypi.python.org/pypi/qpic
 

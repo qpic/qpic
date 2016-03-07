@@ -25,8 +25,8 @@ circuit in the human-readable
 Python program then converts this into {\LaTeX} code using the
 {Ti\emph{k}Z\xspace} graphics package.  This note serves as a manual
 for the language as of
-{$\langle\mathsf{q}|\mathsf{pic}\rangle$\xspace} version~5.0.1a
-(February 2016).
+{$\langle\mathsf{q}|\mathsf{pic}\rangle$\xspace} version~1.0.0
+(March 2016).
 \end{abstract}
 
 \tableofcontents
@@ -1108,9 +1108,10 @@ but in {\sc beamer} it is always equal to the background of the current template
 
 \end{description}
 
-\section{Installing \qpicpy}\label{sec-install}
-% TODO: add hyperlinks to github and pypi
-\qpicpy is available on both {\tt github.com} and {\tt pypi.org}. Installation is recommended using {\tt pip} (included
+\section{Running \qpicpy}\label{sec-run}
+\subsection{Installation}
+\qpicpy is available on both \href{https://github.com/qpic/qpic}{\tt github}
+and \href{https://testpypi.python.org/pypi}{\tt pypi}. Installation is recommended using {\tt pip} (included
 in Python since 2.7.8 and 3.4). {\tt pip} can be installed for earlier versions of Python (2.6 and 3.3).
 Using {\tt pip}, \qpicpy can be installed by
 
@@ -1128,7 +1129,7 @@ pip install --user qpic
 \end{lstlisting}
 \end{minipage}
 
-\section{Running \qpicpy}\label{sec-run}
+\subsection{Basic usage}
 \qpicpy generates \TikZ code by default. \qpicpy can also generate {\tt pdf} files
 using {\tt pdflatex} and {\tt png} files using
 {\tt convert} (from {\tt ImageMagic}). The following commands both send \TikZ code generated from {\tt diagram.qpic} to {\tt

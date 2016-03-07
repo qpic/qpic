@@ -66,6 +66,9 @@ tests/data/*.tex
 tests/data/*.tikz
 tests/data/*.pdf
 tests/data/*.png
+doc/*.tex
+doc/*.tikz
+doc/*.pdf
 
 # Editor files
 *~
