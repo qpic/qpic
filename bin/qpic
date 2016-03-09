@@ -3,6 +3,8 @@
 
 from __future__ import print_function
 
+__version__ = '1.0.0'
+
 import argparse
 import os
 import shutil
@@ -36,7 +38,7 @@ class Capturing(list):
 def create_parser():
     parser = argparse.ArgumentParser(
         description='Command line utility to create graphics from <q|pic>'
-        'code.'
+        ' code.'
     )
     parser.add_argument(
         'infile', nargs='?', type=argparse.FileType('r'), default=sys.stdin,
@@ -47,6 +49,9 @@ def create_parser():
     parser.add_argument(
         '--filetype', '-f', type=str, default=None,
         help='File type to write. Options are tikz, tex, pdf or png.')
+    parser.add_argument(
+        '-V', '--version', action='version',
+        version='qpic (version %s)'%(__version__))
     return parser
 
 
