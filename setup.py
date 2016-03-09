@@ -24,7 +24,7 @@ test_requirements = [
 
 setup(
     name='qpic',
-    version='0.1.4',
+    version='1.0.0',
     description="Creating quantum circuit diagrams in TikZ",
     long_description=readme + '\n\n' + history,
     author="Sandy Kutin, Thomas Draper",
