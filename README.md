@@ -140,7 +140,7 @@ If you do not have permission to install or wish to install `qpic` as a single u
 `pip install --user qpic`
 
 ## Uninstall
-To uninstall `pic` simply type
+To uninstall `qpic` simply type
 
 `pip uninstall qpic`
 
@@ -200,7 +200,7 @@ In some cases, additional TeX commands may be required in the preamble.  (These 
 \usepackage{graphicx}
 ```
 
-and included the file using the command:
+and include the file using the command:
 
 ```
 \includegraphics{my_graphic.pdf}
