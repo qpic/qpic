@@ -135,8 +135,7 @@ Recommended installation method is [pip](https://en.wikipedia.org/wiki/Pip_(pack
 
 `pip install qpic`
 
-If you do not have permission to install, you can install `qpic` locally using:
-If you wish to install `qpic` as a single user, add `$HOME/.local/bin` to your `$PATH` and install using
+If you do not have permission to install or wish to install `qpic` as a single user, add `$HOME/.local/bin` to your `$PATH` and install using
 
 `pip install --user qpic`
 
