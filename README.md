@@ -120,7 +120,7 @@ b0 b1 x1 x2 @ 0 2 fill=green style=rounded_corners %% $[qq]$ Quantum entanglemen
 a b0 x2 x1 @ 6 6 fill=blue style=rounded_corners %% \hspace{.5cm}$2[c\rightarrow c]$ Classical channel
 ```
 
-For an explanation of `qpic` commands and more examples, see the official documentation.
+For an explanation of `qpic` commands and more examples, see the [official documentation](doc/qpic_doc.pdf).
 
 # Using ⟨q|pic⟩
 * [Install](#install)
