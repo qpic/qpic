@@ -14,9 +14,10 @@ A compiler from quantum circuits to graphical representations.
 .. image:: https://img.shields.io/travis/qpic/qpic.svg
         :target: https://travis-ci.org/qpic/qpic
 
-.. image:: https://readthedocs.org/projects/qpic/badge/?version=latest
-        :target: https://readthedocs.org/projects/qpic/?badge=latest
-        :alt: Documentation Status
+.. TODO: Publish badge after porting to ReadTheDocs
+    .. image:: https://readthedocs.org/projects/qpic/badge/?version=latest
+            :target: https://readthedocs.org/projects/qpic/?badge=latest
+            :alt: Documentation Status
 
 -  Free software: GNU GPLv3 license
 -  Documentation: `⟨q\|pic⟩ manual <doc/qpic_doc.pdf>`_
