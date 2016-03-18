@@ -11,7 +11,7 @@ A compiler from quantum circuits to graphical representations.
 .. image:: https://img.shields.io/pypi/v/qpic.svg
         :target: https://pypi.python.org/pypi/qpic
 
-.. image:: https://img.shields.io/travis/SmoothDragon/qpic.svg
+.. image:: https://img.shields.io/travis/qpic/qpic.svg
         :target: https://travis-ci.org/qpic/qpic
 
 .. image:: https://readthedocs.org/projects/qpic/badge/?version=latest
