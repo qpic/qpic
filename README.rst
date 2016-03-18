@@ -1,45 +1,34 @@
-⟨q\|pic⟩
-========
-
-Quantum circuits made easy
---------------------------
-
-`|qpic logo| <#features>`_
+####################################
+⟨q\|pic⟩: Quantum circuits made easy
+####################################
 
 .. image:: docs/images/qpic.png
-    :target: <#features>
 
-.. image:: https://github.com/qpic/qpic/docs/images/qpic.png
-
+**************************************************************
 A compiler from quantum circuits to graphical representations.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**************************************************************
 
-.. raw:: html
-
-   <p align="center">
-       
 .. image:: https://img.shields.io/pypi/v/qpic.svg
         :target: https://pypi.python.org/pypi/qpic
 
 .. image:: https://img.shields.io/travis/SmoothDragon/qpic.svg
-        :target: https://travis-ci.org/SmoothDragon/qpic
+        :target: https://travis-ci.org/qpic/qpic
 
 .. image:: https://readthedocs.org/projects/qpic/badge/?version=latest
         :target: https://readthedocs.org/projects/qpic/?badge=latest
         :alt: Documentation Status
 
-.. raw:: html
-
-   </p>
-
 -  Free software: GNU GPLv3 license
 -  Documentation: `⟨q\|pic⟩ manual <doc/qpic_doc.pdf>`_
 
- # Contents \* `Features <#features>`_ \* `Examples <#examples>`_ \*
-`Using ⟨q\|pic⟩ <#using-qpic>`_
+Contents
+========
+* `Features <#features>`_ 
+* `Examples <#examples>`_ 
+* `Using ⟨q\|pic⟩ <#using-qpic>`_
 
 Features
---------
+========
 
 The ⟨q\|pic⟩ language provides a concise, readable, ASCII format for
 describing quantum circuits. ``qpic`` converts ⟨q\|pic⟩ files to the
@@ -51,7 +40,9 @@ scientific paper standard of LaTeX using TikZ graphic commands.
 -  Can be included in LaTeX documents in TikZ or PDF form.
 
 ⟨q\|pic⟩ produces high quality graphics quickly. The following graphic
-illustrating part of a ripple carry adder `|MAJ| <#features>`_
+illustrating part of a ripple carry adder 
+
+.. image:: docs/images/Adder_CDKM_MAJ.png
 
 is compiled from the ⟨q\|pic⟩ code
 
@@ -68,12 +59,12 @@ is compiled from the ⟨q\|pic⟩ code
     a b +c
 
 Examples
---------
+========
 
 Basic quantum teleportation circuit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`|basic teleport| <#features>`_
+.. image:: docs/images/BasicTeleportation.png
 
 This classic diagram derives from the following code:
 
@@ -94,7 +85,7 @@ Decorated quantum teleportation circuit
 ⟨q\|pic⟩ has additional features for commenting or highlighting parts of
 a circuit.
 
-`|fancy teleport| <#features>`_
+.. image:: docs/images/QuantumTeleportation.png
 
 This diagram derives from the following:
 
@@ -135,7 +126,7 @@ Using ⟨q\|pic⟩
 -  `Using ⟨q\|pic⟩ with LaTeX <#using-qpic-with-latex>`_
 
 Install
--------
+=======
 
 Pip
 ~~~
@@ -154,7 +145,7 @@ using
 ``pip install --user qpic``
 
 Uninstall
----------
+~~~~~~~~~
 
 To uninstall ``qpic`` simply type
 
@@ -169,7 +160,7 @@ To try out the basic script without installation:
 2. Run ``python qpic.py your_file.qpic > your_file.tex``.
 
 Running ⟨q\|pic⟩
-----------------
+~~~~~~~~~~~~~~~~
 
 ``qpic`` generates TikZ code by default. ``qpic`` can also generate pdf
 files using ``pdflatex`` and png files using ``convert`` (from
@@ -243,9 +234,4 @@ and include the file using the command:
     \includegraphics{my_graphic.pdf}
 
 This method requires the document to be processed with pdfLaTeX. For
-further information see the full ⟨q\|pic⟩ documentation.
-
-.. |qpic logo| image:: docs/images/qpic.png
-.. |MAJ| image:: docs/images/Adder_CDKM_MAJ.png
-.. |basic teleport| image:: docs/images/BasicTeleportation.png
-.. |fancy teleport| image:: docs/images/QuantumTeleportation.png
+further information see the full `⟨q\|pic⟩ documentation <doc/qpic_doc.pdf>`_.
