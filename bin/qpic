@@ -3,7 +3,6 @@
 
 from __future__ import print_function
 
-__version__ = '1.0.0'
 
 import argparse
 import os
@@ -13,6 +12,8 @@ import tempfile
 import sys
 
 import qpic
+
+__version__ = '1.0.0'
 
 # Clever idea to capture stdout
 # TODO: remove after changing qpic output to be a textstream.
@@ -51,7 +52,7 @@ def create_parser():
         help='File type to write. Options are tikz, tex, pdf or png.')
     parser.add_argument(
         '-V', '--version', action='version',
-        version='qpic (version %s)'%(__version__))
+        version='qpic (version %s)' % (__version__))
     return parser
 
 
