@@ -6,6 +6,11 @@ Quantum circuits made easy
 
 `|qpic logo| <#features>`_
 
+.. image:: docs/images/qpic.png
+    :target: <#features>
+
+.. image:: https://github.com/qpic/qpic/docs/images/qpic.png
+
 A compiler from quantum circuits to graphical representations.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -13,6 +18,15 @@ A compiler from quantum circuits to graphical representations.
 
    <p align="center">
        
+.. image:: https://img.shields.io/pypi/v/qpic.svg
+        :target: https://pypi.python.org/pypi/qpic
+
+.. image:: https://img.shields.io/travis/SmoothDragon/qpic.svg
+        :target: https://travis-ci.org/SmoothDragon/qpic
+
+.. image:: https://readthedocs.org/projects/qpic/badge/?version=latest
+        :target: https://readthedocs.org/projects/qpic/?badge=latest
+        :alt: Documentation Status
 
 .. raw:: html
 
