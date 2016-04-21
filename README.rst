@@ -22,12 +22,6 @@ A compiler from quantum circuits to graphical representations.
 -  Free software: GNU GPLv3 license
 -  Documentation: `⟨q\|pic⟩ manual <doc/qpic_doc.pdf>`_
 
-Contents
-========
-* `Features <#features>`_ 
-* `Examples <#examples>`_ 
-* `Using ⟨q\|pic⟩ <#using-qpic>`_
-
 Features
 ========
 
@@ -118,19 +112,8 @@ This diagram derives from the following:
 For an explanation of ``qpic`` commands and more examples, see the
 `official documentation <doc/qpic_doc.pdf>`_.
 
-Using ⟨q\|pic⟩
-==============
-
--  `Install <#install>`_
--  `Uninstall <#uninstall>`_
--  `Running ⟨q\|pic⟩ <#running-qpic>`_
--  `Using ⟨q\|pic⟩ with LaTeX <#using-qpic-with-latex>`_
-
-Install
-=======
-
-Pip
-~~~
+Installation
+~~~~~~~~~~~~
 
 Recommended installation method is
 `pip <https://en.wikipedia.org/wiki/Pip_(package_manager)>`_. Current
@@ -191,8 +174,8 @@ Including graphics in LaTeX documents
 There are two main methods for including ⟨q\|pic⟩ in LaTeX documents.
 Each has its advantage in certain areas. They are:
 
--  `Include TikZ code directly <#tikz>`_
--  `Include as a PDF graphic <#pdf>`_
+-  Include TikZ code directly
+-  Include as a PDF graphic
 
 TikZ
 ~~~~

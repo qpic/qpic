@@ -8,10 +8,16 @@ except ImportError:
     from distutils.core import setup
 
 
-with open('README.rst') as readme_file:
+import sys
+if sys.version_info[:2] >= (3,0):
+    openargs = {'encoding':'utf-8'}
+else:
+    openargs = {}
+
+with open('README.rst','r',**openargs) as readme_file:
     readme = readme_file.read()
 
-with open('HISTORY.rst') as history_file:
+with open('HISTORY.rst','r',**openargs) as history_file:
     history = history_file.read()
 
 requirements = [
@@ -24,7 +30,7 @@ test_requirements = [
 
 setup(
     name='qpic',
-    version='1.0.0',
+    version='1.0.2',
     description="Creating quantum circuit diagrams in TikZ",
     long_description=readme + '\n\n' + history,
     author="Sandy Kutin, Thomas Draper",
