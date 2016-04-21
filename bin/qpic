@@ -102,7 +102,17 @@ def ExecuteShellFunctions(args):
     tikz = subprocess.Popen(command.split(), stdout=subprocess.PIPE)
     with open(args.basename+'.tex', 'w') as texfile:
         for line in tikz.stdout:
-            texfile.write(line)
+            # It is possible that we may need to actually set the
+            # encoding scheme for platforms running in non-en_US
+            # locales.  If that is the case, the following may be
+            # sufficient:
+            #
+            # encoding = sys.__stdout__.encoding
+            # if encoding is None:
+            #     encoding = 'utf-8'
+            # texfile.write(line.decode(encoding))
+            #
+            texfile.write(line.decode())
     tikz.wait()
     if args.filetype == 'tex':
         return True
@@ -110,7 +120,10 @@ def ExecuteShellFunctions(args):
     command = 'pdflatex -interaction=batchmode %s' % (args.basename+'.tex')
     print(command)
     try:
-        subprocess.call(command.split())
+        rc = subprocess.call(command.split())
+        if rc:
+            print("PDFLATEX failed (return code = %s)" % rc)
+            # Should we re-run pdflatex outside of batchmode to see the error?
     except OSError:
         print('pdflatex needs to be installed for creating PDF files.')
         return False
