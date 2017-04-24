@@ -243,6 +243,9 @@
 # AUTOWIRES
 #   Allow undeclared wires (number or lowercase string, optional '_',
 #      comma-separated numbers).  Default is 'on' until first 'W' declaration
+# THROUGHSTYLE
+#   Change style of lines drawn through lines (default is dashed)
+#   Spaces must be replaced by '_'
 #
 ########################################################
 # WARNING: no longer allowed (use : syntax)
@@ -262,7 +265,7 @@ def initialize_globals():
     global wire_prefix, cut_info, premath_str, postmath_str, overall_scale
     global preamble_list, pretikz_list, posttikz_list, predocument_list
     global measure_shape, ROUNDED_CORNERS, OPACITY, allow_different_gates
-    global orientation, start_degrees, end_degrees, bgcolor, auto_wires
+    global orientation, start_degrees, end_degrees, bgcolor, auto_wires, through_style
     global CLASSICAL_SEP, EQUALS, legal_options, BARRIER_STYLE
     global valid_prefixes
     global master_depth_list, overall_depth, last_depth
@@ -297,6 +300,7 @@ def initialize_globals():
     bgcolor = 'white'
     # choices: 'off' = disallow; 'on' = allow; 'default' = allow until wire declaration occurs
     auto_wires = 'default'
+    through_style = 'dashed'
 
     CLASSICAL_SEP = 0.5
 
@@ -1919,7 +1923,7 @@ class Gate:
         return self.options['attach_to'].already_drawn
     
     def draw_gate(self):
-        global wires, orientation, bgcolor
+        global wires, orientation, bgcolor, through_style
         print(self.input_line)
         self.already_drawn = 1
         if self.type == 'PHANTOM':
@@ -2002,7 +2006,7 @@ class Gate:
                         elif wn in self.all_wires():
                             continue
                         else:
-                            tikz_strs[wn] = 'dashed'
+                            tikz_strs[wn] = ' '.join(through_style.split('_'))
                         if wn not in fixed_wires:
                             fixed_wires.append(wn)
                 fixed_wires.sort(key=get_start_loc_from_name,reverse=True)
@@ -2651,7 +2655,7 @@ def process_one_command(words, line_options, gate_options, comment0, comment1):
     global OPACITY, COMMENT_SIZE, wire_prefix, premath_str, postmath_str
     global overall_scale, new_colors, preamble_list, pretikz_list
     global posttikz_list, orientation, start_degrees, end_degrees
-    global measure_shape, bgcolor, auto_wires, predocument_list
+    global measure_shape, bgcolor, auto_wires, through_style, predocument_list
     global level_stack, level_list
     original_line_options = copy.copy(line_options)
     if (words[0] == 'R'):
@@ -2746,6 +2750,8 @@ def process_one_command(words, line_options, gate_options, comment0, comment1):
             depth_marks[w] = last_depth
     elif (words[0] == 'HEADER'):
         predocument_list.append(' '.join(words[1:]))
+    elif (words[0] == 'THROUGHSTYLE'):
+        through_style = words[1]
     else:
         targets = []
         controls = []
