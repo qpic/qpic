@@ -187,6 +187,7 @@ need to add
 ::
 
     \usepackage{tikz}
+    \usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing}
 
 to the preamble of your paper. Graphics can then be included with the
 command:
