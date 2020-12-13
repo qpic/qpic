@@ -309,7 +309,7 @@ def initialize_globals():
         for s2 in ['<', '', '>']:
             EQUALS.append(s1+'='+s2)
 
-    legal_options = ['color', 'length', 'breadth', 'size', 'width', 'height', 'style', 'fill', 'hyperlink', 'type', 'shape', 'operator']
+    legal_options = ['color', 'length', 'breadth', 'size', 'width', 'height', 'style', 'fill', 'hyperlink', 'type', 'shape', 'operator', 'result', 'control']
 
     BARRIER_STYLE="decorate,decoration={zigzag,amplitude=1pt,segment length=4}"
 
@@ -377,7 +377,7 @@ def parse_options(word):
             opt = 'length'
         else:
             opt = 'breadth'
-    if opt in ['color', 'fill', 'hyperlink', 'operator']:
+    if opt in ['color', 'fill', 'hyperlink', 'operator', 'result', 'control']:
         val = val_string
     elif opt == 'style':
         val = ' '.join(val_string.split('_')) # _ -> space
@@ -621,9 +621,9 @@ def write_operator_name(x,y,operator):
         if operator[-1] != '"':
             operator += '"'
         operator_str = operator[1:-1]
-        print("\\begin{scope}[shift={(%f,%f)}]" % (x,y))
+        print("\\scope[shift={(%f,%f)}]" % (x,y))
         print(operator_str)
-        print("\\end{scope}")
+        print("\\endscope")
     else:
         print("\\draw (%f, %f) node {%s};" % (x,y,operator))
 
@@ -643,7 +643,7 @@ def draw_xor(x,y,options):
     operator = options['operator']
     fillcolor = options.get('fill',bgcolor)
     thick_side = options.get('thick_side',0)
-    print("\\begin{scope}")
+    print("\\scope")
     if shape == 2:
         shape_line = "(%f, %f) %s(%s);" % (x,y,circle_str,arc_str)
         num_sides = 0
@@ -744,7 +744,7 @@ def draw_xor(x,y,options):
             print("\\filldraw (%f, %f) circle(%fpt);" % (x,y,.25))
         else:
             write_operator_name(x,y,operator)
-    print("\\end{scope}")
+    print("\\endscope")
     
 def draw_control(x,y,size):
     print("\\filldraw (%f, %f) circle(%fpt);" % (x,y,0.5*size))
@@ -1437,7 +1437,7 @@ class Box:
         global wires, orientation
         scope_str = make_scope_str(color=self.color,style=self.style)
         if scope_str:
-            print("\\begin{scope}[%s]" % scope_str)
+            print("\\scope[%s]" % scope_str)
         draw_options = copy.deepcopy(self.options)
         draw_options['operator'] = self.name
         target_locations = [wires[t].location(pos) for t in self.targets]
@@ -1467,7 +1467,20 @@ class Box:
         draw_options['direction'] = dir
         (x,y) = get_x_y(pos - length_shift,
                         0.5*(target_min + target_max) - breadth_shift)
-        draw_xor(x,y,draw_options)
+        if self.type == 'J':
+            draw_options['operator'] = " "
+            draw_xor(x,y,draw_options)
+            for i, target_location in enumerate(target_locations):
+                (x,y) = get_x_y(pos - length_shift, target_location - breadth_shift)
+                write_operator_name(x, y, "$%s$" % self.name[i])
+            if "result" in self.options:
+                (x,y) = get_x_y(pos + pos_s,
+                                0.5*(target_min + target_max) - breadth_shift)
+                print("\\draw (%f,%f) -- (%f,%f);" % (x, y - CLASSICAL_SEP, x + 5, y - CLASSICAL_SEP))
+                print("\\draw (%f,%f) -- (%f,%f);" % (x, y + CLASSICAL_SEP, x + 5, y + CLASSICAL_SEP))
+                print("\\draw (%f,%f) node[inner sep=0.5pt, outer sep=0pt, right] {%s};" % (x + 5, y, self.options["result"]))
+        else:
+            draw_xor(x,y,draw_options)
         if self.hyperlink:
             corner1 = get_x_y(pos-pos_s-length_shift, target_start - breadth_shift)
             corner2 = get_x_y(pos+pos_s-length_shift, target_end - breadth_shift)
@@ -1476,7 +1489,12 @@ class Box:
             box_height = corner1[1] + corner2[1] - 2*lower_left[1]
             print("\\draw (%f,%f) node[inner sep=0pt, outer sep=0pt, anchor=south west] {\\hyperlink{%s}{\\phantom{\\rule{%fpt}{%fpt}}}};" % (lower_left + (self.hyperlink, box_width, box_height)))
         if scope_str:
-            print("\\end{scope}")
+            print("\\endscope")
+        if "control" in self.options:
+            (x,y) = get_x_y(pos - length_shift, target_min + the_breadth / 2)
+            print("\\draw (%f,%f) -- (%f,%f);" % (x - CLASSICAL_SEP, y, x - CLASSICAL_SEP, y + 5))
+            print("\\draw (%f,%f) -- (%f,%f);" % (x + CLASSICAL_SEP, y, x + CLASSICAL_SEP, y + 5))
+            print("\\draw (%f,%f) node[inner sep=0.5pt, outer sep=0pt, above] {%s};" % (x, y + 5, self.options["control"]))
             
 class Gate:
     # note: "args" includes name of gate and controls
@@ -1932,7 +1950,7 @@ class Gate:
             return
         scope_str = make_scope_str(color=self.color)
         if scope_str:
-            print("\\begin{scope}[%s]" % scope_str)
+            print("\\scope[%s]" % scope_str)
         (width,height) = get_w_h(self.get_length(), self.get_breadth())
         self.draw_comments(self.position_list[0][0])
         for (pos,dir) in self.position_list:
@@ -2059,7 +2077,7 @@ class Gate:
                             draw_measurement(x, y, width, height, style=self.style, fill=self.fill)
                         
         if scope_str:
-            print("\\end{scope}")
+            print("\\endscope")
 
 def new_depth(depth_to_copy=None,direction=1):
     global overall_depth, master_depth_list
@@ -2262,7 +2280,7 @@ def print_circuit(circuit_length, cut_lines):
         print(pre)
     for col in new_colors:
         print("\\definecolor{%s}{rgb}{%s,%s,%s}" % (col[0], col[1], col[2], col[3]))
-    print("\\begin{tikzpicture}[scale=%f,x=1pt,y=1pt]" % overall_scale)
+    print("\\tikzpicture[scale=%f,x=1pt,y=1pt]" % overall_scale)
     print("\\filldraw[color=%s] (%f, %f) rectangle (%f, %f);" % ((bgcolor,) + get_x_y(0, circuit_bottom) + get_x_y(circuit_length, circuit_top)))
     for pre in pretikz_list:
         print(pre)
@@ -2350,7 +2368,7 @@ def print_circuit(circuit_length, cut_lines):
     print("% Done with comments")
     for post in posttikz_list:
         print(post)
-    print("\\end{tikzpicture}")
+    print("\\endtikzpicture")
         
 def interpret_depth(ref, interpret_as_length = 0):
     global depth_marks, last_depth, line_num
@@ -2556,7 +2574,7 @@ def parse_command(subwords):
     wire_options = {}
     gate_options = []
     
-    gate_names = ['G', 'G|', '|G', 'P']
+    gate_names = ['G', 'G|', '|G', 'P', 'J']
     while subwords:
         w = subwords.pop(0)
         word_options = parse_options(w)
@@ -2766,7 +2784,7 @@ def process_one_command(words, line_options, gate_options, comment0, comment1):
                 if boxes:
                     sys.exit("Error:  Line %i: cannot mix %s with G or P\n" % (line_num, word))
                 break
-            elif word in ['G', 'G|', '|G', 'P']:
+            elif word in ['G', 'G|', '|G', 'P', 'J']:
                 if not targets:
                     sys.exit("Error:  Line %i: %s needs at least one target\n" % (line_num, word))
                 box_options = copy.copy(line_options)
