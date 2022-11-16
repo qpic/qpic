@@ -18,10 +18,10 @@ __version__ = '1.0.2'
 # Clever idea to capture stdout
 # TODO: remove after changing qpic output to be a textstream.
 try:
-    # Python2
+    # Python 2
     from cStringIO import StringIO
 except ImportError:
-    # Python2
+    # Python 3
     from io import StringIO
 
 

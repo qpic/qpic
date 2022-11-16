@@ -2,6 +2,11 @@
 History
 =======
 
+1.0.3 (2022-11-16)
+------------------
+
+* Handle deprecation of collections.Mapping in Python 3.10+
+
 1.0.2 (2016-04-20)
 ------------------
 

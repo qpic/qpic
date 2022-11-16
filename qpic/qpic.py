@@ -256,6 +256,13 @@ from __future__ import print_function
 
 import sys, string, copy, math, collections, types
 
+try:
+    # Python 3.3+
+    from collections.abc import Mapping
+except ImportError:
+    # Old Python
+    from collections import Mapping
+
 def initialize_globals():
     global line_num
     global DEPTH_PAD, GATE_SIZE, BRACE_AMPLITUDE, WIRE_PAD, COMMENT_SIZE
@@ -2392,8 +2399,8 @@ def get_wire_name(word, check_if_wire=1,return_prefix=1,create_wire=1):
     
 def complete_update(d_main, d_in):
     for (k, v) in d_in.items():
-        if isinstance(v, collections.Mapping):
-            if (k not in d_main) or not isinstance(d_main[k], collections.Mapping):
+        if isinstance(v, Mapping):
+            if (k not in d_main) or not isinstance(d_main[k], Mapping):
                 d_main[k] = v
             else:
                 complete_update(d_main[k],v)
