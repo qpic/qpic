@@ -13,7 +13,7 @@ import sys
 
 import qpic
 
-__version__ = '1.0.2'
+__version__ = '1.0.3'
 
 # Clever idea to capture stdout
 # TODO: remove after changing qpic output to be a textstream.
@@ -87,7 +87,8 @@ def complete_args(args):
 
 
 def ExecuteShellFunctions(args):
-    '''Create each filetype in succession. If target met, copy to outfile and exit.
+    '''Create each filetype in succession.
+    If target met, copy to outfile and exit.
     '''
     with Capturing() as result:  # TODO: Remove hack to capture stdout
         qpic.main(args.infile)
@@ -162,6 +163,7 @@ def main():
     args = parser.parse_args()
     args = complete_args(args)
     qpic_args(args)
+
 
 if __name__ == '__main__':
     main()

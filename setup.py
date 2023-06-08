@@ -30,7 +30,7 @@ test_requirements = [
 
 setup(
     name='qpic',
-    version='1.0.2',
+    version='1.0.3',
     description="Creating quantum circuit diagrams in TikZ",
     long_description=readme + '\n\n' + history,
     author="Sandy Kutin, Thomas Draper",
@@ -48,16 +48,17 @@ setup(
     zip_safe=False,
     keywords='qpic',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Natural Language :: English',
         "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
     ],
     test_suite='tests',
     tests_require=test_requirements

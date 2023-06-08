@@ -256,12 +256,11 @@ from __future__ import print_function
 
 import sys, string, copy, math, collections, types
 
-try:
-    # Python 3.3+
+try: # Python 3.3+
     from collections.abc import Mapping
-except ImportError:
-    # Old Python
+except ImportError: # Old Python
     from collections import Mapping
+# from collections import Mapping
 
 def initialize_globals():
     global line_num
