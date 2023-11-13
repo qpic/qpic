@@ -30,12 +30,13 @@ test_requirements = [
 
 setup(
     name='qpic',
-    version='1.0.3',
+    version='1.1.0',
     description="Creating quantum circuit diagrams in TikZ",
     long_description=readme + '\n\n' + history,
+    long_description_content_type='text/x-rst',
     author="Sandy Kutin, Thomas Draper",
-    author_email='kutin@idaccr.org, draper@idaccr.org',
-    url='https://github.com/KutinS/qpic',
+    author_email='kutin@idaccr.org, tdraper@ccr-lajolla.org',
+    url='https://github.com/qpic/qpic',
     packages=[
         'qpic',
     ],

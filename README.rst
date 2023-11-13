@@ -8,10 +8,12 @@
 A compiler from quantum circuits to graphical representations.
 **************************************************************
 
-.. image:: https://img.shields.io/pypi/v/qpic.svg
+..
+  image:: https://img.shields.io/pypi/v/qpic.svg
         :target: https://pypi.python.org/pypi/qpic
 
-.. TODO: Publish badge after porting to ReadTheDocs
+..
+  TODO: Publish badge after porting to ReadTheDocs
     .. image:: https://readthedocs.org/projects/qpic/badge/?version=latest
             :target: https://readthedocs.org/projects/qpic/?badge=latest
             :alt: Documentation Status
@@ -163,7 +165,7 @@ Create PNG file ``diagram.png``
 ``qpic -f png diagram.qpic``
 
 Using ⟨q\|pic⟩ with LaTeX
--------------------------
+=========================
 
 Including graphics in LaTeX documents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
