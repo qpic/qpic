@@ -1,0 +1,22 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{qpic-latex}[2026/08/24 Qpic integration for LaTeX]
+
+\RequirePackage{tikz}
+\RequirePackage{fancyvrb} 
+
+\newcounter{qpicglobal}
+
+\newenvironment{qpic}{%
+  \stepcounter{qpicglobal}%
+  \edef\qpicname{qpic-\arabic{qpicglobal}}%
+  \VerbatimEnvironment
+  \begin{VerbatimOut}{\qpicname.qpic}%
+}{%
+  \end{VerbatimOut}%
+  \immediate\write18{qpic -f tikz \qpicname.qpic > \qpicname.tikz 2>\qpicname.err}%
+  \IfFileExists{\qpicname.tikz}{%
+    \input{\qpicname.tikz}%
+  }{%
+    \PackageError{qpic-latex}{Failed to compile \qpicname.qpic}{}%
+  }%
+}
