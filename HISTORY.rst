@@ -2,6 +2,11 @@
 History
 =======
 
+Unreleased
+----------
+
+* Add SWAP-family gates (ISWAP, SQISWAP, SQISWAP_INV, BSWAP) and a squeezing box.
+
 1.1.0 (2023-11-13)
 ------------------
 

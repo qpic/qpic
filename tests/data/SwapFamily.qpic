@@ -1,0 +1,9 @@
+HORIZONTAL
+a W
+b W
+a b iswap
+a b sqiswap
+a b sqiswap_inv
+a b bswap
+a squeezing
+TOUCH

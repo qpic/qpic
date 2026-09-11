@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Reference symbols for qpic gates: iswap, sqiswap, sqiswap_inv, bswap, squeezing -->
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="200" viewBox="0 0 520 200">
+  <rect width="100%" height="100%" fill="#0a0a0a"/>
+  <g fill="none" stroke="#f0f0f0" stroke-width="2" stroke-linecap="round">
+    <!-- iswap: two X + vertical -->
+    <g transform="translate(20,30)">
+      <text x="0" y="-8" fill="#f0f0f0" font-size="12" font-family="sans-serif">iswap / ISWAP</text>
+      <line x1="0" y1="20" x2="60" y2="20"/>
+      <line x1="0" y1="60" x2="60" y2="60"/>
+      <line x1="30" y1="20" x2="30" y2="60"/>
+      <line x1="22" y1="12" x2="38" y2="28"/><line x1="22" y1="28" x2="38" y2="12"/>
+      <line x1="22" y1="52" x2="38" y2="68"/><line x1="22" y1="68" x2="38" y2="52"/>
+    </g>
+    <!-- sqiswap: | top, X bottom -->
+    <g transform="translate(120,30)">
+      <text x="0" y="-8" fill="#f0f0f0" font-size="12" font-family="sans-serif">sqiswap / SQISWAP</text>
+      <line x1="0" y1="20" x2="60" y2="20"/>
+      <line x1="0" y1="60" x2="60" y2="60"/>
+      <line x1="30" y1="20" x2="30" y2="60"/>
+      <line x1="30" y1="8" x2="30" y2="32"/>
+      <line x1="22" y1="52" x2="38" y2="68"/><line x1="22" y1="68" x2="38" y2="52"/>
+    </g>
+    <!-- sqiswap_inv: X top, | bottom -->
+    <g transform="translate(220,30)">
+      <text x="0" y="-8" fill="#f0f0f0" font-size="12" font-family="sans-serif">sqiswap_inv</text>
+      <line x1="0" y1="20" x2="60" y2="20"/>
+      <line x1="0" y1="60" x2="60" y2="60"/>
+      <line x1="30" y1="20" x2="30" y2="60"/>
+      <line x1="22" y1="12" x2="38" y2="28"/><line x1="22" y1="28" x2="38" y2="12"/>
+      <line x1="30" y1="48" x2="30" y2="72"/>
+    </g>
+    <!-- bswap: | both -->
+    <g transform="translate(320,30)">
+      <text x="0" y="-8" fill="#f0f0f0" font-size="12" font-family="sans-serif">bswap / BSWAP</text>
+      <line x1="0" y1="20" x2="60" y2="20"/>
+      <line x1="0" y1="60" x2="60" y2="60"/>
+      <line x1="30" y1="20" x2="30" y2="60"/>
+      <line x1="30" y1="8" x2="30" y2="32"/>
+      <line x1="30" y1="48" x2="30" y2="72"/>
+    </g>
+    <!-- squeezing -->
+    <g transform="translate(420,40)">
+      <text x="0" y="-18" fill="#f0f0f0" font-size="12" font-family="sans-serif">squeezing</text>
+      <line x1="0" y1="30" x2="80" y2="30"/>
+      <rect x="28" y="12" width="24" height="36" fill="none" stroke="#f0f0f0" stroke-width="2"/>
+      <text x="40" y="34" fill="#f0f0f0" font-size="20" font-family="serif" text-anchor="middle">S</text>
+    </g>
+  </g>
+</svg>

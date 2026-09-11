@@ -63,8 +63,18 @@
 # target Z [control list]
 # target H [control list]
 #    Unary operators.
-# target1 target2 SWAP
-#   swap values on two wires
+# target1 target2 SWAP  (aliases: swap, sw)
+#   standard SWAP (two crossed strokes on each wire, vertical link).
+# target1 target2 ISWAP  (alias: iswap)
+#   same diagram as SWAP (matches iSWAP / “i-SWAP” circuit symbol).
+# target1 target2 SQISWAP  (aliases: sqiswap, sqrtiswap)
+#   vertical bar on the upper wire, X on the lower wire, vertical link.
+# target1 target2 SQISWAP_INV  (alias: sqiswap_inv)
+#   X on the upper wire, vertical bar on the lower wire, vertical link.
+# target1 target2 BSWAP  (alias: bswap)
+#   vertical bar on both wires, vertical link.
+# target SQUEEZING  (alias: squeezing)
+#   single-qubit box labeled S (squeezing operator).
 # target1 target2 ... M [operator]
 #   Measure; also changes targets to type=c
 #   if operator specified, use D-shaped box; otherwise, use meter
@@ -260,6 +270,24 @@ try: # Python 3.3+
 except ImportError: # Old Python
     from collections import Mapping
 # from collections import Mapping
+
+# Two-qubit SWAP-family: map command token -> internal style for drawing.
+# Symbols follow the reference diagram (iSWAP = SWAP symbol; mixed |/X; bswap = ||).
+SWAP_FAMILY_COMMANDS = {
+    'SWAP': 'swap',
+    'swap': 'swap',
+    'sw': 'swap',
+    'ISWAP': 'iswap',
+    'iswap': 'iswap',
+    'SQISWAP': 'sqiswap',
+    'sqiswap': 'sqiswap',
+    'sqrtiswap': 'sqiswap',
+    'SQISWAP_INV': 'sqiswap_inv',
+    'sqiswap_inv': 'sqiswap_inv',
+    'BSWAP': 'bswap',
+    'bswap': 'bswap',
+}
+SQUEEZE_COMMANDS = frozenset(['SQUEEZING', 'squeezing'])
 
 def initialize_globals():
     global line_num
@@ -2035,10 +2063,21 @@ class Gate:
                         else:
                             wires[target].draw_end_label(pos - 0.5*self.get_length(), "fill=%s" % bgcolor,length=self.get_length())
                 elif self.type in ['N', 'M','/']:
+                    tq_style = self.options.get('two_qubit_style') if self.type == 'N' else None
+                    topw = botw = None
+                    if self.type == 'N' and len(self.targets) == 2 and tq_style in ('sqiswap', 'sqiswap_inv'):
+                        ordered = sorted(self.targets, key=lambda wn: wires[wn].location(pos), reverse=True)
+                        topw, botw = ordered[0], ordered[1]
                     for target in self.targets:
                         (x,y) = get_x_y(pos, wires[target].location(pos))
                         if self.type == 'N':
                             draw_options = get_draw_options(self.options, target, '+')
+                            if tq_style == 'sqiswap' and topw is not None:
+                                draw_options['operator'] = '|' if target == topw else 'x'
+                            elif tq_style == 'sqiswap_inv' and topw is not None:
+                                draw_options['operator'] = 'x' if target == topw else '|'
+                            elif tq_style == 'bswap':
+                                draw_options['operator'] = '|'
                             draw_xor_or_control(x,y,draw_options)
                         elif self.type == 'M':
                             draw_measurement(x,y, width, height, name=self.name, style=self.style, fill=self.fill)
@@ -2759,7 +2798,13 @@ def process_one_command(words, line_options, gate_options, comment0, comment1):
         pos = 0
         while pos < len(words):
             word = words[pos]
-            if word in ['W', 'T', 'C', 'N', 'X', 'H', 'Z', 'LABEL', 'PHANTOM', 'M', 'IN', 'OUT', 'SWAP', '/', 'TOUCH', 'BARRIER', 'START', 'END', 'PERMUTE', '@'] + EQUALS:
+            if word in ['W', 'T', 'C', 'N', 'X', 'H', 'Z', 'LABEL', 'PHANTOM', 'M', 'IN', 'OUT',
+                        'SWAP', 'swap', 'sw', 'ISWAP', 'iswap',
+                        'SQISWAP', 'sqiswap', 'sqrtiswap',
+                        'SQISWAP_INV', 'sqiswap_inv',
+                        'BSWAP', 'bswap',
+                        'SQUEEZING', 'squeezing',
+                        '/', 'TOUCH', 'BARRIER', 'START', 'END', 'PERMUTE', '@'] + EQUALS:
                 gate_type = word
                 controls = words[pos+1:]
                 if boxes:
@@ -2846,13 +2891,30 @@ def process_one_command(words, line_options, gate_options, comment0, comment1):
         #    if len(targets) != 0:
         #        sys.exit("Error:  Line %i: should not be target to %s\n" % (line_num, gate_type))
         #    gate_type = 'N'
-        if gate_type == 'SWAP':
+        if gate_type in SQUEEZE_COMMANDS:
+            if len(targets) != 1:
+                sys.exit("Error:  Line %i: %s should have exactly one target\n" % (line_num, gate_type))
+            name = '$S$'
+            boxes.append(Box('G', targets, name, options=line_options))
+            targets = []
+            gate_type = 'G'
+            line_options = original_line_options
+        elif gate_type in SWAP_FAMILY_COMMANDS:
             if len(targets) != 2:
-                sys.exit("Error:  Line %i: SWAP should have exactly two targets\n" % line_num)
-            if 'operator' not in line_options:
-                line_options['operator'] = 'x'
+                sys.exit("Error:  Line %i: %s should have exactly two targets\n" % (line_num, gate_type))
+            style = SWAP_FAMILY_COMMANDS[gate_type]
             if 'shape' not in line_options:
                 line_options['shape'] = 0
+            if style == 'sqiswap':
+                line_options['two_qubit_style'] = 'sqiswap'
+            elif style == 'sqiswap_inv':
+                line_options['two_qubit_style'] = 'sqiswap_inv'
+            elif style == 'bswap':
+                line_options['two_qubit_style'] = 'bswap'
+            else:
+                # swap and iswap: same diagram as classic SWAP (two X strokes per wire)
+                if 'operator' not in line_options:
+                    line_options['operator'] = 'x'
             gate_type = 'N'
         if gate_type in ['C', 'T']:
             gate_type = 'N'

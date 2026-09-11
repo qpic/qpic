@@ -1,0 +1,55 @@
+\begin{tikzpicture}[scale=1.000000,x=1pt,y=1pt]
+\filldraw[color=white] (0.000000, -7.500000) rectangle (96.000000, 22.500000);
+% Drawing wires
+% Line 2: a W
+\draw[color=black] (0.000000,15.000000) -- (96.000000,15.000000);
+% Line 3: b W
+\draw[color=black] (0.000000,0.000000) -- (96.000000,0.000000);
+% Done with wires; drawing gates
+% Line 4: a b iswap
+\draw (9.000000,15.000000) -- (9.000000,0.000000);
+\begin{scope}
+\draw (6.878680, 12.878680) -- (11.121320, 17.121320);
+\draw (6.878680, 17.121320) -- (11.121320, 12.878680);
+\end{scope}
+\begin{scope}
+\draw (6.878680, -2.121320) -- (11.121320, 2.121320);
+\draw (6.878680, 2.121320) -- (11.121320, -2.121320);
+\end{scope}
+% Line 5: a b sqiswap
+\draw (27.000000,15.000000) -- (27.000000,0.000000);
+\begin{scope}
+\draw (27.000000, 12.000000) -- (27.000000, 18.000000);
+\end{scope}
+\begin{scope}
+\draw (24.878680, -2.121320) -- (29.121320, 2.121320);
+\draw (24.878680, 2.121320) -- (29.121320, -2.121320);
+\end{scope}
+% Line 6: a b sqiswap_inv
+\draw (45.000000,15.000000) -- (45.000000,0.000000);
+\begin{scope}
+\draw (42.878680, 12.878680) -- (47.121320, 17.121320);
+\draw (42.878680, 17.121320) -- (47.121320, 12.878680);
+\end{scope}
+\begin{scope}
+\draw (45.000000, -3.000000) -- (45.000000, 3.000000);
+\end{scope}
+% Line 7: a b bswap
+\draw (63.000000,15.000000) -- (63.000000,0.000000);
+\begin{scope}
+\draw (63.000000, 12.000000) -- (63.000000, 18.000000);
+\end{scope}
+\begin{scope}
+\draw (63.000000, -3.000000) -- (63.000000, 3.000000);
+\end{scope}
+% Line 8: a squeezing
+\begin{scope}
+\draw[fill=white] (84.000000, 15.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\clip (84.000000, 15.000000) +(-45.000000:8.485281pt and 8.485281pt) -- +(45.000000:8.485281pt and 8.485281pt) -- +(135.000000:8.485281pt and 8.485281pt) -- +(225.000000:8.485281pt and 8.485281pt) -- cycle;
+\draw (84.000000, 15.000000) node {$S$};
+\end{scope}
+% Line 9: TOUCH
+% Done with gates; drawing ending labels
+% Done with ending labels; drawing cut lines and comments
+% Done with comments
+\end{tikzpicture}
