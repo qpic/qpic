@@ -58,11 +58,42 @@ directory must be on ``PATH``)::
     source ~/.venvs/qpic/bin/activate
     pip install qpic
 
+Windows
+-------
+
+These are the Windows differences only. They have not been verified on a
+Windows machine for this guide.
+
+Install TeX Live or MiKTeX, including ``latexmk``. Install qpic with
+``pipx install qpic``, or::
+
+    py -m pip install qpic
+
+Add the pipx shim directory or
+``%APPDATA%\Python\Python3x\Scripts`` to your **user** ``PATH``.
+Confirm in a **new** Command Prompt::
+
+    qpic --version
+
+GUI editors (TeXworks, TeXstudio, VS Code started from the Start menu)
+do not see a virtual environment you activated in a terminal. Restart
+the editor after changing ``PATH``. If ``\write18`` still cannot find
+``qpic``, put the full path to ``qpic.exe`` in ``qpic-latex.sty``.
+
+For shell escape, TeX Live uses ``-shell-escape``. MiKTeX uses
+``-enable-write18`` (current MiKTeX also accepts ``-shell-escape``).
+The same trust rules apply.
+
+Keep ``qpic-latex.sty`` next to the ``.tex`` file, or install it as:
+
+- TeX Live: ``%USERPROFILE%\texmf\tex\latex\qpic\``
+- MiKTeX: add that folder as a TEXMF root in MiKTeX Console
+
 2. The qpic-LaTeX style file
 ============================
 
 Copy ``qpic-latex.sty`` from this directory next to your ``.tex`` file
-(or into ``~/texmf/tex/latex/qpic/``). Then::
+(or into ``~/texmf/tex/latex/qpic/`` on Unix). Then::
 
     \usepackage{qpic-latex}
 
@@ -88,7 +119,8 @@ Option A: via terminal (this document only)
 
     latexmk -pdf -shell-escape test.tex
 
-The ``-shell-escape`` flag is a trust decision for ``test.tex``, not a
+On MiKTeX, the traditional flag is ``-enable-write18`` instead of
+``-shell-escape``. The flag is a trust decision for ``test.tex``, not a
 general TeX setting.
 
 Option B: project-local ``.latexmkrc``
@@ -175,9 +207,12 @@ Troubleshooting
 - **``qpic-latex`` error about shell escape**: You compiled without
   ``-shell-escape`` (or only restricted ``\write18`` is on). Rebuild with
   ``latexmk -pdf -shell-escape …`` for a document you trust.
-- **``sh: 1: qpic: not found``**: LaTeX cannot find your ``qpic``
-  binary. Try replacing ``qpic`` in the ``.sty`` file with the absolute
-  path (e.g., ``/home/yourname/.local/bin/qpic``).
+- **``qpic: not found``** (or ``sh: 1: qpic: not found``): LaTeX cannot
+  find ``qpic``. From a GUI editor on Windows this usually means
+  ``qpic.exe`` is not on the user ``PATH`` the editor inherited; restart
+  the editor after fixing ``PATH``, or put the full path in the ``.sty``
+  file (e.g., ``/home/yourname/.local/bin/qpic`` or
+  ``C:\Users\yourname\AppData\Roaming\Python\Python3x\Scripts\qpic.exe``).
 - **Empty diagram**: Ensure the ``fancyvrb`` package is installed and
   the compile actually used ``-shell-escape`` (check the log for the
   qpic-latex warning).
