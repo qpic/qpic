@@ -148,7 +148,7 @@ argument for ``latexmk``::
 
     \begin{document}
     \title{Quantum Circuit Test}
-    \author{Me}
+    \author{Hughes Q. Pick}
     \maketitle
 
 

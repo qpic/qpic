@@ -6,23 +6,67 @@
 
 \begin{document}
 \title{Quantum Circuit Test}
-\author{Me}
+\author{Hughes Q. Pick}
 \maketitle
 
 
 \begin{figure}[h]
     \centering
     \begin{qpic}
-        SCALE 2.1
-        PREAMBLE \providecommand{\ket}[1]{\left|#1\right\rangle}
-        a W \ket{\psi}_{A_i} a_i
-        b W \ket{\psi}_{B_i} b_i
+PREAMBLE \providecommand{\K}[1]{\left|#1\right\rangle}
+a  W \K{\phi} [x]
+x1 W type=o # Empty wire used for positioning
+x0 W style=dashed # Dividing line
+x2 W type=o # Empty wire used for positioning
+b0 W \K{0} [y]
+b1 W \K{0} \K{\phi}
 
-        b C a
-        a H
-        a b M
+VERTICAL 0
+b1 H    % $\K{\phi}\K{0}(\K{0}{+}\K{1})$
++b0 b1   % $(\alpha\K{0}{+}\beta\K{1})(\K{00}{+}\K{11})$
+b0 x1 PERMUTE
++b0 a %$\scriptstyle\alpha\K{0}(\K{00}{+}\K{11}){+}\beta\K{1}(\K{10}{+}\K{01})$
+a H     % $\sum_{x,y}\K{xy}(\alpha\K{y}{+}(-1)^x\beta\K{\bar{y}})$
+a b0 M  % $[xy](\alpha\K{y}{+}(-1)^x\beta\K{\bar{y}})$
+x1 x2 a b0 PERMUTE
++b1 b0   % $[xy](\alpha\K{0}{+}(-1)^x\beta\K{1})$
+b1 a  % $[xy](\alpha\K{0}{+}\beta\K{1})$
+
+# Colored boxes
+DEFINE qq fill=green style=rounded_corners
+DEFINE cc fill=blue style=rounded_corners
+b0 b1 x1 x2 @ 0 2 qq %% $[qq]$ Quantum entanglement
+a b0 x2 x1 @ 6 6 cc %% \hspace{.5cm}$2[c\rightarrow c]$ Classical channel
     \end{qpic}
-    \caption{Inline qpic diagram.}
+    \caption{Quantum teleportation.}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{qpic}
+PREAMBLE \providecommand{\ket}[1]{\left|#1\right\rangle}
+a0 W [x] [x] type=c
+a1 W [y] [y] type=c
+x1 W type=o
+x0 W style=dashed
+b0 W \ket{0} \ket{x}
+b1 W \ket{0} \ket{y}
+
+VERTICAL 0
+b1 H    % $[xy]\ket{0}(\ket{0}{+}\ket{1})$
+b0 b1   % $[xy](\ket{00}{+}\ket{11})$
+b0 x1 PERMUTE
+a1 b0   % $[xy](\ket{00}{+}(-1)^{y}\ket{11})$
++b0 a0   % $[xy](\ket{x 0}{+}(-1)^{y}\ket{\bar{x} 1})$
+x1 b0 PERMUTE
++b0 b1   % $[xy]\ket{x}(\ket{0}{+}(-1)^{y}\ket{1})$
+b1 H    % $[xy]\ket{x y}$
+
+# Colored boxes
+x1 b1 @ 0 2 fill=green style=rounded_corners %% $[qq]$ Quantum entanglement
+b0 x1 @ 5 5 fill=red style=rounded_corners %% \hspace{.5cm}$[q\rightarrow q]$ Quantum channel
+    \end{qpic}
+    \caption{Superdense coding.}
 \end{figure}
 
 \end{document}
