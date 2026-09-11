@@ -1,0 +1,28 @@
+% This document requires -shell-escape: \usepackage{qpic-latex} runs
+% qpic via the shell. Only compile this way for documents you trust.
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{qpic-latex}
+
+\begin{document}
+\title{Quantum Circuit Test}
+\author{Hughes Q. Pick}
+\maketitle
+
+
+\begin{figure}[h]
+    \centering
+    \begin{qpic}
+        SCALE 2.1
+        PREAMBLE \providecommand{\ket}[1]{\left|#1\right\rangle}
+        a W \ket{\psi}_{A_i} a_i
+        b W \ket{\psi}_{B_i} b_i
+
+        b C a
+        a H
+        a b M
+    \end{qpic}
+    \caption{Inline qpic diagram.}
+\end{figure}
+
+\end{document}

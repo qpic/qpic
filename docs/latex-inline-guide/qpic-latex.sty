@@ -1,0 +1,45 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{qpic-latex}[2026/09/11 Qpic integration for LaTeX]
+
+\RequirePackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing}
+\RequirePackage{fancyvrb}
+\RequirePackage{shellesc}
+
+\PackageWarningNoLine{qpic-latex}{%
+  This package runs the qpic program via shell escape.^^J%
+  -shell-escape allows any shell command in this document,^^J%
+  not only qpic. Compile this way only for sources you trust}
+
+\ifcase\ShellEscapeStatus
+  \PackageError{qpic-latex}{%
+    Shell escape is disabled\MessageBreak
+    qpic-latex runs qpic via the shell while TeX runs}%
+   {Compile with -shell-escape (TeX Live) or -enable-write18 (MiKTeX).^^J%
+    That flag enables the shell for the entire document, so use it^^J%
+    only on sources you trust.}%
+\or
+\else
+  \PackageError{qpic-latex}{%
+    Restricted shell escape is not enough\MessageBreak
+    qpic is not on TeX Live's restricted command list}%
+   {Compile this document with unrestricted -shell-escape.^^J%
+    Restricted mode cannot run qpic. Only do this for sources you trust.}%
+\fi
+
+\newcounter{qpicglobal}
+
+\newenvironment{qpic}{%
+  \stepcounter{qpicglobal}%
+  \edef\qpicname{qpic-\arabic{qpicglobal}}%
+  \VerbatimEnvironment
+  \begin{VerbatimOut}{\qpicname.qpic}%
+}{%
+  \end{VerbatimOut}%
+  \ShellEscape{qpic \qpicname.qpic > \qpicname.tikz 2>\qpicname.err}%
+  \IfFileExists{\qpicname.tikz}{%
+    \input{\qpicname.tikz}%
+  }{%
+    \PackageError{qpic-latex}{Failed to compile \qpicname.qpic}{}%
+  }%
+}

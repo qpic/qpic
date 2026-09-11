@@ -176,6 +176,9 @@ Each has its advantage in certain areas. They are:
 -  Include TikZ code directly
 -  Include as a PDF graphic
 
+To write ⟨q\|pic⟩ code directly inside a ``.tex`` file, see the
+`inline LaTeX guide <docs/latex-inline-guide/README.rst>`_.
+
 TikZ
 ~~~~
 
