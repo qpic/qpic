@@ -61,57 +61,22 @@ directory must be on ``PATH``)::
 2. The qpic-LaTeX style file
 ============================
 
-To use the ``qpic`` environment, use the ``qpic-latex.sty`` shipped in
-this directory (or copy it next to your ``.tex`` file, or into
-``~/texmf/tex/latex/qpic/``). The file is:
+Copy ``qpic-latex.sty`` from this directory next to your ``.tex`` file
+(or into ``~/texmf/tex/latex/qpic/``). Then::
 
-.. code-block:: latex
+    \usepackage{qpic-latex}
 
-    \NeedsTeXFormat{LaTeX2e}
-    \ProvidesPackage{qpic-latex}[2026/09/11 Qpic integration for LaTeX]
+    \begin{qpic}
+        ...
+    \end{qpic}
 
-    \RequirePackage{tikz}
-    \usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing}
-    \RequirePackage{fancyvrb}
-    \RequirePackage{shellesc}
+While TeX runs, the environment writes ``qpic-N.qpic`` and compiles it
+with::
 
-    \PackageWarningNoLine{qpic-latex}{%
-      This package runs the qpic program via shell escape.^^J%
-      -shell-escape allows any shell command in this document,^^J%
-      not only qpic. Compile this way only for sources you trust}
+    qpic qpic-N.qpic > qpic-N.tikz 2>qpic-N.err
 
-    \ifcase\ShellEscapeStatus
-      \PackageError{qpic-latex}{%
-        Shell escape is disabled\MessageBreak
-        qpic-latex runs qpic via the shell while TeX runs}%
-       {Compile with -shell-escape (TeX Live) or -enable-write18 (MiKTeX).^^J%
-        That flag enables the shell for the entire document, so use it^^J%
-        only on sources you trust.}%
-    \or
-    \else
-      \PackageError{qpic-latex}{%
-        Restricted shell escape is not enough\MessageBreak
-        qpic is not on TeX Live's restricted command list}%
-       {Compile this document with unrestricted -shell-escape.^^J%
-        Restricted mode cannot run qpic. Only do this for sources you trust.}%
-    \fi
-
-    \newcounter{qpicglobal}
-
-    \newenvironment{qpic}{%
-      \stepcounter{qpicglobal}%
-      \edef\qpicname{qpic-\arabic{qpicglobal}}%
-      \VerbatimEnvironment
-      \begin{VerbatimOut}{\qpicname.qpic}%
-    }{%
-      \end{VerbatimOut}%
-      \ShellEscape{qpic \qpicname.qpic > \qpicname.tikz 2>\qpicname.err}%
-      \IfFileExists{\qpicname.tikz}{%
-        \input{\qpicname.tikz}%
-      }{%
-        \PackageError{qpic-latex}{Failed to compile \qpicname.qpic}{}%
-      }%
-    }
+See ``qpic-latex.sty`` for the full package (shell-escape checks, TikZ
+libraries, and error handling).
 
 3. Compilation
 ==============
@@ -134,6 +99,20 @@ project directory** (the same folder as the ``.tex`` file), not in your
 home directory::
 
     $pdflatex = 'pdflatex -shell-escape %O %S';
+
+Generated files
+---------------
+
+Each ``qpic`` environment leaves three files next to the ``.tex``
+source, named ``qpic-N.qpic``, ``qpic-N.tikz``, and ``qpic-N.err``
+(``N`` counts environments in the document). They are rebuildable: safe
+to delete, and safe to ignore in git, for example::
+
+    qpic-*.qpic
+    qpic-*.tikz
+    qpic-*.err
+
+Keep ``qpic-N.err`` only if you need to inspect a failed ``qpic`` run.
 
 4. VS Code integration (LaTeX Workshop)
 =======================================
@@ -202,3 +181,5 @@ Troubleshooting
 - **Empty diagram**: Ensure the ``fancyvrb`` package is installed and
   the compile actually used ``-shell-escape`` (check the log for the
   qpic-latex warning).
+- **Extra ``qpic-N.*`` files**: Expected; see *Generated files* above.
+  Delete them or add them to ``.gitignore``. They are not the document.
