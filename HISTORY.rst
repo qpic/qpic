@@ -2,6 +2,12 @@
 History
 =======
 
+1.1.1 (2026-09-11)
+------------------
+
+* Inline LaTeX ``qpic`` environment guide and ``qpic-latex.sty``.
+* Ignore ``.venv/`` directories.
+
 1.1.0 (2023-11-13)
 ------------------
 

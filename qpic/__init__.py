@@ -2,6 +2,6 @@
 
 __author__ = 'Thomas Draper and Sandy Kutin'
 __email__ = 'tdraper@ccr-lajolla.org, kutin@idaccr.org'
-__version__ = '1.0.3'
+__version__ = '1.1.1'
 
 from .qpic import *

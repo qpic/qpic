@@ -30,7 +30,7 @@ test_requirements = [
 
 setup(
     name='qpic',
-    version='1.1.0',
+    version='1.1.1',
     description="Creating quantum circuit diagrams in TikZ",
     long_description=readme + '\n\n' + history,
     long_description_content_type='text/x-rst',
@@ -48,13 +48,12 @@ setup(
     license="GPL",
     zip_safe=False,
     keywords='qpic',
+    python_requires='>=3.8',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Natural Language :: English',
-        "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
