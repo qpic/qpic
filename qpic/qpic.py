@@ -242,6 +242,9 @@
 # AUTOWIRES
 #   Allow undeclared wires (number or lowercase string, optional '_',
 #      comma-separated numbers).  Default is 'on' until first 'W' declaration
+# THROUGHSTYLE
+#   Change style of lines drawn through lines (default is dashed)
+#   Spaces must be replaced by '_'
 #
 ########################################################
 # WARNING: no longer allowed (use : syntax)
@@ -267,7 +270,7 @@ def initialize_globals():
     global wire_prefix, cut_info, premath_str, postmath_str, overall_scale
     global preamble_list, pretikz_list, posttikz_list, predocument_list
     global measure_shape, ROUNDED_CORNERS, OPACITY, allow_different_gates
-    global orientation, start_degrees, end_degrees, bgcolor, auto_wires
+    global orientation, start_degrees, end_degrees, bgcolor, auto_wires, through_style
     global CLASSICAL_SEP, EQUALS, legal_options, BARRIER_STYLE
     global valid_prefixes
     global master_depth_list, overall_depth, last_depth
@@ -302,6 +305,7 @@ def initialize_globals():
     bgcolor = 'white'
     # choices: 'off' = disallow; 'on' = allow; 'default' = allow until wire declaration occurs
     auto_wires = 'default'
+    through_style = 'dashed'
 
     CLASSICAL_SEP = 0.5
 
@@ -310,7 +314,7 @@ def initialize_globals():
         for s2 in ['<', '', '>']:
             EQUALS.append(s1+'='+s2)
 
-    legal_options = ['color', 'length', 'breadth', 'size', 'width', 'height', 'style', 'fill', 'hyperlink', 'type', 'shape', 'operator']
+    legal_options = ['color', 'length', 'breadth', 'size', 'width', 'height', 'style', 'fill', 'hyperlink', 'type', 'shape', 'operator', 'result', 'control']
 
     BARRIER_STYLE="decorate,decoration={zigzag,amplitude=1pt,segment length=4}"
 
@@ -378,7 +382,7 @@ def parse_options(word):
             opt = 'length'
         else:
             opt = 'breadth'
-    if opt in ['color', 'fill', 'hyperlink', 'operator']:
+    if opt in ['color', 'fill', 'hyperlink', 'operator', 'result', 'control']:
         val = val_string
     elif opt == 'style':
         val = ' '.join(val_string.split('_')) # _ -> space
@@ -622,9 +626,9 @@ def write_operator_name(x,y,operator):
         if operator[-1] != '"':
             operator += '"'
         operator_str = operator[1:-1]
-        print("\\begin{scope}[shift={(%f,%f)}]" % (x,y))
+        print("\\scope[shift={(%f,%f)}]" % (x,y))
         print(operator_str)
-        print("\\end{scope}")
+        print("\\endscope")
     else:
         print("\\draw (%f, %f) node {%s};" % (x,y,operator))
 
@@ -644,7 +648,7 @@ def draw_xor(x,y,options):
     operator = options['operator']
     fillcolor = options.get('fill',bgcolor)
     thick_side = options.get('thick_side',0)
-    print("\\begin{scope}")
+    print("\\scope")
     if shape == 2:
         shape_line = "(%f, %f) %s(%s);" % (x,y,circle_str,arc_str)
         num_sides = 0
@@ -745,7 +749,7 @@ def draw_xor(x,y,options):
             print("\\filldraw (%f, %f) circle(%fpt);" % (x,y,.25))
         else:
             write_operator_name(x,y,operator)
-    print("\\end{scope}")
+    print("\\endscope")
     
 def draw_control(x,y,size):
     print("\\filldraw (%f, %f) circle(%fpt);" % (x,y,0.5*size))
@@ -1438,7 +1442,7 @@ class Box:
         global wires, orientation
         scope_str = make_scope_str(color=self.color,style=self.style)
         if scope_str:
-            print("\\begin{scope}[%s]" % scope_str)
+            print("\\scope[%s]" % scope_str)
         draw_options = copy.deepcopy(self.options)
         draw_options['operator'] = self.name
         target_locations = [wires[t].location(pos) for t in self.targets]
@@ -1468,7 +1472,20 @@ class Box:
         draw_options['direction'] = dir
         (x,y) = get_x_y(pos - length_shift,
                         0.5*(target_min + target_max) - breadth_shift)
-        draw_xor(x,y,draw_options)
+        if self.type == 'J':
+            draw_options['operator'] = " "
+            draw_xor(x,y,draw_options)
+            for i, target_location in enumerate(target_locations):
+                (x,y) = get_x_y(pos - length_shift, target_location - breadth_shift)
+                write_operator_name(x, y, "$%s$" % self.name[i])
+            if "result" in self.options:
+                (x,y) = get_x_y(pos + pos_s,
+                                0.5*(target_min + target_max) - breadth_shift)
+                print("\\draw (%f,%f) -- (%f,%f);" % (x, y - CLASSICAL_SEP, x + 5, y - CLASSICAL_SEP))
+                print("\\draw (%f,%f) -- (%f,%f);" % (x, y + CLASSICAL_SEP, x + 5, y + CLASSICAL_SEP))
+                print("\\draw (%f,%f) node[inner sep=0.5pt, outer sep=0pt, right] {%s};" % (x + 5, y, self.options["result"]))
+        else:
+            draw_xor(x,y,draw_options)
         if self.hyperlink:
             corner1 = get_x_y(pos-pos_s-length_shift, target_start - breadth_shift)
             corner2 = get_x_y(pos+pos_s-length_shift, target_end - breadth_shift)
@@ -1477,7 +1494,12 @@ class Box:
             box_height = corner1[1] + corner2[1] - 2*lower_left[1]
             print("\\draw (%f,%f) node[inner sep=0pt, outer sep=0pt, anchor=south west] {\\hyperlink{%s}{\\phantom{\\rule{%fpt}{%fpt}}}};" % (lower_left + (self.hyperlink, box_width, box_height)))
         if scope_str:
-            print("\\end{scope}")
+            print("\\endscope")
+        if "control" in self.options:
+            (x,y) = get_x_y(pos - length_shift, target_min + the_breadth / 2)
+            print("\\draw (%f,%f) -- (%f,%f);" % (x - CLASSICAL_SEP, y, x - CLASSICAL_SEP, y + 5))
+            print("\\draw (%f,%f) -- (%f,%f);" % (x + CLASSICAL_SEP, y, x + CLASSICAL_SEP, y + 5))
+            print("\\draw (%f,%f) node[inner sep=0.5pt, outer sep=0pt, above] {%s};" % (x, y + 5, self.options["control"]))
             
 class Gate:
     # note: "args" includes name of gate and controls
@@ -1924,7 +1946,7 @@ class Gate:
         return self.options['attach_to'].already_drawn
     
     def draw_gate(self):
-        global wires, orientation, bgcolor
+        global wires, orientation, bgcolor, through_style
         print(self.input_line)
         self.already_drawn = 1
         if self.type == 'PHANTOM':
@@ -1933,7 +1955,7 @@ class Gate:
             return
         scope_str = make_scope_str(color=self.color)
         if scope_str:
-            print("\\begin{scope}[%s]" % scope_str)
+            print("\\scope[%s]" % scope_str)
         (width,height) = get_w_h(self.get_length(), self.get_breadth())
         self.draw_comments(self.position_list[0][0])
         for (pos,dir) in self.position_list:
@@ -2007,7 +2029,7 @@ class Gate:
                         elif wn in self.all_wires():
                             continue
                         else:
-                            tikz_strs[wn] = 'dashed'
+                            tikz_strs[wn] = ' '.join(through_style.split('_'))
                         if wn not in fixed_wires:
                             fixed_wires.append(wn)
                 fixed_wires.sort(key=get_start_loc_from_name,reverse=True)
@@ -2060,7 +2082,7 @@ class Gate:
                             draw_measurement(x, y, width, height, style=self.style, fill=self.fill)
                         
         if scope_str:
-            print("\\end{scope}")
+            print("\\endscope")
 
 def new_depth(depth_to_copy=None,direction=1):
     global overall_depth, master_depth_list
@@ -2263,7 +2285,7 @@ def print_circuit(circuit_length, cut_lines):
         print(pre)
     for col in new_colors:
         print("\\definecolor{%s}{rgb}{%s,%s,%s}" % (col[0], col[1], col[2], col[3]))
-    print("\\begin{tikzpicture}[scale=%f,x=1pt,y=1pt]" % overall_scale)
+    print("\\tikzpicture[scale=%f,x=1pt,y=1pt]" % overall_scale)
     print("\\filldraw[color=%s] (%f, %f) rectangle (%f, %f);" % ((bgcolor,) + get_x_y(0, circuit_bottom) + get_x_y(circuit_length, circuit_top)))
     for pre in pretikz_list:
         print(pre)
@@ -2351,7 +2373,7 @@ def print_circuit(circuit_length, cut_lines):
     print("% Done with comments")
     for post in posttikz_list:
         print(post)
-    print("\\end{tikzpicture}")
+    print("\\endtikzpicture")
         
 def interpret_depth(ref, interpret_as_length = 0):
     global depth_marks, last_depth, line_num
@@ -2557,7 +2579,7 @@ def parse_command(subwords):
     wire_options = {}
     gate_options = []
     
-    gate_names = ['G', 'G|', '|G', 'P']
+    gate_names = ['G', 'G|', '|G', 'P', 'J']
     while subwords:
         w = subwords.pop(0)
         word_options = parse_options(w)
@@ -2656,7 +2678,7 @@ def process_one_command(words, line_options, gate_options, comment0, comment1):
     global OPACITY, COMMENT_SIZE, wire_prefix, premath_str, postmath_str
     global overall_scale, new_colors, preamble_list, pretikz_list
     global posttikz_list, orientation, start_degrees, end_degrees
-    global measure_shape, bgcolor, auto_wires, predocument_list
+    global measure_shape, bgcolor, auto_wires, through_style, predocument_list
     global level_stack, level_list
     original_line_options = copy.copy(line_options)
     if (words[0] == 'R'):
@@ -2751,6 +2773,8 @@ def process_one_command(words, line_options, gate_options, comment0, comment1):
             depth_marks[w] = last_depth
     elif (words[0] == 'HEADER'):
         predocument_list.append(' '.join(words[1:]))
+    elif (words[0] == 'THROUGHSTYLE'):
+        through_style = words[1]
     else:
         targets = []
         controls = []
@@ -2765,7 +2789,7 @@ def process_one_command(words, line_options, gate_options, comment0, comment1):
                 if boxes:
                     sys.exit("Error:  Line %i: cannot mix %s with G or P\n" % (line_num, word))
                 break
-            elif word in ['G', 'G|', '|G', 'P']:
+            elif word in ['G', 'G|', '|G', 'P', 'J']:
                 if not targets:
                     sys.exit("Error:  Line %i: %s needs at least one target\n" % (line_num, word))
                 box_options = copy.copy(line_options)
