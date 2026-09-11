@@ -201,6 +201,9 @@ argument for ``latexmk``::
 
     \end{document}
 
+A longer sample (quantum teleportation and superdense coding) is
+``test-extended.tex`` in this directory.
+
 Troubleshooting
 ---------------
 
