@@ -41,10 +41,11 @@ To use the `\begin{qpic}` environment, create a file named `qpic-latex.sty`. You
 
 ```latex
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{qpic-latex}[2026/08/24 Qpic integration for LaTeX]
+\ProvidesPackage{qpic-latex}[2026/09/11 Qpic integration for LaTeX]
 
 \RequirePackage{tikz}
-\RequirePackage{fancyvrb} 
+\usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing}
+\RequirePackage{fancyvrb}
 
 \newcounter{qpicglobal}
 
@@ -55,7 +56,7 @@ To use the `\begin{qpic}` environment, create a file named `qpic-latex.sty`. You
   \begin{VerbatimOut}{\qpicname.qpic}%
 }{%
   \end{VerbatimOut}%
-  \immediate\write18{qpic -f tikz \qpicname.qpic > \qpicname.tikz 2>\qpicname.err}%
+  \immediate\write18{qpic \qpicname.qpic > \qpicname.tikz 2>\qpicname.err}%
   \IfFileExists{\qpicname.tikz}{%
     \input{\qpicname.tikz}%
   }{%
